@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-4.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-5.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-6.png">
-<meta property="og:updated_time" content="2018-03-17T06:56:12.000Z">
+<meta property="og:updated_time" content="2018-03-17T16:23:00.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零配置Webpack4.0搭建一个React工程">
 <meta name="twitter:description" content="最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考 前段工程化思考说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包/自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目">
@@ -216,6 +216,12 @@
 <p>这就出来了</p>
 <p>最后 ：<br><img src="/assets/blogImg/20180317-6.png" alt=""><br>告诉我们服务端渲染，需要用这个react16新加的这个方法ReactDOM.hydrate()<br>大概意思就是如果我们使用了服务端渲染，我们需要用ReactDOM.hydrate()，在web端去渲染内容。react回去对比客户端和服务端生成的代码<br>之间的差别。如果有差别，他会用客户端的代码替换掉服务端的代码。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span></span><br><span class="line"></span><br><span class="line">ReactDOM.hydrate(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span>, document.getElementById('root'))</span></span><br></pre></td></tr></table></figure></p>
 <p>再走一波就没有警告了。</p>
+<h3 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h3><p>webpack dev server是一个通过webpack配置启动的server</p>
+<p>配置起来也很简单。<br>首先：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-dev-server -D</span><br></pre></td></tr></table></figure></p>
+<p>之后需要判断是否为开发环境<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isDev = process.env.NODE_ENV === <span class="string">'development'</span></span><br></pre></td></tr></table></figure></p>
+<p>将webpack.config.js中的moudle.exports,拿出来。赋值为const config<br>之后：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isDev) &#123;</span><br><span class="line">  config.devServer = &#123;</span><br><span class="line">    host: <span class="string">'0.0.0.0'</span>,  <span class="comment">// 我们可以允许我们用任意方式进行访问（127.0.0.1，localhost, 本机ip）</span></span><br><span class="line">    port: <span class="string">'8888'</span>,</span><br><span class="line">    contentBase: path.join(__dirname, <span class="string">'../dist'</span>),</span><br><span class="line">    <span class="comment">// hot: true,  //启动热加载</span></span><br><span class="line">    overlay: &#123;  <span class="comment">// 错误提醒弹窗小遮层</span></span><br><span class="line">      errors: <span class="literal">true</span> <span class="comment">//只显示error</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 和output配置对应起来</span></span><br><span class="line">    publicPath: <span class="string">'/public'</span>,  <span class="comment">// 访问所有静态路径都要前面加/public才能访问生成的静态文件</span></span><br><span class="line">    historyApiFallback: &#123;</span><br><span class="line">      index: <span class="string">'/public/index.html'</span> <span class="comment">// 所有404的请求全部访问该配置下的url</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config</span><br></pre></td></tr></table></figure></p>
+<p>之后启动可以使用这条命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.js --mode development</span><br></pre></td></tr></table></figure></p>
+<p>其中cross-env也需要安装。这里他是为了解决mac下(*nix)和win环境变量设置不一致这个问题。<br>执行完毕，<a href="http://localhost:8888/就可以使用了" target="_blank" rel="noopener">http://localhost:8888/就可以使用了</a></p>
 
       
 
@@ -395,23 +401,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -423,15 +421,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">JQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">JQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,11 +445,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">移动端</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,6 +477,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
@@ -487,15 +489,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,7 +497,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">SASS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,11 +521,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,23 +541,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">
