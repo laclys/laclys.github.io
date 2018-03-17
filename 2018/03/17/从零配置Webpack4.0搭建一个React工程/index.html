@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-4.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-5.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-6.png">
-<meta property="og:updated_time" content="2018-03-17T16:23:00.229Z">
+<meta property="og:updated_time" content="2018-03-17T16:27:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零配置Webpack4.0搭建一个React工程">
 <meta name="twitter:description" content="最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考 前段工程化思考说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包/自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目">
@@ -206,11 +206,11 @@
 <p>启动服务器：</p>
 <p>chrome上出现：this is app</p>
 <p>搞定！</p>
-<h3 id="添加html模板"><a href="#添加html模板" class="headerlink" title="添加html模板"></a>添加html模板</h3><p>然而我们会发现，我们通过服务端渲染出来的只是：<br><img src="/assets/blogImg/20180317-4.png" alt=""><br>显然不是我们想要的，二来，之前我们将<app>直接挂在在body上其实也是不对的。这里我们迫切需要一个html模板。<br>在src下创建一个template.html文件：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;<span class="name">app</span>&gt;</span><span class="tag">&lt;/<span class="name">app</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></app></p>
+<h3 id="添加html模板"><a href="#添加html模板" class="headerlink" title="添加html模板"></a>添加html模板</h3><p>然而我们会发现，我们通过服务端渲染出来的只是：<br><img src="/assets/blogImg/20180317-4.png" alt=""><br>显然不是我们想要的，二来，之前我们将<app>直接挂在在body上其实也是不对的。这里我们迫切需要一个html模板。<br>在src下创建一个template.html文件：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="comment">&lt;!--app--&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></app></p>
 <p>更改webpack.config.js配置，在HTMLPlugin中添加选项：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> HTMLPlugin(&#123;</span><br><span class="line">  template: path.join(__dirname, <span class="string">'../src/template.html'</span>) <span class="comment">// 以template.html作为模板文件生成html</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>因为牵扯静态文件。web端和werver端webpack的配置：输出目录中的publicPath: ‘public’</p>
 <p>当然app.js中就需要挂载在root节点上了。ReactDOM.render(<app>, document.getElementById(‘root’))</app></p>
-<p>说完web端，再搞服务端。在server.js中改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express =<span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">const</span> ReactSSR = <span class="built_in">require</span>(<span class="string">'react-dom/server'</span>)</span><br><span class="line"><span class="keyword">const</span> serverEntry = <span class="built_in">require</span>(<span class="string">'../dist/server-entry'</span>).default</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> tplPath = path.join(__dirname, <span class="string">'../dist/index.html'</span>)</span><br><span class="line"><span class="keyword">const</span> template = fs.readFileSync(tplPath, <span class="string">'utf8'</span>) <span class="comment">// 不指定utf-8,默认是buffer</span></span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/public'</span>, express.static(path.join(__dirname, <span class="string">'../dist'</span>))) <span class="comment">//静态文件指定请求返回</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'*'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> appStr = ReactSSR.renderToString(serverEntry)</span><br><span class="line">  res.send(template.replace(<span class="string">'&lt;app&gt;&lt;/app&gt;'</span>, appStr))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">2333</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'server is listening on 2333'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>说完web端，再搞服务端。在server.js中改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express =<span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">const</span> ReactSSR = <span class="built_in">require</span>(<span class="string">'react-dom/server'</span>)</span><br><span class="line"><span class="keyword">const</span> serverEntry = <span class="built_in">require</span>(<span class="string">'../dist/server-entry'</span>).default</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> tplPath = path.join(__dirname, <span class="string">'../dist/index.html'</span>)</span><br><span class="line"><span class="keyword">const</span> template = fs.readFileSync(tplPath, <span class="string">'utf8'</span>) <span class="comment">// 不指定utf-8,默认是buffer</span></span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/public'</span>, express.static(path.join(__dirname, <span class="string">'../dist'</span>))) <span class="comment">//静态文件指定请求返回</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'*'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> appStr = ReactSSR.renderToString(serverEntry)</span><br><span class="line">  res.send(template.replace(<span class="string">'&lt;!--app--&gt;'</span>, appStr))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">2333</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'server is listening on 2333'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>因为改了之前的代码，我们需要重新build一下再启动服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build &amp;&amp; node server/server.js</span><br></pre></td></tr></table></figure></p>
 <p><img src="/assets/blogImg/20180317-5.png" alt=""></p>
 <p>这就出来了</p>
@@ -401,11 +401,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,10 +485,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
@@ -489,11 +493,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">node</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,19 +505,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +513,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">2017</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">Emmet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,19 +541,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">响应式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">杂</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Mobx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
