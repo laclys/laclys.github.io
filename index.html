@@ -147,6 +147,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于RN项目升级(-)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/28/关于RN项目升级(-)/">关于RN项目升级(-)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/28/关于RN项目升级(-)/" class="archive-article-date">
+  	<time datetime="2018-04-27T17:03:14.008Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说道RN，依稀记得去年刚来时接触的时候还是0.38。之后公司要搞App，选了一个不新不旧的版本0.44.3。再到之后为了做一个滤镜的效果，依赖于gl-react和gl-react-native这个库。为了追究更好的体验和兼容Android机，将版本升级成了0.46.4。离职之后最近一直在看web，没怎么看RN这块。没想到现在RN已经更新到了0.55.3。（FB团队是真的勤快）,主要是闲的蛋疼。把自己的一个个人小项目升级了一波。顺便总结一下这一年RN 组件和API的变化以及升级方法。</p>
+<h3 id="组件上的变化："><a href="#组件上的变化：" class="headerlink" title="组件上的变化："></a>组件上的变化：</h3><p>新增了：ImageBackground（背景图片组件，它是一个容器组件。当然有了它，也就不支持Image直接包裹的形式）、FlatList、SectionList、VirtualizedList（FlatList、SectionList的底层实现）、SwipeableFlatList（类似于ios备忘录从右往左划出现的效果，带滑动显示更多菜单的FlatList组件）、MaskedViewIOS（可以为组件添加一个透明的遮罩）以及为了适配ipX，0.50出现的SafeAreaView。</p>
+<h3 id="新增的Api："><a href="#新增的Api：" class="headerlink" title="新增的Api："></a>新增的Api：</h3><p>自身使用上，主要用了AccessibilityInfo（判断屏幕阅读器是否处于激活状态）以及DeviceInfo（一个类专门提供屏幕尺寸，字体缩放等信息）。<br>YellowBox（可以屏蔽指定的警告，这个其实也很好用，0.44版本提供的。在公司项目中由于使用了code push。但是在开发环境没有配置key。每次刷新都会弹错，有了它就解决了这个问题。当然更好的办法就是在dev环境配个key）<br>BackAndroid也被BackHandler所替换。在原有的基础上做了加强和补充。</p>
+<h3 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h3><ul>
+<li>View.propTypes -&gt; ViewPropTypes</li>
+<li>takeSnapshot:从 UIManager 移动到 ReactNative(截图的话，疯狂安利：react-native-view-shot)</li>
+<li>react-navigation 代替 Navigator、NavigationExperimental。（前一阵尝试了一下 react-native-router-flux 体验也不错）</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/04/28/关于RN项目升级(-)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/28/关于RN项目升级(-)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-4月杂" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -632,73 +703,9 @@
 
 
   
-    <article id="post-Mongoose用法笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/09/Mongoose用法笔记/">Mongoose用法笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/09/Mongoose用法笔记/" class="archive-article-date">
-  	<time datetime="2018-01-09T15:23:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本来新年第一篇博文理应是2017年的总结。客观+主观原因，一直拖着难产不出。近期工作这边有需求，APP这块一个独立的业务搭建一个迷你小后台。既然是迷你小后台，应该找不出Express+Mongo以外更好的选择了吧。node和mongo结合，最通用的就是mongoose这个库，操作使用都很便利，简单。在这里笔记总结一下</p>
-        
-          <a class="article-more-a" href="/2018/01/09/Mongoose用法笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">mongoDB</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/09/Mongoose用法笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -801,7 +808,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -809,7 +820,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -817,7 +828,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,6 +856,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -849,23 +868,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -897,11 +912,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">css</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -929,19 +944,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">Redux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -954,10 +965,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">响应式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
