@@ -147,6 +147,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScriptStandardStyle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/02/JavaScriptStandardStyle/">JavaScript Standard Style</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/02/JavaScriptStandardStyle/" class="archive-article-date">
+  	<time datetime="2017-08-02T15:14:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近公司新开的RN项目，使用了这份JS编码规范。在这里简单的介绍一下。</p>
+<p><a href="https://github.com/standard/standard" target="_blank" rel="noopener">https://github.com/standard/standard</a><br>（star超级多=。=）</p>
+<p>相比Eslint、JSCS这类代码检查工作，优势就是，自有一套社区规范化的[标准]风格。不用维护 .eslintrc, .jshintrc, or .jscsrc 。开箱即用。<br>自动代码格式化。在主流的编译器上sublime/vscode/Atom/Vim都有相应的插件提供支持。实际体验很好。</p>
+<p>再来说说这一套JS编码规范的细则：</p>
+<ul>
+<li>2 spaces – for indentation</li>
+<li>Single quotes for strings – except to avoid escaping</li>
+<li>No unused variables – this one catches tons of bugs!</li>
+<li>No semicolons – It’s fine. Really!</li>
+<li>Never start a line with (, [, or `</li>
+<li>This is the only gotcha with omitting semicolons – automatically checked for you!</li>
+<li>Space after keywords if (condition) { … }</li>
+<li>Space after function name function name (arg) { … }</li>
+<li>Always use === instead of == – but obj == null is allowed to check null || undefined.</li>
+<li>Always handle the node.js err function parameter</li>
+<li>Always prefix browser globals with window – except document and navigator are okay</li>
+<li>Prevents accidental use of poorly-named browser globals like open, length, event, and name.</li>
+<li>And more goodness – give standard a try today!</li>
+</ul>
+<p>仔细看这一串规范，大概最大的争议点是：没有分号。 Standard Style的作者Feross（google了一下，很NB的一个人）他自己认为不用分号的 JavaScript 非常好。<br>分号自动插入是 JavaScript 的一个特性，它可以减少噪点、简化程序。<br>
+        
+          <a class="article-more-a" href="/2017/08/02/JavaScriptStandardStyle/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">react-native</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">standard</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/02/JavaScriptStandardStyle/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-React-Native学习--布局问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -660,81 +751,6 @@
 
 
   
-    <article id="post-Angular1.5到Angular1.6的JSONP相关的设置及小Demo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/23/Angular1.5到Angular1.6的JSONP相关的设置及小Demo/">Angular1.5到Angular1.6的JSONP交互相关的设置及小Demo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/23/Angular1.5到Angular1.6的JSONP相关的设置及小Demo/" class="archive-article-date">
-  	<time datetime="2017-03-23T15:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>不管学习那个前端框架（其实后端也是）都回避不了，数据的交互。在交互中在重要的两个就是AJax以及跨域的JSONP。</p>
-<h3 id="Angular–Ajax交互"><a href="#Angular–Ajax交互" class="headerlink" title="Angular–Ajax交互"></a>Angular–Ajax交互</h3><p>在之前的博文中开头先跑题一下说说第一种Angular的Ajax交互。<br>废话不多说上代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>, []);</span><br><span class="line"> app.controller(<span class="string">'show'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope, $http</span>) </span>&#123;</span><br><span class="line">     $scope.get = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">         $http(&#123;</span><br><span class="line">             method: <span class="string">'GET'</span>,</span><br><span class="line">             url: <span class="string">'a.txt'</span></span><br><span class="line">         &#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">             alert(res.data);</span><br><span class="line">         &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">         &#125;)</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这里在文件夹内建了一个a.txt文件里面随便打了一些数字。在angular包裹的控制器中调用$http，设置url以及所使用的method。如果有其他数据就加一个data属性。这样向后台发的信息就制作好了。是不是和JQ很像。之后then后面两个函数一次对应JQ中的success和error函数。这里。我们当它成功获取a.txt文件中数据时，console.log一下.数据就在我们控制台显示了出来。<br><img src="/assets/blogImg/20170323-1.jpg" alt=""></p>
-<h3 id="Angular–JSONP交互"><a href="#Angular–JSONP交互" class="headerlink" title="Angular–JSONP交互"></a>Angular–JSONP交互</h3><p>下面开始说今儿的重点JSONP交互。Angular中JSONP的操作也是基于$http方法中的。由于前端框架的高速版本变化。在JSONP这一块1.5版本和1.6版本有很大的不同。下面就来详细说一下。<br>
-        
-          <a class="article-more-a" href="/2017/03/23/Angular1.5到Angular1.6的JSONP相关的设置及小Demo/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">Angular</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">交互</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/23/Angular1.5到Angular1.6的JSONP相关的设置及小Demo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -908,15 +924,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">TypeScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,15 +952,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,6 +981,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ReactSSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">直播</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">HLS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">RTMP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -997,18 +1025,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">直播</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">HLS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">RTMP</a>
               </li>
             
             <div class="clearfix"></div>

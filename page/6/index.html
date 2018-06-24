@@ -147,6 +147,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/17/JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度/">JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/17/JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度/" class="archive-article-date">
+  	<time datetime="2017-02-17T09:00:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">alert($(<span class="built_in">window</span>).height()); <span class="comment">//浏览器时下窗口可视区域高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>).height()); <span class="comment">//浏览器时下窗口文档的高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>.body).height());<span class="comment">//浏览器时下窗口文档body的高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>.body).outerHeight(<span class="literal">true</span>));<span class="comment">//浏览器时下窗口文档body的总高度 包括border padding margin</span></span><br><span class="line">alert($(<span class="built_in">window</span>).width()); <span class="comment">//浏览器时下窗口可视区域宽度</span></span><br><span class="line">alert($(<span class="built_in">document</span>).width());<span class="comment">//浏览器时下窗口文档对于象宽度</span></span><br><span class="line">alert($(<span class="built_in">document</span>.body).width());<span class="comment">//浏览器时下窗口文档body的高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>.body).outerWidth(<span class="literal">true</span>));<span class="comment">//浏览器时下窗口文档body的总宽度 包括border padding margin</span></span><br><span class="line">alert($(<span class="built_in">document</span>).scrollTop()); <span class="comment">//获取滚动条到顶部的垂直高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>).scrollLeft()); <span class="comment">//获取滚动条到左边的垂直宽度</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">JQuery</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/17/JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JS原型与原型链学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -665,89 +731,6 @@
 
 
   
-    <article id="post-浅谈Responsive设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/11/浅谈Responsive设计/">浅谈Responsive设计</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/11/浅谈Responsive设计/" class="archive-article-date">
-  	<time datetime="2017-01-11T14:16:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这两天一直在看CSS3相关的东西，提到CSS3有个很重要的特性就是Media Queries,说到Media Queries,到头来还是网页的响应式开发（<em>Responsive设计简单的称为RWD</em>）。</p>
-<p>说到响应式开发，自己第一想到的就是这个带有‘栅格系统’的Bootstrap。它可以让你的网站在不同设备中展现不同的风格，版面不会因为屏幕大小变化而乱掉。说俗一点就是‘有求必应’。就这先前Bootstrap的使用经验，结合理论在这里笔记总结一下。</p>
-<p>响应式设计需要满足以下三个条件：</p>
-<blockquote>
-<ul>
-<li>网站必须建立灵活的网格基础；</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>引用到网站的图片必须是可伸缩的；</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>不同的显示风格，需要在Media Queries上写不同的样式。
-        
-          <a class="article-more-a" href="/2017/01/11/浅谈Responsive设计/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">响应式</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/11/浅谈Responsive设计/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -921,15 +904,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">TypeScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -949,15 +932,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -978,6 +961,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ReactSSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">直播</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">HLS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">RTMP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1010,18 +1005,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">直播</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">HLS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">RTMP</a>
               </li>
             
             <div class="clearfix"></div>
