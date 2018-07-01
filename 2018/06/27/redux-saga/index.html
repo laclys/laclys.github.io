@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: RTMP | Lac&#39;s Blog</title>
+  <title>Redux-saga | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好きな瞬間を 好きなだけ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lac&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/RTMP/index.html">
+  <meta name="description" content="公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。这两天正好在学习和摸索redux-saga。顺便总结一下。 redux-thunk/redux-saga首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。">
+<meta name="keywords" content="react,redux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redux-saga">
+<meta property="og:url" content="http://yoursite.com/2018/06/27/redux-saga/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="好きな瞬間を 好きなだけ">
+<meta property="og:description" content="公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。这两天正好在学习和摸索redux-saga。顺便总结一下。 redux-thunk/redux-saga首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-01T13:22:16.674Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lac&#39;s Blog">
-<meta name="twitter:description" content="好きな瞬間を 好きなだけ">
+<meta name="twitter:title" content="Redux-saga">
+<meta name="twitter:description" content="公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。这两天正好在学习和摸索redux-saga。顺便总结一下。 redux-thunk/redux-saga首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -145,68 +147,147 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-redux-saga" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/14/关于直播/" class="archive-article-date">
-  	<time datetime="2018-05-14T02:37:31.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/14/关于直播/">关于直播</a>
+    <h1 class="article-title" itemprop="name">
+      Redux-saga
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/27/redux-saga/" class="archive-article-date">
+  	<time datetime="2018-06-27T06:36:53.590Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。<br>这两天正好在学习和摸索redux-saga。顺便总结一下。</p>
+<h3 id="redux-thunk-redux-saga"><a href="#redux-thunk-redux-saga" class="headerlink" title="redux-thunk/redux-saga"></a>redux-thunk/redux-saga</h3><p>首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。redux本身是不支持异步的，action creator直接返回一个对象。这里redux-thunk通过十几行代码，判断action creator函数返回的是不是一个对象，不是对象是函数的话再用dispatch发出去。之前自己写过一个简单的redux-thunk的模拟。大致就是这样的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> thunk = <span class="function">(<span class="params">&#123;dispatch, getState&#125;</span>) =&gt;</span> next =&gt; <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 如果是函数，执行以下；参数是dispatch和getState</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> action === <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> action(dispatch, getState)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 啥事没干 原样返回</span></span><br><span class="line">  <span class="keyword">return</span> next(action)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> thunk</span><br></pre></td></tr></table></figure></p>
+<p>redux-saga也是解决同样的问题，但是redux-saga是通过在redux原有的数据流中再加了一层，对action进行监听。捕获到监听的Action后可以派生一个新的任务对state进行维护，更改state来驱动view层变化。saga和thunk都是可以处理异步操作和协调复杂的dispatch。不同额是thunk是在action创建的时候才调用，saga是在应用入口就启动了，一直在监听action，并作出相应处理。说白了就是saga将所有的异步操作逻辑收集在一个地方集中处理。相比thunk的处理方式，更能剥离redux应用的副作用，让数据处理更加优雅（也更加麻烦=。=）</p>
+<p>saga核心原理是利用了generator，使异步操作流程更加优雅。sagas都是用Generator函数实现的。</p>
+<ul>
+<li>以generator形式组织逻辑序列（function* + yield），把一系列的串行/并行操作通过yield拆分开</li>
+<li>利用iterator的可“暂停/恢复”特性（iter.next()）分步执行</li>
+<li>通过iterator影响内部状态（iter.next(result)），注入异步操作结果</li>
+<li>利用iterator的错误捕获特性（iter.throw(error)），注入异步操作异常</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>下面说说怎么引入redux-saga<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> createSagaMiddleware <span class="keyword">from</span> <span class="string">'redux-saga'</span></span><br><span class="line"><span class="comment">//引入saga文件</span></span><br><span class="line"><span class="keyword">import</span> &#123; rootSaga &#125; <span class="keyword">from</span> <span class="string">'./rootSaga'</span></span><br><span class="line"><span class="comment">//使用 redux-saga 模块的 createSagaMiddleware 工厂函数来创建一个 Saga middleware。</span></span><br><span class="line"><span class="comment">//运行 rootSaga 之前，我们必须使用 applyMiddleware 将 middleware 连接至 Store。然后使用 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sagaMiddleware = createSagaMiddleware()</span><br><span class="line"><span class="keyword">const</span> middlewares = [ sagaMiddleware ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(rootReducer, applyMiddleware(...middlewares))</span><br><span class="line">sagaMiddleware.run(rootSaga)</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="一些Api"><a href="#一些Api" class="headerlink" title="一些Api"></a>一些Api</h3><p>在使用上是通过yield Effects的方式完成的。<br>（An Effect is simply an object which contains some information to be interpreted by the middleware.）</p>
+<ul>
+<li>call:yield call(Generator, param)yield一个call 到Generator,saga等待Generator执行之后,接收返回值继续执行,call是堵塞的,就是等待执行完再继续执行,返回的是执行完正常返回的结果.</li>
+<li>take:是阻塞的,只有监听到他(action.type),才会继续往下执行.</li>
+<li>put:类似dispatch方法,触发一个action</li>
+<li>fork:非阻塞的,遇到它不需要等待他执行完毕,就可以继续往下执行,fork返回的是一个任务,可以被取消</li>
+<li>cancel:针对fork方法返回的任务,进行取消</li>
+</ul>
+<h3 id="redux-saga-helper"><a href="#redux-saga-helper" class="headerlink" title="redux-saga helper"></a>redux-saga helper</h3><ul>
+<li><p>take：语义相当于once</p>
+</li>
+<li><p>takeEvery：语义相当于on，允许并发action（上一个没完成也立即开始下一个）</p>
+</li>
+<li><p>takeLatest：限制版的on，不允许并发action（pending时又来一个就cancel掉pending的，只做最新的）</p>
+</li>
+<li><p>takeEvery, takeLatest是在take之上的封装，take才是底层API，灵活性最大，能手动满足各种场景</p>
+</li>
+</ul>
+<h3 id="一些使用场景"><a href="#一些使用场景" class="headerlink" title="一些使用场景"></a>一些使用场景</h3><ul>
+<li><p>接口访问</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fetchProducts</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> products = <span class="keyword">yield</span> call(Api.fetch, <span class="string">'/products'</span>)</span><br><span class="line">    <span class="keyword">yield</span> put(&#123; <span class="attr">type</span>: <span class="string">'PRODUCTS_RECEIVED'</span>, products &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">catch</span>(error) &#123;</span><br><span class="line">    <span class="keyword">yield</span> put(&#123; <span class="attr">type</span>: <span class="string">'PRODUCTS_REQUEST_FAILED'</span>, error &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Login/Logout</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">loginFlow</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> take(<span class="string">'LOGIN'</span>)</span><br><span class="line">    <span class="comment">// ... perform the login logic</span></span><br><span class="line">    <span class="keyword">yield</span> take(<span class="string">'LOGOUT'</span>)</span><br><span class="line">    <span class="comment">// ... perform the logout logic</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样写就能保证action的执行顺序。<em>LOGOUT</em>永远在<em>LOGIN</em>之后发生。</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><ul>
+<li>优：<br>redux-saga的加入让流程拆分的更加细化。以同步的方式去写异步代码，代码层次结构更加清晰。便于测试</li>
+<li>缺：<br>拆分细化意味着流程上多一个环节，增加了代码复杂度，和开发工作量。</li>
+</ul>
+<hr>
+<p>学习这一块，细化拆分专门写了个例子，感觉把能用的都用了：<a href="https://github.com/laclys/Ezreal" target="_blank" rel="noopener">https://github.com/laclys/Ezreal</a></p>
+<p>以上~<br>~<br>~<br>~</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>来weibo和我交朋友吧<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">直播</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">HLS</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">RTMP</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">redux</a>
         </li>
       
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/06/24/React杂记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React杂记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -230,9 +311,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
