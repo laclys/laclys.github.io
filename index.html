@@ -147,6 +147,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-7月" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/29/7月/">2018.7</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/29/7月/" class="archive-article-date">
+  	<time datetime="2018-07-29T14:29:34.323Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上篇博文至今，又间隔了一个多月。其实这一个月自我感觉成长了不少，学到也用到了不少东西。一直懒于动笔拖到了七月的尾巴。</p>
+<h3 id="工作上"><a href="#工作上" class="headerlink" title="工作上"></a>工作上</h3><p>工作上正式开搞了一个新项目。前端这边React全家桶。React全家桶无非就那点东西，但这回确实收获了不少。最大的收获还是工程化和拆分这一块。之前自己写前端项目亦或是在无二写RN回头来看离工程化差的好远，这次的工作才真真切切感受到了什么是前端工程。</p>
+<p>在这次工作中，在等待后端提供接口的时间，首先做了一个纯JS的组件库，组件库分通用组件和逻辑组件两种。一开始自己不太理解已经有Antd这样UI组件库，为什么还要自己搞一套。和老大请教之后给出的解释是这样的我们所做的后台之后还会面向C端，与其用一个大而全的开源项目修改，不如一点点完善一个小项目，可以避免很多冗余的代码同时项目不仅仅只是纯UI组件还会有很多业务强相关的组件，先完善搞好组件之后正式开发项目在页面上甩组件就是咯。</p>
+<p>在组件库开发过程中，为了方便开发，使用了Storybook这个神器。Storybook可以说是一个UI组件的开发环境,很方便的去交互测试组件，以及生成组件文档。其实<a href="https://storybook.js.org/" target="_blank" rel="noopener">官方文档</a>也相当清楚。正如它页面展示的动图一样，交互体验去开发组件，调试测试都很方面。这里暂时不展开说了了，后续专门写一篇介绍一下。样式组件之外就是和业务强关联的业务组件。自己在这一块的开发做的不是很好，没有想清业务便着手开发在之后项目使用中，发现这里有不足那里有不足返工添加属性逻辑反反复复好几次。以后还是要先想好理清楚之后再coding。</p>
+<p>组件库做得差不多了、后端API也开发完毕了终于到了项目开发，总体来说有了组件库的开发铺垫，正式开发起来非常效率。<br>在豆瓣工作最直观的感受就是工作上的任务、文档清晰明了，所有研发都心照不宣地维护这个传统和文化，这点真的很难得。提issue讨论确定需求，projects任务排期。开发之后提PR，同事仔细地Review代码，最后同事的一句<code>LGTM</code>结束这个PR的开发。这一系列看似理所因当的，规范的流程操作，在国内快文化下太难得了。</p>
+<p>回到前端工程上来，首先是项目拆分的很细致。就说Redux这一块actions、const、effect、reducer、sagas、store(这里是之后一个文件configure-store.js进行redux的一些配置包括区分开发和生产环境以及saga的配置)足足有六个文件夹。一开始上手的时候很懵逼，不过确实很清晰。自己在工作之余的学习中，自己的那个项目也完全按工作中的细化规模自己实践了一番。Redux虽说繁琐，不过真正搞清楚Redux工作流，熟练上手之后。Redux这种清晰的数据变化流程不要太赞。我认为Redux最能提升的不是开发效率，而是维护效率。这就是Redux的<code>可预测性</code>吧。再有就是从同事的代码上学到了好多，在之前的公司完全没有这种感受，自己还是要加油</p>
+        
+          <a class="article-more-a" href="/2018/07/29/7月/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">随笔</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/29/7月/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-redux-saga" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -653,77 +730,6 @@
 
 
   
-    <article id="post-node-path" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/28/node-path/">node-path</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/28/node-path/" class="archive-article-date">
-  	<time datetime="2018-02-28T14:26:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在看node，仿照anywhere，自己也撸了一个静态资源服务器。说道静态资源服务器，<br>大量运用了路径层级这块。一开始又是相对路径，绝对路径，暴露的接口也是一大堆，有点懵逼。<br>遂对着官方文档撸一遍，这里笔记总结一下。</p>
-<h3 id="path-basename-path-ext"><a href="#path-basename-path-ext" class="headerlink" title="path.basename(path[, ext])"></a>path.basename(path[, ext])</h3><ul>
-<li>path <string> 路径</string></li>
-<li>ext <string> 可选参数</string></li>
-</ul>
-<p>path.basename()返回路径的最后一部分</p>
-<p>eg:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>);</span><br><span class="line"><span class="comment">// returns 'quux.html'</span></span><br><span class="line">path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>, <span class="string">'.html'</span>);</span><br><span class="line"><span class="comment">// returns 'quux'</span></span><br><span class="line">path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>, <span class="string">'ux.html'</span>);</span><br><span class="line"><span class="comment">// returns 'qu'</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/02/28/node-path/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">node</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/28/node-path/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -829,19 +835,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">工作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -849,7 +843,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -857,7 +863,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color2">JQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -869,19 +875,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -893,11 +891,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -909,6 +911,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">TypeScript</a>
               </li>
              
@@ -917,15 +923,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">webpack</a>
+                <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -933,7 +935,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">css3</a>
+                <a href="javascript:void(0)" class="color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -953,15 +955,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -977,18 +979,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">直播</a>
               </li>
              
@@ -1001,11 +991,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">响应式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
             
             <div class="clearfix"></div>
