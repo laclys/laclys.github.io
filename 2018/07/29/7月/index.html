@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180730-01.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180730-02.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180730-03.jpg">
-<meta property="og:updated_time" content="2018-07-30T08:45:03.251Z">
+<meta property="og:updated_time" content="2018-08-01T09:03:41.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018.7">
 <meta name="twitter:description" content="上篇博文至今，又间隔了一个多月。其实这一个月自我感觉成长了不少，学到也用到了不少东西。一直懒于动笔拖到了七月的尾巴。 工作上工作上正式开搞了一个新项目。前端这边React全家桶。React全家桶无非就那点东西，但这回确实收获了不少。最大的收获还是工程化和拆分这一块。之前自己写前端项目亦或是在无二写RN回头来看离工程化差的好远，这次的工作才真真切切感受到了什么是前端工程。 在这次工作中，在等待后端提">
@@ -189,15 +189,23 @@
 <p>此外Styled-components支持全部Css特性，归根结底本质还是css，什么动画、伪类都不在话下。还有一个优点就是，我们不再需要考虑className命名问题。使用Styled-components会给生成的React组件添加一个值为随机字符串的className。使用同一个Styled-components生成的多个React组件的className是不同的，这种随机className的机制使得组件之间的className值不会冲突，从而解决了CSS全局作用域的问题，也省去了命名的麻烦。</p>
 <p>这种控制样式的编程方式不光能解决CSS全局作用域的问题，而且移除了样式和组件间的映射关系真的好用。</p>
 <h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><ul>
-<li>新版React不再推荐<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">  a: <span class="number">1</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<li>新版React不再推荐对象的方式去改变<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">  a: <span class="number">1</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>推荐异步的形式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">preState</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>推荐异步函数的形式代替对象传入setState中<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    a: prevState.a + <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>其中<code>preState</code> 等价于this.state</p>
 <ul>
-<li><p>想在最外层包一层，但又不想被显示。可以试试React16引入的Fragment</p>
+<li><p>想在最外层包一层，但又不想被显示。可以试试React16引入的Fragment。一个JSX空标签</p>
 </li>
 <li><p>ref={(input) =&gt; { this.input = input }}这种使用ref获取dom，一定要记得setState是异步的</p>
+</li>
+<li><p>说到React ref,React16.3加入了新的React.createRef API。目前获取ref dom元素有三种方法 1）String Ref 2）Callback Ref 3）React.createRef<br>React官方表示String Ref将会在未来版本被移出，建议用户使用Callback Ref、React.createRef来代替<br>String Ref一些问题:</p>
+<ol>
+<li>React元素在创建和更新的过程中，定义成String类型的ref会被封装为一个闭包函数，等待commit阶段被执行，这样会对React性能产生一些影响。</li>
+<li>String Ref无法被组合，当父组件已经给子组件传递了ref，那么我们就无法再在子组件上添加ref了, Callback Ref方式便可避免。</li>
+<li>在根组件上使用无法生效。</li>
+</ol>
+<p>另外，React16还另外提供了一个关于ref的API <code>React.forwardRef</code>，主要用于穿过父元素直接获取子元素的ref。</p>
 </li>
 <li><p>生命周期中componentWillReceiveProps。没有props参数是不会执行的，只有父组件接受了props才会执行，只要父组件render函数重新执行了，子组件componentWillReceiveProps就会执行。</p>
 </li>
@@ -216,11 +224,11 @@
 </li>
 <li><p>this.props.children可以读取组件下的子节点。this.props.children可以用React.Children.map遍历子节点，好处是不用担心数据类型是undefined还是Obj</p>
 </li>
-<li><p>在项目中最好分离开业务组件和UI组件。UI组件可以使用Stateless方式写以提高性能</p>
+<li><p>在项目中最好分离开业务组件和UI组件。UI组件能写成Stateless方式还是要写成这种方式以提高性能。</p>
 </li>
 <li><p>Styled-components中可以通过innerRef拿到真实Dom</p>
 </li>
-<li><p>实现react页面之间的异步操作可以尝试使用<code>react-loadable</code>这个组件</p>
+<li><p>实现react页面之间的异步加载操作可以尝试使用<code>react-loadable</code>这个组件</p>
 </li>
 </ul>
 </li>
@@ -417,14 +425,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
@@ -433,7 +433,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">JQuery</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,11 +453,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">jsonp</a>
+                <a href="javascript:void(0)" class="color2">JQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
+                <a href="javascript:void(0)" class="color1">jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,7 +469,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,19 +477,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,15 +493,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,11 +521,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">yarn</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,11 +537,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color5">yarn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,18 +553,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">直播</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">HLS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">RTMP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">github</a>
               </li>
              
@@ -573,11 +565,27 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Mobx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color3">直播</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">HLS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">RTMP</a>
               </li>
             
             <div class="clearfix"></div>
