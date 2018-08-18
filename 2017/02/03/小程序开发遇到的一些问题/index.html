@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Git命令复习笔记 | Lac&#39;s Blog</title>
+  <title>小程序开发遇到的一些问题 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="初始化一个Git仓库，使用git init命令。 添加文件到Git仓库，分两步： 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件； 第二步，使用命令git commit，完成。  要随时掌握工作区的状态，使用git status命令。 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。  HEAD指向的版本就是当前版本，因此，Git允许我们在版">
-<meta name="keywords" content="git">
+  <meta name="description" content="小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–快递去哪儿咯。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现">
+<meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git命令复习笔记">
-<meta property="og:url" content="http://yoursite.com/2017/05/11/git命令复习笔记/index.html">
+<meta property="og:title" content="小程序开发遇到的一些问题">
+<meta property="og:url" content="http://yoursite.com/2017/02/03/小程序开发遇到的一些问题/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="初始化一个Git仓库，使用git init命令。 添加文件到Git仓库，分两步： 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件； 第二步，使用命令git commit，完成。  要随时掌握工作区的状态，使用git status命令。 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。  HEAD指向的版本就是当前版本，因此，Git允许我们在版">
+<meta property="og:description" content="小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–快递去哪儿咯。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-05-10T16:08:42.000Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/20180819-01.jpg">
+<meta property="og:updated_time" content="2018-08-18T17:08:15.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git命令复习笔记">
-<meta name="twitter:description" content="初始化一个Git仓库，使用git init命令。 添加文件到Git仓库，分两步： 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件； 第二步，使用命令git commit，完成。  要随时掌握工作区的状态，使用git status命令。 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。  HEAD指向的版本就是当前版本，因此，Git允许我们在版">
+<meta name="twitter:title" content="小程序开发遇到的一些问题">
+<meta name="twitter:description" content="小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–快递去哪儿咯。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20180819-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -147,149 +149,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git命令复习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-小程序开发遇到的一些问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git命令复习笔记
+      小程序开发遇到的一些问题
     </h1>
   
 
         
-        <a href="/2017/05/11/git命令复习笔记/" class="archive-article-date">
-  	<time datetime="2017-05-10T16:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+        <a href="/2017/02/03/小程序开发遇到的一些问题/" class="archive-article-date">
+  	<time datetime="2017-02-03T09:22:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>初始化一个Git仓库，使用git init命令。</p>
-<p>添加文件到Git仓库，分两步：</p>
-<p>第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；</file></p>
-<p>第二步，使用命令git commit，完成。</p>
-<hr>
-<p>要随时掌握工作区的状态，使用git status命令。</p>
-<p>如果git status告诉你有文件被修改过，用git diff可以查看修改内容。</p>
-<hr>
-<p>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。</p>
-<p>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。</p>
-<p>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
-<a id="more"></a>
-<hr>
-<p>每次修改，如果不add到暂存区，那就不会加入到commit中。</p>
-<hr>
-<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。</p>
-<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。</p>
-<p>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</p>
-<hr>
-<p>要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；</p>
-<p>关联后，使用命令git push -u origin master第一次推送master分支的所有内容；</p>
-<p>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；</p>
-<hr>
-<p>查看分支：git branch</p>
-<p>创建分支：git branch <name></name></p>
-<p>切换分支：git checkout <name></name></p>
-<p>创建+切换分支：git checkout -b <name></name></p>
-<p>合并某分支到当前分支：git merge <name></name></p>
-<p>删除分支：git branch -d <name></name></p>
-<hr>
-<p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</p>
-<p>用git log –graph命令可以看到分支合并图</p>
-<hr>
-<h3 id="分支策略"><a href="#分支策略" class="headerlink" title="分支策略"></a>分支策略</h3><p>在实际开发中，我们应该按照几个基本原则进行分支管理：</p>
-<p>首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；</p>
-<p>那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；</p>
-<p>你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。</p>
-<hr>
-<p>概览：master合并merge解决好的bug后，不要先把dev解印，先合并master，获取里面的bug方案后，在解印。解印时会有提示冲突，需手动改一次文件。</p>
-<p>1：在  dev 下正常开发中，说有1个bug要解决，首先我需要把dev分支封存stash</p>
-<p>2：在master下新建一个issue-101分支，解决bug，成功后</p>
-<p>3：在master下合并issue-101</p>
-<p>4：在 dev  下合并master，  这样才同步了里面的bug解决方案</p>
-<p>5：解开dev封印stash pop，系统自动合并 &amp; 提示有冲突，因为封存前dev写了东西，此时去文件里手动改冲突</p>
-<p>6：继续开发dev，最后add，commit</p>
-<p>7：在master下合并最后完成的dev</p>
-<p>代码过程如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">在此插入代码</span><br><span class="line"></span><br><span class="line">1： $ git stash</span><br><span class="line"></span><br><span class="line">2： $ git checkout master</span><br><span class="line">   $ git checkout -b issue-101</span><br><span class="line">    //去文件里修bug</span><br><span class="line">    $ git add README.md</span><br><span class="line">    $ git commit -m &quot;fix-issue-101&quot;</span><br><span class="line"></span><br><span class="line">3： $ git checkout master</span><br><span class="line">   $ git merge --no-ff -m &quot;m-merge-issue-101&quot; issue-101</span><br><span class="line">   $ git branch -d issue-101</span><br><span class="line"></span><br><span class="line">4： $ git checkout dev</span><br><span class="line">    $ git merge --no-ff -m &quot;dev-merge-m&quot; master</span><br><span class="line"></span><br><span class="line">5： $ git stash pop</span><br><span class="line">            //提示冲突，去文件手动改正</span><br><span class="line">            Auto-merging README.md</span><br><span class="line">            CONFLICT (content): Merge conflict in README.md</span><br><span class="line"></span><br><span class="line">6： //继续开发 ... ... ，完成后一并提交</span><br><span class="line">    $ git add README.md</span><br><span class="line">    $ git commit -m &quot;fixconflict &amp; append something&quot;</span><br><span class="line"></span><br><span class="line">7： $ git checkout master</span><br><span class="line">    $ git merge --no-ff -m &quot;m-merge-dev&quot; dev</span><br><span class="line">    $ git branch -d dev</span><br></pre></td></tr></table></figure>
-<hr>
-<p>开发一个新feature，最好新建一个分支；</p>
-<p>如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。  </name></p>
-<hr>
-<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><p>首先，可以试图用git push origin branch-name推送自己的修改；</p>
-<p>如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；</p>
-<p>如果合并有冲突，则解决冲突，并在本地提交；</p>
-<p>没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！</p>
-<p>如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch –set-upstream branch-name origin/branch-name。</p>
-<hr>
-<p>查看远程库信息，使用git remote -v；</p>
-<p>本地新建的分支如果不推送到远程，对其他人就是不可见的；</p>
-<p>从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；</p>
-<p>在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；</p>
-<p>建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；</p>
-<p>从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</p>
-<hr>
-<h3 id="TAG"><a href="#TAG" class="headerlink" title="TAG"></a>TAG</h3><p>命令git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；</name></p>
-<p>git tag -a <tagname> -m “blablabla…”可以指定标签信息；</tagname></p>
-<p>git tag -s <tagname> -m “blablabla…”可以用PGP签名标签；</tagname></p>
-<p>命令git tag可以查看所有标签。</p>
-<hr>
-<p>（05.11追加）</p>
-<h3 id="撤销一个公共修改-Undo-a-“public”-change"><a href="#撤销一个公共修改-Undo-a-“public”-change" class="headerlink" title="撤销一个公共修改 Undo a “public” change"></a>撤销一个公共修改 Undo a “public” change</h3><p>场景：你刚刚用git push将本地修改推送到了GitHub，这时你意识到在提交中有一个错误。你想撤销这次提交。</p>
-<p>使用撤销命令：git revert</p>
-<p>发生了什么：git revert将根据给定SHA的相反值，创建一个新的提交。如果旧提交是“matter”，那么新的提交就是“anti-matter”——旧提交中所有已移除的东西将会被添加进到新提交中，旧提交中增加的东西将在新提交中移除。</p>
-<p>这是Git最安全、也是最简单的“撤销”场景，因为这样不会修改历史记录——你现在可以git push下刚刚revert之后的提交来纠正错误了。</p>
-<hr>
-<h3 id="撤销本地更改-Undo-“local”-changes"><a href="#撤销本地更改-Undo-“local”-changes" class="headerlink" title="撤销本地更改 Undo “local” changes"></a>撤销本地更改 Undo “local” changes</h3><p>场景：你正在编辑的文件被保存了但是你的编辑器恰在此时崩溃了。此时你并没有提交过代码。你期望撤销这个文件中的所有修改——将这个文件回退到上次提交的状态。</p>
-<p>使用撤销命令：git checkout —</p>
-<p>发生了什么：git checkout将工作目录（working directory）里的文件修改成先前Git已知的状态。你可以提供一个期待回退分支的名字或者一个确切的SHA码，Git也会默认检出HEAD——即：当前分支的上一次提交。</p>
-<p>注意：用这种方法“撤销”的修改都将真正的消失。它们永远不会被提交。因此Git不能恢复它们。此时，一定要明确自己在做什么！（或许可以用git diff来确定）</p>
-<hr>
-<p>重置本地修改 Reset “local” changes</p>
-<p>场景：你已经在本地做了一些提交（还没push），但所有的东西都糟糕透了，你想撤销最近的三次提交——就像它们从没发生过一样。</p>
-<p>使用撤销命令：git reset或git reset –hard</p>
-<p>发生了什么：git reset将你的仓库纪录一直回退到指定的最后一个SHA代表的提交，那些提交就像从未发生过一样。默认情况下，git reset会保留工作目录（working directory）。这些提交虽然消失了，但是内容还在磁盘上。这是最安全的做法，但通常情况是：你想使用一个命令来“撤销”所有提交和本地修改——那么请使用–hard参数吧。</p>
-<hr>
-<p>撤销本地后重做 Redo after undo “local”</p>
-<p>场景：你已经提交了一些内容，并使用git reset –hard撤销了这些更改（见上面），突然意识到：你想还原这些修改！</p>
-<p>使用撤销命令：git reflog和git reset, 或者git checkout</p>
-<p>发生了什么：git reflog是一个用来恢复项目历史记录的好办法。你可以通过git reflog恢复几乎任何已提交的内容。</p>
-<p>你或许对git log命令比较熟悉，它能显示提交列表。git reflog与之类似，只不过git reflog显示的是HEAD变更次数的列表。</p>
-<p>一些说明：</p>
-<ol>
-<li><p>只有HEAD会改变。当你切换分支时，用git commit提交变更时，或是用git reset撤销提交时，HEAD都会改变。但当你用git checkout –时， HEAD不会发生改变。（就像上文提到的情形，那些更改根本就没有提交，因此reflog就不能帮助我们进行恢复了）</p>
+        <p>小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–<a href="https://github.com/laclys/your-express-mpvue" target="_blank" rel="noopener">快递去哪儿咯</a>。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现搞all in了两周小程序。这里记录一下遇到的一些小问题或者坑吧。</p>
+<h3 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h3><p>那我们就从吐槽开始</p>
+<p><img src="/assets/blogImg/20180819-01.jpg" alt=""><br>（很喜欢的一部电影）<br><a id="more"></a></p>
+<ul>
+<li><p>繁琐过时的API<br>在网页端开发web，说道处理请求相比axios、fetch已经成了主流，链式调用try···catch处理错误。但是小程序却用着过时的ES3风格的API(wx.request)。这样在使用起来很不优雅，在使用了调用的时候很容易造成回调地狱。<br>想要使用promise这种链式调用的实行。我们不得不去封装一个HTTP类。下面是自己封装的一个HTTP类</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HTTP</span> </span>&#123;</span><br><span class="line">  request(&#123; url, data=&#123;&#125;, method=<span class="string">"GET"</span> &#125;) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>._request(url, resolve, reject, data, method)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _request(url, resolve, reject, data=&#123;&#125;, method=<span class="string">"GET"</span>) &#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: config.api_base_url + url,</span><br><span class="line">      method,</span><br><span class="line">      data,</span><br><span class="line">      header: &#123;</span><br><span class="line">        <span class="string">'content-type'</span>: <span class="string">'application/json'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">				<span class="keyword">const</span> code = res.statusCode.toString()</span><br><span class="line">				<span class="comment">// 判断状态码</span></span><br><span class="line">        <span class="keyword">if</span> (code.startsWith(<span class="string">'2'</span>)) &#123;</span><br><span class="line">          resolve(res.data)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          reject()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      fail: <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        reject()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>git reflog不会永远存在。Git将会定期清理那些“不可达（unreachable）”的对象。不要期望能够在reflog里找到数月前的提交记录。</p>
+<li><p>面向JSON编程<br>接着API设计的过时，不得不吐槽这种面向JSON编程的方式。开发一个小程序需要app.json去配置全局的应用配置、路由配置还有全局UI配置。每个页面，每个组件也有相应json文件去配置。</p>
 </li>
-<li><p>reflog只是你个人的。你不能用你的reflog来恢复其他开发者未push的提交。</p>
+<li><p>wxs真的很难用<br>作为页面的脚本语言，微信这边自己现成的JS不用，自己搞了一套嵌入式脚本语言，里面只能写ES3的语法不说（还不是完整版的ES3语法）没有 Array, Object 对象；或遇到引入 lodash 会报错 TypeError: Cannot read property ‘prototype’ of undefined</p>
 </li>
-</ol>
-<p>因此，怎样合理使用reflog来找回之前“未完成”的提交呢？这要看你究竟要做什么：</p>
-<ol>
-<li><p>如果你想恢复项目历史到某次提交，那请使用git reset –hard</p>
+<li><p>js页面中无法使用绝对路径</p>
 </li>
-<li><p>如果你想在工作目录（working direcotry）中恢复某次提交中的一个或多个文件，并且不改变提交历史，那请使用git checkout–</p>
+<li><p>wxss 里的注释只能用 /<em>…</em>/  写法，不能用 //…</p>
 </li>
-<li><p>如果你想确切的回滚到某次提交，那么请使用git reset</p>
+<li><p>component组件中与支持onShow这个生命周期</p>
 </li>
-</ol>
-<hr>
-<h3 id="与分支有关的那些事-Once-more-with-branching"><a href="#与分支有关的那些事-Once-more-with-branching" class="headerlink" title="与分支有关的那些事 Once more, with branching"></a>与分支有关的那些事 Once more, with branching</h3><p>场景：你提交了一些变更，然后你意识到你正在master分支上，但你期望的是在feature分支上执行这些提交。</p>
-<p>使用撤销命令：git branch feature, git reset –hard origin/master, 和 git checkout feature</p>
-<p>发生了什么：你可能用的是git checkout -b来建立新的分支，这是创建和检出分支的便捷方法——但实际你并不想立刻切换分支。git branch feature会建立一个叫feature的分支，这个分支指向你最近的提交，但是你还停留在master分支上。</p>
-<p>git reset –hard将master回退至origin/master，并忽略所有新提交。别担心，那些提交都还保留在feature上。</p>
-<p>最后，git checkout将分支切换到feature，这个分支原封不动的保留了你最近的所有工作。</p>
-<hr>
-<h3 id="事半功倍处理分支-Branch-in-time-saves-nine"><a href="#事半功倍处理分支-Branch-in-time-saves-nine" class="headerlink" title="事半功倍处理分支 Branch in time saves nine"></a>事半功倍处理分支 Branch in time saves nine</h3><p>场景：你基于master新建了一个feature分支，但是master分支远远落后与origin/master。现在master分支与origin/master同步了，你期望此刻能在feature下立刻commit代码，并且不是在远远落后master的情况下。</p>
-<p>使用撤销命令：git checkout feature和git rebase master</p>
-<p>发生了什么：你也许已经敲了命令：git reset（但是没用–hard,有意在磁盘上保存这些提交内容），然后敲了git checkout -b，之后重新提交更改，但是那样的话，你将失去本地的提交记录。不过，一个更好的方法：</p>
-<p>使用git rebase master可以做到一些事情：</p>
-<p>1.首先，它定位你当前检出分支和master之间的共同祖先节点（common ancestor）。</p>
-<p>2.然后，它将当前检出的分支重置到祖先节点（ancestor），并将后来所有的提交都暂存起来。</p>
-<p>3.最后，它将当前检出分支推进至master末尾，同时在master最后一次提交之后，再次提交那些在暂存区的变更。</p>
+</ul>
+<h3 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h3><ul>
+<li>在开发横向滑动图片的组件的时候，自然而然想到在sroll-view组件上添加scroll-x属性，但是依然划不动。</li>
+</ul>
+<p>解决：父级在设置宽高的同时必须设white-space: nowrap; 子级要用display: inline-block;用浮动都不行</p>
+<ul>
+<li><p>页面配置背景色可使用 backgroundColor,模拟器里并没有生效。最后发现backgroundColor 是指窗体背景颜色，而不是页面背景色。</p>
+</li>
+<li><p>textarea组件是原生组件，placeholder-style 目前只支持设置 fontSize、fontWeight、color 属性</p>
+</li>
+<li><p><map> <textarea> 为原生组件，页面层级最高，就算设置了z-index也无法被覆盖。（这个是真的坑）</textarea></map></p>
+</li>
+<li><p>text组件，看名字我们自然而然想到这个是不是和网页中的span标签一样。但是两个text标签放在一起会出现高度不一致的问题，以及类似网页中的pre标签，会保留文本中的空格和换行符号（开发的时候发现怎么换行了，一个劲的调样式，结果发现=。=真的是无语）</p>
+</li>
+</ul>
+<p>解决: 索性全换成view组件了</p>
+<ul>
+<li><p>发消息模版时需要获得提交表单时的 formId，通过 form 及键盘右下角完成提交事件对象 e.detail 获取不到 formId，只能通过 form button 来获取。</p>
+</li>
+<li><p>component在处理数据变化的时候 可以使用properties中设置的observe或者页面中写wxs,wxs其实相当于vue里面的过滤器。这两个可以结合情况使用</p>
+</li>
+<li><p>wx:if 和hidden结合实际情况适用。hidden不能直接赋值在自定义组件上，需要放在组件里的最外层的view上。用过传参的形式使用</p>
+</li>
+</ul>
+<p>以上</p>
+<p>小程序的开发怎么说真的是又爱又恨，很是微妙。这两周的开发学习感觉又回到了当时研究RN的时候，当效果、成果做出来的时候很有成就感。同时小程序也蛮适合自己瞎搞的，最近在搞的一个repo<br><a href="https://github.com/laclys/teemo" target="_blank" rel="noopener">Teemo</a>,除此之外这两天小程序官方有公测了serverless，感觉发挥的空间更大了。最近自己还真有个好点子，等搞完这个尝试一波（自娱自乐）</p>
 
       
 
@@ -324,7 +246,7 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">git</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">小程序</a>
         </li>
       
 		</ul>
@@ -343,18 +265,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/04/react-native学习笔记(1)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/08/在Github中演示前端demo/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          react-native学习笔记
+          在Github中演示前端demo
         
       </div>
     </a>
   
   
-    <a href="/2017/05/02/yarn-cli笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">yarn-cli笔记</div>
+    <a href="/2017/02/03/过年/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">过年这几天</div>
       <i class="icon-circle-right"></i>
     </a>
   
