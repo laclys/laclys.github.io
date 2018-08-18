@@ -17,7 +17,7 @@
 <meta property="og:description" content="小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–快递去哪儿咯。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180819-01.jpg">
-<meta property="og:updated_time" content="2018-08-18T17:15:02.445Z">
+<meta property="og:updated_time" content="2018-08-18T17:16:57.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序开发遇到的一些问题和吐槽">
 <meta name="twitter:description" content="小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–快递去哪儿咯。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现">
@@ -196,7 +196,7 @@
 </li>
 <li><p>textarea组件是原生组件，placeholder-style 目前只支持设置 fontSize、fontWeight、color 属性</p>
 </li>
-<li><p><map> <textarea> 为原生组件，页面层级最高，就算设置了z-index也无法被覆盖。（这个是真的坑）</textarea></map></p>
+<li><p><code>&lt;map&gt;</code> <code>&lt;textarea&gt;</code> 为原生组件，页面层级最高，就算设置了z-index也无法被覆盖。（这个是真的坑）</p>
 </li>
 <li><p>text组件，看名字我们自然而然想到这个是不是和网页中的span标签一样。但是两个text标签放在一起会出现高度不一致的问题，以及类似网页中的pre标签，会保留文本中的空格和换行符号（开发的时候发现怎么换行了，一个劲的调样式，结果发现=。=真的是无语）</p>
 </li>
@@ -383,11 +383,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -396,18 +408,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -423,11 +423,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
+                <a href="javascript:void(0)" class="color1">jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">jsonp</a>
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,19 +439,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,6 +467,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Vuex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">webpack</a>
               </li>
              
@@ -475,19 +483,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,7 +491,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,7 +499,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,11 +507,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">2017</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,6 +543,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
@@ -547,19 +559,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">响应式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
             
             <div class="clearfix"></div>
