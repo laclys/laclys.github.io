@@ -147,6 +147,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React-Native-配置自定义字体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/24/React-Native-配置自定义字体/">React Native 配置自定义字体</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/24/React-Native-配置自定义字体/" class="archive-article-date">
+  	<time datetime="2017-09-24T06:07:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本想着配置自定义字体不是什么大坑，官网文档找了一下，没有。遂关键字：“React Native 配置自定义字体”这么一搜。都是一样的文章，作者名却是各式各样，真是天下文章大家抄。然而试了一下并不好用。</p>
+<p>（这里使用最新的RN 0.48.4 测试）</p>
+<p>这里想一下React Native最新的，最省事的配置自定自定义字体的方法：<br>1）随便下载一个字体（不要改名字，会有坑）我这里随便下了一个scratchmyback的英文字体。<br>    SCRATCHMYBACK.TTF</p>
+<p>2）在项目根目录创建文件夹assets/fonts。并把刚才下载的字体放进去。</p>
+<p><img src="/assets/blogImg/20170924-1.jpg" alt=""></p>
+<p>3）在Package.json告诉React Native 咱们自定义的字体在哪里：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"rnpm"</span>: &#123;</span><br><span class="line">    <span class="string">"assets"</span>: [</span><br><span class="line">	<span class="string">"./assets/fonts/"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/09/24/React-Native-配置自定义字体/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/24/React-Native-配置自定义字体/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-React-Native用到的第三方组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -671,81 +748,6 @@
 
 
   
-    <article id="post-Vuex学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/23/Vuex学习笔记/">Vuex学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/23/Vuex学习笔记/" class="archive-article-date">
-  	<time datetime="2017-04-23T09:53:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是Vuex？"><a href="#什么是Vuex？" class="headerlink" title="什么是Vuex？"></a>什么是Vuex？</h2><p><img src="/assets/blogImg/20170423-01.png" alt=""></p>
-<p>专门为Vue开发的状态管理模式。采用集中存储管理应用的所有组件状态。在没有用Vuex的时候，我们在进行组件化开发时，数据（也就是状态一般都分散在各个组件中。加入我们要使用这些状态是，我们就得在不同组件中去取状态值，然后进行状态修改，最后还要相互读取对方状态值。<br><strong>父子组件中：</strong><br>我们可以通过事件触发/props进行状态传递。<br><strong>子组件之间：</strong><br>由于Vue本身组件之间有作用域，他们之间无法相互通信。这里就必须用单一时间管理（event bus）或者在所有组件和Vue对象下使用一个统一的Object作为数据，来实现。（实质：引用）。</p>
-<p>如果项目较小还好，中大型项目，组件通信复杂频繁的时候，这两种方式管理起来就会十分麻烦，而且容易出错。</p>
-<p>有了Vuex，它将数据单独放在一个store里，并提供给外部操作内部数据的方法。让我们能更好的管理项目里的状态。这也是Vuex出现的意义吧。就像官网说的：<br>    Flux 架构就像眼镜：您自会知道什么时候需要它<br>
-        
-          <a class="article-more-a" href="/2017/04/23/Vuex学习笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">Vue</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">Vuex</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/23/Vuex学习笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -851,7 +853,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -859,7 +861,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -867,7 +873,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,19 +893,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">jsonp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -907,19 +909,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">移动端</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -935,14 +937,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">webpack</a>
               </li>
              
@@ -951,11 +945,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -979,31 +981,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">express</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1019,7 +1001,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">杂</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Mobx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1027,7 +1025,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
             
             <div class="clearfix"></div>

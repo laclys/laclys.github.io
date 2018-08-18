@@ -147,6 +147,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSONP的原生实现和JQ实现(上)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/">JSONP的原生实现和JQ实现(上)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/23/JSONP的原生实现和JQ实现(上)/" class="archive-article-date">
+  	<time datetime="2017-02-22T17:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP，全称：JSON with padding乍一看应该是和用来数据解析描述的JSON的某个远房亲戚。通过学习，<strong>这两者本质上完全是不同的东西</strong>。</p>
+<p>JSONP的概念在这就不赘言。自己的理解，由于Ajax直接请求文件数据时，跨域无权访问（为了安全）。为了解决跨域问题，我们发现在页面调用JS文件时不受跨域影响（例如，我们在任意文件中都可以引入jq文件，从而使用jq开发页面），因此通过把数据装在一个js格式文件里，在客户端进行处理。这就是JSONP的原理。JSONP允许用户传递一个callback参数给服务器，之后服务器返回数据时通过这个参数的函数包裹上数据传给客户端。</p>
+<p>下面不多说废话，下面用原生和jq分别写两个小获取baidu联想词条的小demo。<br>想要的效果就是当我在搜索条输入‘a’时，出现下拉联想列表（baidu的）<br><img src="/assets/blogImg/20170223-1.jpg" alt=""><br>
+        
+          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JS中的cookie,localStorage和sessionStorage" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -493,72 +567,6 @@
 
 
   
-    <article id="post-小程序开发遇到的一些问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/03/小程序开发遇到的一些问题/">小程序开发遇到的一些问题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/03/小程序开发遇到的一些问题/" class="archive-article-date">
-  	<time datetime="2017-02-03T09:22:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–<a href="https://github.com/laclys/your-express-mpvue" target="_blank" rel="noopener">快递去哪儿咯</a>。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现搞all in了两周小程序。这里记录一下遇到的一些小问题或者坑吧。</p>
-<h3 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h3><p>那我们就从吐槽开始</p>
-<p><img src="/assets/blogImg/20180819-01.jpg" alt=""><br>（很喜欢的一部电影）<br>
-        
-          <a class="article-more-a" href="/2017/02/03/小程序开发遇到的一些问题/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">小程序</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/03/小程序开发遇到的一些问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-过年" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -821,7 +829,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -829,7 +837,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,7 +849,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,19 +869,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">jsonp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -877,19 +885,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">移动端</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -905,14 +913,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">webpack</a>
               </li>
              
@@ -921,11 +921,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -949,31 +957,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">express</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -989,7 +977,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">杂</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Mobx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -997,7 +1001,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
             
             <div class="clearfix"></div>

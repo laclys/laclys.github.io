@@ -147,6 +147,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-比Redux简单太多的Mobx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/18/比Redux简单太多的Mobx/">比Redux简单太多的Mobx</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/18/比Redux简单太多的Mobx/" class="archive-article-date">
+  	<time datetime="2017-11-18T13:30:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>unhappy with redux? try mobx</p>
+<p>相比上手/操作及其繁琐的Redux，用Mobx做状态管理，最直观的感受是爽爆了。</p>
+<p>Mobx是一个非常直观的状态管理库，使用非常简单。通过Mobx，使react 关注的状态(state)到视图(view)的问题。而 mobx 关注的是状态仓库（store）到的状态(state)的问题。</p>
+<p>废话不多说，这里通过一个最最简单的例子来感受基于RN的Mobx。</p>
+        
+          <a class="article-more-a" href="/2017/11/18/比Redux简单太多的Mobx/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">Mobx</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/18/比Redux简单太多的Mobx/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-函数式编程与Redux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -474,11 +545,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">Stylus</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">Stylus</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
         </li>
       
 		</ul>
@@ -551,11 +622,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">Stylus</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">Stylus</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
         </li>
       
 		</ul>
@@ -649,83 +720,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/09/29/React-Native IOS及安卓打包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-React-Native-配置自定义字体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/24/React-Native-配置自定义字体/">React Native 配置自定义字体</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/24/React-Native-配置自定义字体/" class="archive-article-date">
-  	<time datetime="2017-09-24T06:07:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本想着配置自定义字体不是什么大坑，官网文档找了一下，没有。遂关键字：“React Native 配置自定义字体”这么一搜。都是一样的文章，作者名却是各式各样，真是天下文章大家抄。然而试了一下并不好用。</p>
-<p>（这里使用最新的RN 0.48.4 测试）</p>
-<p>这里想一下React Native最新的，最省事的配置自定自定义字体的方法：<br>1）随便下载一个字体（不要改名字，会有坑）我这里随便下了一个scratchmyback的英文字体。<br>    SCRATCHMYBACK.TTF</p>
-<p>2）在项目根目录创建文件夹assets/fonts。并把刚才下载的字体放进去。</p>
-<p><img src="/assets/blogImg/20170924-1.jpg" alt=""></p>
-<p>3）在Package.json告诉React Native 咱们自定义的字体在哪里：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"rnpm"</span>: &#123;</span><br><span class="line">    <span class="string">"assets"</span>: [</span><br><span class="line">	<span class="string">"./assets/fonts/"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/09/24/React-Native-配置自定义字体/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/24/React-Native-配置自定义字体/">展开全文 >></a>
         </p>
       
 
@@ -848,7 +842,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -856,7 +850,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -864,7 +862,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -880,19 +882,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">jsonp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,19 +898,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">移动端</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -932,14 +926,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">webpack</a>
               </li>
              
@@ -948,11 +934,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -976,31 +970,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">express</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1016,7 +990,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">杂</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Mobx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1024,7 +1014,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
             
             <div class="clearfix"></div>
