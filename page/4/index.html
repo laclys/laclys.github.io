@@ -147,6 +147,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React-Native IOS及安卓打包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/29/React-Native IOS及安卓打包/">React-Native IOS及安卓打包</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/29/React-Native IOS及安卓打包/" class="archive-article-date">
+  	<time datetime="2017-09-29T15:35:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开发了快两个月的RN终于到了要打包发布的阶段。</p>
+<p>网上有不少文章博客，还是RN更新太快的缘由，有些并不适用于当前版本。这里简单说一下吧。（这里用的是RN0.43.4）</p>
+<h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><p>首先在项目根目录创建一个空文件夹，我这里创建的是：release_ios</p>
+<p>之后执行打包命令（有点像webpack将JS代码压缩合并，并且导出所使用的静态资源）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native bundle --entry-file index.ios.js --platform ios --dev <span class="literal">false</span> --bundle-output release_ios/main.jsbundle --assets-dest release_ios/</span><br></pre></td></tr></table></figure></p>
+<h4 id="命令具体含义："><a href="#命令具体含义：" class="headerlink" title="命令具体含义："></a>命令具体含义：</h4><ul>
+<li>–entry-file ,ios或者android入口的js名称，比如index.ios.js</li>
+<li>–platform ,平台名称(ios或者android)</li>
+<li>–dev ,设置为false的时候将会对JavaScript代码进行优化处理。</li>
+<li>–bundle-output, 生成的jsbundle文件的名称，比如 release_ios/main.jsbundle</li>
+<li>–assets-dest 图片以及其他资源存放的目录,比如 release_ios/</li>
+</ul>
+<p>大概1，2min打包ok。在我们的新建文件夹中就会有相应的bundle文件。<br><img src="/assets/blogImg/20170929-1.jpg" alt=""></p>
+        
+          <a class="article-more-a" href="/2017/09/29/React-Native IOS及安卓打包/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/29/React-Native IOS及安卓打包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-React-Native-配置自定义字体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -678,76 +761,6 @@
 
 
   
-    <article id="post-yarn-cli笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/02/yarn-cli笔记/">yarn-cli笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/02/yarn-cli笔记/" class="archive-article-date">
-  	<time datetime="2017-05-02T15:18:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前一阵看到一句话，搞技术既要仰望星空，又要脚踏实地。特别是前端，三天两头出来新东西。为了跟上时代，趋势。得学。。然而JS/CSS最基础的东西也不能落下。想学的的东西太多，坑越挖越多。亚历山大~，加油吧~<br><img src="/assets/blogImg/20170502.jpg" alt=""><br>（济南·大明湖 2017-04-30）<br>这两天看了看Yarn，其实之前在微信公众号上看过，自己也照着敲了敲。之后就没在意。还是继续用NPM。没有GET到yarn的优势。恰逢看到一篇yarn vs npm的文章，好好学习了一番。facebook在技术领域的号召力也是没谁了。光看star数都快赶上老大哥npm了。</p>
-<p>为什么用yarn？正如官网所说：<strong>FAST, RELIABLE, AND SECURE </strong>。</p>
-<p>相比NPM，yarn缓存他下载下来的每一个包，无需重复下载。提高了资源利用率。<br>超级可靠！由于国内网络的特殊原因。有时候npm下载依赖的时候，不能保证包的完整性。会出现很多的“坑”！yarn的话，在每一个安装包的执行前使用校验码验证包的完整性。就不会面对那些坑了。<br>还有一个就是目录下的lock文件。Yarn 使用一个格式详尽但简洁的 lockfile 和一个精确的算法来安装，能够保证在一个系统上的运行的安装过程也会以同样的方式运行在其他系统上。<br>
-        
-          <a class="article-more-a" href="/2017/05/02/yarn-cli笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">yarn</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/02/yarn-cli笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -765,12 +778,11 @@
     		&copy; 2018 Lac
     	</div>
       	<div class="footer-right">
-					<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-				</div>
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
     </div>
   </div>
 </footer>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -869,10 +881,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
@@ -886,6 +894,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -913,6 +925,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
@@ -921,15 +937,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -941,11 +949,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,15 +977,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -981,15 +989,11 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">Emmet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ReactSSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1001,11 +1005,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">杂</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1021,11 +1037,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
