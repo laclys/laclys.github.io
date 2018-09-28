@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>小程序Note2 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近一个月，主要的精力还是在小程序这边，公司的项目是，自己闲暇之余写的小项目也是。公司项目就不说了，自己的小项目涙曇前后用了一个月，101commits完成了1.0.0版。从有想法到自己设计再到开发完完全全走完这一套流程，还是很满足的。 这里还是聊聊最近编写小程序一些问题和解决方案 （中秋在三里屯人行天桥拍到的日落，很美） 简单说说登录小程序登录，这里抛开后端（其实镇等复杂的还是获取用户登录信息并">
+  <meta name="description" content="最近一个月，主要的精力还是在小程序这边，公司的项目是，自己闲暇之余写的小项目也是。公司项目就不说了，自己的小项目涙曇前后用了一个月，101commits完成了1.0.0版。从有想法到自己设计再到开发完完全全走完这一套流程，还是很满足的。 这里还是聊聊最近编写小程序一些问题和解决方案 （中秋在三里屯人行天桥拍到的日落，很美）">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小程序Note2">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/小程序Note2/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="最近一个月，主要的精力还是在小程序这边，公司的项目是，自己闲暇之余写的小项目也是。公司项目就不说了，自己的小项目涙曇前后用了一个月，101commits完成了1.0.0版。从有想法到自己设计再到开发完完全全走完这一套流程，还是很满足的。 这里还是聊聊最近编写小程序一些问题和解决方案 （中秋在三里屯人行天桥拍到的日落，很美） 简单说说登录小程序登录，这里抛开后端（其实镇等复杂的还是获取用户登录信息并">
+<meta property="og:description" content="最近一个月，主要的精力还是在小程序这边，公司的项目是，自己闲暇之余写的小项目也是。公司项目就不说了，自己的小项目涙曇前后用了一个月，101commits完成了1.0.0版。从有想法到自己设计再到开发完完全全走完这一套流程，还是很满足的。 这里还是聊聊最近编写小程序一些问题和解决方案 （中秋在三里屯人行天桥拍到的日落，很美）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180928-01.jpg">
-<meta property="og:updated_time" content="2018-09-28T09:36:34.388Z">
+<meta property="og:updated_time" content="2018-09-28T09:39:24.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序Note2">
-<meta name="twitter:description" content="最近一个月，主要的精力还是在小程序这边，公司的项目是，自己闲暇之余写的小项目也是。公司项目就不说了，自己的小项目涙曇前后用了一个月，101commits完成了1.0.0版。从有想法到自己设计再到开发完完全全走完这一套流程，还是很满足的。 这里还是聊聊最近编写小程序一些问题和解决方案 （中秋在三里屯人行天桥拍到的日落，很美） 简单说说登录小程序登录，这里抛开后端（其实镇等复杂的还是获取用户登录信息并">
+<meta name="twitter:description" content="最近一个月，主要的精力还是在小程序这边，公司的项目是，自己闲暇之余写的小项目也是。公司项目就不说了，自己的小项目涙曇前后用了一个月，101commits完成了1.0.0版。从有想法到自己设计再到开发完完全全走完这一套流程，还是很满足的。 这里还是聊聊最近编写小程序一些问题和解决方案 （中秋在三里屯人行天桥拍到的日落，很美）">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20180928-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -172,6 +172,7 @@
         <p>最近一个月，主要的精力还是在小程序这边，公司的项目是，自己闲暇之余写的小项目也是。<br>公司项目就不说了，自己的小项目<a href="https://github.com/tomorrowchuang/leona" target="_blank" rel="noopener">涙曇</a><br>前后用了一个月，101commits完成了1.0.0版。从有想法到自己设计再到开发完完全全走完这一套流程，还是很满足的。</p>
 <p>这里还是聊聊最近编写小程序一些问题和解决方案</p>
 <p><img src="/assets/blogImg/20180928-01.jpg" alt=""><br>（中秋在三里屯人行天桥拍到的日落，很美）</p>
+<a id="more"></a>
 <h3 id="简单说说登录"><a href="#简单说说登录" class="headerlink" title="简单说说登录"></a>简单说说登录</h3><p>小程序登录，这里抛开后端（其实镇等复杂的还是获取用户登录信息并涉及上传用户到服务器这个过程的后端操作）说说前端登录。</p>
 <p>首先说说1.9版本新加的显示用户信息的方法（不需要授权，静默获取）如果只是想在UI显示用户的信息比如昵称，来自那里···，就可以用<code>&lt;open-data&gt;</code>这个组件。<br>使用起来超级简单，弊端就是没有授权，并没有真正拿到数据。如果要上传用户信息到服务器，就必须getUserInfo在js中拿到数据。</p>
 <p>下面再说说授权登录。</p>
@@ -366,6 +367,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
@@ -374,11 +383,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -390,11 +395,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color2">JQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">JQuery</a>
+                <a href="javascript:void(0)" class="color1">jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -402,7 +407,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">jsonp</a>
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -414,23 +419,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,15 +439,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">webpack</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,11 +463,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">node</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,19 +475,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color5">SASS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,23 +503,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,7 +523,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Mobx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">
