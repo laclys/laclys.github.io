@@ -7,24 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
   <meta name="baidu-site-verification" content="18zfFJh9QV" />
-  <title>ReactSSR样式及SEO | Lac&#39;s Blog</title>
+  <title>Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="前一篇主要记录了一下SSR配置以及结合Redux的使用。这里简单说一下React SSR中样式处理和更优雅的SEO SSR样式在React客户端渲染，添加样式很容易。写一个css样式文件，在对应组件中引用。标签上通过className这个属性调用对应样式就万事Ok了。当然我们需要在webpack中配置loader来解析css文件。一般的配置如下（使用css modules）：12345678910">
-<meta name="keywords" content="React,ssr,seo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ReactSSR样式及SEO">
-<meta property="og:url" content="http://yoursite.com/2018/10/19/ReactSSR样式及SEO/index.html">
+  <meta name="description" content="好きな瞬間を 好きなだけ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lac&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/page/8/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="前一篇主要记录了一下SSR配置以及结合Redux的使用。这里简单说一下React SSR中样式处理和更优雅的SEO SSR样式在React客户端渲染，添加样式很容易。写一个css样式文件，在对应组件中引用。标签上通过className这个属性调用对应样式就万事Ok了。当然我们需要在webpack中配置loader来解析css文件。一般的配置如下（使用css modules）：12345678910">
+<meta property="og:description" content="好きな瞬間を 好きなだけ">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/20181020-1.jpg">
-<meta property="og:image" content="http://yoursite.com/assets/blogImg/20181020-1.jpg">
-<meta property="og:updated_time" content="2018-10-20T11:15:25.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ReactSSR样式及SEO">
-<meta name="twitter:description" content="前一篇主要记录了一下SSR配置以及结合Redux的使用。这里简单说一下React SSR中样式处理和更优雅的SEO SSR样式在React客户端渲染，添加样式很容易。写一个css样式文件，在对应组件中引用。标签上通过className这个属性调用对应样式就万事Ok了。当然我们需要在webpack中配置loader来解析css文件。一般的配置如下（使用css modules）：12345678910">
-<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20181020-1.jpg">
+<meta name="twitter:title" content="Lac&#39;s Blog">
+<meta name="twitter:description" content="好きな瞬間を 好きなだけ">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -156,73 +151,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ReactSSR样式及SEO" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-sass基础语法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      ReactSSR样式及SEO
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/04/sass基础语法总结/">SASS基础语法总结</a>
     </h1>
   
 
         
-        <a href="/2018/10/19/ReactSSR样式及SEO/" class="archive-article-date">
-  	<time datetime="2018-10-19T04:01:29.196Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
+        <a href="/2017/01/04/sass基础语法总结/" class="archive-article-date">
+  	<time datetime="2017-01-04T15:51:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前一篇主要记录了一下SSR配置以及结合Redux的使用。这里简单说一下React SSR中样式处理和更优雅的SEO</p>
-<h3 id="SSR样式"><a href="#SSR样式" class="headerlink" title="SSR样式"></a>SSR样式</h3><p>在React客户端渲染，添加样式很容易。写一个css样式文件，在对应组件中引用。标签上通过className这个属性调用对应样式就万事Ok了。当然我们需要在webpack中配置loader来解析css文件。一般的配置如下（使用css modules）：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [&#123;</span><br><span class="line">    test: <span class="regexp">/\.css?$/</span>,</span><br><span class="line">    use: [<span class="string">'style-loader'</span>, &#123;</span><br><span class="line">      loader: <span class="string">'css-loader'</span>,</span><br><span class="line">      options: &#123;</span><br><span class="line">        importLoader: <span class="number">1</span>,</span><br><span class="line">        modules: <span class="literal">true</span>,</span><br><span class="line">        localIdentName: <span class="string">'[name]_[local]_[hash:base64:5]'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>需要先通过css-loader解析css文件，之后再通过style-loader将样式放在html的style标签中。</p>
-<p>那么SSR也这样行吗~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn dev</span><br></pre></td></tr></table></figure></p>
-<p>跑一下服务，发现命令行报这个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    return window &amp;&amp; document &amp;&amp; document.all &amp;&amp; !window.atob;</span><br><span class="line">    ^</span><br><span class="line"></span><br><span class="line">ReferenceError: window is not defined</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>原因在于服务器端渲染哪里有window对象，哪里有DOM啊。我们是通过虚拟DOM。<code>renderToString</code>这个方法生成出来的html字符串。<code>stackoverflow</code>搜了一下发现了<a href="https://github.com/kriasoft/isomorphic-style-loader" target="_blank" rel="noopener"><code>isomorphic-style-loader</code></a>这个专门用于同构的style-loader。<br>话不多少搞起来。客户端的webpack配置不需要变更还是使用css-loader+style-loader。服务器端就使用css-loader+isomorphic-style-loader了(和style-loader用法一波一样)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.server.js</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [&#123;</span><br><span class="line">      test: <span class="regexp">/\.css?$/</span>,</span><br><span class="line">      use: [<span class="string">'isomorphic-style-loader'</span>, &#123;</span><br><span class="line">        loader: <span class="string">'css-loader'</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">          importLoader: <span class="number">1</span>,</span><br><span class="line">          modules: <span class="literal">true</span>,</span><br><span class="line">          localIdentName: <span class="string">'[name]_[local]_[hash:base64:5]'</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>配置好了Run一下，不报错了但是会闪一下屏。禁用掉js发现server端生成的html并没有样式，当客户端JS接管程序之后才会有样式出现。这样的体验相当糟糕。<br>当然我们确实没有向服务器端生成的HTML添加style标签。<br>现在服务器返给我们的html是这样的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;html&gt;</span></span><br><span class="line"><span class="string">      &lt;head&gt;</span></span><br><span class="line"><span class="string">        &lt;title&gt;ssr&lt;/title&gt;</span></span><br><span class="line"><span class="string">      &lt;/head&gt;</span></span><br><span class="line"><span class="string">      &lt;body&gt;</span></span><br><span class="line"><span class="string">        &lt;div id='root' &gt;<span class="subst">$&#123; content &#125;</span>&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;script&gt;</span></span><br><span class="line"><span class="string">          window.context = &#123;</span></span><br><span class="line"><span class="string">            state: <span class="subst">$&#123; <span class="built_in">JSON</span>.stringify(store.getState()) &#125;</span></span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        &lt;/script&gt;</span></span><br><span class="line"><span class="string">        &lt;script src='/index.js' &gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">      &lt;/body&gt;</span></span><br><span class="line"><span class="string">    &lt;/html&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br></pre></td></tr></table></figure></p>
-<p>这时我们想到了context这个玩意。在server端render之前。我们设置一个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> context = &#123;</span><br><span class="line">  css: []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我们还知道在服务端渲染的时候有<code>this.props.staticContext</code>这样一个props拿到我们设置<code>context</code>。另外<code>isomorphic-style-loader</code>提供给我们了<br>_getCss()这个方法。可以在SSR过程中拿到样式。有了这两个必要条件。我们就可以在每一个用到样式的Component中通过<code>componentWillMount</code>这个生命周期<br>添加这样一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">componentWillMount () &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.props.staticContext) &#123; <span class="comment">// 只有服务端渲染时候有this.props.staticContext以及_getCss()</span></span><br><span class="line">    <span class="keyword">this</span>.props.staticContext.css.push(styles._getCss())</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样样式就存储在<code>context</code>这个变量的css数组中咯，改造一下server端的html输出代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cssStr = context.css.length ? context.css.join(<span class="string">'\n'</span>) : <span class="string">''</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;html&gt;</span></span><br><span class="line"><span class="string">        &lt;head&gt;</span></span><br><span class="line"><span class="string">          &lt;title&gt;ssr&lt;/title&gt;</span></span><br><span class="line"><span class="string">          &lt;style&gt;<span class="subst">$&#123;cssStr&#125;</span>&lt;/style&gt;</span></span><br><span class="line"><span class="string">        &lt;/head&gt;</span></span><br><span class="line"><span class="string">        &lt;body&gt;</span></span><br><span class="line"><span class="string">          &lt;div id='root' &gt;<span class="subst">$&#123;content&#125;</span>&lt;/div&gt;</span></span><br><span class="line"><span class="string">          &lt;script&gt;</span></span><br><span class="line"><span class="string">            window.context = &#123;</span></span><br><span class="line"><span class="string">              state: <span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(store.getState())&#125;</span></span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">          &lt;/script&gt;</span></span><br><span class="line"><span class="string">          &lt;script src='/index.js' &gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">        &lt;/body&gt;</span></span><br><span class="line"><span class="string">      &lt;/html&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br></pre></td></tr></table></figure></p>
-<p>万事👌，当然我们可以进一步优化，把componentWillMount所做的事情提出来搞一个HOC（高阶组件）。</p>
-<p>withStylesHOC.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;</span><br><span class="line">  Component</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (DecoratedComponent, styles) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    componentWillMount () &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.props.staticContext) &#123;</span><br><span class="line">        <span class="keyword">this</span>.props.staticContext.css.push(styles._getCss())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">DecoratedComponent</span> &#123;<span class="attr">...this.props</span>&#125; /&gt;</span></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>这样简单的封装一个HOC，之后涉及样式的时候直接通过<code>withStylesHOC</code>包裹一下就好。例如一个结合Redux的Home组件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapState, mapDispatch)(withStyle(Home, styles))</span><br></pre></td></tr></table></figure></p>
-<p><img src="/assets/blogImg/20181020-1.jpg" alt=""></p>
-<h3 id="SSR-SEO"><a href="#SSR-SEO" class="headerlink" title="SSR-SEO"></a>SSR-SEO</h3><p>费大力气通过一个node中间层去实现首屏的SSR，除开首屏速度之外，就是SEO这一大块了，对于一个商业网站来讲真的很重要。<br>SEO（Search Engine Optimization）– 通过一些技术手段让网站在搜索引擎的排名尽量靠前一点。由于客户端渲染出来的网站只有<code>&lt;div id=&#39;root&#39;&gt;</code>这样的html节点。大多数搜索引擎分析不出来网站上有什么。SSR直接渲染出来HTML，这样对搜索引擎就友好了很多。</p>
-<h4 id="SSR中的SEO"><a href="#SSR中的SEO" class="headerlink" title="SSR中的SEO"></a>SSR中的SEO</h4><p>这里我们使用github上的一个库<code>react-helmet</code>首先需要在对应的页面组件中引入<code>react-helmet</code>，就可以在Helmet标签内自由添加title、meta咯<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Home.jax</span></span><br><span class="line"><span class="keyword">import</span> &#123; Helmet &#125; <span class="keyword">from</span> <span class="string">'react-helmet'</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Fragment&gt;</span><br><span class="line">        &lt;Helmet&gt;</span><br><span class="line">          &lt;title&gt;SRR-Home&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">          &lt;meta name='description' content='this is a home Component' /</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/Helmet&gt;</span></span><br><span class="line"><span class="regexp">          ...</span></span><br><span class="line"><span class="regexp">          ...</span></span><br><span class="line"><span class="regexp">      &lt;/</span><span class="xml"><span class="tag">&lt;<span class="name">Fragment</span>&gt;</span>&gt;</span></span><br><span class="line"><span class="xml">    )</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>之后按照readme所说的。在server端这样处理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ReactDOMServer.renderToString(<span class="xml"><span class="tag">&lt;<span class="name">Handler</span> /&gt;</span>);</span></span><br><span class="line"><span class="xml">const helmet = Helmet.renderStatic();</span></span><br></pre></td></tr></table></figure></p>
-<p>并在返回的html字符串中 <code>${helmet.title.toString()}</code>  <code>${helmet.meta.toString()}</code>进行填充<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    $&#123;helmet.title.toString()&#125;</span><br><span class="line">    $&#123;helmet.meta.toString()&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">$&#123;cssStr&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'root'</span> &gt;</span>$&#123;content&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="built_in">window</span>.context = &#123;</span></span><br><span class="line"><span class="javascript">        state: $&#123;<span class="built_in">JSON</span>.stringify(store.getState())&#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'/index.js'</span> &gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>重新跑一下 搞定！</p>
-<p>当然SSR-SEO绝不这么简单。仅仅在页面上添加head标签内加上title 和meta标签影响是有限的。8102年的搜索爬虫已经不单单去匹配title和 description，而是全稳的匹配（也就是说title和descript有影响但是影响很小）搜索爬虫会把整个网站所有的文本收集起来进行分析。</p>
-<h4 id="那么如何做好SEO"><a href="#那么如何做好SEO" class="headerlink" title="那么如何做好SEO"></a>那么如何做好SEO</h4><p>题外话顺便说一下如何做好SEO。一个网站无非三大块内容，文字、多媒体、链接。要做到的是文字的原创性，图片的原创性以及高清度还有站内链接尽量和站内内容相关。</p>
-<p>就这样吧~<br>以上<br><img src="/assets/blogImg/20181020-1.jpg" alt=""></p>
-
+        <h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><p>CSS预处理器。一种基于CSS之上的高级语言，其目的是使得CSS开发更灵活和更强大。</p>
+<hr>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>1.变量</p>
+<blockquote>
+<p>$开头紧跟变量名，变量名值以：分隔，！表示默认值 。$blue : #1875e7;　</p>
+</blockquote>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$blue</span> : <span class="number">#1875e7</span>;　</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line"><span class="attribute">color</span> : <span class="variable">$blue</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.导入@import；</p>
+<blockquote>
+<p>导入其他sass文件。（优于css的@import）</p>
+</blockquote>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">"path/filename.scss"</span>;</span><br></pre></td></tr></table></figure>
+<p>3.计算功能；</p>
+<blockquote>
+<p>允许在代码中使用算式</p>
+</blockquote>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="selector-tag">body</span> &#123;</span><br><span class="line">　　　　<span class="attribute">margin</span>: (<span class="number">14px</span>/<span class="number">2</span>);</span><br><span class="line">　　　　<span class="attribute">top</span>: <span class="number">50px</span> + <span class="number">100px</span>;</span><br><span class="line">　　　　<span class="attribute">right</span>: <span class="variable">$var</span> * <span class="number">10%</span>;</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/01/04/sass基础语法总结/#more">more >></a>
+        
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>読んでくれてありがとう~<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -233,15 +205,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">ssr</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">seo</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">SASS</a>
         </li>
       
 		</ul>
@@ -250,6 +218,10 @@
       
 
       
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/04/sass基础语法总结/">展开全文 >></a>
+        </p>
+      
 
       
       <div class="clearfix"></div>
@@ -257,16 +229,7 @@
   </div>
 </article>
 
-  
-<nav id="article-nav">
-  
-  
-    <a href="/2018/10/16/React SSR Note(1)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">React SSR Note(1)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
+
 
 
 
@@ -274,10 +237,11 @@
 
 
   
-    <div class="duoshuo"></div>
   
-
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+    </nav>
+  
 
 
           </div>
@@ -299,8 +263,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
