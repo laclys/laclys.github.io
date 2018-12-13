@@ -153,6 +153,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React_Portal" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/14/React_Portal/">React Portal</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/14/React_Portal/" class="archive-article-date">
+  	<time datetime="2018-12-13T16:08:36.342Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在看ReactV16带来的新东西，V16版本直接支持了Portal。今儿就总结一下Portal这个自己不是那么熟悉却又非常重要的“传送门”吧。<br>先说说为什么需要传送门。React的世界一切皆组件，进行render就需要一个root根节点进行挂载。组件套组件一层一层，不过最外面一层都是挂在在这个root根节点上的。</p>
+<p>有一个常见的需求Dialog(弹窗),通常它会显示在屏幕正中央，它应该是一个独立的组件。因此将这个弹窗组件放在根节点下的子组件里显然是不合适的。<br>我们希望将其渲染在和root根节点同级的DOM上在React组件树的最顶层。样式独立，没必要受其他组件的干扰。除了Dialog需要在最顶层渲染之外，我们还希望(也可以说是诉求)在不同的业务组件中去使用它。这里就需要Portal咯。</p>
+<p><img src="/assets/blogImg/20181214-1.jpg" alt=""><br>（ 天野喜孝展 ）<br>
+        
+          <a class="article-more-a" href="/2018/12/14/React_Portal/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/14/React_Portal/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-ReactSSR样式及SEO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -516,76 +586,6 @@
 
 
   
-    <article id="post-ReactPortal" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/29/ReactPortal/">React Portal</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/29/ReactPortal/" class="archive-article-date">
-  	<time datetime="2018-07-29T14:29:34.323Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在看ReactV16带来的新东西，V16版本直接支持了Portal。今儿就总结一下Portal这个自己不是那么熟悉却又非常重要的“传送门”吧。<br>先说说为什么需要传送门。React的世界一切皆组件，进行render就需要一个root根节点进行挂载。组件套组件一层一层，不过最外面一层都是挂在在这个root根节点上的。</p>
-<p>有一个常见的需求Dialog(弹窗),通常它会显示在屏幕正中央，它应该是一个独立的组件。因此将这个弹窗组件放在根节点下的子组件里显然是不合适的。<br>我们希望将其渲染在和root根节点同级的DOM上在React组件树的最顶层。样式独立，没必要受其他组件的干扰。除了Dialog需要在最顶层渲染之外，我们还希望(也可以说是诉求)在不同的业务组件中去使用它。这里就需要Portal咯。</p>
-<p><img src="/assets/blogImg/20181214-1.jpg" alt=""><br>（ 天野喜孝展 ）<br>
-        
-          <a class="article-more-a" href="/2018/07/29/ReactPortal/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/29/ReactPortal/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-redux-saga" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -853,6 +853,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">CSS</a>
               </li>
              
@@ -862,10 +866,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,11 +881,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">jsonp</a>
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
+                <a href="javascript:void(0)" class="color1">jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -897,15 +897,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">mongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -917,18 +917,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ssr</a>
               </li>
              
@@ -937,15 +925,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">webpack</a>
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">css3</a>
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,11 +961,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -977,27 +973,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1013,7 +989,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,11 +1017,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Mobx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
             
             <div class="clearfix"></div>
