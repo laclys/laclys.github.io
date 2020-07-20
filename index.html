@@ -149,6 +149,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Snowpack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/Snowpack/">Snowpack</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/20/Snowpack/" class="archive-article-date">
+  	<time datetime="2020-07-20T15:00:11.813Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是Snowpack"><a href="#什么是Snowpack" class="headerlink" title="什么是Snowpack"></a>什么是<code>Snowpack</code></h3><blockquote>
+<p>Snowpack is a modern, lightweight toolchain for web application development. Traditional dev bundlers like webpack or Parcel need to rebuild &amp; rebundle entire chunks of your application every time you save a single file. This introduces lag between changing a file and seeing those changes reflected in the browser, sometimes as slow as several seconds.</p>
+</blockquote>
+<blockquote>
+<p>We call this new approach O(1) Build Tooling.</p>
+</blockquote>
+<p>  简而言之就是利用原生<code>ES Modules</code>(几乎所有现代浏览器都支持这个特性，<del>当然除了IE</del>, 支持IE11),无需打包工具（Webpack，Parcel）便能将代码结果实时展现在浏览器中的<code>No build step needed!</code>构建工具。还有一个宣传点就是<code>Snowpack</code>是一个时间复杂度<code>O(1)</code>的构建系统。像webpack这种打包工具是一个时间复杂度<code>O(n)</code>的过程，一个文件变更，你不止重新构建这一个文件，而是多个相关文件甚至整体一整块，要经历<code>build -&gt; bundle recompilation</code>这个过程。<code>Snowpack</code>呢，则是分别构建每一个文件 。在开发过程中，更改了某个文件，只需要重建这一个文件<code>build(file) =&gt; result</code>单个文件单个缓存(换言之，如果你不变更xx文件，那就永远不用重构它)。加载页面也是，它只会请求当前所需的那些文件。开发环境只要一次<code>Snowpack</code>，修改源码能够实时反馈在浏览器上，可以获得更快的开发体验。当然<code>Snowpack</code>也不是完完全全的<code>bundleless</code>，当然这个是后话</p>
+<h3 id="支持"><a href="#支持" class="headerlink" title="支持"></a>支持</h3><ul>
+<li>框架： <code>React</code>、<code>Preact</code>、<code>Vue</code>、<code>Svelte</code>、<code>Tailwind CSS</code>(<code>snowpack2.0</code> 已经内置了 JSX 和 Typescript 文件的处理)</li>
+<li>Tooling: <code>Babel</code>、<code>TypeScript</code>、<code>PostCSS</code></li>
+<li>官方提供模板：<code>Create Snowpack App</code></li>
+<li>HMR</li>
+<li>Dev Request Proxy</li>
+<li>Environment Variables</li>
+<li>HTTPS/HTTP2(<strong>HTTP2的多路复用、合并请求就能解决<code>Snowpack</code>多构建文件的问题</strong>)</li>
+</ul>
+        
+          <a class="article-more-a" href="/2020/07/20/Snowpack/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">bundleless</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/20/Snowpack/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-说说React16的生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -627,11 +710,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">随笔</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">随笔</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
         </li>
        
         <li class="article-tag-list-item">
@@ -663,84 +746,6 @@
 
 
   
-    <article id="post-redux-saga" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/redux-saga/">Redux-saga</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/27/redux-saga/" class="archive-article-date">
-  	<time datetime="2018-06-27T06:36:53.590Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。<br>这两天正好在学习和摸索redux-saga。顺便总结一下。</p>
-<h3 id="redux-thunk-redux-saga"><a href="#redux-thunk-redux-saga" class="headerlink" title="redux-thunk/redux-saga"></a>redux-thunk/redux-saga</h3><p>首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。redux本身是不支持异步的，action creator直接返回一个对象。这里redux-thunk通过十几行代码，判断action creator函数返回的是不是一个对象，不是对象是函数的话再用dispatch发出去。之前自己写过一个简单的redux-thunk的模拟。大致就是这样的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> thunk = <span class="function">(<span class="params">&#123;dispatch, getState&#125;</span>) =&gt;</span> next =&gt; <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 如果是函数，执行以下；参数是dispatch和getState</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> action === <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> action(dispatch, getState)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 啥事没干 原样返回</span></span><br><span class="line">  <span class="keyword">return</span> next(action)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> thunk</span><br></pre></td></tr></table></figure></p>
-<p>redux-saga也是解决同样的问题，但是redux-saga是通过在redux原有的数据流中再加了一层，对action进行监听。捕获到监听的Action后可以派生一个新的任务对state进行维护，更改state来驱动view层变化。saga和thunk都是可以处理异步操作和协调复杂的dispatch。不同额是thunk是在action创建的时候才调用，saga是在应用入口就启动了，一直在监听action，并作出相应处理。说白了就是saga将所有的异步操作逻辑收集在一个地方集中处理。相比thunk的处理方式，更能剥离redux应用的副作用，让数据处理更加优雅（也更加麻烦=。=）</p>
-<p>saga核心原理是利用了generator，使异步操作流程更加优雅。sagas都是用Generator函数实现的。</p>
-<ul>
-<li>以generator形式组织逻辑序列（function* + yield），把一系列的串行/并行操作通过yield拆分开</li>
-<li>利用iterator的可“暂停/恢复”特性（iter.next()）分步执行</li>
-<li>通过iterator影响内部状态（iter.next(result)），注入异步操作结果</li>
-<li>利用iterator的错误捕获特性（iter.throw(error)），注入异步操作异常</li>
-</ul>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>下面说说怎么引入redux-saga<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> createSagaMiddleware <span class="keyword">from</span> <span class="string">'redux-saga'</span></span><br><span class="line"><span class="comment">//引入saga文件</span></span><br><span class="line"><span class="keyword">import</span> &#123; rootSaga &#125; <span class="keyword">from</span> <span class="string">'./rootSaga'</span></span><br><span class="line"><span class="comment">//使用 redux-saga 模块的 createSagaMiddleware 工厂函数来创建一个 Saga middleware。</span></span><br><span class="line"><span class="comment">//运行 rootSaga 之前，我们必须使用 applyMiddleware 将 middleware 连接至 Store。然后使用 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sagaMiddleware = createSagaMiddleware()</span><br><span class="line"><span class="keyword">const</span> middlewares = [ sagaMiddleware ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(rootReducer, applyMiddleware(...middlewares))</span><br><span class="line">sagaMiddleware.run(rootSaga)</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/06/27/redux-saga/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">redux</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/27/redux-saga/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -755,7 +760,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Lac
+    		&copy; 2020 Lac
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -845,7 +850,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,15 +858,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -870,6 +867,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -885,11 +890,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
+                <a href="javascript:void(0)" class="color1">jsonp</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">jsonp</a>
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -901,15 +906,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">mongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -917,15 +918,27 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ssr</a>
+                <a href="javascript:void(0)" class="color1">bundleless</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">seo</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -981,6 +994,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">直播</a>
               </li>
              
@@ -1001,11 +1018,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1017,23 +1030,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
+                <a href="javascript:void(0)" class="color4">ssr</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color4">seo</a>
               </li>
             
             <div class="clearfix"></div>
