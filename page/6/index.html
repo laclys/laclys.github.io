@@ -149,6 +149,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vuex学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/23/Vuex学习笔记/">Vuex学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/23/Vuex学习笔记/" class="archive-article-date">
+  	<time datetime="2017-04-23T09:53:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是Vuex？"><a href="#什么是Vuex？" class="headerlink" title="什么是Vuex？"></a>什么是Vuex？</h2><p><img src="/assets/blogImg/20170423-01.png" alt=""></p>
+<p>专门为Vue开发的状态管理模式。采用集中存储管理应用的所有组件状态。在没有用Vuex的时候，我们在进行组件化开发时，数据（也就是状态一般都分散在各个组件中。加入我们要使用这些状态是，我们就得在不同组件中去取状态值，然后进行状态修改，最后还要相互读取对方状态值。<br><strong>父子组件中：</strong><br>我们可以通过事件触发/props进行状态传递。<br><strong>子组件之间：</strong><br>由于Vue本身组件之间有作用域，他们之间无法相互通信。这里就必须用单一时间管理（event bus）或者在所有组件和Vue对象下使用一个统一的Object作为数据，来实现。（实质：引用）。</p>
+<p>如果项目较小还好，中大型项目，组件通信复杂频繁的时候，这两种方式管理起来就会十分麻烦，而且容易出错。</p>
+<p>有了Vuex，它将数据单独放在一个store里，并提供给外部操作内部数据的方法。让我们能更好的管理项目里的状态。这也是Vuex出现的意义吧。就像官网说的：<br>    Flux 架构就像眼镜：您自会知道什么时候需要它<br>
+        
+          <a class="article-more-a" href="/2017/04/23/Vuex学习笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">Vue</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">Vuex</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/23/Vuex学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-VueJS组件化开发实践总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -620,11 +695,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
         </li>
       
 		</ul>
@@ -635,80 +710,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(下)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JSONP的原生实现和JQ实现(上)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/">JSONP的原生实现和JQ实现(上)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/23/JSONP的原生实现和JQ实现(上)/" class="archive-article-date">
-  	<time datetime="2017-02-22T17:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP，全称：JSON with padding乍一看应该是和用来数据解析描述的JSON的某个远房亲戚。通过学习，<strong>这两者本质上完全是不同的东西</strong>。</p>
-<p>JSONP的概念在这就不赘言。自己的理解，由于Ajax直接请求文件数据时，跨域无权访问（为了安全）。为了解决跨域问题，我们发现在页面调用JS文件时不受跨域影响（例如，我们在任意文件中都可以引入jq文件，从而使用jq开发页面），因此通过把数据装在一个js格式文件里，在客户端进行处理。这就是JSONP的原理。JSONP允许用户传递一个callback参数给服务器，之后服务器返回数据时通过这个参数的函数包裹上数据传给客户端。</p>
-<p>下面不多说废话，下面用原生和jq分别写两个小获取baidu联想词条的小demo。<br>想要的效果就是当我在搜索条输入‘a’时，出现下拉联想列表（baidu的）<br><img src="/assets/blogImg/20170223-1.jpg" alt=""><br>
-        
-          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/">展开全文 >></a>
         </p>
       
 
@@ -846,15 +847,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color2">JQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
+                <a href="javascript:void(0)" class="color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
+                <a href="javascript:void(0)" class="color1">jsonp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,14 +871,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -882,7 +879,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">jsonp</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -894,19 +891,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
+                <a href="javascript:void(0)" class="color4">ssr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">seo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -918,11 +919,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -930,7 +927,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,11 +943,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">css</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -958,11 +963,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color5">yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">yarn</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1018,15 +1023,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ssr</a>
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">seo</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
+                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
             
             <div class="clearfix"></div>

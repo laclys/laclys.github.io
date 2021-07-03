@@ -149,6 +149,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JSONP的原生实现和JQ实现(上)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/">JSONP的原生实现和JQ实现(上)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/23/JSONP的原生实现和JQ实现(上)/" class="archive-article-date">
+  	<time datetime="2017-02-22T17:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP，全称：JSON with padding乍一看应该是和用来数据解析描述的JSON的某个远房亲戚。通过学习，<strong>这两者本质上完全是不同的东西</strong>。</p>
+<p>JSONP的概念在这就不赘言。自己的理解，由于Ajax直接请求文件数据时，跨域无权访问（为了安全）。为了解决跨域问题，我们发现在页面调用JS文件时不受跨域影响（例如，我们在任意文件中都可以引入jq文件，从而使用jq开发页面），因此通过把数据装在一个js格式文件里，在客户端进行处理。这就是JSONP的原理。JSONP允许用户传递一个callback参数给服务器，之后服务器返回数据时通过这个参数的函数包裹上数据传给客户端。</p>
+<p>下面不多说废话，下面用原生和jq分别写两个小获取baidu联想词条的小demo。<br>想要的效果就是当我在搜索条输入‘a’时，出现下拉联想列表（baidu的）<br><img src="/assets/blogImg/20170223-1.jpg" alt=""><br>
+        
+          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-JS中的cookie,localStorage和sessionStorage" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -652,80 +726,6 @@
 
 
   
-    <article id="post-VSCODE1.8下TypeScript（win10）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/31/VSCODE1.8下TypeScript（win10）/">VSCODE1.8下TypeScript（win10）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/31/VSCODE1.8下TypeScript（win10）/" class="archive-article-date">
-  	<time datetime="2017-01-30T17:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h3><p>TypeScript是微软开发的一个Js的超集，TypeScript兼容JavaScript，可以载入JavaScript代码然后运行。完全支持ES6规范。<br>TypeScript也是Google公司推出前端框架Angular2的开发语言。<br>(可以说是Google，微软强强联手吧。一直想学Angular框架自然的学学这TypeScript)</p>
-<p>由于TypeScript 是 JavaScript 的超集，扩展了 JavaScript 的语法，TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。首先就是搭建开发环境。</p>
-<h3 id="compier"><a href="#compier" class="headerlink" title="compier"></a>compier</h3><p>编译器分两种一种是在线编译器，在百度搜索typescript，就可以找到：<a href="http://www.typescriptlang.org/play/index.html" target="_blank" rel="noopener">http://www.typescriptlang.org/play/index.html</a><br>可以将TS代码转化成JS代码。<br>另一种就是本地编译器。由于自己一直用vscode这一轻量级ide。网上资料不是很对。就来码一下自己的安装配置过程。<br>
-        
-          <a class="article-more-a" href="/2017/01/31/VSCODE1.8下TypeScript（win10）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">TypeScript</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">vscode</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/31/VSCODE1.8下TypeScript（win10）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
@@ -846,15 +846,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color2">JQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
+                <a href="javascript:void(0)" class="color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
+                <a href="javascript:void(0)" class="color1">jsonp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,14 +870,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -882,7 +878,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">jsonp</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -894,19 +890,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
+                <a href="javascript:void(0)" class="color4">ssr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">seo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -918,11 +918,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -930,7 +926,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,11 +942,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">css</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -958,11 +962,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color5">yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">yarn</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1018,15 +1022,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ssr</a>
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">seo</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
+                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
             
             <div class="clearfix"></div>

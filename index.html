@@ -149,6 +149,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Docker-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/01/Docker-note/">Docker Note</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/01/Docker-note/" class="archive-article-date">
+  	<time datetime="2020-11-01T07:58:11.079Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>容器技术的一个实现</p>
+</blockquote>
+<h2 id="container"><a href="#container" class="headerlink" title="container"></a>container</h2><blockquote>
+<p>快速打包技术</p>
+<ul>
+<li>标准化</li>
+<li>轻量化</li>
+<li>易移植</li>
+</ul>
+</blockquote>
+<h3 id="Linux-Container-2008"><a href="#Linux-Container-2008" class="headerlink" title="Linux Container(2008)"></a>Linux Container(2008)</h3><blockquote>
+<p>Namespace和Cgroup(负责资源管理控制)两大机制保障</p>
+</blockquote>
+<h3 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h3><p><code>docker != container</code></p>
+<ul>
+<li>runtime spec(基本规范 eg：下载、创建容器)</li>
+<li>image spec(镜像的基本格式)</li>
+</ul>
+<h2 id="Image-VS-Container"><a href="#Image-VS-Container" class="headerlink" title="Image VS Container"></a>Image VS Container</h2><h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><ul>
+<li>Docker image是一个 <code>read-only</code> 文件</li>
+<li>理解成一个模板</li>
+<li>包含文件系统、源码、库文件还有依赖</li>
+<li>Image有分层的概念</li>
+</ul>
+        
+          <a class="article-more-a" href="/2020/11/01/Docker-note/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">docker</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/01/Docker-note/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-about Vue3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -681,72 +769,6 @@
 
 
   
-    <article id="post-小程序开发遇到的一些问题和吐槽" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/19/小程序开发遇到的一些问题和吐槽/">小程序开发遇到的一些问题和吐槽</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/19/小程序开发遇到的一些问题和吐槽/" class="archive-article-date">
-  	<time datetime="2018-08-18T17:15:02.425Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–<a href="https://github.com/laclys/your-express-mpvue" target="_blank" rel="noopener">快递去哪儿咯</a>。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现搞all in了两周小程序。这里记录一下遇到的一些小问题或者坑吧。</p>
-<h3 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h3><p>那我们就从吐槽开始</p>
-<p><img src="/assets/blogImg/20180819-01.jpg" alt=""><br>（很喜欢的一部电影）<br>
-        
-          <a class="article-more-a" href="/2018/08/19/小程序开发遇到的一些问题和吐槽/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">小程序</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/19/小程序开发遇到的一些问题和吐槽/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -867,15 +889,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
+                <a href="javascript:void(0)" class="color2">JQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
+                <a href="javascript:void(0)" class="color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
+                <a href="javascript:void(0)" class="color1">jsonp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -887,14 +913,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -903,7 +921,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">jsonp</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -915,19 +933,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
+                <a href="javascript:void(0)" class="color4">ssr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">seo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -939,11 +961,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">Vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,7 +969,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -959,11 +985,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">css</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -979,11 +1005,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color5">yarn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">yarn</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1039,15 +1065,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ssr</a>
+                <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">seo</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
+                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
             
             <div class="clearfix"></div>
