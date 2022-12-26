@@ -149,6 +149,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-yarn-cli笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/02/yarn-cli笔记/">yarn-cli笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/02/yarn-cli笔记/" class="archive-article-date">
+  	<time datetime="2017-05-02T15:18:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前一阵看到一句话，搞技术既要仰望星空，又要脚踏实地。特别是前端，三天两头出来新东西。为了跟上时代，趋势。得学。。然而JS/CSS最基础的东西也不能落下。想学的的东西太多，坑越挖越多。亚历山大~，加油吧~<br><img src="/assets/blogImg/20170502.jpg" alt=""><br>（济南·大明湖 2017-04-30）<br>这两天看了看Yarn，其实之前在微信公众号上看过，自己也照着敲了敲。之后就没在意。还是继续用NPM。没有GET到yarn的优势。恰逢看到一篇yarn vs npm的文章，好好学习了一番。facebook在技术领域的号召力也是没谁了。光看star数都快赶上老大哥npm了。</p>
+<p>为什么用yarn？正如官网所说：<strong>FAST, RELIABLE, AND SECURE </strong>。</p>
+<p>相比NPM，yarn缓存他下载下来的每一个包，无需重复下载。提高了资源利用率。<br>超级可靠！由于国内网络的特殊原因。有时候npm下载依赖的时候，不能保证包的完整性。会出现很多的“坑”！yarn的话，在每一个安装包的执行前使用校验码验证包的完整性。就不会面对那些坑了。<br>还有一个就是目录下的lock文件。Yarn 使用一个格式详尽但简洁的 lockfile 和一个精确的算法来安装，能够保证在一个系统上的运行的安装过程也会以同样的方式运行在其他系统上。<br>
+        
+          <a class="article-more-a" href="/2017/05/02/yarn-cli笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">yarn</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/02/yarn-cli笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Vuex学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -408,11 +478,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">Angular</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">Angular</a>
         </li>
        
         <li class="article-tag-list-item">
@@ -654,79 +724,6 @@
 
 
   
-    <article id="post-JSONP的原生实现和JQ实现(下)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/JSONP的原生实现和JQ实现(下)/">JSONP的原生实现和JQ实现(下)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/23/JSONP的原生实现和JQ实现(下)/" class="archive-article-date">
-  	<time datetime="2017-02-22T17:03:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="JQ实现方式："><a href="#JQ实现方式：" class="headerlink" title="JQ实现方式："></a>JQ实现方式：</h4><p>JQ实现JSONP的时候看起来和ajax调用方式很像，目的也一样，都是请求url，染过获得服务器的数据之后进行处理。但两者完全是两个不同的东西。只是JQ这个框架将jsonp作为ajax的一种形式进行了封装。<br>实质上：ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加script标签来调用服务器提供的js脚本。</p>
-<p>ajax与jsonp的区别不在于是否跨域，ajax通过服务端代理一样可以实现跨域，jsonp本身也不排斥同域的数据的获取。<br>话不多说，下边是jq的实现，用过console.log得到目标数据：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          $(<span class="string">'#inp'</span>).keypress(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="keyword">var</span> str = $(<span class="keyword">this</span>).val();</span><br><span class="line">              $.ajax(&#123;</span><br><span class="line">                  url: <span class="string">'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su'</span>,</span><br><span class="line">                  data: &#123;</span><br><span class="line">                      wd: str</span><br><span class="line">                  &#125;,</span><br><span class="line">                  dataType: <span class="string">'jsonp'</span>,</span><br><span class="line">                  jsonp: <span class="string">'cb'</span>,</span><br><span class="line">                  success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                      <span class="built_in">console</span>.log(data);</span><br><span class="line">                  &#125;,</span><br><span class="line">                  error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">                  &#125;</span><br><span class="line">  </span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure></p>
-<p><img src="/assets/blogImg/20170223-6.jpg" alt=""></p>
-<p>以上！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(下)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -831,7 +828,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
+                <a href="javascript:void(0)" class="color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -839,23 +836,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">交互</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">Stylus</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -875,35 +864,11 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">JQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">jsonp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ssr</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">seo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -915,7 +880,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">JQuery</a>
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -923,7 +904,27 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">ssr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">seo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -931,7 +932,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">SSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -943,10 +952,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">node</a>
               </li>
              
@@ -955,23 +960,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">yarn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">ReactSSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">yarn</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,7 +976,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">github</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -999,7 +992,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1007,11 +1004,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">响应式</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1019,15 +1012,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
+                <a href="javascript:void(0)" class="color4">响应式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
+                <a href="javascript:void(0)" class="color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Mobx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
