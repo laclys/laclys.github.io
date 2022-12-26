@@ -10,19 +10,20 @@
   <title>React Native学习--布局问题 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios/Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑=。=）。 今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而RN，是面向ios/Andro">
-<meta name="keywords" content="react-native,react">
+  <meta name="description" content="最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios&#x2F;Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑&#x3D;。&#x3D;）。 今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native学习--布局问题">
-<meta property="og:url" content="http://yoursite.com/2017/06/10/React-Native学习--布局问题/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios/Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑=。=）。 今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而RN，是面向ios/Andro">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios&#x2F;Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑&#x3D;。&#x3D;）。 今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170610.png">
-<meta property="og:updated_time" content="2017-06-10T08:49:20.000Z">
+<meta property="article:published_time" content="2017-06-10T08:49:20.000Z">
+<meta property="article:modified_time" content="2017-06-10T08:49:20.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="react-native">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native学习--布局问题">
-<meta name="twitter:description" content="最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios/Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑=。=）。 今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而RN，是面向ios/Andro">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20170610.png">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -41,7 +42,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +56,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -109,10 +108,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -163,7 +160,7 @@
   
 
         
-        <a href="/2017/06/10/React-Native学习--布局问题/" class="archive-article-date">
+        <a href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/" class="archive-article-date">
   	<time datetime="2017-06-10T08:49:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
 </a>
         
@@ -171,30 +168,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios/Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑=。=）。</p>
-<p>今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而RN，是面向ios/Android的。既然RN对FlexBox支持。我们大可不必关心兼容性问题。</p>
-<h3 id="RN的单位"><a href="#RN的单位" class="headerlink" title="RN的单位"></a>RN的单位</h3><p>首先要说的是RN中的尺寸。<br>在RN中尺寸是没有单位的，他代表设备独立像素。<br>eg：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>,<span class="attr">margin</span>:<span class="number">40</span>,<span class="attr">backgroundColor</span>:<span class="string">'gray'</span>&#125;&#125;&gt;</span><br><span class="line">        &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">margin</span>:<span class="number">20</span>&#125;&#125;&gt;尺寸&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>View&gt;</span><br></pre></td></tr></table></figure></p>
+        <p>最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios&#x2F;Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑&#x3D;。&#x3D;）。</p>
+<p>今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而RN，是面向ios&#x2F;Android的。既然RN对FlexBox支持。我们大可不必关心兼容性问题。</p>
+<h3 id="RN的单位"><a href="#RN的单位" class="headerlink" title="RN的单位"></a>RN的单位</h3><p>首先要说的是RN中的尺寸。<br>在RN中尺寸是没有单位的，他代表设备独立像素。<br>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">View</span> style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>,<span class="attr">margin</span>:<span class="number">40</span>,<span class="attr">backgroundColor</span>:<span class="string">&#x27;gray&#x27;</span>&#125;&#125;&gt;</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;</span> &#123;<span class="attr">fontSize:16</span>,<span class="attr">margin:20</span>&#125;&#125;&gt;</span>尺寸<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">View</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>这里使用无单位的尺寸，是为了确保布局在任何不同的dpi的手机屏幕上不会发生改变。<br>在上面的代码中：</p>
 <p>运行在Android上时，View的长和宽被解释成：100dp 100dp单位是dp，字体被解释成16sp 单位是sp，运行在iOS上时尺寸单位被解释称了pt。</p>
-<a id="more"></a>
-<h3 id="RN-web-css上FlexBox的不同之处"><a href="#RN-web-css上FlexBox的不同之处" class="headerlink" title="RN/web css上FlexBox的不同之处"></a>RN/web css上FlexBox的不同之处</h3><pre><code>lexDirection: React Native中默认为flexDirection:&apos;column&apos;，在Web CSS中默认为flex-direction:&apos;row&apos;
+<span id="more"></span>
 
-alignItems: React Native中默认为alignItems:&apos;stretch&apos;，在Web CSS中默认align-items:&apos;flex-start&apos;
+<h3 id="RN-x2F-web-css上FlexBox的不同之处"><a href="#RN-x2F-web-css上FlexBox的不同之处" class="headerlink" title="RN&#x2F;web css上FlexBox的不同之处"></a>RN&#x2F;web css上FlexBox的不同之处</h3><pre><code>lexDirection: React Native中默认为flexDirection:&#39;column&#39;，在Web CSS中默认为flex-direction:&#39;row&#39;
+
+alignItems: React Native中默认为alignItems:&#39;stretch&#39;，在Web CSS中默认align-items:&#39;flex-start&#39;
 
 flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Native中flex只接受一个参数
 
 不支持属性：align-content，flex-basis，order，flex-basis，flex-flow，flex-grow，flex-shrink
-</code></pre><p>以上是React Native中的FlexBox 和Web CSSS上FlexBox的不同之处。</p>
+</code></pre>
+<p>以上是React Native中的FlexBox 和Web CSSS上FlexBox的不同之处。</p>
 <h3 id="Flex-in-React-Native"><a href="#Flex-in-React-Native" class="headerlink" title="Flex in React Native"></a>Flex in React Native</h3><p>容器属性：</p>
 <ul>
 <li>flexDirection enum(‘row’, ‘column’,’row-reverse’,’column-reverse’)</li>
-<li>flexWrap enum(‘wrap’, ‘nowrap’)（nowrap flex的元素只排列在一行上，可能导致溢出。/wrap flex的元素在一行排列不下时，就进行多行排列。）</li>
+<li>flexWrap enum(‘wrap’, ‘nowrap’)（nowrap flex的元素只排列在一行上，可能导致溢出。&#x2F;wrap flex的元素在一行排列不下时，就进行多行排列。）</li>
 <li>justifyContent enum(‘flex-start’, ‘flex-end’, ‘center’, ‘space-between’, ‘space-around’)</li>
 <li>alignItems enum(‘flex-start’, ‘flex-end’, ‘center’, ‘stretch’)</li>
 </ul>
 <p>子容器属性：</p>
 <ul>
-<li>alignSelf enum(‘auto’, ‘flex-start’, ‘flex-end’, ‘center’, ‘stretch’)<br>alignSelf 属性可重写灵活容器的 alignItems 属性。    </li>
+<li>alignSelf enum(‘auto’, ‘flex-start’, ‘flex-end’, ‘center’, ‘stretch’)<br>alignSelf 属性可重写灵活容器的 alignItems 属性。	</li>
 <li>flex number(属性定义了一个可伸缩元素的能力，默认为0)</li>
 </ul>
 <h3 id="其他布局-in-RN"><a href="#其他布局-in-RN" class="headerlink" title="其他布局 in RN"></a>其他布局 in RN</h3><p><strong>视图边框：</strong></p>
@@ -236,8 +236,8 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
 <li>position enum(‘absolute’, ‘relative’)属性设置元素的定位方式，为将要定位的元素定义定位规则。</li>
 </ul>
 <hr>
-<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">A Complete Guide to Flexbox </a><br><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="noopener">Using CSS flexible boxes</a></p>
-<p><img src="/assets/blogImg/20170610.png" alt=""></p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a target="_blank" rel="noopener" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox </a><br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">Using CSS flexible boxes</a></p>
+<p><img src="/assets/blogImg/20170610.png"></p>
 
       
 
@@ -272,11 +272,11 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">react-native</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">react-native</a>
         </li>
       
 		</ul>
@@ -305,7 +305,7 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
     </a>
   
   
-    <a href="/2017/06/04/react-native学习笔记(1)/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">react-native学习笔记</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -421,7 +421,7 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,31 +429,23 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,6 +457,22 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -473,11 +481,15 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -485,23 +497,7 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,11 +509,23 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,19 +533,11 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,11 +549,15 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,15 +565,11 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,7 +585,11 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,15 +597,15 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,15 +613,11 @@ flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Na
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

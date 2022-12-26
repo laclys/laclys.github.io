@@ -10,18 +10,19 @@
   <title>Webpack2小试 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="前端的水很深很杂，因而前端相关的工具也像雨后春笋一个一个的冒出来。最近大热的应该就数webpack–这个模块化解决方案工具。 Gulp/Grunt VS Webpack首先这三者都是前端工具，都等让我们高效自动化的解决一些问题。但实质上webpack和Gulp/Grunt有本质的区别。 先谈谈前者。Gulp/Grunt两者的区别，暂且不在这说了。用处的话，两者可以帮我们自动刷新页面，压缩css/j">
-<meta name="keywords" content="前端,webpack">
+  <meta name="description" content="前端的水很深很杂，因而前端相关的工具也像雨后春笋一个一个的冒出来。最近大热的应该就数webpack–这个模块化解决方案工具。 Gulp&#x2F;Grunt VS Webpack首先这三者都是前端工具，都等让我们高效自动化的解决一些问题。但实质上webpack和Gulp&#x2F;Grunt有本质的区别。 先谈谈前者。Gulp&#x2F;Grunt两者的区别，暂且不在这说了。用处的话，两者可以帮我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack2小试">
-<meta property="og:url" content="http://yoursite.com/2017/03/29/Webpack2小试/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/Webpack2%E5%B0%8F%E8%AF%95/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="前端的水很深很杂，因而前端相关的工具也像雨后春笋一个一个的冒出来。最近大热的应该就数webpack–这个模块化解决方案工具。 Gulp/Grunt VS Webpack首先这三者都是前端工具，都等让我们高效自动化的解决一些问题。但实质上webpack和Gulp/Grunt有本质的区别。 先谈谈前者。Gulp/Grunt两者的区别，暂且不在这说了。用处的话，两者可以帮我们自动刷新页面，压缩css/j">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-03-29T13:08:52.000Z">
+<meta property="og:description" content="前端的水很深很杂，因而前端相关的工具也像雨后春笋一个一个的冒出来。最近大热的应该就数webpack–这个模块化解决方案工具。 Gulp&#x2F;Grunt VS Webpack首先这三者都是前端工具，都等让我们高效自动化的解决一些问题。但实质上webpack和Gulp&#x2F;Grunt有本质的区别。 先谈谈前者。Gulp&#x2F;Grunt两者的区别，暂且不在这说了。用处的话，两者可以帮我">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-03-29T13:08:52.000Z">
+<meta property="article:modified_time" content="2017-03-29T13:08:52.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack2小试">
-<meta name="twitter:description" content="前端的水很深很杂，因而前端相关的工具也像雨后春笋一个一个的冒出来。最近大热的应该就数webpack–这个模块化解决方案工具。 Gulp/Grunt VS Webpack首先这三者都是前端工具，都等让我们高效自动化的解决一些问题。但实质上webpack和Gulp/Grunt有本质的区别。 先谈谈前者。Gulp/Grunt两者的区别，暂且不在这说了。用处的话，两者可以帮我们自动刷新页面，压缩css/j">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +40,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +54,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +106,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +158,7 @@
   
 
         
-        <a href="/2017/03/29/Webpack2小试/" class="archive-article-date">
+        <a href="/2017/03/29/Webpack2%E5%B0%8F%E8%AF%95/" class="archive-article-date">
   	<time datetime="2017-03-29T13:08:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-29</time>
 </a>
         
@@ -170,23 +167,30 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>前端的水很深很杂，因而前端相关的工具也像雨后春笋一个一个的冒出来。最近大热的应该就数webpack–这个模块化解决方案工具。</p>
-<h3 id="Gulp-Grunt-VS-Webpack"><a href="#Gulp-Grunt-VS-Webpack" class="headerlink" title="Gulp/Grunt VS Webpack"></a>Gulp/Grunt VS Webpack</h3><p>首先这三者都是前端工具，都等让我们高效自动化的解决一些问题。但实质上webpack和Gulp/Grunt有本质的区别。</p>
-<p>先谈谈前者。Gulp/Grunt两者的区别，暂且不在这说了。用处的话，两者可以帮我们自动刷新页面，压缩css/js/html以及便宜sass/less。简单的说只要你配置你需要的插件，就可以把以前需要手动做的事情让它帮你完成。那官方的话来说就是—-TaskRunner。可以做到node能做到的任何事。</p>
+<h3 id="Gulp-x2F-Grunt-VS-Webpack"><a href="#Gulp-x2F-Grunt-VS-Webpack" class="headerlink" title="Gulp&#x2F;Grunt VS Webpack"></a>Gulp&#x2F;Grunt VS Webpack</h3><p>首先这三者都是前端工具，都等让我们高效自动化的解决一些问题。但实质上webpack和Gulp&#x2F;Grunt有本质的区别。</p>
+<p>先谈谈前者。Gulp&#x2F;Grunt两者的区别，暂且不在这说了。用处的话，两者可以帮我们自动刷新页面，压缩css&#x2F;js&#x2F;html以及便宜sass&#x2F;less。简单的说只要你配置你需要的插件，就可以把以前需要手动做的事情让它帮你完成。那官方的话来说就是—-TaskRunner。可以做到node能做到的任何事。</p>
 <p>而Webpack，简单的说：就是一个针对Javascript代码模块的打包工具。作为一个 module bundler 存在。<br>在我的理解来看：webpack 更多的是用来打包前端代码。 webpack 并不暴露文件处理的细节，<br>你只是把一堆文件丢给它，告诉它用什么 loader 来处理什么文件，然后就可以等着输出了。</p>
 <p>webpack相比gulp来说功能单一一些，更简化一些。当然两者也有交际例如什么预编译,压缩代码之类的。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <h3 id="How-to-use-Webpack2"><a href="#How-to-use-Webpack2" class="headerlink" title="How to use Webpack2"></a>How to use Webpack2</h3><p>首先需要npm install 相关的模块：<br>    npm i webpack –save-dev</p>
-<p>之后在根目录下建一个webpack.config.js,来配置webpack。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: __dirname + <span class="string">'/dist'</span>,</span><br><span class="line">        filename: <span class="string">'js/[name].bundle.js'</span>,</span><br><span class="line">    &#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>entry为webpack寻找的入口。output便是处理之后输出文件的地址。(__dirname这里指根目录)<br>在entry中的js文件里我们可以通过import或者require引入依赖。<br>源文件都放在了src目录中:<br>└─src<br>    └─www<br>        ├─css<br>        ├─img<br>        └─js<br>在src目录下有一个app.js。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./www/js/js-test.js'</span></span><br></pre></td></tr></table></figure></p>
-<p>分别调用了css/js文件夹的内容。<br>test-css.css<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="comment">/*background: red;*/</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../img/test-img.jpg);</span><br><span class="line">    <span class="attribute">background-size</span>: contain;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>js-test.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">12345</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>之后在根目录下建一个webpack.config.js,来配置webpack。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">&#x27;webpack&#x27;</span>);</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">entry</span>: <span class="string">&#x27;./src/app.js&#x27;</span>,</span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="attr">path</span>: __dirname + <span class="string">&#x27;/dist&#x27;</span>,</span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&#x27;js/[name].bundle.js&#x27;</span>,</span><br><span class="line">    &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>entry为webpack寻找的入口。output便是处理之后输出文件的地址。(__dirname这里指根目录)<br>在entry中的js文件里我们可以通过import或者require引入依赖。<br>源文件都放在了src目录中:<br>└─src<br>    └─www<br>        ├─css<br>        ├─img<br>        └─js<br>在src目录下有一个app.js。如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./www/js/js-test.js&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>分别调用了css&#x2F;js文件夹的内容。<br>test-css.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="comment">/*background: red;*/</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">../img/test-img.jpg</span>);</span><br><span class="line">    <span class="attribute">background-size</span>: contain;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>js-test.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">a</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">12345</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>之后在命令行就可以运行webpack了。不过在这之前 我们可以在package.json文件中对webpack命令进行一下小配置：<br>在script下添加<br>        “webpack”: “webpack –config webpack.config.js –progress –display-modules –colors –display-reasons”</p>
 <p><em>分别是显示过程 显示模块 高亮 以及执行原因</em></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run webpack</span><br></pre></td></tr></table></figure>
 <p>在dist文件夹就生成了 打包好的js文件：main.bundle.js。</p>
-<h3 id="Loaders"><a href="#Loaders" class="headerlink" title="Loaders"></a>Loaders</h3><p>前面 说的都是关于打包JS代码。我们的webpack当然能力不仅仅是这些。通过各种文件的loader，我们可以处理各种文件。。前提是我们将他传入js代码中。<br>比如处理css的css-loader/style-loader。css预处理loader：postcss-loader。处理sass的sass-loader。图片文件的file-loader和url-loader。这些loader我们都可以通过npm i 来下载使用。<br>这里简单说一个css-loader/style-loader。<br>首先我们要在app.js中引入css文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./www/css/test-css.css'</span>;</span><br></pre></td></tr></table></figure></p>
-<p>之后在webpack.config.js中配置插件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">        loaders: [&#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                loader: <span class="string">'style-loader!css-loader'</span><span class="comment">//从右向左执行。先执行css-loader，再执行style-loader</span></span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure></p>
-<p>之后在命令行运行一下就ok了。<br>webpack的使用很灵活处理ES6=&gt;ES5。给css代码加前缀····<br>github：<a href="https://github.com/laclys/webpack2_Demo/tree/master/webpack0329" target="_blank" rel="noopener">https://github.com/laclys/webpack2_Demo/tree/master/webpack0329</a></p>
+<h3 id="Loaders"><a href="#Loaders" class="headerlink" title="Loaders"></a>Loaders</h3><p>前面 说的都是关于打包JS代码。我们的webpack当然能力不仅仅是这些。通过各种文件的loader，我们可以处理各种文件。。前提是我们将他传入js代码中。<br>比如处理css的css-loader&#x2F;style-loader。css预处理loader：postcss-loader。处理sass的sass-loader。图片文件的file-loader和url-loader。这些loader我们都可以通过npm i 来下载使用。<br>这里简单说一个css-loader&#x2F;style-loader。<br>首先我们要在app.js中引入css文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./www/css/test-css.css&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>之后在webpack.config.js中配置插件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">module</span>: &#123;</span><br><span class="line">        <span class="attr">loaders</span>: [&#123;</span><br><span class="line">                <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                <span class="attr">loader</span>: <span class="string">&#x27;style-loader!css-loader&#x27;</span><span class="comment">//从右向左执行。先执行css-loader，再执行style-loader</span></span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>之后在命令行运行一下就ok了。<br>webpack的使用很灵活处理ES6&#x3D;&gt;ES5。给css代码加前缀····<br>github：<a target="_blank" rel="noopener" href="https://github.com/laclys/webpack2_Demo/tree/master/webpack0329">https://github.com/laclys/webpack2_Demo/tree/master/webpack0329</a></p>
 <p>以上~</p>
 
       
@@ -245,7 +249,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/10/VueJS组件化开发实践总结/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/10/VueJS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -255,7 +259,7 @@
     </a>
   
   
-    <a href="/2017/03/23/Angular1.5到Angular1.6的JSONP相关的设置及小Demo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/03/23/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Angular1.5到Angular1.6的JSONP交互相关的设置及小Demo</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -371,7 +375,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -379,31 +383,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -415,6 +411,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -423,11 +435,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -435,23 +451,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -463,11 +463,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,19 +487,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,11 +503,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,15 +519,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +539,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,15 +551,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,15 +567,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

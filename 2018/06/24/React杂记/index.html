@@ -10,19 +10,19 @@
   <title>React杂记 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="（上海·凌空SOHO） React性能优化：性能优化老生常谈，网上的文章也一大堆，自己总结一下，也做一个记录。 1）单组件：传递参数要少传，尽可能减少React在传递参数时候的负担。当然在使用数据的时候尽可能使用一份数据，而不是重新定义一份。 在使用 函数的时候： NG： 每次执行render函数的时候bind都会执行一次1&amp;lt;button onClick=&amp;#123;this.handleC">
-<meta name="keywords" content="react">
+  <meta name="description" content="（上海·凌空SOHO） React性能优化：性能优化老生常谈，网上的文章也一大堆，自己总结一下，也做一个记录。 1）单组件：传递参数要少传，尽可能减少React在传递参数时候的负担。当然在使用数据的时候尽可能使用一份数据，而不是重新定义一份。 在使用 函数的时候： NG： 每次执行render函数的时候bind都会执行一次 1&lt;button onClick&#x3D;&amp;#123;this.handle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React杂记">
-<meta property="og:url" content="http://yoursite.com/2018/06/24/React杂记/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/React%E6%9D%82%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="（上海·凌空SOHO） React性能优化：性能优化老生常谈，网上的文章也一大堆，自己总结一下，也做一个记录。 1）单组件：传递参数要少传，尽可能减少React在传递参数时候的负担。当然在使用数据的时候尽可能使用一份数据，而不是重新定义一份。 在使用 函数的时候： NG： 每次执行render函数的时候bind都会执行一次1&amp;lt;button onClick=&amp;#123;this.handleC">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="（上海·凌空SOHO） React性能优化：性能优化老生常谈，网上的文章也一大堆，自己总结一下，也做一个记录。 1）单组件：传递参数要少传，尽可能减少React在传递参数时候的负担。当然在使用数据的时候尽可能使用一份数据，而不是重新定义一份。 在使用 函数的时候： NG： 每次执行render函数的时候bind都会执行一次 1&lt;button onClick&#x3D;&amp;#123;this.handle">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180624-01.jpg">
-<meta property="og:updated_time" content="2018-06-24T04:22:37.385Z">
+<meta property="article:published_time" content="2018-06-23T17:11:58.961Z">
+<meta property="article:modified_time" content="2018-06-24T04:22:37.385Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React杂记">
-<meta name="twitter:description" content="（上海·凌空SOHO） React性能优化：性能优化老生常谈，网上的文章也一大堆，自己总结一下，也做一个记录。 1）单组件：传递参数要少传，尽可能减少React在传递参数时候的负担。当然在使用数据的时候尽可能使用一份数据，而不是重新定义一份。 在使用 函数的时候： NG： 每次执行render函数的时候bind都会执行一次1&amp;lt;button onClick=&amp;#123;this.handleC">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20180624-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -41,7 +41,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +55,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -109,10 +107,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -163,7 +159,7 @@
   
 
         
-        <a href="/2018/06/24/React杂记/" class="archive-article-date">
+        <a href="/2018/06/24/React%E6%9D%82%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2018-06-23T17:11:58.961Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
 </a>
         
@@ -171,24 +167,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/assets/blogImg/20180624-01.jpg" alt=""><br>（上海·凌空SOHO）</p>
+        <p><img src="/assets/blogImg/20180624-01.jpg"><br>（上海·凌空SOHO）</p>
 <h3 id="React性能优化："><a href="#React性能优化：" class="headerlink" title="React性能优化："></a>React性能优化：</h3><p>性能优化老生常谈，网上的文章也一大堆，自己总结一下，也做一个记录。</p>
 <p>1）单组件：传递参数要少传，尽可能减少React在传递参数时候的负担。当然在使用数据的时候尽可能使用一份数据，而不是重新定义一份。</p>
 <p>在使用 函数的时候：</p>
 <p>NG：</p>
-<p>每次执行render函数的时候bind都会执行一次<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick.bind(this)&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>比上一个好一点，但每次执行render的时候都会重新生成一个函数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.handleClick()&#125;&gt;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>每次执行render函数的时候bind都会执行一次</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick.bind(this)&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>比上一个好一点，但每次执行render的时候都会重新生成一个函数</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.handleClick()&#125;&gt;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Good：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props)</span><br><span class="line">  <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>) <span class="comment">// 构造函数只会执行一次。在构造函数中绑定this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="variable language_">super</span>(props)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">handleClick</span> = <span class="variable language_">this</span>.<span class="property">handleClick</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>) <span class="comment">// 构造函数只会执行一次。在构造函数中绑定this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>在传递参数的时候<br>NG：<br>每次都会生成新对象<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;color:</span> '<span class="attr">red</span>'&#125;&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+<span id="more"></span>
+
+<p>在传递参数的时候<br>NG：<br>每次都会生成新对象</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;color:</span> &#x27;<span class="attr">red</span>&#x27;&#125;&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>GOOD：</p>
 <p>提前定义好需要的对象。目的就是使用一份数据，而不是重新定义一份</p>
 <p>再给子组件传递参数的时候 ，只传递需要的参数。！</p>
-<p>2） 多组件：<br>说道多组件有一个情况就是：子组件是不需要变化的，但是父组件的render执行了变化，子组件也会跟着再次渲染<br>例,fu组件render中通过一个改变name的btn，使state中的name变化。在点击按钮的时候，state中的title没有变化，childCom渲染的内容没有改变当然是不需要再渲染的，但事实上childCom又重新渲染了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;hello,&#123;<span class="keyword">this</span>.state.name&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button onClick=&#123;this.changeName&#125;&gt;&lt;/</span>button&gt;</span><br><span class="line">    &lt;childCom title = &#123;<span class="keyword">this</span>.state.title&#125; /&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2） 多组件：<br>说道多组件有一个情况就是：子组件是不需要变化的，但是父组件的render执行了变化，子组件也会跟着再次渲染<br>例,fu组件render中通过一个改变name的btn，使state中的name变化。在点击按钮的时候，state中的title没有变化，childCom渲染的内容没有改变当然是不需要再渲染的，但事实上childCom又重新渲染了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hello,&#123;this.state.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.changeName&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">childCom</span> <span class="attr">title</span> = <span class="string">&#123;this.state.title&#125;</span> /&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>ps：在react性能检测。在开发url中加上？react_perf-&gt;刷新在chrome中的performance中即可得到我们需要的性能检测的过程数据（重点看：user Timing）</p>
-<p>这是我们就可以在子组件里通多shouldComponentUpdate来处理组件需不需要渲染。默认直接return true渲染组件。这里我们不希望子组件在父组件title没变化的时候再次渲染，这里我们就要定制一下shouldComponentUpdate<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate(nextProps, nextState) &#123;</span><br><span class="line">  <span class="keyword">if</span> (nextProps.title == <span class="keyword">this</span>.props.title) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是我们就可以在子组件里通多shouldComponentUpdate来处理组件需不需要渲染。默认直接return true渲染组件。这里我们不希望子组件在父组件title没变化的时候再次渲染，这里我们就要定制一下shouldComponentUpdate</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">shouldComponentUpdate</span>(<span class="params">nextProps, nextState</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (nextProps.<span class="property">title</span> == <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">title</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当然在react15之后 使用pureComponent就可以了。它的核心原理也是重写了shouldComponentUpdate</p>
 <p>3）老生常谈key的问题</p>
 <p>4）使用不可变的JS（immutable.js）。在这里就不细说了，具体原理就是 通过不可变得数据结构（直接比较hash值）减少我们的渲染次数。</p>
@@ -196,8 +199,10 @@
 <p>6）React同构 SSR 首屏渲染速度</p>
 <h3 id="React-Context："><a href="#React-Context：" class="headerlink" title="React Context："></a>React Context：</h3><p>在使用react-redux的时候，我们要在最外层包裹一个Provider。把redux的store放进去。这样我们就可以在项目的任意组件中自由读取store内容了。这里用运用了context。</p>
 <p>context是全局的，组件声明，所有子元素可以直接获取</p>
-<p>context对数据校验强要求！(子/父都需要设置)</p>
-<p>这里是一个最简单的例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sidebar</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;Top Place&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;Navbar /</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Navbar extends React.Component &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  static contextTypes = &#123;</span></span><br><span class="line"><span class="regexp">    user: PropTypes.string</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  render () &#123;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;p&gt;&#123;this.context.user&#125;のNavbar Place&lt;/</span>p&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Page extends React.Component &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  static childContextTypes = &#123;</span></span><br><span class="line"><span class="regexp">    user: PropTypes.string</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  constructor (props) &#123;</span></span><br><span class="line"><span class="regexp">    super(props)</span></span><br><span class="line"><span class="regexp">    this.state = &#123;user: 'Lac'&#125;</span></span><br><span class="line"><span class="regexp">  &#125; </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  getChildContext () &#123;</span></span><br><span class="line"><span class="regexp">    return this.state</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  render () &#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;my name is &#123;this.state.user&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;Sidebar /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Page</span></span><br></pre></td></tr></table></figure></p>
+<p>context对数据校验强要求！(子&#x2F;父都需要设置)</p>
+<p>这里是一个最简单的例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">PropTypes</span> <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Sidebar</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Top Place<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Navbar</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Navbar</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> contextTypes = &#123;</span><br><span class="line">    <span class="attr">user</span>: <span class="title class_">PropTypes</span>.<span class="property">string</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;this.context.user&#125;のNavbar Place<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Page</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> childContextTypes = &#123;</span><br><span class="line">    <span class="attr">user</span>: <span class="title class_">PropTypes</span>.<span class="property">string</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span> (props) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;<span class="attr">user</span>: <span class="string">&#x27;Lac&#x27;</span>&#125;</span><br><span class="line">  &#125; </span><br><span class="line"></span><br><span class="line">  getChildContext () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">state</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>my name is &#123;this.state.user&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Sidebar</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Page</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>以上</p>
 <hr>
 <p>这两个月过得无比纠结，经验教训就是：真的没事别瞎折腾，非常累。</p>
@@ -265,7 +270,7 @@
     </a>
   
   
-    <a href="/2018/05/14/关于直播/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/14/%E5%85%B3%E4%BA%8E%E7%9B%B4%E6%92%AD/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">关于直播</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -381,7 +386,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -389,31 +394,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -425,6 +422,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -433,11 +446,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,23 +462,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,11 +474,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -485,19 +498,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,11 +514,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,15 +530,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,7 +550,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,15 +562,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,15 +578,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -11,18 +11,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="因为RN开始接触React，JSX相比HTML，更加简明。由于All in JS，如果在编写React代码的时候不注重代码的规范和整洁。后期维护起来会相当的痛苦。 正如文章所说:编程也是艺术行为，当我们丝毫代码复用、变量命名时，就是在进行艺术的思考。">
-<meta name="keywords" content="ReactNative,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React代码整洁之道笔记">
-<meta property="og:url" content="http://yoursite.com/2017/12/07/React代码整洁之道笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="因为RN开始接触React，JSX相比HTML，更加简明。由于All in JS，如果在编写React代码的时候不注重代码的规范和整洁。后期维护起来会相当的痛苦。 正如文章所说:编程也是艺术行为，当我们丝毫代码复用、变量命名时，就是在进行艺术的思考。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171207-01.jpg">
-<meta property="og:updated_time" content="2017-12-07T15:31:58.000Z">
+<meta property="article:published_time" content="2017-12-07T15:31:58.000Z">
+<meta property="article:modified_time" content="2017-12-07T15:31:58.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="ReactNative">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React代码整洁之道笔记">
-<meta name="twitter:description" content="因为RN开始接触React，JSX相比HTML，更加简明。由于All in JS，如果在编写React代码的时候不注重代码的规范和整洁。后期维护起来会相当的痛苦。 正如文章所说:编程也是艺术行为，当我们丝毫代码复用、变量命名时，就是在进行艺术的思考。">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20171207-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -41,7 +42,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +56,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -109,10 +108,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -163,7 +160,7 @@
   
 
         
-        <a href="/2017/12/07/React代码整洁之道笔记/" class="archive-article-date">
+        <a href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2017-12-07T15:31:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
 </a>
         
@@ -173,16 +170,16 @@
       
         <p>因为RN开始接触React，JSX相比HTML，更加简明。由于All in JS，如果在编写React代码的时候不注重代码的规范和整洁。后期维护起来会相当的痛苦。</p>
 <p>正如文章所说:编程也是艺术行为，当我们丝毫代码复用、变量命名时，就是在进行艺术的思考。</p>
-<p><img src="/assets/blogImg/20171207-01.jpg" alt=""></p>
-<a id="more"></a>
-<h3 id="不冗余"><a href="#不冗余" class="headerlink" title="不冗余"></a>不冗余</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Dirty</span></span><br><span class="line"><span class="keyword">const</span> MyComponent = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;OtherComponent type=<span class="string">"a"</span> className=<span class="string">"colorful"</span> foo=&#123;<span class="number">123</span>&#125; bar=&#123;<span class="number">456</span>&#125; /&gt;</span><br><span class="line">    &lt;OtherComponent type=<span class="string">"b"</span> className=<span class="string">"colorful"</span> foo=&#123;<span class="number">123</span>&#125; bar=&#123;<span class="number">456</span>&#125; /&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ Clean</span></span><br><span class="line"><span class="regexp">const MyOtherComponent = (&#123; type &#125;) =&gt; (</span></span><br><span class="line"><span class="regexp">  &lt;OtherComponent type=&#123;type&#125; className="colorful" foo=&#123;123&#125; bar=&#123;456&#125; /</span>&gt;</span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> MyComponent = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;MyOtherComponent type=<span class="string">"a"</span> /&gt;</span><br><span class="line">    &lt;MyOtherComponent type=<span class="string">"b"</span> /&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/20171207-01.jpg"></p>
+<span id="more"></span>
+
+<h3 id="不冗余"><a href="#不冗余" class="headerlink" title="不冗余"></a>不冗余</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Dirty</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">MyComponent</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">OtherComponent</span> <span class="attr">type</span>=<span class="string">&quot;a&quot;</span> <span class="attr">className</span>=<span class="string">&quot;colorful&quot;</span> <span class="attr">foo</span>=<span class="string">&#123;123&#125;</span> <span class="attr">bar</span>=<span class="string">&#123;456&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">OtherComponent</span> <span class="attr">type</span>=<span class="string">&quot;b&quot;</span> <span class="attr">className</span>=<span class="string">&quot;colorful&quot;</span> <span class="attr">foo</span>=<span class="string">&#123;123&#125;</span> <span class="attr">bar</span>=<span class="string">&#123;456&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Clean</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">MyOtherComponent</span> = (<span class="params">&#123; type &#125;</span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">OtherComponent</span> <span class="attr">type</span>=<span class="string">&#123;type&#125;</span> <span class="attr">className</span>=<span class="string">&quot;colorful&quot;</span> <span class="attr">foo</span>=<span class="string">&#123;123&#125;</span> <span class="attr">bar</span>=<span class="string">&#123;456&#125;</span> /&gt;</span></span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">MyComponent</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">MyOtherComponent</span> <span class="attr">type</span>=<span class="string">&quot;a&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">MyOtherComponent</span> <span class="attr">type</span>=<span class="string">&quot;b&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>但是要记住不要过度的优化，拆分。过度和破坏没什么区别。</p>
 <h3 id="可预测、可测试"><a href="#可预测、可测试" class="headerlink" title="可预测、可测试"></a>可预测、可测试</h3><p>这方面自己接触的不是很多，抽空有必要好好学习一下前端方面的测试</p>
 <h3 id="自我解释-斟酌变量名"><a href="#自我解释-斟酌变量名" class="headerlink" title="自我解释 斟酌变量名"></a>自我解释 斟酌变量名</h3><p>尽可能减少代码中的注释。可以通过让变量名更语义化、只注释复杂、潜在逻辑，来减少注释量，同时也提高了可维护性，毕竟不用总在代码与注释之间同步了。</p>
 <ul>
 <li>布尔值或者返回值是布尔类型的函数，命名以 is has should 开头</li>
-<li>函数以其效果命名，而不是怎么做的来命名<br>eg：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Dirty</span></span><br><span class="line"><span class="keyword">const</span> done = current &gt;= goal;</span><br><span class="line"><span class="comment">// Clean</span></span><br><span class="line"><span class="keyword">const</span> isComplete = current &gt;= goal;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dirty</span></span><br><span class="line"><span class="keyword">const</span> loadConfigFromServer = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// Clean</span></span><br><span class="line"><span class="keyword">const</span> loadConfig = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<li>函数以其效果命名，而不是怎么做的来命名<br>eg：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Dirty</span></span><br><span class="line"><span class="keyword">const</span> done = current &gt;= goal;</span><br><span class="line"><span class="comment">// Clean</span></span><br><span class="line"><span class="keyword">const</span> isComplete = current &gt;= goal;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dirty</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">loadConfigFromServer</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// Clean</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">loadConfig</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="遵循设计模式"><a href="#遵循设计模式" class="headerlink" title="遵循设计模式"></a>遵循设计模式</h3><p>这里所说的设计模式并不是工程上的，而是更广泛开发中的设计模式。比如使用standrad进行代码规范···</p>
 <p>对于 React，遵循以下几个最佳实践：</p>
@@ -229,11 +226,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
         </li>
       
 		</ul>
@@ -252,7 +249,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/09/Mongoose用法笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/09/Mongoose%E7%94%A8%E6%B3%95%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -262,7 +259,7 @@
     </a>
   
   
-    <a href="/2017/12/06/Express配合MongoDB简单使用/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Express配合MongoDB简单使用</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -378,7 +375,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -386,31 +383,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -422,6 +411,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -430,11 +435,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,23 +451,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -470,11 +463,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,19 +487,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,11 +503,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,15 +519,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,7 +539,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,15 +551,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,15 +567,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

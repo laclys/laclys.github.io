@@ -11,18 +11,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="最近在看ReactV16带来的新东西，V16版本直接支持了Portal。今儿就总结一下Portal这个自己不是那么熟悉却又非常重要的“传送门”吧。先说说为什么需要传送门。React的世界一切皆组件，进行render就需要一个root根节点进行挂载。组件套组件一层一层，不过最外面一层都是挂在在这个root根节点上的。 有一个常见的需求Dialog(弹窗),通常它会显示在屏幕正中央，它应该是一个独立的">
-<meta name="keywords" content="前端,react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Portal 小谈">
 <meta property="og:url" content="http://yoursite.com/2018/12/14/React_Portal/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="最近在看ReactV16带来的新东西，V16版本直接支持了Portal。今儿就总结一下Portal这个自己不是那么熟悉却又非常重要的“传送门”吧。先说说为什么需要传送门。React的世界一切皆组件，进行render就需要一个root根节点进行挂载。组件套组件一层一层，不过最外面一层都是挂在在这个root根节点上的。 有一个常见的需求Dialog(弹窗),通常它会显示在屏幕正中央，它应该是一个独立的">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20181214-1.jpg">
-<meta property="og:updated_time" content="2018-12-13T16:15:28.282Z">
+<meta property="article:published_time" content="2018-12-13T16:08:36.342Z">
+<meta property="article:modified_time" content="2018-12-13T16:15:28.282Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Portal 小谈">
-<meta name="twitter:description" content="最近在看ReactV16带来的新东西，V16版本直接支持了Portal。今儿就总结一下Portal这个自己不是那么熟悉却又非常重要的“传送门”吧。先说说为什么需要传送门。React的世界一切皆组件，进行render就需要一个root根节点进行挂载。组件套组件一层一层，不过最外面一层都是挂在在这个root根节点上的。 有一个常见的需求Dialog(弹窗),通常它会显示在屏幕正中央，它应该是一个独立的">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20181214-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -41,7 +42,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +56,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -109,10 +108,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -173,13 +170,16 @@
       
         <p>最近在看ReactV16带来的新东西，V16版本直接支持了Portal。今儿就总结一下Portal这个自己不是那么熟悉却又非常重要的“传送门”吧。<br>先说说为什么需要传送门。React的世界一切皆组件，进行render就需要一个root根节点进行挂载。组件套组件一层一层，不过最外面一层都是挂在在这个root根节点上的。</p>
 <p>有一个常见的需求Dialog(弹窗),通常它会显示在屏幕正中央，它应该是一个独立的组件。因此将这个弹窗组件放在根节点下的子组件里显然是不合适的。<br>我们希望将其渲染在和root根节点同级的DOM上在React组件树的最顶层。样式独立，没必要受其他组件的干扰。除了Dialog需要在最顶层渲染之外，我们还希望(也可以说是诉求)在不同的业务组件中去使用它。这里就需要Portal咯。</p>
-<p><img src="/assets/blogImg/20181214-1.jpg" alt=""><br>（ 天野喜孝展 ）<br><a id="more"></a></p>
-<h3 id="V16之前去实现Dialog"><a href="#V16之前去实现Dialog" class="headerlink" title="V16之前去实现Dialog"></a>V16之前去实现Dialog</h3><p>上代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; unstable_renderSubtreeIntoContainer, unmountComponentAtNode &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dialog</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">const</span> doc = <span class="built_in">window</span>.document</span><br><span class="line">    <span class="keyword">this</span>.node = doc.createElement(<span class="string">'div'</span>)</span><br><span class="line">    doc.body.appendChild(<span class="keyword">this</span>.node)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.renderPortal(<span class="keyword">this</span>.props)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidUpdate() &#123;</span><br><span class="line">    <span class="keyword">this</span>.renderPortal(<span class="keyword">this</span>.props)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    unmountComponentAtNode(<span class="keyword">this</span>.node)</span><br><span class="line">    <span class="built_in">window</span>.document.body.removeChild(<span class="keyword">this</span>.node)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  renderPortal(props) &#123;</span><br><span class="line">    unstable_renderSubtreeIntoContainer(</span><br><span class="line">      <span class="keyword">this</span>, <span class="comment">//当前组件</span></span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'dialog'</span>&gt;</span><br><span class="line">        &#123;props.children&#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;,</span></span><br><span class="line"><span class="regexp">      this.node </span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/assets/blogImg/20181214-1.jpg"><br>（ 天野喜孝展 ）</p>
+<span id="more"></span>
+<h3 id="V16之前去实现Dialog"><a href="#V16之前去实现Dialog" class="headerlink" title="V16之前去实现Dialog"></a>V16之前去实现Dialog</h3><p>上代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; unstable_renderSubtreeIntoContainer, unmountComponentAtNode &#125; <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dialog</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> doc = <span class="variable language_">window</span>.<span class="property">document</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">node</span> = doc.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">    doc.<span class="property">body</span>.<span class="title function_">appendChild</span>(<span class="variable language_">this</span>.<span class="property">node</span>)</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">renderPortal</span>(<span class="variable language_">this</span>.<span class="property">props</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentDidUpdate</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">renderPortal</span>(<span class="variable language_">this</span>.<span class="property">props</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentWillUnmount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">unmountComponentAtNode</span>(<span class="variable language_">this</span>.<span class="property">node</span>)</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(<span class="variable language_">this</span>.<span class="property">node</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">renderPortal</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="title function_">unstable_renderSubtreeIntoContainer</span>(</span><br><span class="line">      <span class="variable language_">this</span>, <span class="comment">//当前组件</span></span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;dialog&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;props.children&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>,</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">node</span> </span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>render返回的是null，在componentDidMount下在body上创建一个div。通过<code>renderPortal</code>将组件内容（props.children）塞进去</p>
 <p>这里主要用了 react-dom中 <code>unstable_renderSubtreeIntoContainer</code>, <code>unmountComponentAtNode</code>这两个库。<br>其中<code>unstable_renderSubtreeIntoContainer</code>算是一个React标准外的API，作用嘛就是“传送门”把一部分组件结构<br>塞到另外一个地方。</p>
 <p><code>unmountComponentAtNode</code>则是在componentWillUnmount这个生命周期里调用去清理<code>unstable_renderSubtreeIntoContainer</code>产生的副作用</p>
 <h3 id="V16实现Dialog"><a href="#V16实现Dialog" class="headerlink" title="V16实现Dialog"></a>V16实现Dialog</h3><p>React V16真的是一个巨大的版本。本身支持了<code>Portal</code>。提供了createPortal函数。<br>我们就不需要在componentDidMount、componentDidUpdate中<code>renderPortal</code>也不需要在去通过<code>unmountComponentAtNode</code>清理副作用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; createPortal &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dialog</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.node = doc.createElement(<span class="string">'div'</span>)</span><br><span class="line">    <span class="built_in">window</span>.document.body.appendChild(<span class="keyword">this</span>.node)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    <span class="built_in">window</span>.document.body.removeChild(<span class="keyword">this</span>.node)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> createPortal(</span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'dialog'</span>&gt;</span><br><span class="line">        &#123; <span class="keyword">this</span>.props.children &#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;,</span></span><br><span class="line"><span class="regexp">      this.node</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; createPortal &#125; <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dialog</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">node</span> = doc.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(<span class="variable language_">this</span>.<span class="property">node</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">componentWillUnmount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(<span class="variable language_">this</span>.<span class="property">node</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">createPortal</span>(</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;dialog&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123; this.props.children &#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>,</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">node</span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>以上~~~</p>
 <p>11中旬开始，异常地忙碌。项目需求真的是无穷无尽，大佬开会表示19年的需求都排满了。</p>
 <p>代码代码何时是个头。</p>
@@ -242,7 +242,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/13/说说React16的生命周期/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/13/%E8%AF%B4%E8%AF%B4React16%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -252,7 +252,7 @@
     </a>
   
   
-    <a href="/2018/10/19/ReactSSR样式及SEO/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/10/19/ReactSSR%E6%A0%B7%E5%BC%8F%E5%8F%8ASEO/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">ReactSSR样式及SEO</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -368,7 +368,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -376,31 +376,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -412,6 +404,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -420,11 +428,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -432,23 +444,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,11 +456,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,19 +480,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,11 +496,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,15 +512,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,7 +532,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,15 +544,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,15 +560,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

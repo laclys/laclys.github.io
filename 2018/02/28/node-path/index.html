@@ -11,17 +11,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="最近在看node，仿照anywhere，自己也撸了一个静态资源服务器。说道静态资源服务器，大量运用了路径层级这块。一开始又是相对路径，绝对路径，暴露的接口也是一大堆，有点懵逼。遂对着官方文档撸一遍，这里笔记总结一下。 path.basename(path[, ext]) path  路径 ext  可选参数  path.basename()返回路径的最后一部分 eg: 123456path.bas">
-<meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node-path">
 <meta property="og:url" content="http://yoursite.com/2018/02/28/node-path/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="最近在看node，仿照anywhere，自己也撸了一个静态资源服务器。说道静态资源服务器，大量运用了路径层级这块。一开始又是相对路径，绝对路径，暴露的接口也是一大堆，有点懵逼。遂对着官方文档撸一遍，这里笔记总结一下。 path.basename(path[, ext]) path  路径 ext  可选参数  path.basename()返回路径的最后一部分 eg: 123456path.bas">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-28T14:26:28.000Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-02-28T14:26:28.000Z">
+<meta property="article:modified_time" content="2018-02-28T14:26:28.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="node">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node-path">
-<meta name="twitter:description" content="最近在看node，仿照anywhere，自己也撸了一个静态资源服务器。说道静态资源服务器，大量运用了路径层级这块。一开始又是相对路径，绝对路径，暴露的接口也是一大堆，有点懵逼。遂对着官方文档撸一遍，这里笔记总结一下。 path.basename(path[, ext]) path  路径 ext  可选参数  path.basename()返回路径的最后一部分 eg: 123456path.bas">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +39,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +53,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +105,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -171,46 +167,66 @@
       
         <p>最近在看node，仿照anywhere，自己也撸了一个静态资源服务器。说道静态资源服务器，<br>大量运用了路径层级这块。一开始又是相对路径，绝对路径，暴露的接口也是一大堆，有点懵逼。<br>遂对着官方文档撸一遍，这里笔记总结一下。</p>
 <h3 id="path-basename-path-ext"><a href="#path-basename-path-ext" class="headerlink" title="path.basename(path[, ext])"></a>path.basename(path[, ext])</h3><ul>
-<li>path <string> 路径</string></li>
-<li>ext <string> 可选参数</string></li>
+<li>path <String> 路径</li>
+<li>ext <String> 可选参数</li>
 </ul>
 <p>path.basename()返回路径的最后一部分</p>
 <p>eg:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>);</span><br><span class="line"><span class="comment">// returns 'quux.html'</span></span><br><span class="line">path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>, <span class="string">'.html'</span>);</span><br><span class="line"><span class="comment">// returns 'quux'</span></span><br><span class="line">path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>, <span class="string">'ux.html'</span>);</span><br><span class="line"><span class="comment">// returns 'qu'</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">path.<span class="title function_">basename</span>(<span class="string">&#x27;/foo/bar/baz/asdf/quux.html&#x27;</span>);</span><br><span class="line"><span class="comment">// returns &#x27;quux.html&#x27;</span></span><br><span class="line">path.<span class="title function_">basename</span>(<span class="string">&#x27;/foo/bar/baz/asdf/quux.html&#x27;</span>, <span class="string">&#x27;.html&#x27;</span>);</span><br><span class="line"><span class="comment">// returns &#x27;quux&#x27;</span></span><br><span class="line">path.<span class="title function_">basename</span>(<span class="string">&#x27;/foo/bar/baz/asdf/quux.html&#x27;</span>, <span class="string">&#x27;ux.html&#x27;</span>);</span><br><span class="line"><span class="comment">// returns &#x27;qu&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <h3 id="path-dirname-path"><a href="#path-dirname-path" class="headerlink" title="path.dirname(path)"></a>path.dirname(path)</h3><ul>
-<li>path <string> 路径</string></li>
+<li>path <String> 路径</li>
 </ul>
 <p>path.dirname()返回path的所在路径</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">path.dirname(<span class="string">'/foo/bar/baz/asdf'</span>);</span><br><span class="line"><span class="comment">// returns '/foo/bar/baz'</span></span><br><span class="line">path.dirname(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>);</span><br><span class="line"><span class="comment">// returns '/foo/bar/baz/asdf'</span></span><br><span class="line">path.dirname(<span class="string">'quux.html'</span>);</span><br><span class="line"><span class="comment">// returns '.'</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">path.<span class="title function_">dirname</span>(<span class="string">&#x27;/foo/bar/baz/asdf&#x27;</span>);</span><br><span class="line"><span class="comment">// returns &#x27;/foo/bar/baz&#x27;</span></span><br><span class="line">path.<span class="title function_">dirname</span>(<span class="string">&#x27;/foo/bar/baz/asdf/quux.html&#x27;</span>);</span><br><span class="line"><span class="comment">// returns &#x27;/foo/bar/baz/asdf&#x27;</span></span><br><span class="line">path.<span class="title function_">dirname</span>(<span class="string">&#x27;quux.html&#x27;</span>);</span><br><span class="line"><span class="comment">// returns &#x27;.&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="path-extname-path"><a href="#path-extname-path" class="headerlink" title="path.extname(path)"></a>path.extname(path)</h3><ul>
-<li>path <string> 路径</string></li>
+<li>path <String> 路径</li>
 </ul>
 <p>返回路径最后一部分中的最后一个.字符到结尾截取的字符串，如果没有字符.，或者路径最后一部分的开头是字符.，则会返回空字符串。</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">path.extname(<span class="string">'index.html'</span>)</span><br><span class="line"><span class="comment">// returns '.html'</span></span><br><span class="line">path.extname(<span class="string">'index.coffee.md'</span>)</span><br><span class="line"><span class="comment">// returns '.md'</span></span><br><span class="line">path.extname(<span class="string">'index.'</span>)</span><br><span class="line"><span class="comment">// returns '.'</span></span><br><span class="line">path.extname(<span class="string">'index'</span>)</span><br><span class="line"><span class="comment">// returns ''</span></span><br><span class="line">path.extname(<span class="string">'.index'</span>)</span><br><span class="line"><span class="comment">// returns ''</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">path.<span class="title function_">extname</span>(<span class="string">&#x27;index.html&#x27;</span>)</span><br><span class="line"><span class="comment">// returns &#x27;.html&#x27;</span></span><br><span class="line">path.<span class="title function_">extname</span>(<span class="string">&#x27;index.coffee.md&#x27;</span>)</span><br><span class="line"><span class="comment">// returns &#x27;.md&#x27;</span></span><br><span class="line">path.<span class="title function_">extname</span>(<span class="string">&#x27;index.&#x27;</span>)</span><br><span class="line"><span class="comment">// returns &#x27;.&#x27;</span></span><br><span class="line">path.<span class="title function_">extname</span>(<span class="string">&#x27;index&#x27;</span>)</span><br><span class="line"><span class="comment">// returns &#x27;&#x27;</span></span><br><span class="line">path.<span class="title function_">extname</span>(<span class="string">&#x27;.index&#x27;</span>)</span><br><span class="line"><span class="comment">// returns &#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="path-normalize-path"><a href="#path-normalize-path" class="headerlink" title="path.normalize(path)"></a>path.normalize(path)</h3><ul>
-<li>path <string></string></li>
+<li>path <String></li>
 </ul>
 <p>使字符串路径标准化</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">path.normalize(<span class="string">'/foo/bar///baz/asdf/quux/../'</span>);</span><br><span class="line">    <span class="comment">// return '/foo/bar/baz/asdf/' posix</span></span><br><span class="line">    <span class="comment">// return '\\foo\\bar\\baz\\asdf\\' windows</span></span><br><span class="line">path.normalize(<span class="string">''</span>);</span><br><span class="line">    <span class="comment">// return '.'</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">path.<span class="title function_">normalize</span>(<span class="string">&#x27;/foo/bar///baz/asdf/quux/../&#x27;</span>);</span><br><span class="line">    <span class="comment">// return &#x27;/foo/bar/baz/asdf/&#x27; posix</span></span><br><span class="line">    <span class="comment">// return &#x27;\\foo\\bar\\baz\\asdf\\&#x27; windows</span></span><br><span class="line">path.<span class="title function_">normalize</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">    <span class="comment">// return &#x27;.&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="path-join-path1-path2-…"><a href="#path-join-path1-path2-…" class="headerlink" title="path.join([path1][, path2][, …])"></a>path.join([path1][, path2][, …])</h3><ul>
-<li>pathX <string></string></li>
+<li>pathX <String></li>
 </ul>
 <p>把所有字符串参数合到一起并返回标准化后的路径</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">path.join(<span class="string">'/foo/'</span>, <span class="string">'bar'</span>, <span class="string">'baz//asdf'</span>, <span class="string">'quux'</span>, <span class="string">'..'</span>, <span class="string">'test.html'</span>)</span><br><span class="line">    <span class="comment">// return '/foo/bar/baz/asdf/test.html'</span></span><br><span class="line">path.join(<span class="string">'/foo'</span>, <span class="string">''</span>, <span class="string">'test.html'</span>)</span><br><span class="line">    <span class="comment">// return '/foo/test.html'  如果有空字符串参数，则会被忽略</span></span><br><span class="line">path.join(<span class="string">''</span>)</span><br><span class="line">    <span class="comment">// return '.'  如果所有参数合到一起是空字符串，则会返回'.'，表示当前目录</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">path.<span class="title function_">join</span>(<span class="string">&#x27;/foo/&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;baz//asdf&#x27;</span>, <span class="string">&#x27;quux&#x27;</span>, <span class="string">&#x27;..&#x27;</span>, <span class="string">&#x27;test.html&#x27;</span>)</span><br><span class="line">    <span class="comment">// return &#x27;/foo/bar/baz/asdf/test.html&#x27;</span></span><br><span class="line">path.<span class="title function_">join</span>(<span class="string">&#x27;/foo&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;test.html&#x27;</span>)</span><br><span class="line">    <span class="comment">// return &#x27;/foo/test.html&#x27;  如果有空字符串参数，则会被忽略</span></span><br><span class="line">path.<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="comment">// return &#x27;.&#x27;  如果所有参数合到一起是空字符串，则会返回&#x27;.&#x27;，表示当前目录</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="path-isAbsolute-path"><a href="#path-isAbsolute-path" class="headerlink" title="path.isAbsolute(path)"></a>path.isAbsolute(path)</h3><ul>
-<li>path <string></string></li>
+<li>path <String></li>
 </ul>
 <p>判断path是否是绝对路径</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Posix</span></span><br><span class="line">path.isAbsolute(<span class="string">'/foo/bar'</span>) <span class="comment">// true</span></span><br><span class="line">path.isAbsolute(<span class="string">'/baz/..'</span>)  <span class="comment">// true</span></span><br><span class="line">path.isAbsolute(<span class="string">'qux/'</span>)     <span class="comment">// false</span></span><br><span class="line">path.isAbsolute(<span class="string">'.'</span>)        <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Windows</span></span><br><span class="line">path.isAbsolute(<span class="string">'//server'</span>)  <span class="comment">// true</span></span><br><span class="line">path.isAbsolute(<span class="string">'C:/foo/..'</span>) <span class="comment">// true</span></span><br><span class="line">path.isAbsolute(<span class="string">'bar\\baz'</span>)  <span class="comment">// false</span></span><br><span class="line">path.isAbsolute(<span class="string">'.'</span>)         <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Posix</span></span><br><span class="line">path.<span class="title function_">isAbsolute</span>(<span class="string">&#x27;/foo/bar&#x27;</span>) <span class="comment">// true</span></span><br><span class="line">path.<span class="title function_">isAbsolute</span>(<span class="string">&#x27;/baz/..&#x27;</span>)  <span class="comment">// true</span></span><br><span class="line">path.<span class="title function_">isAbsolute</span>(<span class="string">&#x27;qux/&#x27;</span>)     <span class="comment">// false</span></span><br><span class="line">path.<span class="title function_">isAbsolute</span>(<span class="string">&#x27;.&#x27;</span>)        <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Windows</span></span><br><span class="line">path.<span class="title function_">isAbsolute</span>(<span class="string">&#x27;//server&#x27;</span>)  <span class="comment">// true</span></span><br><span class="line">path.<span class="title function_">isAbsolute</span>(<span class="string">&#x27;C:/foo/..&#x27;</span>) <span class="comment">// true</span></span><br><span class="line">path.<span class="title function_">isAbsolute</span>(<span class="string">&#x27;bar\\baz&#x27;</span>)  <span class="comment">// false</span></span><br><span class="line">path.<span class="title function_">isAbsolute</span>(<span class="string">&#x27;.&#x27;</span>)         <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="path-format-pathObject"><a href="#path-format-pathObject" class="headerlink" title="path.format(pathObject)"></a>path.format(pathObject)</h3><p>根据参数pathObject返回路径字符串。</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If `dir` and `base` are provided, `dir` + platform separator + `base`</span></span><br><span class="line"><span class="comment">// will be returned.</span></span><br><span class="line">path.format(&#123;</span><br><span class="line">    dir: <span class="string">'/home/user/dir'</span>,</span><br><span class="line">    base: <span class="string">'file.txt'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// returns '/home/user/dir/file.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// `root` will be used if `dir` is not specified.</span></span><br><span class="line"><span class="comment">// `name` + `ext` will be used if `base` is not specified.</span></span><br><span class="line"><span class="comment">// If only `root` is provided or `dir` is equal to `root` then the</span></span><br><span class="line"><span class="comment">// platform separator will not be included.</span></span><br><span class="line">path.format(&#123;</span><br><span class="line">    root: <span class="string">'/'</span>,</span><br><span class="line">    base: <span class="string">'file.txt'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// returns '/file.txt'</span></span><br><span class="line"></span><br><span class="line">path.format(&#123;</span><br><span class="line">    dir: <span class="string">'/'</span>,</span><br><span class="line">    root: <span class="string">'/'</span>,</span><br><span class="line">    name: <span class="string">'file'</span>,</span><br><span class="line">    ext: <span class="string">'.txt'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// returns '/file.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// `base` will be returned if `dir` or `root` are not provided.</span></span><br><span class="line">path.format(&#123;</span><br><span class="line">    base: <span class="string">'file.txt'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// returns 'file.txt'</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If `dir` and `base` are provided, `dir` + platform separator + `base`</span></span><br><span class="line"><span class="comment">// will be returned.</span></span><br><span class="line">path.<span class="title function_">format</span>(&#123;</span><br><span class="line">    <span class="attr">dir</span>: <span class="string">&#x27;/home/user/dir&#x27;</span>,</span><br><span class="line">    <span class="attr">base</span>: <span class="string">&#x27;file.txt&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// returns &#x27;/home/user/dir/file.txt&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// `root` will be used if `dir` is not specified.</span></span><br><span class="line"><span class="comment">// `name` + `ext` will be used if `base` is not specified.</span></span><br><span class="line"><span class="comment">// If only `root` is provided or `dir` is equal to `root` then the</span></span><br><span class="line"><span class="comment">// platform separator will not be included.</span></span><br><span class="line">path.<span class="title function_">format</span>(&#123;</span><br><span class="line">    <span class="attr">root</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">base</span>: <span class="string">&#x27;file.txt&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// returns &#x27;/file.txt&#x27;</span></span><br><span class="line"></span><br><span class="line">path.<span class="title function_">format</span>(&#123;</span><br><span class="line">    <span class="attr">dir</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">root</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;file&#x27;</span>,</span><br><span class="line">    <span class="attr">ext</span>: <span class="string">&#x27;.txt&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// returns &#x27;/file.txt&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// `base` will be returned if `dir` or `root` are not provided.</span></span><br><span class="line">path.<span class="title function_">format</span>(&#123;</span><br><span class="line">    <span class="attr">base</span>: <span class="string">&#x27;file.txt&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// returns &#x27;file.txt&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="path-parse-pathString"><a href="#path-parse-pathString" class="headerlink" title="path.parse(pathString)"></a>path.parse(pathString)</h3><p>和path.format相反</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">path.parse(<span class="string">'/home/user/dir/file.txt'</span>)</span><br><span class="line"><span class="comment">// returns</span></span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//    root : "/",</span></span><br><span class="line"><span class="comment">//    dir : "/home/user/dir",</span></span><br><span class="line"><span class="comment">//    base : "file.txt",</span></span><br><span class="line"><span class="comment">//    ext : ".txt",</span></span><br><span class="line"><span class="comment">//    name : "file"</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">path.<span class="title function_">parse</span>(<span class="string">&#x27;/home/user/dir/file.txt&#x27;</span>)</span><br><span class="line"><span class="comment">// returns</span></span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//    root : &quot;/&quot;,</span></span><br><span class="line"><span class="comment">//    dir : &quot;/home/user/dir&quot;,</span></span><br><span class="line"><span class="comment">//    base : &quot;file.txt&quot;,</span></span><br><span class="line"><span class="comment">//    ext : &quot;.txt&quot;,</span></span><br><span class="line"><span class="comment">//    name : &quot;file&quot;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="path-relative-from-to"><a href="#path-relative-from-to" class="headerlink" title="path.relative(from, to)"></a>path.relative(from, to)</h3><p>该方法根据两个绝对路径from和to解析出一个相对路径（说白了就是从一个绝对路径到另一个绝对路径是怎么走的）</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.relative(<span class="string">'/data/orandea/test/aaa'</span>, <span class="string">'/data/orandea/impl/bbb'</span>)</span><br><span class="line"><span class="comment">// returns '../../impl/bbb'</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.<span class="title function_">relative</span>(<span class="string">&#x27;/data/orandea/test/aaa&#x27;</span>, <span class="string">&#x27;/data/orandea/impl/bbb&#x27;</span>)</span><br><span class="line"><span class="comment">// returns &#x27;../../impl/bbb&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="path-resolve-from-…-to"><a href="#path-resolve-from-…-to" class="headerlink" title="path.resolve([from …], to)"></a>path.resolve([from …], to)</h3><p>简单讲就是执行一连串的cd命令，执行后返回一个绝对路径</p>
-<p>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> foo/bar</span><br><span class="line"><span class="built_in">cd</span> /tmp/file/</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> a/../subfile</span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></p>
+<p>eg:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> foo/bar</span><br><span class="line"><span class="built_in">cd</span> /tmp/file/</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> a/../subfile</span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -274,7 +290,7 @@
     </a>
   
   
-    <a href="/2018/02/06/node服务器开发上线小记/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/02/06/node%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%8A%E7%BA%BF%E5%B0%8F%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">node服务器开发上线小记</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -390,7 +406,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -398,31 +414,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,6 +442,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -442,11 +466,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,23 +482,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,11 +494,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,19 +518,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,11 +534,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,15 +550,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,7 +570,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,15 +582,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,15 +598,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

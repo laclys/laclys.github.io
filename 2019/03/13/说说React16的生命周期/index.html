@@ -10,18 +10,18 @@
   <title>说说React16的生命周期 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="React16算是React诞生至今变化相当大的一个版本，在v16版本中陆陆续续新增/修改了很多地方。最新的release版本已经到了v16.8.4。不管是平时工作还是自己学习都已经使用上了v16这个版本 这里就简单说一下v16里的生命周期(虽说是老生常谈，但仔细看文档还是发现了一些之前没注意、不怎么用的东西比如getDerivedStateFromProps和getSnapshotBeforeU">
-<meta name="keywords" content="react">
+  <meta name="description" content="React16算是React诞生至今变化相当大的一个版本，在v16版本中陆陆续续新增&#x2F;修改了很多地方。最新的release版本已经到了v16.8.4。不管是平时工作还是自己学习都已经使用上了v16这个版本 这里就简单说一下v16里的生命周期(虽说是老生常谈，但仔细看文档还是发现了一些之前没注意、不怎么用的东西比如getDerivedStateFromProps和getSnapshotBe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="说说React16的生命周期">
-<meta property="og:url" content="http://yoursite.com/2019/03/13/说说React16的生命周期/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/13/%E8%AF%B4%E8%AF%B4React16%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="React16算是React诞生至今变化相当大的一个版本，在v16版本中陆陆续续新增/修改了很多地方。最新的release版本已经到了v16.8.4。不管是平时工作还是自己学习都已经使用上了v16这个版本 这里就简单说一下v16里的生命周期(虽说是老生常谈，但仔细看文档还是发现了一些之前没注意、不怎么用的东西比如getDerivedStateFromProps和getSnapshotBeforeU">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-22T09:54:51.264Z">
+<meta property="og:description" content="React16算是React诞生至今变化相当大的一个版本，在v16版本中陆陆续续新增&#x2F;修改了很多地方。最新的release版本已经到了v16.8.4。不管是平时工作还是自己学习都已经使用上了v16这个版本 这里就简单说一下v16里的生命周期(虽说是老生常谈，但仔细看文档还是发现了一些之前没注意、不怎么用的东西比如getDerivedStateFromProps和getSnapshotBe">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-03-12T16:53:39.211Z">
+<meta property="article:modified_time" content="2019-03-22T09:54:51.264Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="说说React16的生命周期">
-<meta name="twitter:description" content="React16算是React诞生至今变化相当大的一个版本，在v16版本中陆陆续续新增/修改了很多地方。最新的release版本已经到了v16.8.4。不管是平时工作还是自己学习都已经使用上了v16这个版本 这里就简单说一下v16里的生命周期(虽说是老生常谈，但仔细看文档还是发现了一些之前没注意、不怎么用的东西比如getDerivedStateFromProps和getSnapshotBeforeU">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +39,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +53,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +105,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +157,7 @@
   
 
         
-        <a href="/2019/03/13/说说React16的生命周期/" class="archive-article-date">
+        <a href="/2019/03/13/%E8%AF%B4%E8%AF%B4React16%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
   	<time datetime="2019-03-12T16:53:39.211Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
 </a>
         
@@ -169,7 +165,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>React16算是React诞生至今变化相当大的一个版本，在<code>v16</code>版本中陆陆续续新增/修改了很多地方。最新的release版本已经到了<code>v16.8.4</code>。<br>不管是平时工作还是自己学习都已经使用上了v16这个版本</p>
+        <p>React16算是React诞生至今变化相当大的一个版本，在<code>v16</code>版本中陆陆续续新增&#x2F;修改了很多地方。最新的release版本已经到了<code>v16.8.4</code>。<br>不管是平时工作还是自己学习都已经使用上了v16这个版本</p>
 <p>这里就简单说一下v16里的生命周期(虽说是老生常谈，但仔细看文档还是发现了一些之前没注意、不怎么用的东西比如<code>getDerivedStateFromProps</code>和<code>getSnapshotBeforeUpdate</code>)</p>
 <p>react生命周期分三个阶段：挂载、更新、卸载 , v16多出了一个异常捕获(<code>componentDidCatch</code>)</p>
 <h3 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h3><ul>
@@ -184,10 +180,10 @@
 </ul>
 <ol>
 <li>初始化 state(注意避免使用props给state赋值)</li>
-<li>给方法绑定this<br>但在v16之后这两件事在<code>constructor</code>外面做会更直观更简单(v16之后<code>constructor</code>使用场景会变少)<br>eg：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  handleClick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// xxx</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>给方法绑定this<br>但在v16之后这两件事在<code>constructor</code>外面做会更直观更简单(v16之后<code>constructor</code>使用场景会变少)<br>eg：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  handleClick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// xxx</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
+
 <ul>
 <li>componentWillMount:</li>
 </ul>
@@ -195,7 +191,8 @@
 <ul>
 <li>static getDerivedStateFromProps</li>
 </ul>
-<p>这个就是再次看文档的新发现。上面说到应避免使用props给state赋值。v16给与了我们这个静态方法（挂载组件时，它会在<code>render</code>之前执行）<br>eg：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// getDerivedStateFromProps的返回值将作为setState的参数，如果返回null，则不更新state，不能返回object 或 null 以外的值，否则会警告。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test2</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    b: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> getDerivedStateFromProps(props, state): State &#123;</span><br><span class="line">    <span class="keyword">if</span>(props.b !== state.b) &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        b: props.b</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个就是再次看文档的新发现。上面说到应避免使用props给state赋值。v16给与了我们这个静态方法（挂载组件时，它会在<code>render</code>之前执行）<br>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// getDerivedStateFromProps的返回值将作为setState的参数，如果返回null，则不更新state，不能返回object 或 null 以外的值，否则会警告。</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test2</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    <span class="attr">b</span>: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">getDerivedStateFromProps</span>(props, state): <span class="title class_">State</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(props.<span class="property">b</span> !== state.<span class="property">b</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">b</span>: props.<span class="property">b</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>另外需要提一下，<code>getDerivedStateFromProps</code>是静态方法，故拿不到this，所以我们需要把它设计为纯函数。</p>
 <p>同时也会发现有了这个静态方法，<code>componentWillReceiveProps</code>好像也没什么用了（这就能解释为什么v16也把它’删掉咯’）</p>
 <h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul>
@@ -208,10 +205,14 @@
 <p>这里就说说，另一个我之前没怎么注意到的点<code>getSnapshotBeforeUpdate</code></p>
 <p>在 react 更新 dom 之前调用，此时 state 已更新； 返回值作为 componentDidUpdate 的第3个参数； 一般用于获取 render 之前的 dom 数据</p>
 <p>eg：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test3</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  getSnapshotBeforeUpdate (prevProps, prevState): Snapshot &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  componentDidUpdate(prevProps, prevState, snapshot) &#123;</span><br><span class="line">    <span class="comment">// snapshot 是从 getSnapshotBeforeUpdate 的返回值，默认是 null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="componentDidCatch"><a href="#componentDidCatch" class="headerlink" title="componentDidCatch"></a>componentDidCatch</h3><p>最后再说说这个异常捕获,用于捕获组件树的异常。v16版本引入了所谓<code>Error Boundary</code>的概念,而保证了发生在 UI 层的错误不会连锁导致整个应用程序崩溃。其实可以理解为<code>try···catch</code><br>通常我们可以使用这个捕获异常的生命周期钩子封装成一个这样的 <code>decorator</code>来包裹可能出错的组件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (message = <span class="string">'出错啦!'</span>) =&gt; <span class="function">(<span class="params">TargetComponent</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">ErrorBoundary</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span> (props) &#123;</span><br><span class="line">      <span class="keyword">super</span>(props)</span><br><span class="line">      <span class="keyword">this</span>.state = &#123;</span><br><span class="line">        hasError: <span class="literal">false</span>,</span><br><span class="line">        error: <span class="literal">null</span>,</span><br><span class="line">        info: <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidCatch (error, info) &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        hasError: <span class="literal">true</span>,</span><br><span class="line">        error,</span><br><span class="line">        info</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; hasError &#125; = <span class="keyword">this</span>.state</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (hasError) &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">          &lt;div className=<span class="string">'error-boundary'</span>&gt;</span><br><span class="line">            &lt;p className=<span class="string">'error-boundary-message'</span>&gt;</span><br><span class="line">              &#123; message &#125;</span><br><span class="line">            &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &#123; this.renderError() &#125;</span></span><br><span class="line"><span class="regexp">            &#123; this.renderComponentStack() &#125;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;TargetComponent &#123; ...this.props &#125; /&gt;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    renderError () &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; error &#125; = <span class="keyword">this</span>.state</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!error) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;div className=<span class="string">'error-boundary-info'</span>&gt;</span><br><span class="line">          &lt;h6&gt;<span class="built_in">Error</span> Stack:<span class="xml"><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &#123;</span><br><span class="line">              error.stack.split(<span class="string">'\n'</span>).map(<span class="function">(<span class="params">line, index</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> (</span><br><span class="line">                  &lt;p key=&#123; index &#125;&gt;&#123; line &#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">                )</span></span><br><span class="line"><span class="regexp">              &#125;)</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>div&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    renderComponentStack() &#123;</span></span><br><span class="line"><span class="regexp">      const &#123; info &#125; = this.state</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      if (!info || !info.componentStack) &#123;</span></span><br><span class="line"><span class="regexp">        return null</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      return (</span></span><br><span class="line"><span class="regexp">        &lt;div className='error-boundary-info'&gt;</span></span><br><span class="line"><span class="regexp">          &lt;h6&gt;ErrorInfo componentStack:&lt;/</span>h6&gt;</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &#123;</span><br><span class="line">              info.componentStack.split(<span class="string">'\n'</span>).map(<span class="function">(<span class="params">line, index</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> (</span><br><span class="line">                  &lt;p key=&#123; index &#125;&gt;&#123; line &#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">                )</span></span><br><span class="line"><span class="regexp">              &#125;)</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>div&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  return ErrorBoundary</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="完整新生命周期"><a href="#完整新生命周期" class="headerlink" title="完整新生命周期"></a>完整新生命周期</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="comment">// 初始化state方式（1）</span></span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> defaultProps = &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 初始化state方式（2）</span></span><br><span class="line">  state = &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> getDerivedStateFromProps(props, state) &#123;</span><br><span class="line">    <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidCatch(error, info) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  shouldComponentUpdate(nextProps, nextState) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  getSnapshotBeforeUpdate(prevProps, prevState) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  componentDidUpdate(prevProps, prevState, snapshot) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test3</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  getSnapshotBeforeUpdate (prevProps, prevState): <span class="title class_">Snapshot</span> &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">componentDidUpdate</span>(<span class="params">prevProps, prevState, snapshot</span>) &#123;</span><br><span class="line">    <span class="comment">// snapshot 是从 getSnapshotBeforeUpdate 的返回值，默认是 null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="componentDidCatch"><a href="#componentDidCatch" class="headerlink" title="componentDidCatch"></a>componentDidCatch</h3><p>最后再说说这个异常捕获,用于捕获组件树的异常。v16版本引入了所谓<code>Error Boundary</code>的概念,而保证了发生在 UI 层的错误不会连锁导致整个应用程序崩溃。其实可以理解为<code>try···catch</code><br>通常我们可以使用这个捕获异常的生命周期钩子封装成一个这样的 <code>decorator </code>来包裹可能出错的组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">Component</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (message = <span class="string">&#x27;出错啦!&#x27;</span>) =&gt; <span class="function">(<span class="params">TargetComponent</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">class</span> <span class="title class_">ErrorBoundary</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">constructor</span> (props) &#123;</span><br><span class="line">      <span class="variable language_">super</span>(props)</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">        <span class="attr">hasError</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">error</span>: <span class="literal">null</span>,</span><br><span class="line">        <span class="attr">info</span>: <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidCatch (error, info) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">        <span class="attr">hasError</span>: <span class="literal">true</span>,</span><br><span class="line">        error,</span><br><span class="line">        info</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; hasError &#125; = <span class="variable language_">this</span>.<span class="property">state</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (hasError) &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">          <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#x27;error-boundary&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">className</span>=<span class="string">&#x27;error-boundary-message&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123; message &#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123; this.renderError() &#125;</span></span><br><span class="line"><span class="language-xml">            &#123; this.renderComponentStack() &#125;</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        )</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">TargetComponent</span> &#123; <span class="attr">...this.props</span> &#125; /&gt;</span></span></span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    renderError () &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; error &#125; = <span class="variable language_">this</span>.<span class="property">state</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!error) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#x27;error-boundary-info&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">h6</span>&gt;</span>Error Stack:<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;</span></span><br><span class="line"><span class="language-xml">              error.stack.split(&#x27;\n&#x27;).map((line, index) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                return (</span></span><br><span class="line"><span class="language-xml">                  <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;</span> <span class="attr">index</span> &#125;&gt;</span>&#123; line &#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                )</span></span><br><span class="line"><span class="language-xml">              &#125;)</span></span><br><span class="line"><span class="language-xml">            &#125;</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">renderComponentStack</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; info &#125; = <span class="variable language_">this</span>.<span class="property">state</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!info || !info.<span class="property">componentStack</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#x27;error-boundary-info&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">h6</span>&gt;</span>ErrorInfo componentStack:<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;</span></span><br><span class="line"><span class="language-xml">              info.componentStack.split(&#x27;\n&#x27;).map((line, index) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                return (</span></span><br><span class="line"><span class="language-xml">                  <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;</span> <span class="attr">index</span> &#125;&gt;</span>&#123; line &#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                )</span></span><br><span class="line"><span class="language-xml">              &#125;)</span></span><br><span class="line"><span class="language-xml">            &#125;</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">ErrorBoundary</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="完整新生命周期"><a href="#完整新生命周期" class="headerlink" title="完整新生命周期"></a>完整新生命周期</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">MyComponent</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="comment">// 初始化state方式（1）</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> defaultProps = &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 初始化state方式（2）</span></span><br><span class="line">  state = &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">getDerivedStateFromProps</span>(<span class="params">props, state</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">componentDidCatch</span>(<span class="params">error, info</span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">shouldComponentUpdate</span>(<span class="params">nextProps, nextState</span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">getSnapshotBeforeUpdate</span>(<span class="params">prevProps, prevState</span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">componentDidUpdate</span>(<span class="params">prevProps, prevState, snapshot</span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">componentWillUnmount</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>以上~</p>
 
       
@@ -392,7 +393,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -400,31 +401,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -436,6 +429,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -444,11 +453,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,23 +469,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,11 +481,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,19 +505,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,11 +521,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,15 +537,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,7 +557,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,15 +569,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,15 +585,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -10,20 +10,21 @@
   <title>比Redux简单太多的Mobx | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="unhappy with redux? try mobx 相比上手/操作及其繁琐的Redux，用Mobx做状态管理，最直观的感受是爽爆了。 Mobx是一个非常直观的状态管理库，使用非常简单。通过Mobx，使react 关注的状态(state)到视图(view)的问题。而 mobx 关注的是状态仓库（store）到的状态(state)的问题。 废话不多说，这里通过一个最最简单的例子来感受基于RN的M">
-<meta name="keywords" content="ReactNative,Mobx">
+  <meta name="description" content="unhappy with redux? try mobx 相比上手&#x2F;操作及其繁琐的Redux，用Mobx做状态管理，最直观的感受是爽爆了。 Mobx是一个非常直观的状态管理库，使用非常简单。通过Mobx，使react 关注的状态(state)到视图(view)的问题。而 mobx 关注的是状态仓库（store）到的状态(state)的问题。 废话不多说，这里通过一个最最简单的例子来感受基">
 <meta property="og:type" content="article">
 <meta property="og:title" content="比Redux简单太多的Mobx">
-<meta property="og:url" content="http://yoursite.com/2017/11/18/比Redux简单太多的Mobx/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/11/18/%E6%AF%94Redux%E7%AE%80%E5%8D%95%E5%A4%AA%E5%A4%9A%E7%9A%84Mobx/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="unhappy with redux? try mobx 相比上手/操作及其繁琐的Redux，用Mobx做状态管理，最直观的感受是爽爆了。 Mobx是一个非常直观的状态管理库，使用非常简单。通过Mobx，使react 关注的状态(state)到视图(view)的问题。而 mobx 关注的是状态仓库（store）到的状态(state)的问题。 废话不多说，这里通过一个最最简单的例子来感受基于RN的M">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="unhappy with redux? try mobx 相比上手&#x2F;操作及其繁琐的Redux，用Mobx做状态管理，最直观的感受是爽爆了。 Mobx是一个非常直观的状态管理库，使用非常简单。通过Mobx，使react 关注的状态(state)到视图(view)的问题。而 mobx 关注的是状态仓库（store）到的状态(state)的问题。 废话不多说，这里通过一个最最简单的例子来感受基">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171118-01.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171118-02.jpg">
-<meta property="og:updated_time" content="2017-11-18T13:30:54.000Z">
+<meta property="article:published_time" content="2017-11-18T13:30:54.000Z">
+<meta property="article:modified_time" content="2017-11-18T13:30:54.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="ReactNative">
+<meta property="article:tag" content="Mobx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="比Redux简单太多的Mobx">
-<meta name="twitter:description" content="unhappy with redux? try mobx 相比上手/操作及其繁琐的Redux，用Mobx做状态管理，最直观的感受是爽爆了。 Mobx是一个非常直观的状态管理库，使用非常简单。通过Mobx，使react 关注的状态(state)到视图(view)的问题。而 mobx 关注的是状态仓库（store）到的状态(state)的问题。 废话不多说，这里通过一个最最简单的例子来感受基于RN的M">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20171118-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -42,7 +43,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -56,10 +57,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -110,10 +109,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -164,7 +161,7 @@
   
 
         
-        <a href="/2017/11/18/比Redux简单太多的Mobx/" class="archive-article-date">
+        <a href="/2017/11/18/%E6%AF%94Redux%E7%AE%80%E5%8D%95%E5%A4%AA%E5%A4%9A%E7%9A%84Mobx/" class="archive-article-date">
   	<time datetime="2017-11-18T13:30:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
 </a>
         
@@ -173,23 +170,29 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>unhappy with redux? try mobx</p>
-<p>相比上手/操作及其繁琐的Redux，用Mobx做状态管理，最直观的感受是爽爆了。</p>
+<p>相比上手&#x2F;操作及其繁琐的Redux，用Mobx做状态管理，最直观的感受是爽爆了。</p>
 <p>Mobx是一个非常直观的状态管理库，使用非常简单。通过Mobx，使react 关注的状态(state)到视图(view)的问题。而 mobx 关注的是状态仓库（store）到的状态(state)的问题。</p>
 <p>废话不多说，这里通过一个最最简单的例子来感受基于RN的Mobx。</p>
-<a id="more"></a>
-<p>首先init 一个RN工程：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init ReactNativeMobX</span><br></pre></td></tr></table></figure></p>
-<p>安装依赖库mobx以及mobx-react：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i mobx mobx-react --save</span><br></pre></td></tr></table></figure></p>
-<p>因为mobx要使用ES7的语法（Decorator）,我们还需要在项目中使用babel：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-plugin-transform-decorators-legacy babel-preset-react-native-stage-0 --save-dev</span><br></pre></td></tr></table></figure></p>
-<p>在工程目录下的.babellrc文件里配置一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123; </span><br><span class="line"> &quot;presets&quot;: [&quot;react-native&quot;],  </span><br><span class="line"> &quot;plugins&quot;: [&quot;transform-decorators-legacy&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<span id="more"></span>
+
+<p>首先init 一个RN工程：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init ReactNativeMobX</span><br></pre></td></tr></table></figure>
+<p>安装依赖库mobx以及mobx-react：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i mobx mobx-react --save</span><br></pre></td></tr></table></figure>
+<p>因为mobx要使用ES7的语法（Decorator）,我们还需要在项目中使用babel：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-plugin-transform-decorators-legacy babel-preset-react-native-stage-0 --save-dev</span><br></pre></td></tr></table></figure>
+<p>在工程目录下的.babellrc文件里配置一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123; </span><br><span class="line"> &quot;presets&quot;: [&quot;react-native&quot;],  </span><br><span class="line"> &quot;plugins&quot;: [&quot;transform-decorators-legacy&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>环境搭配完咯。下面我们就可以编写代码咯。这里实现一个超级简单的例子。两个btn，+和-。控制字符的加减。</p>
-<p><img src="/assets/blogImg/20171118-01.jpg" alt=""></p>
-<p><img src="/assets/blogImg/20171118-02.jpg" alt=""></p>
+<p><img src="/assets/blogImg/20171118-01.jpg"></p>
+<p><img src="/assets/blogImg/20171118-02.jpg"></p>
 <p>首先，我们在工程根目录创建一个mobx文件夹并创建一个仓库文件：countStore.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 导入了被观察者 observable</span></span><br><span class="line"><span class="keyword">import</span> &#123;observable&#125; <span class="keyword">from</span> <span class="string">'mobx'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建了一个新类：ObservableCountStore</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ObservableCountStore</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义一个data变量。这个变量的特殊之处在于被@observable修饰</span></span><br><span class="line">    <span class="comment">// 表示该类的data属性可被观察者（observer）观察，也就是观察者模式。</span></span><br><span class="line">    @observable data = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递增操作方法</span></span><br><span class="line">    handleAdd = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.data++</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递减操作方法</span></span><br><span class="line">    handleDec = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.data--</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例化了ObservableListStore类</span></span><br><span class="line"><span class="keyword">const</span> observableCountStore = <span class="keyword">new</span> ObservableCountStore();</span><br><span class="line"><span class="comment">// export实例化的对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> observableCountStore</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 导入了被观察者 observable</span></span><br><span class="line"><span class="keyword">import</span> &#123;observable&#125; <span class="keyword">from</span> <span class="string">&#x27;mobx&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建了一个新类：ObservableCountStore</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ObservableCountStore</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义一个data变量。这个变量的特殊之处在于被@observable修饰</span></span><br><span class="line">    <span class="comment">// 表示该类的data属性可被观察者（observer）观察，也就是观察者模式。</span></span><br><span class="line">    @observable data = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递增操作方法</span></span><br><span class="line">    handleAdd = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data</span>++</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递减操作方法</span></span><br><span class="line">    handleDec = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data</span>--</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例化了ObservableListStore类</span></span><br><span class="line"><span class="keyword">const</span> observableCountStore = <span class="keyword">new</span> <span class="title class_">ObservableCountStore</span>();</span><br><span class="line"><span class="comment">// export实例化的对象</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> observableCountStore</span><br></pre></td></tr></table></figure>
+
 <p>这里我们的仓库就创建完了。接下来在App.js文件（新版RN将index.android.js及index.ios.js合二为一了）使用我们的store。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Text,</span><br><span class="line">  View,</span><br><span class="line">  TouchableOpacity</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导入observer（观察者）</span></span><br><span class="line"><span class="keyword">import</span> &#123;observer&#125; <span class="keyword">from</span> <span class="string">'mobx-react/native'</span></span><br><span class="line"><span class="comment">// 导入我们的仓库</span></span><br><span class="line"><span class="keyword">import</span> observableCountStore <span class="keyword">from</span> <span class="string">'./mobx/countStore'</span></span><br><span class="line"><span class="comment">// 我们使用@observer修饰符来修饰App类，它可以保证当其相关联的数据变化时，该组件会重新渲染</span></span><br><span class="line">@observer</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span>&lt;</span>&#123;&#125;&gt; &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</span><br><span class="line">          &#123;observableCountStore.data&#125;</span><br><span class="line">        &lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">        &lt;View style=&#123;styles.wrapper&#125; &gt;</span></span><br><span class="line"><span class="regexp">          &lt;TouchableOpacity</span></span><br><span class="line"><span class="regexp">            style=&#123;styles.countBtn&#125;</span></span><br><span class="line"><span class="regexp">            onPress=&#123;() =&gt; &#123;</span></span><br><span class="line"><span class="regexp">              observableCountStore.handleAdd()</span></span><br><span class="line"><span class="regexp">            &#125;&#125;</span></span><br><span class="line"><span class="regexp">          &gt;</span></span><br><span class="line"><span class="regexp">            &lt;Text&gt;+&lt;/</span>Text&gt;</span><br><span class="line">          &lt;<span class="regexp">/TouchableOpacity&gt;</span></span><br><span class="line"><span class="regexp">          &lt;TouchableOpacity</span></span><br><span class="line"><span class="regexp">            style=&#123;styles.countBtn&#125;</span></span><br><span class="line"><span class="regexp">            onPress=&#123;() =&gt; &#123;</span></span><br><span class="line"><span class="regexp">                observableCountStore.handleDec()</span></span><br><span class="line"><span class="regexp">            &#125;&#125;</span></span><br><span class="line"><span class="regexp">          &gt;</span></span><br><span class="line"><span class="regexp">            &lt;Text&gt;-&lt;/</span>Text&gt;</span><br><span class="line">          &lt;<span class="regexp">/TouchableOpacity&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>View&gt;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 样式省略~</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">Component</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  <span class="title class_">StyleSheet</span>,</span><br><span class="line">  <span class="title class_">Text</span>,</span><br><span class="line">  <span class="title class_">View</span>,</span><br><span class="line">  <span class="title class_">TouchableOpacity</span></span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导入observer（观察者）</span></span><br><span class="line"><span class="keyword">import</span> &#123;observer&#125; <span class="keyword">from</span> <span class="string">&#x27;mobx-react/native&#x27;</span></span><br><span class="line"><span class="comment">// 导入我们的仓库</span></span><br><span class="line"><span class="keyword">import</span> observableCountStore <span class="keyword">from</span> <span class="string">&#x27;./mobx/countStore&#x27;</span></span><br><span class="line"><span class="comment">// 我们使用@observer修饰符来修饰App类，它可以保证当其相关联的数据变化时，该组件会重新渲染</span></span><br><span class="line">@observer</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span>&lt;&#123;&#125;&gt; &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles.container&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;styles.welcome&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;observableCountStore.data&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles.wrapper&#125;</span> &gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">TouchableOpacity</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">style</span>=<span class="string">&#123;styles.countBtn&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">onPress</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">              observableCountStore.handleAdd()</span></span><br><span class="line"><span class="language-xml">            &#125;&#125;</span></span><br><span class="line"><span class="language-xml">          &gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Text</span>&gt;</span>+<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">TouchableOpacity</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">style</span>=<span class="string">&#123;styles.countBtn&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">onPress</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                observableCountStore.handleDec()</span></span><br><span class="line"><span class="language-xml">            &#125;&#125;</span></span><br><span class="line"><span class="language-xml">          &gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Text</span>&gt;</span>-<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 样式省略~</span></span><br></pre></td></tr></table></figure>
 <p>通过observableCountStore.data，在render里使用store里的数据。<br>通过observableCountStore.handleAdd()和observableCountStore.handleDec()两个方法来改变状态。</p>
-<p>至此一个最最简单的Mobx例子完成。我们可以看到mobx以最直接的方式来管理我们的状态，即我们开始说的 mobx 关注的是状态仓库（store）到的状态(state)的问题。是不是比Redux简单太多了~=。=</p>
+<p>至此一个最最简单的Mobx例子完成。我们可以看到mobx以最直接的方式来管理我们的状态，即我们开始说的 mobx 关注的是状态仓库（store）到的状态(state)的问题。是不是比Redux简单太多了~&#x3D;。&#x3D;</p>
 
       
 
@@ -247,7 +250,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/18/CSS混合模式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/18/CSS%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -257,7 +260,7 @@
     </a>
   
   
-    <a href="/2017/11/14/函数式编程与Redux/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/11/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%8ERedux/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">函数式编程与Redux</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -373,7 +376,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -381,31 +384,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -417,6 +412,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -425,11 +436,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -437,23 +452,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,11 +464,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,19 +488,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,11 +504,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,15 +520,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,7 +540,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,15 +552,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,15 +568,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

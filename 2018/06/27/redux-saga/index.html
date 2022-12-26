@@ -10,18 +10,19 @@
   <title>Redux-saga | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。这两天正好在学习和摸索redux-saga。顺便总结一下。 redux-thunk/redux-saga首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。">
-<meta name="keywords" content="react,redux">
+  <meta name="description" content="公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目&#x2F;练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。这两天正好在学习和摸索redux-saga。顺便总结一下。 redux-thunk&#x2F;redux-saga首先redux-thunk和redux-saga都是redux的中间件，目的是解决redu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redux-saga">
 <meta property="og:url" content="http://yoursite.com/2018/06/27/redux-saga/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。这两天正好在学习和摸索redux-saga。顺便总结一下。 redux-thunk/redux-saga首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-01T13:22:16.674Z">
+<meta property="og:description" content="公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目&#x2F;练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。这两天正好在学习和摸索redux-saga。顺便总结一下。 redux-thunk&#x2F;redux-saga首先redux-thunk和redux-saga都是redux的中间件，目的是解决redu">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-06-27T06:36:53.590Z">
+<meta property="article:modified_time" content="2018-07-01T13:22:16.674Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="redux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redux-saga">
-<meta name="twitter:description" content="公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。这两天正好在学习和摸索redux-saga。顺便总结一下。 redux-thunk/redux-saga首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +40,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +54,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +106,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -169,18 +166,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目/练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。<br>这两天正好在学习和摸索redux-saga。顺便总结一下。</p>
-<h3 id="redux-thunk-redux-saga"><a href="#redux-thunk-redux-saga" class="headerlink" title="redux-thunk/redux-saga"></a>redux-thunk/redux-saga</h3><p>首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。redux本身是不支持异步的，action creator直接返回一个对象。这里redux-thunk通过十几行代码，判断action creator函数返回的是不是一个对象，不是对象是函数的话再用dispatch发出去。之前自己写过一个简单的redux-thunk的模拟。大致就是这样的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> thunk = <span class="function">(<span class="params">&#123;dispatch, getState&#125;</span>) =&gt;</span> next =&gt; <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 如果是函数，执行以下；参数是dispatch和getState</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> action === <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> action(dispatch, getState)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 啥事没干 原样返回</span></span><br><span class="line">  <span class="keyword">return</span> next(action)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> thunk</span><br></pre></td></tr></table></figure></p>
-<p>redux-saga也是解决同样的问题，但是redux-saga是通过在redux原有的数据流中再加了一层，对action进行监听。捕获到监听的Action后可以派生一个新的任务对state进行维护，更改state来驱动view层变化。saga和thunk都是可以处理异步操作和协调复杂的dispatch。不同额是thunk是在action创建的时候才调用，saga是在应用入口就启动了，一直在监听action，并作出相应处理。说白了就是saga将所有的异步操作逻辑收集在一个地方集中处理。相比thunk的处理方式，更能剥离redux应用的副作用，让数据处理更加优雅（也更加麻烦=。=）</p>
+        <p>公司的react项目，在管理异步action这一块，都用的是redux-saga这个中间件。之前自己在做项目&#x2F;练习的时候，都是用redux-thunk这个比起saga轻量很多的解决方案。<br>这两天正好在学习和摸索redux-saga。顺便总结一下。</p>
+<h3 id="redux-thunk-x2F-redux-saga"><a href="#redux-thunk-x2F-redux-saga" class="headerlink" title="redux-thunk&#x2F;redux-saga"></a>redux-thunk&#x2F;redux-saga</h3><p>首先redux-thunk和redux-saga都是redux的中间件，目的是解决redux应用中的异步问题。redux本身是不支持异步的，action creator直接返回一个对象。这里redux-thunk通过十几行代码，判断action creator函数返回的是不是一个对象，不是对象是函数的话再用dispatch发出去。之前自己写过一个简单的redux-thunk的模拟。大致就是这样的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">thunk</span> = (<span class="params">&#123;dispatch, getState&#125;</span>) =&gt; <span class="function"><span class="params">next</span> =&gt;</span> <span class="function"><span class="params">action</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 如果是函数，执行以下；参数是dispatch和getState</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> action === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">action</span>(dispatch, getState)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 啥事没干 原样返回</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">next</span>(action)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> thunk</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>redux-saga也是解决同样的问题，但是redux-saga是通过在redux原有的数据流中再加了一层，对action进行监听。捕获到监听的Action后可以派生一个新的任务对state进行维护，更改state来驱动view层变化。saga和thunk都是可以处理异步操作和协调复杂的dispatch。不同额是thunk是在action创建的时候才调用，saga是在应用入口就启动了，一直在监听action，并作出相应处理。说白了就是saga将所有的异步操作逻辑收集在一个地方集中处理。相比thunk的处理方式，更能剥离redux应用的副作用，让数据处理更加优雅（也更加麻烦&#x3D;。&#x3D;）</p>
 <p>saga核心原理是利用了generator，使异步操作流程更加优雅。sagas都是用Generator函数实现的。</p>
 <ul>
-<li>以generator形式组织逻辑序列（function* + yield），把一系列的串行/并行操作通过yield拆分开</li>
-<li>利用iterator的可“暂停/恢复”特性（iter.next()）分步执行</li>
+<li>以generator形式组织逻辑序列（function* + yield），把一系列的串行&#x2F;并行操作通过yield拆分开</li>
+<li>利用iterator的可“暂停&#x2F;恢复”特性（iter.next()）分步执行</li>
 <li>通过iterator影响内部状态（iter.next(result)），注入异步操作结果</li>
 <li>利用iterator的错误捕获特性（iter.throw(error)），注入异步操作异常</li>
 </ul>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>下面说说怎么引入redux-saga<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> createSagaMiddleware <span class="keyword">from</span> <span class="string">'redux-saga'</span></span><br><span class="line"><span class="comment">//引入saga文件</span></span><br><span class="line"><span class="keyword">import</span> &#123; rootSaga &#125; <span class="keyword">from</span> <span class="string">'./rootSaga'</span></span><br><span class="line"><span class="comment">//使用 redux-saga 模块的 createSagaMiddleware 工厂函数来创建一个 Saga middleware。</span></span><br><span class="line"><span class="comment">//运行 rootSaga 之前，我们必须使用 applyMiddleware 将 middleware 连接至 Store。然后使用 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sagaMiddleware = createSagaMiddleware()</span><br><span class="line"><span class="keyword">const</span> middlewares = [ sagaMiddleware ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(rootReducer, applyMiddleware(...middlewares))</span><br><span class="line">sagaMiddleware.run(rootSaga)</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>下面说说怎么引入redux-saga</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span></span><br><span class="line"><span class="keyword">import</span> createSagaMiddleware <span class="keyword">from</span> <span class="string">&#x27;redux-saga&#x27;</span></span><br><span class="line"><span class="comment">//引入saga文件</span></span><br><span class="line"><span class="keyword">import</span> &#123; rootSaga &#125; <span class="keyword">from</span> <span class="string">&#x27;./rootSaga&#x27;</span></span><br><span class="line"><span class="comment">//使用 redux-saga 模块的 createSagaMiddleware 工厂函数来创建一个 Saga middleware。</span></span><br><span class="line"><span class="comment">//运行 rootSaga 之前，我们必须使用 applyMiddleware 将 middleware 连接至 Store。然后使用 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sagaMiddleware = <span class="title function_">createSagaMiddleware</span>()</span><br><span class="line"><span class="keyword">const</span> middlewares = [ sagaMiddleware ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(rootReducer, <span class="title function_">applyMiddleware</span>(...middlewares))</span><br><span class="line">sagaMiddleware.<span class="title function_">run</span>(rootSaga)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
 <h3 id="一些Api"><a href="#一些Api" class="headerlink" title="一些Api"></a>一些Api</h3><p>在使用上是通过yield Effects的方式完成的。<br>（An Effect is simply an object which contains some information to be interpreted by the middleware.）</p>
 <ul>
 <li>call:yield call(Generator, param)yield一个call 到Generator,saga等待Generator执行之后,接收返回值继续执行,call是堵塞的,就是等待执行完再继续执行,返回的是执行完正常返回的结果.</li>
@@ -200,20 +200,16 @@
 </li>
 </ul>
 <h3 id="一些使用场景"><a href="#一些使用场景" class="headerlink" title="一些使用场景"></a>一些使用场景</h3><ul>
-<li><p>接口访问</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fetchProducts</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> products = <span class="keyword">yield</span> call(Api.fetch, <span class="string">'/products'</span>)</span><br><span class="line">    <span class="keyword">yield</span> put(&#123; <span class="attr">type</span>: <span class="string">'PRODUCTS_RECEIVED'</span>, products &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">catch</span>(error) &#123;</span><br><span class="line">    <span class="keyword">yield</span> put(&#123; <span class="attr">type</span>: <span class="string">'PRODUCTS_REQUEST_FAILED'</span>, error &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Login/Logout</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">loginFlow</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> take(<span class="string">'LOGIN'</span>)</span><br><span class="line">    <span class="comment">// ... perform the login logic</span></span><br><span class="line">    <span class="keyword">yield</span> take(<span class="string">'LOGOUT'</span>)</span><br><span class="line">    <span class="comment">// ... perform the logout logic</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>接口访问<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">fetchProducts</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> products = <span class="keyword">yield</span> <span class="title function_">call</span>(<span class="title class_">Api</span>.<span class="property">fetch</span>, <span class="string">&#x27;/products&#x27;</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="title function_">put</span>(&#123; <span class="attr">type</span>: <span class="string">&#x27;PRODUCTS_RECEIVED&#x27;</span>, products &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">catch</span>(error) &#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="title function_">put</span>(&#123; <span class="attr">type</span>: <span class="string">&#x27;PRODUCTS_REQUEST_FAILED&#x27;</span>, error &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Login&#x2F;Logout<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">loginFlow</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="title function_">take</span>(<span class="string">&#x27;LOGIN&#x27;</span>)</span><br><span class="line">    <span class="comment">// ... perform the login logic</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="title function_">take</span>(<span class="string">&#x27;LOGOUT&#x27;</span>)</span><br><span class="line">    <span class="comment">// ... perform the logout logic</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这样写就能保证action的执行顺序。<em>LOGOUT</em>永远在<em>LOGIN</em>之后发生。</li>
 </ul>
-<p>这样写就能保证action的执行顺序。<em>LOGOUT</em>永远在<em>LOGIN</em>之后发生。</p>
 <h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><ul>
 <li>优：<br>redux-saga的加入让流程拆分的更加细化。以同步的方式去写异步代码，代码层次结构更加清晰。便于测试</li>
 <li>缺：<br>拆分细化意味着流程上多一个环节，增加了代码复杂度，和开发工作量。</li>
 </ul>
 <hr>
-<p>学习这一块，细化拆分专门写了个例子，感觉把能用的都用了：<a href="https://github.com/laclys/Ezreal" target="_blank" rel="noopener">https://github.com/laclys/Ezreal</a></p>
+<p>学习这一块，细化拆分专门写了个例子，感觉把能用的都用了：<a target="_blank" rel="noopener" href="https://github.com/laclys/Ezreal">https://github.com/laclys/Ezreal</a></p>
 <p>以上~<br>~<br>~<br>~</p>
 
       
@@ -272,7 +268,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/29/7月/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/29/7%E6%9C%88/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -282,7 +278,7 @@
     </a>
   
   
-    <a href="/2018/06/24/React杂记/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/24/React%E6%9D%82%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">React杂记</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -398,7 +394,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -406,31 +402,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,6 +430,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -450,11 +454,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,23 +470,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,11 +482,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,19 +506,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,11 +522,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,15 +538,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,7 +558,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,15 +570,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,15 +586,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

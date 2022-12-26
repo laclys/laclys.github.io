@@ -10,18 +10,19 @@
   <title>小试NodeJS的express进行前后端数据交互 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="今儿小试了一下NodeJs的express框架，在这说一说如何通过express进行前后台的数据交互。 这几年nodeJs大火，有很多原因。其中最重要的我想就是和前台同为JS语言，在交互上比其他后台语言配合起来更爽一些。 这里就简要的讲一下通过express框架进行前后端数据交互。express是一个很轻量级的nodeJS框架。使用起来也比较简单。要运用这个框架首先我们需要先将它下载下来：1npm">
-<meta name="keywords" content="node,express">
+  <meta name="description" content="今儿小试了一下NodeJs的express框架，在这说一说如何通过express进行前后台的数据交互。 这几年nodeJs大火，有很多原因。其中最重要的我想就是和前台同为JS语言，在交互上比其他后台语言配合起来更爽一些。 这里就简要的讲一下通过express框架进行前后端数据交互。express是一个很轻量级的nodeJS框架。使用起来也比较简单。要运用这个框架首先我们需要先将它下载下来： 1np">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小试NodeJS的express进行前后端数据交互">
-<meta property="og:url" content="http://yoursite.com/2017/03/14/小试NodeJS的express进行前后端数据交互/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="今儿小试了一下NodeJs的express框架，在这说一说如何通过express进行前后台的数据交互。 这几年nodeJs大火，有很多原因。其中最重要的我想就是和前台同为JS语言，在交互上比其他后台语言配合起来更爽一些。 这里就简要的讲一下通过express框架进行前后端数据交互。express是一个很轻量级的nodeJS框架。使用起来也比较简单。要运用这个框架首先我们需要先将它下载下来：1npm">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-03-13T17:09:02.000Z">
+<meta property="og:description" content="今儿小试了一下NodeJs的express框架，在这说一说如何通过express进行前后台的数据交互。 这几年nodeJs大火，有很多原因。其中最重要的我想就是和前台同为JS语言，在交互上比其他后台语言配合起来更爽一些。 这里就简要的讲一下通过express框架进行前后端数据交互。express是一个很轻量级的nodeJS框架。使用起来也比较简单。要运用这个框架首先我们需要先将它下载下来： 1np">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-03-13T17:09:02.000Z">
+<meta property="article:modified_time" content="2017-03-13T17:09:02.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="express">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小试NodeJS的express进行前后端数据交互">
-<meta name="twitter:description" content="今儿小试了一下NodeJs的express框架，在这说一说如何通过express进行前后台的数据交互。 这几年nodeJs大火，有很多原因。其中最重要的我想就是和前台同为JS语言，在交互上比其他后台语言配合起来更爽一些。 这里就简要的讲一下通过express框架进行前后端数据交互。express是一个很轻量级的nodeJS框架。使用起来也比较简单。要运用这个框架首先我们需要先将它下载下来：1npm">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +40,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +54,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +106,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +158,7 @@
   
 
         
-        <a href="/2017/03/14/小试NodeJS的express进行前后端数据交互/" class="archive-article-date">
+        <a href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/" class="archive-article-date">
   	<time datetime="2017-03-13T17:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
 </a>
         
@@ -171,20 +168,34 @@
       
         <p>今儿小试了一下NodeJs的express框架，在这说一说如何通过express进行前后台的数据交互。</p>
 <p>这几年nodeJs大火，有很多原因。其中最重要的我想就是和前台同为JS语言，在交互上比其他后台语言配合起来更爽一些。</p>
-<p>这里就简要的讲一下通过express框架进行前后端数据交互。<br>express是一个很轻量级的nodeJS框架。使用起来也比较简单。<br>要运用这个框架首先我们需要先将它下载下来：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save</span><br></pre></td></tr></table></figure></p>
+<p>这里就简要的讲一下通过express框架进行前后端数据交互。<br>express是一个很轻量级的nodeJS框架。使用起来也比较简单。<br>要运用这个框架首先我们需要先将它下载下来：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save</span><br></pre></td></tr></table></figure>
 <p>（<em>后面加了–save，是为了把模块保存到配置文件中，当项目移植的时候只需要npm install 就会把所有依赖的模块下载下来</em>）</p>
-<p>之后就是搭建服务器了。<br>创建一个js文件<br>1, 首先引入框架<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express=<span class="built_in">require</span>(<span class="string">'express'</span>);</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>2, 创建、搭建服务器<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> server=express();</span><br></pre></td></tr></table></figure></p>
-<p>3,设置一个端口进行监听<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.listen(<span class="number">2333</span>);</span><br></pre></td></tr></table></figure></p>
-<p><em>端口号随便设，只要不超过65535就好</em><br>4,设置中间量<br>这里我们可以使用三种依次是get/post/use。这里我用的是get方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server.get(<span class="string">'/a'</span>,(request, response)=&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(request.query);</span><br><span class="line">	response.send(<span class="string">"永远18岁"</span>);</span><br><span class="line">    response.end(); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>5,设由于三次握手，我们还需要访问静态的html，让其得到后台的处理结果。<br>所以我们需要再引入一个模块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express-static --save</span><br></pre></td></tr></table></figure></p>
-<p>并在js中添加：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">static</span> = <span class="built_in">require</span>(<span class="string">'express-static'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>有了它，我们就能访问html这类静态文件了。<br>6,设置文件权限。将前后端分离开来，前端文件都放在一个叫‘www’的文件夹中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.use(<span class="keyword">static</span>(<span class="string">'www'</span>));</span><br></pre></td></tr></table></figure></p>
-<p>7，前端交互（运用了JQ打包好的Ajax,这里就不细说了）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-3.1.1.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    $.ajax(&#123;</span></span><br><span class="line"><span class="javascript">        url:<span class="string">'/a'</span>,</span></span><br><span class="line"><span class="javascript">        type:<span class="string">'POST'</span>,</span></span><br><span class="line"><span class="undefined">        data:&#123;</span></span><br><span class="line"><span class="javascript">            name:<span class="string">'zyy'</span>,</span></span><br><span class="line"><span class="undefined">            age:18</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(data);</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="javascript">        error:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span></span><br><span class="line"><span class="undefined">    &#125;); </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>前台向后台发送data（永远18岁），<br>在后台接收到了数据，通过console.log(request.query);打印出来。<br>另外post的话，和get不同。<br>先下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i body-parser --save</span><br></pre></td></tr></table></figure></p>
-<p>再加上下面两行代码，再在里面用：console.log(request.body);打印<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> body=<span class="built_in">require</span>(<span class="string">'body-parser'</span>);</span><br><span class="line">server.use(body.urlencoded());</span><br></pre></td></tr></table></figure></p>
-<p>随后后台通过response.send(“永远18岁”);又向前台做出回应。前台通过Ajax，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">success:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">             <span class="built_in">console</span>.log(data);<span class="comment">//得到这条回应，并在浏览器控制台打印出来</span></span><br><span class="line">             					<span class="comment">//“永远18岁”</span></span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure></p>
+<p>之后就是搭建服务器了。<br>创建一个js文件<br>1, 首先引入框架</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express=<span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>2, 创建、搭建服务器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> server=<span class="title function_">express</span>();</span><br></pre></td></tr></table></figure>
+<p>3,设置一个端口进行监听</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.<span class="title function_">listen</span>(<span class="number">2333</span>);</span><br></pre></td></tr></table></figure>
+<p><em>端口号随便设，只要不超过65535就好</em><br>4,设置中间量<br>这里我们可以使用三种依次是get&#x2F;post&#x2F;use。这里我用的是get方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server.<span class="title function_">get</span>(<span class="string">&#x27;/a&#x27;</span>,<span class="function">(<span class="params">request, response</span>)=&gt;</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(request.<span class="property">query</span>);</span><br><span class="line">	response.<span class="title function_">send</span>(<span class="string">&quot;永远18岁&quot;</span>);</span><br><span class="line">    response.<span class="title function_">end</span>(); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>5,设由于三次握手，我们还需要访问静态的html，让其得到后台的处理结果。<br>所以我们需要再引入一个模块：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express-static --save</span><br></pre></td></tr></table></figure>
+<p>并在js中添加：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">static</span> = <span class="built_in">require</span>(<span class="string">&#x27;express-static&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>有了它，我们就能访问html这类静态文件了。<br>6,设置文件权限。将前后端分离开来，前端文件都放在一个叫‘www’的文件夹中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.<span class="title function_">use</span>(<span class="title function_">static</span>(<span class="string">&#x27;www&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p>7，前端交互（运用了JQ打包好的Ajax,这里就不细说了）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;jquery-3.1.1.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    $.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">url</span>:<span class="string">&#x27;/a&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">type</span>:<span class="string">&#x27;POST&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">name</span>:<span class="string">&#x27;zyy&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">age</span>:<span class="number">18</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">success</span>:<span class="keyword">function</span>(<span class="params">data</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">error</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;); </span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>前台向后台发送data（永远18岁），<br>在后台接收到了数据，通过console.log(request.query);打印出来。<br>另外post的话，和get不同。<br>先下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i body-parser --save</span><br></pre></td></tr></table></figure>
+<p>再加上下面两行代码，再在里面用：console.log(request.body);打印</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> body=<span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line">server.<span class="title function_">use</span>(body.<span class="title function_">urlencoded</span>());</span><br></pre></td></tr></table></figure>
+<p>随后后台通过response.send(“永远18岁”);又向前台做出回应。前台通过Ajax，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">success</span>:<span class="keyword">function</span>(<span class="params">data</span>)&#123;</span><br><span class="line">             <span class="variable language_">console</span>.<span class="title function_">log</span>(data);<span class="comment">//得到这条回应，并在浏览器控制台打印出来</span></span><br><span class="line">             					<span class="comment">//“永远18岁”</span></span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+
+
 <p>这个就是基于NodeJs express框架 前后端数据交互3次握手典型的小Demo。</p>
 <p>以上！</p>
 
@@ -244,7 +255,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/03/23/Angular1.5到Angular1.6的JSONP相关的设置及小Demo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/03/23/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -254,7 +265,7 @@
     </a>
   
   
-    <a href="/2017/03/12/深入理解javascript原型和闭包笔记总结/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/03/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">深入理解javascript原型和闭包笔记总结</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -370,7 +381,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -378,31 +389,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -414,6 +417,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -422,11 +441,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,23 +457,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,11 +469,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,19 +493,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,11 +509,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,15 +525,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,7 +545,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,15 +557,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,15 +573,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

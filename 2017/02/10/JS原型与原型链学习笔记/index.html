@@ -10,19 +10,20 @@
   <title>JS原型与原型链学习笔记 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="这一周在慕课以及网上搜索，好好学习理解了一下JS的原型/原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。 普通对象与函数：JavaScript 中分为普通对象和函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。 构造函数：12345678function Person(name, age, job) &amp;#123; this.name = name">
-<meta name="keywords" content="前端,javascript">
+  <meta name="description" content="这一周在慕课以及网上搜索，好好学习理解了一下JS的原型&#x2F;原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。 普通对象与函数：JavaScript 中分为普通对象和函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。 构造函数：12345678function Person(name, age, job) &amp;#123; this.name &#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS原型与原型链学习笔记">
-<meta property="og:url" content="http://yoursite.com/2017/02/10/JS原型与原型链学习笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="这一周在慕课以及网上搜索，好好学习理解了一下JS的原型/原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。 普通对象与函数：JavaScript 中分为普通对象和函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。 构造函数：12345678function Person(name, age, job) &amp;#123; this.name = name">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="这一周在慕课以及网上搜索，好好学习理解了一下JS的原型&#x2F;原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。 普通对象与函数：JavaScript 中分为普通对象和函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。 构造函数：12345678function Person(name, age, job) &amp;#123; this.name &#x3D;">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170210-1.jpg">
-<meta property="og:updated_time" content="2017-02-10T15:55:00.000Z">
+<meta property="article:published_time" content="2017-02-10T15:55:00.000Z">
+<meta property="article:modified_time" content="2017-02-10T15:55:00.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS原型与原型链学习笔记">
-<meta name="twitter:description" content="这一周在慕课以及网上搜索，好好学习理解了一下JS的原型/原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。 普通对象与函数：JavaScript 中分为普通对象和函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。 构造函数：12345678function Person(name, age, job) &amp;#123; this.name = name">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20170210-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -41,7 +42,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +56,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -109,10 +108,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -163,7 +160,7 @@
   
 
         
-        <a href="/2017/02/10/JS原型与原型链学习笔记/" class="archive-article-date">
+        <a href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2017-02-10T15:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
 </a>
         
@@ -171,16 +168,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这一周在慕课以及网上搜索，好好学习理解了一下JS的原型/原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。</p>
+        <p>这一周在慕课以及网上搜索，好好学习理解了一下JS的原型&#x2F;原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。</p>
 <h3 id="普通对象与函数："><a href="#普通对象与函数：" class="headerlink" title="普通对象与函数："></a>普通对象与函数：</h3><p>JavaScript 中分为普通对象和函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。</p>
-<h3 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">this</span>.name = name;</span><br><span class="line"> <span class="keyword">this</span>.age = age;</span><br><span class="line"> <span class="keyword">this</span>.job = job;</span><br><span class="line"> <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(<span class="keyword">this</span>.name) &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'Zaxlct'</span>, <span class="number">28</span>, <span class="string">'Software Engineer'</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">'Mick'</span>, <span class="number">23</span>, <span class="string">'Doctor'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, job</span>) &#123;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">job</span> = job;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123; <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>) &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Zaxlct&#x27;</span>, <span class="number">28</span>, <span class="string">&#x27;Software Engineer&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Mick&#x27;</span>, <span class="number">23</span>, <span class="string">&#x27;Doctor&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <p>上面的例子中 person1 和 person2 都是 Person 的实例。这两个实例都有一个 constructor （构造函数）属性，该属性（是一个指针）指向 Person。<br><strong>person1 和 person2 都是 构造函数 Person 的实例</strong> </p>
-<p>!!!实例的构造函数属性（constructor）指向构造函数。<br><a id="more"></a></p>
-<h3 id="原型对象："><a href="#原型对象：" class="headerlink" title="原型对象："></a>原型对象：</h3><p>在默认情况下，所有的原型对象都会自动获得一个 constructor（构造函数）属性，这个属性（是一个指针）指向 prototype 属性所在的函数（Person）。<br>eg：<br>    Person.prototype.constructor == Person<br><strong>可以理解为：原型对象（Person.prototype）是 构造函数（Person）的一个实例</strong> </p>
-<h3 id="proto"><a href="#proto" class="headerlink" title=".proto:"></a>.<em>proto</em>:</h3><p>JS 在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做<strong>proto</strong> 的内置<br>属性，用于指向创建它的构造函数的原型对象。<br>对象 person1 有一个 <strong>proto</strong>属性，创建它的构造函数是 Person，构造函数的原型对象<br>是 Person.prototype ，所以：<br>    person1.<strong>proto</strong> == Person.prototype</p>
-<p><img src="/assets/blogImg/20170210-1.jpg" alt=""> via internet<br>从而可得到：<br>    Person.prototype.constructor == Person;<br>    person1.<strong>proto</strong> == Person.prototype;<br>    person1.constructor == Person;</p>
+<p>!!!实例的构造函数属性（constructor）指向构造函数。</p>
+<span id="more"></span>
+<h3 id="原型对象："><a href="#原型对象：" class="headerlink" title="原型对象："></a>原型对象：</h3><p>在默认情况下，所有的原型对象都会自动获得一个 constructor（构造函数）属性，这个属性（是一个指针）指向 prototype 属性所在的函数（Person）。<br>eg：<br>    Person.prototype.constructor &#x3D;&#x3D; Person<br><strong>可以理解为：原型对象（Person.prototype）是 构造函数（Person）的一个实例</strong> </p>
+<h3 id="proto"><a href="#proto" class="headerlink" title=".proto:"></a>.<em>proto</em>:</h3><p>JS 在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做__proto__ 的内置<br>属性，用于指向创建它的构造函数的原型对象。<br>对象 person1 有一个 __proto__属性，创建它的构造函数是 Person，构造函数的原型对象<br>是 Person.prototype ，所以：<br>    person1.<strong>proto</strong> &#x3D;&#x3D; Person.prototype</p>
+<p><img src="/assets/blogImg/20170210-1.jpg"> via internet<br>从而可得到：<br>    Person.prototype.constructor &#x3D;&#x3D; Person;<br>    person1.<strong>proto</strong> &#x3D;&#x3D; Person.prototype;<br>    person1.constructor &#x3D;&#x3D; Person;</p>
 <h3 id="构造器："><a href="#构造器：" class="headerlink" title="构造器："></a>构造器：</h3><p>构造器都是函数对象 “function”。</p>
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>1,原型和原型链是JS实现继承的一种模型。<br>2,原型链的形成是真正是靠<strong>proto</strong> 而非prototype</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>1,原型和原型链是JS实现继承的一种模型。<br>2,原型链的形成是真正是靠__proto__ 而非prototype</p>
 <p>以上！！！</p>
 
       
@@ -239,7 +237,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/02/17/JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/17/JQuery%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%BA%E5%9F%9F%E9%AB%98%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6,%E6%BB%9A%E5%8A%A8%E6%9D%A1%E9%AB%98%E5%BA%A6/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -249,7 +247,7 @@
     </a>
   
   
-    <a href="/2017/02/08/在Github中演示前端demo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/02/08/%E5%9C%A8Github%E4%B8%AD%E6%BC%94%E7%A4%BA%E5%89%8D%E7%AB%AFdemo/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">在Github中演示前端demo</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -365,7 +363,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -373,31 +371,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -409,6 +399,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -417,11 +423,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,23 +439,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,11 +451,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,19 +475,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,11 +491,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,15 +507,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,7 +527,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,15 +539,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,15 +555,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

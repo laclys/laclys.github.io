@@ -11,18 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="说道RN，依稀记得去年刚来时接触的时候还是0.38。之后公司要搞App，选了一个不新不旧的版本0.44.3。再到之后为了做一个滤镜的效果，依赖于gl-react和gl-react-native这个库。为了追究更好的体验和兼容Android机，将版本升级成了0.46.4。离职之后最近一直在看web，没怎么看RN这块。没想到现在RN已经更新到了0.55.3。（FB团队是真的勤快）,主要是闲的蛋疼。把自">
-<meta name="keywords" content="ReactNative">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于RN项目升级(-)">
-<meta property="og:url" content="http://yoursite.com/2018/04/28/关于RN项目升级(-)/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/%E5%85%B3%E4%BA%8ERN%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7(-)/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="说道RN，依稀记得去年刚来时接触的时候还是0.38。之后公司要搞App，选了一个不新不旧的版本0.44.3。再到之后为了做一个滤镜的效果，依赖于gl-react和gl-react-native这个库。为了追究更好的体验和兼容Android机，将版本升级成了0.46.4。离职之后最近一直在看web，没怎么看RN这块。没想到现在RN已经更新到了0.55.3。（FB团队是真的勤快）,主要是闲的蛋疼。把自">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180428-01.jpg">
-<meta property="og:updated_time" content="2018-04-27T17:06:07.081Z">
+<meta property="article:published_time" content="2018-04-27T17:03:14.008Z">
+<meta property="article:modified_time" content="2018-04-27T17:06:07.081Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="ReactNative">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于RN项目升级(-)">
-<meta name="twitter:description" content="说道RN，依稀记得去年刚来时接触的时候还是0.38。之后公司要搞App，选了一个不新不旧的版本0.44.3。再到之后为了做一个滤镜的效果，依赖于gl-react和gl-react-native这个库。为了追究更好的体验和兼容Android机，将版本升级成了0.46.4。离职之后最近一直在看web，没怎么看RN这块。没想到现在RN已经更新到了0.55.3。（FB团队是真的勤快）,主要是闲的蛋疼。把自">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20180428-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -41,7 +41,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +55,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -109,10 +107,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -163,7 +159,7 @@
   
 
         
-        <a href="/2018/04/28/关于RN项目升级(-)/" class="archive-article-date">
+        <a href="/2018/04/28/%E5%85%B3%E4%BA%8ERN%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7(-)/" class="archive-article-date">
   	<time datetime="2018-04-27T17:03:14.008Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-28</time>
 </a>
         
@@ -179,13 +175,14 @@
 <li>takeSnapshot:从 UIManager 移动到 ReactNative(截图的话，疯狂安利：react-native-view-shot)</li>
 <li>react-navigation 代替 Navigator、NavigationExperimental。（前一阵尝试了一下 react-native-router-flux 体验也不错）</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
+
 <h3 id="怎么升级"><a href="#怎么升级" class="headerlink" title="怎么升级"></a>怎么升级</h3><p>RN一周一个版本，小版本之前有时候都跨度很大。更别提大版本0.4x-&gt;0.5x这种了。升级方式有两种：</p>
 <ul>
 <li>使用react-native-git-upgrade</li>
 <li>手动shengji</li>
 </ul>
-<p>我这边比较倾向手动升级，能减少很多不必要的麻烦。使用前者是通过git自动合并更新。版本跨度较大的时候在native层各种冲突，跟头痛的一件事。<br>手动升级这里就简单很多。可以初始化一个最新的rn项目，之后对比老项目的以来文件，进行版本改变。然后删除node_modules &amp;&amp; npm i.(当然这里要注意的就是 依赖的第三方库/组件，一定要一个一个去检索不同版本RN对应的版本)。</p>
+<p>我这边比较倾向手动升级，能减少很多不必要的麻烦。使用前者是通过git自动合并更新。版本跨度较大的时候在native层各种冲突，跟头痛的一件事。<br>手动升级这里就简单很多。可以初始化一个最新的rn项目，之后对比老项目的以来文件，进行版本改变。然后删除node_modules &amp;&amp; npm i.(当然这里要注意的就是 依赖的第三方库&#x2F;组件，一定要一个一个去检索不同版本RN对应的版本)。</p>
 <p>除了这些之外就是：</p>
 <ul>
 <li>Navigator -&gt; react-navigation</li>
@@ -197,7 +194,7 @@
 </ul>
 <h3 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h3><p>换了新的2017 mac pro 编译速度相比之前的15版快了很多。13k大洋不是白花的</p>
 <p>用了新电脑，在构建rn程序的时候遇到了这个错误：</p>
-<p><img src="/assets/blogImg/20180428-01.jpg" alt=""></p>
+<p><img src="/assets/blogImg/20180428-01.jpg"></p>
 <p>查了好半天原因，原来是新电脑没有装watchman</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install watchman</span><br></pre></td></tr></table></figure>
 <p>就好。</p>
@@ -254,7 +251,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/14/关于直播/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/14/%E5%85%B3%E4%BA%8E%E7%9B%B4%E6%92%AD/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -264,7 +261,7 @@
     </a>
   
   
-    <a href="/2018/04/09/从零配置Webpack4.0搭建一个React工程/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">从零配置Webpack4.0搭建一个React工程</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -380,7 +377,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -388,31 +385,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -424,6 +413,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -432,11 +437,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,23 +453,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -472,11 +465,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,19 +489,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,11 +505,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,15 +521,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,7 +541,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,15 +553,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,15 +569,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

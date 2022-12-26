@@ -10,24 +10,26 @@
   <title>从零配置Webpack4.0搭建一个React工程 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考 前段工程化思考说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包/自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目">
-<meta name="keywords" content="React,webpack,ReactSSR">
+  <meta name="description" content="最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考 前段工程化思考说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包&#x2F;自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从零配置Webpack4.0搭建一个React工程">
-<meta property="og:url" content="http://yoursite.com/2018/04/09/从零配置Webpack4.0搭建一个React工程/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考 前段工程化思考说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包/自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考 前段工程化思考说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包&#x2F;自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-1.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-2.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-3.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-4.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-5.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180317-6.png">
-<meta property="og:updated_time" content="2018-04-09T08:44:58.000Z">
+<meta property="article:published_time" content="2018-04-09T08:44:58.000Z">
+<meta property="article:modified_time" content="2018-04-09T08:44:58.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="webpack">
+<meta property="article:tag" content="ReactSSR">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从零配置Webpack4.0搭建一个React工程">
-<meta name="twitter:description" content="最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考 前段工程化思考说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包/自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20180317-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -46,7 +48,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -60,10 +62,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -114,10 +114,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -168,7 +166,7 @@
   
 
         
-        <a href="/2018/04/09/从零配置Webpack4.0搭建一个React工程/" class="archive-article-date">
+        <a href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/" class="archive-article-date">
   	<time datetime="2018-04-09T08:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
 </a>
         
@@ -177,64 +175,86 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考</p>
-<h3 id="前段工程化思考"><a href="#前段工程化思考" class="headerlink" title="前段工程化思考"></a>前段工程化思考</h3><p>说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包/自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目工程之后开发人员只需要关注业务/代码即可。第二点就是保证项目质量，在多人协作，不同环境下开发。通过code lint等约束以及git commit预处理保证代码风格的一致统一，这一点对后续的代码维护很重要。第三就是优化。通过前端工程化、自动化去合理的压缩合并资源文件。这些大部分恰巧webpack帮我们完成了。<br>在vue和react开发中，通过脚手架工具，生成项目之后，只要run一下项目就跑起来了。然而cli给我们提供的只是一个泛模板。然而我们想要去定制它、修改它。就需要深入了解它，知道他是怎么跑起来的。我想考虑的前端工程化，这是每一个前端er绕不开的话题。坑越早开越好&gt;_&lt;</p>
+<h3 id="前段工程化思考"><a href="#前段工程化思考" class="headerlink" title="前段工程化思考"></a>前段工程化思考</h3><p>说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包&#x2F;自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目工程之后开发人员只需要关注业务&#x2F;代码即可。第二点就是保证项目质量，在多人协作，不同环境下开发。通过code lint等约束以及git commit预处理保证代码风格的一致统一，这一点对后续的代码维护很重要。第三就是优化。通过前端工程化、自动化去合理的压缩合并资源文件。这些大部分恰巧webpack帮我们完成了。<br>在vue和react开发中，通过脚手架工具，生成项目之后，只要run一下项目就跑起来了。然而cli给我们提供的只是一个泛模板。然而我们想要去定制它、修改它。就需要深入了解它，知道他是怎么跑起来的。我想考虑的前端工程化，这是每一个前端er绕不开的话题。坑越早开越好&gt;_&lt;</p>
 <h3 id="Webpack基础配置"><a href="#Webpack基础配置" class="headerlink" title="Webpack基础配置"></a>Webpack基础配置</h3><p>这里首先我们要明确webpack工程架构的核心是什么？<br>– loader机制 （不同loader去处理不同的文件。甚至你可以自己创造一个文件，并作出对应的loader来处理它）</p>
-<a id="more"></a>
-<p>首先 我们npm init创建一个项目。接下来安装初始化需要的依赖：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm i react --save</span><br><span class="line">npm i react-dom --save</span><br><span class="line">npm i webpack --save</span><br><span class="line">npm i webpack-cli --save</span><br></pre></td></tr></table></figure></p>
-<p>最基本的依赖包安装完毕之后，我们需要创建WebApp的入口文件。这里我们在根目录创建一个src文件夹，并创建两个空文件app.js(作为入口文件) 以及App.jsx（声明我们app页面上的内容）。<br>有了入口文件，就可以进行Webpack的基本配置。这里我们在根目录下创建build文件夹在下面webpack.config.js里进行配置：<br><img src="/assets/blogImg/20180317-1.png" alt=""><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>) <span class="comment">// 引入‘path’，为了在这里使用绝对路径，避免相对路径在不同系统时出现不必要的问题</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports =&#123;</span><br><span class="line">  <span class="comment">// 应用入口</span></span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: path.join(__dirname, <span class="string">'../src/app.js'</span>)  <span class="comment">// app.js作为打包的入口</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 输出目录</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].[hash].js'</span>,  <span class="comment">//name代表entry对应的名字; hash代表 整个app打包完成后根据内容加上hash。一旦整个文件内容变更，hash就会变化</span></span><br><span class="line">    path: path.join(__dirname, <span class="string">'../dist'</span>), <span class="comment">// 打包好之后的输出路径</span></span><br><span class="line">    publicPath: <span class="string">'/public'</span> <span class="comment">// 静态资源文件引用时的路径（加在引用静态资源前面的）</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>有了入口和输出。我们就可以启动webpack了。这里在app.js随便写一段简单的js代码执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --config build/webpack.config.js --mode development</span><br></pre></td></tr></table></figure></p>
-<p>为了方便我们把这段代码加到script里：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"build"</span>: <span class="string">"webpack --mode development --config build/webpack.config.js"</span></span><br></pre></td></tr></table></figure></p>
+<span id="more"></span>
+
+<p>首先 我们npm init创建一个项目。接下来安装初始化需要的依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm i react --save</span><br><span class="line">npm i react-dom --save</span><br><span class="line">npm i webpack --save</span><br><span class="line">npm i webpack-cli --save</span><br></pre></td></tr></table></figure>
+<p>最基本的依赖包安装完毕之后，我们需要创建WebApp的入口文件。这里我们在根目录创建一个src文件夹，并创建两个空文件app.js(作为入口文件) 以及App.jsx（声明我们app页面上的内容）。<br>有了入口文件，就可以进行Webpack的基本配置。这里我们在根目录下创建build文件夹在下面webpack.config.js里进行配置：<br><img src="/assets/blogImg/20180317-1.png"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>) <span class="comment">// 引入‘path’，为了在这里使用绝对路径，避免相对路径在不同系统时出现不必要的问题</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> =&#123;</span><br><span class="line">  <span class="comment">// 应用入口</span></span><br><span class="line">  <span class="attr">entry</span>: &#123;</span><br><span class="line">    <span class="attr">app</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../src/app.js&#x27;</span>)  <span class="comment">// app.js作为打包的入口</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 输出目录</span></span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;[name].[hash].js&#x27;</span>,  <span class="comment">//name代表entry对应的名字; hash代表 整个app打包完成后根据内容加上hash。一旦整个文件内容变更，hash就会变化</span></span><br><span class="line">    <span class="attr">path</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../dist&#x27;</span>), <span class="comment">// 打包好之后的输出路径</span></span><br><span class="line">    <span class="attr">publicPath</span>: <span class="string">&#x27;/public&#x27;</span> <span class="comment">// 静态资源文件引用时的路径（加在引用静态资源前面的）</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>有了入口和输出。我们就可以启动webpack了。这里在app.js随便写一段简单的js代码执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --config build/webpack.config.js --mode development</span><br></pre></td></tr></table></figure>
+<p>为了方便我们把这段代码加到script里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;build&quot;</span>: <span class="string">&quot;webpack --mode development --config build/webpack.config.js&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p>（Webpack4 不添加mode，会有：The ‘mode’ option has not been set. Set ‘mode’ option to ‘development’ or ‘production’ to enable defaults for this environment.警告。对应option：development or production）</p>
 <p>就会在项目根目录下多出一个dist文件夹。里面就是压缩打包好的代码</p>
-<h3 id="Webpack-Loader基础"><a href="#Webpack-Loader基础" class="headerlink" title="Webpack Loader基础"></a>Webpack Loader基础</h3><p>我们要处理.jsx以及.js文件。这里我们就需要在上面的webpack.config.js加入新配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置loader</span></span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/.jsx$/</span>, <span class="comment">//使用loader的目标文件。这里是.jsx</span></span><br><span class="line">      loader: <span class="string">'babel-loader'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/.(js)$/</span>, <span class="comment">//使用loader的目标文件。这里是.js</span></span><br><span class="line">      loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">      exclude: [</span><br><span class="line">        path.join(__dirname, <span class="string">'../node_modules'</span>)  <span class="comment">// 由于node_modules都是编译过的文件，这里我们不让babel去处理其下面的js文件</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这里我们用babel-loader处理jsx文件。光在这里配置不想我们需要安装一些依赖<br>babel-loader以及babel-core(这是babel的核心处理代码)。有了这些我们在app.js和App。jsx写一个最简单的react代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span></span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span>, document.body)</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">//App.jsx</span></span><br><span class="line"><span class="xml">import React from 'react'</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default class App extends React.Component &#123;</span></span><br><span class="line"><span class="xml">  render () &#123;</span></span><br><span class="line"><span class="xml">    return (</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>this is app<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    )</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>执行一下npm run build，发现报错。这是因为我们没有进行babel的配置。在根目录加上一个.babelrc的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;es2015&quot;, &#123;&quot;loose&quot;: true&#125;],</span><br><span class="line">    &quot;react&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Webpack-Loader基础"><a href="#Webpack-Loader基础" class="headerlink" title="Webpack Loader基础"></a>Webpack Loader基础</h3><p>我们要处理.jsx以及.js文件。这里我们就需要在上面的webpack.config.js加入新配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置loader</span></span><br><span class="line"><span class="attr">module</span>: &#123;</span><br><span class="line">  <span class="attr">rules</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">test</span>: <span class="regexp">/.jsx$/</span>, <span class="comment">//使用loader的目标文件。这里是.jsx</span></span><br><span class="line">      <span class="attr">loader</span>: <span class="string">&#x27;babel-loader&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">test</span>: <span class="regexp">/.(js)$/</span>, <span class="comment">//使用loader的目标文件。这里是.js</span></span><br><span class="line">      <span class="attr">loader</span>: <span class="string">&#x27;babel-loader&#x27;</span>,</span><br><span class="line">      <span class="attr">exclude</span>: [</span><br><span class="line">        path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../node_modules&#x27;</span>)  <span class="comment">// 由于node_modules都是编译过的文件，这里我们不让babel去处理其下面的js文件</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们用babel-loader处理jsx文件。光在这里配置不想我们需要安装一些依赖<br>babel-loader以及babel-core(这是babel的核心处理代码)。有了这些我们在app.js和App。jsx写一个最简单的react代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.jsx&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="variable language_">document</span>.<span class="property">body</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//App.jsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>this is app<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>执行一下npm run build，发现报错。这是因为我们没有进行babel的配置。在根目录加上一个.babelrc的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;es2015&quot;, &#123;&quot;loose&quot;: true&#125;],</span><br><span class="line">    &quot;react&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>并安装相关依赖：babel-preset-es2015、babel-preset-es2015-loose（这个是宽松模式）、babel-preset-react。</p>
 <p>再次build，dist文件夹就会出现新打包的js文件咯</p>
-<h3 id="生成一个HTML"><a href="#生成一个HTML" class="headerlink" title="生成一个HTML"></a>生成一个HTML</h3><p>这里我们想要在dist文件夹生成一个html页面去查看 我们处理过后的js代码可不可以用。这里我们需要借助’html-webpack-plugin’这个plugin<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i html-webpack-plugin -D</span><br></pre></td></tr></table></figure></p>
-<p>在webpack.config.js里添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HTMLPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>以及底部追加：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  <span class="keyword">new</span> HTMLPlugin()   <span class="comment">// 生成一个html页面，同时在webpack编译的时候。把我们所生成的entry都注入到这个html页面中,路径都是根据我们output配置的来走的。</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h3 id="生成一个HTML"><a href="#生成一个HTML" class="headerlink" title="生成一个HTML"></a>生成一个HTML</h3><p>这里我们想要在dist文件夹生成一个html页面去查看 我们处理过后的js代码可不可以用。这里我们需要借助’html-webpack-plugin’这个plugin</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i html-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+<p>在webpack.config.js里添加</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">HTMLPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>以及底部追加：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins</span>: [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">HTMLPlugin</span>()   <span class="comment">// 生成一个html页面，同时在webpack编译的时候。把我们所生成的entry都注入到这个html页面中,路径都是根据我们output配置的来走的。</span></span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>另外不要忘了 将output配置中的publicPath设为空，便于我们测试。</p>
-<p> 上面步骤走完，我们在build一下，发现dist文件夹中多出来了一个index.html文件。<br><img src="/assets/blogImg/20180317-2.png" alt=""></p>
+<p> 上面步骤走完，我们在build一下，发现dist文件夹中多出来了一个index.html文件。<br><img src="/assets/blogImg/20180317-2.png"></p>
 <p> 打开测试一下。发现我们的chrome上出现了“this is app”的字样 ~搞定！</p>
-<h3 id="React服务端渲染配置"><a href="#React服务端渲染配置" class="headerlink" title="React服务端渲染配置"></a>React服务端渲染配置</h3><p>现在单页面应用大行其道的年代，为了解决SEO不友好以及首屏过长的纹理。服务端渲染（SSR）也是绕不开的。<br>react-dom是react专供web端开发渲染的工具。而服务端没有window/document等属性：ReactDOM.render(<app>, document.body)这句是用不了的。</app></p>
-<p>下面就来说说node服务端执行环境代码在webpack下怎么搞定：<br>首先我们需要在src目录下创建一个server渲染的入口<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//server-entry.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &lt;App /&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="React服务端渲染配置"><a href="#React服务端渲染配置" class="headerlink" title="React服务端渲染配置"></a>React服务端渲染配置</h3><p>现在单页面应用大行其道的年代，为了解决SEO不友好以及首屏过长的纹理。服务端渲染（SSR）也是绕不开的。<br>react-dom是react专供web端开发渲染的工具。而服务端没有window&#x2F;document等属性：ReactDOM.render(<App />, document.body)这句是用不了的。</p>
+<p>下面就来说说node服务端执行环境代码在webpack下怎么搞定：<br>首先我们需要在src目录下创建一个server渲染的入口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//server-entry.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.jsx&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &lt;<span class="title class_">App</span> /&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>之后在build中在区别开web端的webpack配置，另外创建一个新的配置文件暂且叫：webpack.config.server.js大部分内容都和web端的配置一样：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>) <span class="comment">// 引入‘path’，为了在这里使用绝对路径，避免相对路径在不同系统时出现不必要的问题</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports =&#123;</span><br><span class="line">  target: <span class="string">'node'</span>, <span class="comment">//webpack打包出来的内容使用在什么环境下</span></span><br><span class="line">  <span class="comment">// 应用入口</span></span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: path.join(__dirname, <span class="string">'../src/server-entry.js'</span>)  <span class="comment">// app.js作为打包的入口</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 输出目录</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'server-entry.js'</span>,  <span class="comment">// node端没有浏览器缓存这个概念，并且需要在node中直接import这个文件。故直接命名就好</span></span><br><span class="line">    path: path.join(__dirname, <span class="string">'../dist'</span>), <span class="comment">// 打包好之后的输出路径</span></span><br><span class="line">    publicPath: <span class="string">''</span>,</span><br><span class="line">    libraryTarget: <span class="string">'commonjs2'</span> <span class="comment">// 打包出来js模块所使用的方案（umd、amd、cmd、commonJS）这里我们使用commonjs2，适用于node端</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 配置loader</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/.(jsx)$/</span>, <span class="comment">//使用loader的目标文件。这里是.jsx</span></span><br><span class="line">        loader: <span class="string">'babel-loader'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/.(js)$/</span>, <span class="comment">//使用loader的目标文件。这里是.js</span></span><br><span class="line">        loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">        exclude: [</span><br><span class="line">          path.join(__dirname, <span class="string">'../node_modules'</span>)  <span class="comment">// 由于node_modules都是编译过的文件，这里我们不让babel去处理其下面的js文件</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>值得注意的就是我们需要加上target和output中libraryTarget这两个配置。<br>之后改一下我们的npm script：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"build:web": "webpack --mode development --config build/webpack.config.js",</span><br><span class="line">"build:server": "webpack --mode development --config build/webpack.config.server.js",</span><br><span class="line">"clear": "rimraf dist",</span><br><span class="line">"build": "npm run clear &amp;&amp; npm run build:web &amp;&amp; npm run build:server"</span><br></pre></td></tr></table></figure></p>
-<p>(rimraf是一个非常好用删除文件夹的库，当然也可以用rm的方式)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure></p>
-<p>走一波。发现dist多出了server-entry.js这个打包好的文件。打开秋一眼，有别于web打包（是一个自执行的方法）。<br><img src="/assets/blogImg/20180317-3.png" alt=""><br>已经变成了node模块导出的方式咯。<br>这里我们用express搭建一个服务，看看是否成功：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express =<span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> ReactSSR = <span class="built_in">require</span>(<span class="string">'react-dom/server'</span>)</span><br><span class="line"><span class="keyword">const</span> serverEntry = <span class="built_in">require</span>(<span class="string">'../dist/server-entry'</span>).default</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'*'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> appStr = ReactSSR.renderToString(serverEntry)</span><br><span class="line">  res.send(appStr)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">2333</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'server is listening on 2333'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>react SSR这块不是这篇blog的重点就不细说。这里需要注意的是。我们的server-entry是通过export default导出的与import配套。在node中用require的方式需要require(‘../dist/server-entry’).default一下<br>这一块的知识点可以看阮一峰老师写的博文</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>) <span class="comment">// 引入‘path’，为了在这里使用绝对路径，避免相对路径在不同系统时出现不必要的问题</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> =&#123;</span><br><span class="line">  <span class="attr">target</span>: <span class="string">&#x27;node&#x27;</span>, <span class="comment">//webpack打包出来的内容使用在什么环境下</span></span><br><span class="line">  <span class="comment">// 应用入口</span></span><br><span class="line">  <span class="attr">entry</span>: &#123;</span><br><span class="line">    <span class="attr">app</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../src/server-entry.js&#x27;</span>)  <span class="comment">// app.js作为打包的入口</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 输出目录</span></span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;server-entry.js&#x27;</span>,  <span class="comment">// node端没有浏览器缓存这个概念，并且需要在node中直接import这个文件。故直接命名就好</span></span><br><span class="line">    <span class="attr">path</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../dist&#x27;</span>), <span class="comment">// 打包好之后的输出路径</span></span><br><span class="line">    <span class="attr">publicPath</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">libraryTarget</span>: <span class="string">&#x27;commonjs2&#x27;</span> <span class="comment">// 打包出来js模块所使用的方案（umd、amd、cmd、commonJS）这里我们使用commonjs2，适用于node端</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 配置loader</span></span><br><span class="line">  <span class="attr">module</span>: &#123;</span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/.(jsx)$/</span>, <span class="comment">//使用loader的目标文件。这里是.jsx</span></span><br><span class="line">        <span class="attr">loader</span>: <span class="string">&#x27;babel-loader&#x27;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/.(js)$/</span>, <span class="comment">//使用loader的目标文件。这里是.js</span></span><br><span class="line">        <span class="attr">loader</span>: <span class="string">&#x27;babel-loader&#x27;</span>,</span><br><span class="line">        <span class="attr">exclude</span>: [</span><br><span class="line">          path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../node_modules&#x27;</span>)  <span class="comment">// 由于node_modules都是编译过的文件，这里我们不让babel去处理其下面的js文件</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>值得注意的就是我们需要加上target和output中libraryTarget这两个配置。<br>之后改一下我们的npm script：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;build:web&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack --mode development --config build/webpack.config.js&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;build:server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack --mode development --config build/webpack.config.server.js&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;clear&quot;</span><span class="punctuation">:</span> <span class="string">&quot;rimraf dist&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run clear &amp;&amp; npm run build:web &amp;&amp; npm run build:server&quot;</span></span><br></pre></td></tr></table></figure>
+<p>(rimraf是一个非常好用删除文件夹的库，当然也可以用rm的方式)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>走一波。发现dist多出了server-entry.js这个打包好的文件。打开秋一眼，有别于web打包（是一个自执行的方法）。<br><img src="/assets/blogImg/20180317-3.png"><br>已经变成了node模块导出的方式咯。<br>这里我们用express搭建一个服务，看看是否成功：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express =<span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ReactSSR</span> = <span class="built_in">require</span>(<span class="string">&#x27;react-dom/server&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> serverEntry = <span class="built_in">require</span>(<span class="string">&#x27;../dist/server-entry&#x27;</span>).<span class="property">default</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;*&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> appStr = <span class="title class_">ReactSSR</span>.<span class="title function_">renderToString</span>(serverEntry)</span><br><span class="line">  res.<span class="title function_">send</span>(appStr)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">2333</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;server is listening on 2333&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>react SSR这块不是这篇blog的重点就不细说。这里需要注意的是。我们的server-entry是通过export default导出的与import配套。在node中用require的方式需要require(‘..&#x2F;dist&#x2F;server-entry’).default一下<br>这一块的知识点可以看阮一峰老师写的博文</p>
 <p>启动服务器：</p>
 <p>chrome上出现：this is app</p>
 <p>搞定！</p>
-<h3 id="添加html模板"><a href="#添加html模板" class="headerlink" title="添加html模板"></a>添加html模板</h3><p>然而我们会发现，我们通过服务端渲染出来的只是：<br><img src="/assets/blogImg/20180317-4.png" alt=""><br>显然不是我们想要的，二来，之前我们将<app>直接挂在在body上其实也是不对的。这里我们迫切需要一个html模板。<br>在src下创建一个template.html文件：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="comment">&lt;!--app--&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></app></p>
-<p>更改webpack.config.js配置，在HTMLPlugin中添加选项：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> HTMLPlugin(&#123;</span><br><span class="line">  template: path.join(__dirname, <span class="string">'../src/template.html'</span>) <span class="comment">// 以template.html作为模板文件生成html</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="添加html模板"><a href="#添加html模板" class="headerlink" title="添加html模板"></a>添加html模板</h3><p>然而我们会发现，我们通过服务端渲染出来的只是：<br><img src="/assets/blogImg/20180317-4.png"><br>显然不是我们想要的，二来，之前我们将<App/>直接挂在在body上其实也是不对的。这里我们迫切需要一个html模板。<br>在src下创建一个template.html文件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="comment">&lt;!--app--&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>更改webpack.config.js配置，在HTMLPlugin中添加选项：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">HTMLPlugin</span>(&#123;</span><br><span class="line">  <span class="attr">template</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../src/template.html&#x27;</span>) <span class="comment">// 以template.html作为模板文件生成html</span></span><br><span class="line">&#125;)   </span><br></pre></td></tr></table></figure>
 <p>因为牵扯静态文件。web端和werver端webpack的配置：输出目录中的publicPath: ‘public’</p>
-<p>当然app.js中就需要挂载在root节点上了。ReactDOM.render(<app>, document.getElementById(‘root’))</app></p>
-<p>说完web端，再搞服务端。在server.js中改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express =<span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">const</span> ReactSSR = <span class="built_in">require</span>(<span class="string">'react-dom/server'</span>)</span><br><span class="line"><span class="keyword">const</span> serverEntry = <span class="built_in">require</span>(<span class="string">'../dist/server-entry'</span>).default</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> tplPath = path.join(__dirname, <span class="string">'../dist/index.html'</span>)</span><br><span class="line"><span class="keyword">const</span> template = fs.readFileSync(tplPath, <span class="string">'utf8'</span>) <span class="comment">// 不指定utf-8,默认是buffer</span></span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/public'</span>, express.static(path.join(__dirname, <span class="string">'../dist'</span>))) <span class="comment">//静态文件指定请求返回</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'*'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> appStr = ReactSSR.renderToString(serverEntry)</span><br><span class="line">  res.send(template.replace(<span class="string">'&lt;!--app--&gt;'</span>, appStr))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">2333</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'server is listening on 2333'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>因为改了之前的代码，我们需要重新build一下再启动服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build &amp;&amp; node server/server.js</span><br></pre></td></tr></table></figure></p>
-<p><img src="/assets/blogImg/20180317-5.png" alt=""></p>
+<p>当然app.js中就需要挂载在root节点上了。ReactDOM.render(<App />, document.getElementById(‘root’))</p>
+<p>说完web端，再搞服务端。在server.js中改为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express =<span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ReactSSR</span> = <span class="built_in">require</span>(<span class="string">&#x27;react-dom/server&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> serverEntry = <span class="built_in">require</span>(<span class="string">&#x27;../dist/server-entry&#x27;</span>).<span class="property">default</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> tplPath = path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../dist/index.html&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> template = fs.<span class="title function_">readFileSync</span>(tplPath, <span class="string">&#x27;utf8&#x27;</span>) <span class="comment">// 不指定utf-8,默认是buffer</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="string">&#x27;/public&#x27;</span>, express.<span class="title function_">static</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../dist&#x27;</span>))) <span class="comment">//静态文件指定请求返回</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;*&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> appStr = <span class="title class_">ReactSSR</span>.<span class="title function_">renderToString</span>(serverEntry)</span><br><span class="line">  res.<span class="title function_">send</span>(template.<span class="title function_">replace</span>(<span class="string">&#x27;&lt;!--app--&gt;&#x27;</span>, appStr))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">2333</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;server is listening on 2333&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>因为改了之前的代码，我们需要重新build一下再启动服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build &amp;&amp; node server/server.js</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/20180317-5.png"></p>
 <p>这就出来了</p>
-<p>最后 ：<br><img src="/assets/blogImg/20180317-6.png" alt=""><br>告诉我们服务端渲染，需要用这个react16新加的这个方法ReactDOM.hydrate()<br>大概意思就是如果我们使用了服务端渲染，我们需要用ReactDOM.hydrate()，在web端去渲染内容。react回去对比客户端和服务端生成的代码<br>之间的差别。如果有差别，他会用客户端的代码替换掉服务端的代码。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.jsx'</span></span><br><span class="line"></span><br><span class="line">ReactDOM.hydrate(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span>, document.getElementById('root'))</span></span><br></pre></td></tr></table></figure></p>
+<p>最后 ：<br><img src="/assets/blogImg/20180317-6.png"><br>告诉我们服务端渲染，需要用这个react16新加的这个方法ReactDOM.hydrate()<br>大概意思就是如果我们使用了服务端渲染，我们需要用ReactDOM.hydrate()，在web端去渲染内容。react回去对比客户端和服务端生成的代码<br>之间的差别。如果有差别，他会用客户端的代码替换掉服务端的代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.jsx&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">hydrate</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>再走一波就没有警告了。</p>
 <h3 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h3><p>webpack dev server是一个通过webpack配置启动的server</p>
-<p>配置起来也很简单。<br>首先：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-dev-server -D</span><br></pre></td></tr></table></figure></p>
-<p>之后需要判断是否为开发环境<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isDev = process.env.NODE_ENV === <span class="string">'development'</span></span><br></pre></td></tr></table></figure></p>
-<p>将webpack.config.js中的moudle.exports,拿出来。赋值为const config<br>之后：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isDev) &#123;</span><br><span class="line">  config.devServer = &#123;</span><br><span class="line">    host: <span class="string">'0.0.0.0'</span>,  <span class="comment">// 我们可以允许我们用任意方式进行访问（127.0.0.1，localhost, 本机ip）</span></span><br><span class="line">    port: <span class="string">'8888'</span>,</span><br><span class="line">    contentBase: path.join(__dirname, <span class="string">'../dist'</span>),</span><br><span class="line">    <span class="comment">// hot: true,  //启动热加载</span></span><br><span class="line">    overlay: &#123;  <span class="comment">// 错误提醒弹窗小遮层</span></span><br><span class="line">      errors: <span class="literal">true</span> <span class="comment">//只显示error</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 和output配置对应起来</span></span><br><span class="line">    publicPath: <span class="string">'/public'</span>,  <span class="comment">// 访问所有静态路径都要前面加/public才能访问生成的静态文件</span></span><br><span class="line">    historyApiFallback: &#123;</span><br><span class="line">      index: <span class="string">'/public/index.html'</span> <span class="comment">// 所有404的请求全部访问该配置下的url</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config</span><br></pre></td></tr></table></figure></p>
-<p>之后启动可以使用这条命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.js --mode development</span><br></pre></td></tr></table></figure></p>
-<p>其中cross-env也需要安装。这里他是为了解决mac下(*nix)和win环境变量设置不一致这个问题。<br>执行完毕，<a href="http://localhost:8888/就可以使用了" target="_blank" rel="noopener">http://localhost:8888/就可以使用了</a></p>
+<p>配置起来也很简单。<br>首先：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+<p>之后需要判断是否为开发环境</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isDev = process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;development&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>将webpack.config.js中的moudle.exports,拿出来。赋值为const config<br>之后：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isDev) &#123;</span><br><span class="line">  config.<span class="property">devServer</span> = &#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;0.0.0.0&#x27;</span>,  <span class="comment">// 我们可以允许我们用任意方式进行访问（127.0.0.1，localhost, 本机ip）</span></span><br><span class="line">    <span class="attr">port</span>: <span class="string">&#x27;8888&#x27;</span>,</span><br><span class="line">    <span class="attr">contentBase</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;../dist&#x27;</span>),</span><br><span class="line">    <span class="comment">// hot: true,  //启动热加载</span></span><br><span class="line">    <span class="attr">overlay</span>: &#123;  <span class="comment">// 错误提醒弹窗小遮层</span></span><br><span class="line">      <span class="attr">errors</span>: <span class="literal">true</span> <span class="comment">//只显示error</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 和output配置对应起来</span></span><br><span class="line">    <span class="attr">publicPath</span>: <span class="string">&#x27;/public&#x27;</span>,  <span class="comment">// 访问所有静态路径都要前面加/public才能访问生成的静态文件</span></span><br><span class="line">    <span class="attr">historyApiFallback</span>: &#123;</span><br><span class="line">      <span class="attr">index</span>: <span class="string">&#x27;/public/index.html&#x27;</span> <span class="comment">// 所有404的请求全部访问该配置下的url</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = config</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>之后启动可以使用这条命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.js --mode development</span><br></pre></td></tr></table></figure>
+<p>其中cross-env也需要安装。这里他是为了解决mac下(*nix)和win环境变量设置不一致这个问题。<br>执行完毕，<a target="_blank" rel="noopener" href="http://localhost:8888/%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E4%BA%86">http://localhost:8888/就可以使用了</a></p>
 <h3 id="Webpack3-gt-Webpack4一些变化"><a href="#Webpack3-gt-Webpack4一些变化" class="headerlink" title="Webpack3 -&gt; Webpack4一些变化"></a>Webpack3 -&gt; Webpack4一些变化</h3><p>不是很全，自己配置时候碰到的，不断更新中···</p>
 <ul>
 <li>Webpack4之后，命令行启动都拆分开来放到了webpack-cli里。需要单独安装</li>
-<li>webpack4加入了mode这个option。不写会有警告（development/production）</li>
+<li>webpack4加入了mode这个option。不写会有警告（development&#x2F;production）</li>
 <li>4默认加了devtool这个选项</li>
-<li><p>webpack3中webpack.optimize.CommonsChunkPlugin在4里面被废弃掉了，<br>在config加配置，基本等同</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// node_modules里的代码打包到vendor里</span></span><br><span class="line">optimization: &#123;</span><br><span class="line">  spliteChunk: &#123;</span><br><span class="line">    chunks: <span class="string">'all'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  runtimeChunk: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4废弃</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins中defaultPlugins.concat([</span><br><span class="line">  <span class="keyword">new</span> webpack.NoEmitOnErrorsPlugin()</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-</li>
+<li>webpack3中webpack.optimize.CommonsChunkPlugin在4里面被废弃掉了，<br>在config加配置，基本等同<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// node_modules里的代码打包到vendor里</span></span><br><span class="line"><span class="attr">optimization</span>: &#123;</span><br><span class="line">  <span class="attr">spliteChunk</span>: &#123;</span><br><span class="line">    <span class="attr">chunks</span>: <span class="string">&#x27;all&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">runtimeChunk</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>4废弃<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins中defaultPlugins.<span class="title function_">concat</span>([</span><br><span class="line">  <span class="keyword">new</span> webpack.<span class="title class_">NoEmitOnErrorsPlugin</span>()</span><br><span class="line">])</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -297,7 +317,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/28/关于RN项目升级(-)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/04/28/%E5%85%B3%E4%BA%8ERN%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7(-)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -307,7 +327,7 @@
     </a>
   
   
-    <a href="/2018/03/10/node图片合成/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/10/node%E5%9B%BE%E7%89%87%E5%90%88%E6%88%90/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">node图片合成</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -423,7 +443,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,31 +451,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,6 +479,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -475,11 +503,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,23 +519,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,11 +531,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,19 +555,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,11 +571,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,15 +587,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,7 +607,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,15 +619,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,15 +635,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

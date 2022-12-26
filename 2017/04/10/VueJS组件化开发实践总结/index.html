@@ -10,20 +10,21 @@
   <title>VueJS组件化开发实践总结 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="前言接触Vuejs，好一阵了。清明节前在慕课网学了一门课。前前后后花了40多个小时琢磨，搭建起了组件化开发的饿了么SPA。这40小时收获了很多，也踩了不少坑。这里总结一下。 源码： https://github.com/laclys/vueApp 技术栈VueJS+Vue-resource+Vue-router+Sass+webpack+ES6 具体细节目录结构 common: 公共文件，包含图标">
-<meta name="keywords" content="前端,Vue">
+  <meta name="description" content="前言接触Vuejs，好一阵了。清明节前在慕课网学了一门课。前前后后花了40多个小时琢磨，搭建起了组件化开发的饿了么SPA。这40小时收获了很多，也踩了不少坑。这里总结一下。 源码： https:&#x2F;&#x2F;github.com&#x2F;laclys&#x2F;vueApp 技术栈VueJS+Vue-resource+Vue-router+Sass+webpack+ES6 具体细节目录结构 common: 公共文件，包含图标">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VueJS组件化开发实践总结">
-<meta property="og:url" content="http://yoursite.com/2017/04/10/VueJS组件化开发实践总结/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/VueJS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="前言接触Vuejs，好一阵了。清明节前在慕课网学了一门课。前前后后花了40多个小时琢磨，搭建起了组件化开发的饿了么SPA。这40小时收获了很多，也踩了不少坑。这里总结一下。 源码： https://github.com/laclys/vueApp 技术栈VueJS+Vue-resource+Vue-router+Sass+webpack+ES6 具体细节目录结构 common: 公共文件，包含图标">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="前言接触Vuejs，好一阵了。清明节前在慕课网学了一门课。前前后后花了40多个小时琢磨，搭建起了组件化开发的饿了么SPA。这40小时收获了很多，也踩了不少坑。这里总结一下。 源码： https:&#x2F;&#x2F;github.com&#x2F;laclys&#x2F;vueApp 技术栈VueJS+Vue-resource+Vue-router+Sass+webpack+ES6 具体细节目录结构 common: 公共文件，包含图标">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170409-01.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170409-02.jpg">
-<meta property="og:updated_time" content="2017-04-09T16:31:18.000Z">
+<meta property="article:published_time" content="2017-04-09T16:31:18.000Z">
+<meta property="article:modified_time" content="2017-04-09T16:31:18.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VueJS组件化开发实践总结">
-<meta name="twitter:description" content="前言接触Vuejs，好一阵了。清明节前在慕课网学了一门课。前前后后花了40多个小时琢磨，搭建起了组件化开发的饿了么SPA。这40小时收获了很多，也踩了不少坑。这里总结一下。 源码： https://github.com/laclys/vueApp 技术栈VueJS+Vue-resource+Vue-router+Sass+webpack+ES6 具体细节目录结构 common: 公共文件，包含图标">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20170409-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -42,7 +43,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -56,10 +57,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -110,10 +109,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -164,7 +161,7 @@
   
 
         
-        <a href="/2017/04/10/VueJS组件化开发实践总结/" class="archive-article-date">
+        <a href="/2017/04/10/VueJS%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/" class="archive-article-date">
   	<time datetime="2017-04-09T16:31:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-10</time>
 </a>
         
@@ -173,40 +170,32 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>接触Vuejs，好一阵了。清明节前在慕课网学了一门课。前前后后花了40多个小时琢磨，搭建起了组件化开发的饿了么SPA。这40小时收获了很多，也踩了不少坑。这里总结一下。</p>
-<p>源码： <a href="https://github.com/laclys/vueApp" target="_blank" rel="noopener">https://github.com/laclys/vueApp</a></p>
+<p>源码： <a target="_blank" rel="noopener" href="https://github.com/laclys/vueApp">https://github.com/laclys/vueApp</a></p>
 <h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><p>VueJS+Vue-resource+Vue-router+Sass+webpack+ES6</p>
-<h2 id="具体细节"><a href="#具体细节" class="headerlink" title="具体细节"></a>具体细节</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p><img src="/assets/blogImg/20170409-01.jpg" alt=""></p>
+<h2 id="具体细节"><a href="#具体细节" class="headerlink" title="具体细节"></a>具体细节</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p><img src="/assets/blogImg/20170409-01.jpg"></p>
 <p>common: 公共文件，包含图标字体文件、一些公共JS方法、Sass的mixin(这里包含移动端一像素、移动端DPR等，后面再提)<br>components：公共组件<br>    包含：<br>    cartcontrol:页面底部购物车组件<br>    food：商品详情也组件<br>    goods：商品列表页组件<br>    header：头部组件<br>    ratings：评论列表页组件<br>    seller：商家页组件<br>    shopcart：购物车组件<br>    split：空隙行组件<br>    star：评价星星组件<br>App.vue: 页面入口app组件（组件头头，所有组件都依附于它。)<br>main.js: VueJs入口文件,加载路由,公共组件,组件状态。</p>
 <h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><p>比较零散一条一一条总结：</p>
- <a id="more"></a>
+ <span id="more"></span>
+
 <ul>
-<li>​Vue的核心思想就是数据驱动，省去了操纵DOM的步骤，我们所做的一切都是为了改变数据。数据（model）改变/驱动视图（view）自动更新。</li>
+<li>​Vue的核心思想就是数据驱动，省去了操纵DOM的步骤，我们所做的一切都是为了改变数据。数据（model）改变&#x2F;驱动视图（view）自动更新。</li>
 <li>组件化的意义：扩展HTML元素，封装可重用的代码。</li>
-<li>DPR–量化屏幕的物理分辨率和显示清晰度。例如iphone6的DPR为2，6 plus/7是3。一般UI给的psd图都是基于DPR为2做的，所以移动端的设计稿，像素尺寸都是两倍或三倍。（这里提一下一般只针对ios，安卓采用1倍布局方案）</li>
-<li><p>移动端实现1px：利用伪类+y轴缩放。味蕾相对于元素绝对定位后，给伪类1px的边框，然后根据设备最小dpr进行scaleY。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> border-<span class="number">1px</span>($color) &#123;</span><br><span class="line">    <span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line">    &amp;<span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">        <span class="attribute">border-top</span>: <span class="number">1px</span> solid $color;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// DPR1.5时候</span><br><span class="line">@<span class="keyword">media</span> (-webkit-min-device-pixel-ratio:<span class="number">1.5</span>),</span><br><span class="line">(min-device-pixel-ratio:<span class="number">1.5</span>) &#123;</span><br><span class="line">    <span class="selector-class">.border-1px</span> &#123;</span><br><span class="line">        &amp;:after &#123;</span><br><span class="line">            <span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">scaleY</span>(0<span class="selector-class">.7</span>);</span><br><span class="line">            <span class="selector-tag">transform</span>: <span class="selector-tag">scaleY</span>(0<span class="selector-class">.7</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// DPR2时候</span><br><span class="line">@<span class="keyword">media</span> (-webkit-min-device-pixel-ratio:<span class="number">2</span>),</span><br><span class="line">(min-device-pixel-ratio:<span class="number">2</span>) &#123;</span><br><span class="line">    <span class="selector-class">.border-1px</span> &#123;</span><br><span class="line">        &amp;:after &#123;</span><br><span class="line">            <span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">scaleY</span>(0<span class="selector-class">.5</span>);</span><br><span class="line">            <span class="selector-tag">transform</span>: <span class="selector-tag">scaleY</span>(0<span class="selector-class">.5</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>​Vue组件中不能直接使用src，要通过v-bind绑定使用。</p>
-</li>
+<li>DPR–量化屏幕的物理分辨率和显示清晰度。例如iphone6的DPR为2，6 plus&#x2F;7是3。一般UI给的psd图都是基于DPR为2做的，所以移动端的设计稿，像素尺寸都是两倍或三倍。（这里提一下一般只针对ios，安卓采用1倍布局方案）</li>
+<li>移动端实现1px：利用伪类+y轴缩放。味蕾相对于元素绝对定位后，给伪类1px的边框，然后根据设备最小dpr进行scaleY。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> border-<span class="number">1px</span>($<span class="attribute">color</span>) &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    &amp;<span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">        <span class="attribute">border-top</span>: <span class="number">1px</span> solid $color;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// DPR1.<span class="number">5</span>时候</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">-webkit-min-device-pixel-ratio</span>:<span class="number">1.5</span>),</span><br><span class="line">(<span class="attribute">min-device-pixel-ratio</span>:<span class="number">1.5</span>) &#123;</span><br><span class="line">    <span class="selector-class">.border-1px</span> &#123;</span><br><span class="line">        &amp;<span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">            -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleY</span>(<span class="number">0.7</span>);</span><br><span class="line">            <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(<span class="number">0.7</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// DPR2时候</span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">-webkit-min-device-pixel-ratio</span>:<span class="number">2</span>),</span><br><span class="line">(<span class="attribute">min-device-pixel-ratio</span>:<span class="number">2</span>) &#123;</span><br><span class="line">    <span class="selector-class">.border-1px</span> &#123;</span><br><span class="line">        &amp;<span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">            -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleY</span>(<span class="number">0.5</span>);</span><br><span class="line">            <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(<span class="number">0.5</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>​Vue组件中不能直接使用src，要通过v-bind绑定使用。</li>
 <li>CSS消除inline-block下两个行间样式之间的留白。两种办法一种是两个标签不换行紧紧贴着；二是给他们的父级加font-size：0。这样就可以解决了。</li>
 <li>iphone一般的默认字体：<br>‘PingFang SC’, ‘STHeitiSC-Light’, ‘Helvetica-Light’, arial, sans-serif;</li>
-<li><p>省略号：（写过好多遍）</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:nowrap</span>;</span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>CSS sticky footer布局（实现底部内容随着内容长度而变化。）：<a href="http://www.w3cplus.com/css3/css-secrets/sticky-footers.html" target="_blank" rel="noopener">http://www.w3cplus.com/css3/css-secrets/sticky-footers.html</a></p>
-</li>
+<li>省略号：（写过好多遍）<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">white-space</span>:nowrap;</span><br><span class="line"><span class="attribute">overflow</span>:hidden;</span><br><span class="line"><span class="attribute">text-overflow</span>:ellipsis;</span><br></pre></td></tr></table></figure></li>
+<li>CSS sticky footer布局（实现底部内容随着内容长度而变化。）：<a target="_blank" rel="noopener" href="http://www.w3cplus.com/css3/css-secrets/sticky-footers.html">http://www.w3cplus.com/css3/css-secrets/sticky-footers.html</a></li>
 <li>IOS专有的模糊背景属性：backdrop-filter: blur(10px);</li>
 <li>​垂直居中：父级用display: table, 子级display：table-cell；vertical-align：middle；</li>
-<li>Vue异步赋值。一般需要dom加载完成后操作dom时使用（动态更新数据）：this.$nextTick(()=&gt;{});</li>
+<li>Vue异步赋值。一般需要dom加载完成后操作dom时使用（动态更新数据）：this.$nextTick(()&#x3D;&gt;{});</li>
 <li>css黑魔法：padding-top：100%（相对于宽度来计算padding）</li>
-<li><p>兼容iphone5小屏幕时：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> only screen and (max-width:<span class="number">320px</span>)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意驼峰命名和连字符命名</p>
-</li>
+<li>兼容iphone5小屏幕时：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>:<span class="number">320px</span>)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>注意驼峰命名和连字符命名</li>
 </ul>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过这次组件化开发事件，收获不仅仅是vue这门语言，还有很多规范的编程习惯。ESlink的使用、css结构格式、命名规范···<br>Vue很多技术细节，还是需要好好琢磨文档。抽时间再学一下Vuex。<br>webpack真的很方便。不过吐槽一下vue-loader根本没有处理.vue文件里面的内容，他只是告诉你应该由其他的方式来loader来处理这个文件。</p>
-<p>就这样吧。<br><img src="/assets/blogImg/20170409-02.jpg" alt=""><br>又是一年樱花季，来一张去年的照片解解馋吧=。=</p>
+<p>就这样吧。<br><img src="/assets/blogImg/20170409-02.jpg"><br>又是一年樱花季，来一张去年的照片解解馋吧&#x3D;。&#x3D;</p>
 
       
 
@@ -264,7 +253,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/23/Vuex学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/23/Vuex%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -274,7 +263,7 @@
     </a>
   
   
-    <a href="/2017/03/29/Webpack2小试/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/03/29/Webpack2%E5%B0%8F%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Webpack2小试</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -390,7 +379,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -398,31 +387,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -434,6 +415,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -442,11 +439,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,23 +455,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,11 +467,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,19 +491,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,11 +507,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,15 +523,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,7 +543,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,15 +555,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,15 +571,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

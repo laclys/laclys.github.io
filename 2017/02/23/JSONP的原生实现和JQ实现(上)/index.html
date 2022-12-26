@@ -11,22 +11,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="JSONPJSONP，全称：JSON with padding乍一看应该是和用来数据解析描述的JSON的某个远房亲戚。通过学习，这两者本质上完全是不同的东西。 JSONP的概念在这就不赘言。自己的理解，由于Ajax直接请求文件数据时，跨域无权访问（为了安全）。为了解决跨域问题，我们发现在页面调用JS文件时不受跨域影响（例如，我们在任意文件中都可以引入jq文件，从而使用jq开发页面），因此通过把数据">
-<meta name="keywords" content="前端,javascript,jsonp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSONP的原生实现和JQ实现(上)">
-<meta property="og:url" content="http://yoursite.com/2017/02/23/JSONP的原生实现和JQ实现(上)/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8A)/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="JSONPJSONP，全称：JSON with padding乍一看应该是和用来数据解析描述的JSON的某个远房亲戚。通过学习，这两者本质上完全是不同的东西。 JSONP的概念在这就不赘言。自己的理解，由于Ajax直接请求文件数据时，跨域无权访问（为了安全）。为了解决跨域问题，我们发现在页面调用JS文件时不受跨域影响（例如，我们在任意文件中都可以引入jq文件，从而使用jq开发页面），因此通过把数据">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170223-1.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170223-2.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170223-3.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170223-4.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170223-5.jpg">
-<meta property="og:updated_time" content="2017-02-22T17:01:18.000Z">
+<meta property="article:published_time" content="2017-02-22T17:01:18.000Z">
+<meta property="article:modified_time" content="2017-02-22T17:01:18.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="jsonp">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSONP的原生实现和JQ实现(上)">
-<meta name="twitter:description" content="JSONPJSONP，全称：JSON with padding乍一看应该是和用来数据解析描述的JSON的某个远房亲戚。通过学习，这两者本质上完全是不同的东西。 JSONP的概念在这就不赘言。自己的理解，由于Ajax直接请求文件数据时，跨域无权访问（为了安全）。为了解决跨域问题，我们发现在页面调用JS文件时不受跨域影响（例如，我们在任意文件中都可以引入jq文件，从而使用jq开发页面），因此通过把数据">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20170223-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -45,7 +47,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -59,10 +61,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -113,10 +113,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -167,7 +165,7 @@
   
 
         
-        <a href="/2017/02/23/JSONP的原生实现和JQ实现(上)/" class="archive-article-date">
+        <a href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8A)/" class="archive-article-date">
   	<time datetime="2017-02-22T17:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
 </a>
         
@@ -177,11 +175,14 @@
       
         <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP，全称：JSON with padding乍一看应该是和用来数据解析描述的JSON的某个远房亲戚。通过学习，<strong>这两者本质上完全是不同的东西</strong>。</p>
 <p>JSONP的概念在这就不赘言。自己的理解，由于Ajax直接请求文件数据时，跨域无权访问（为了安全）。为了解决跨域问题，我们发现在页面调用JS文件时不受跨域影响（例如，我们在任意文件中都可以引入jq文件，从而使用jq开发页面），因此通过把数据装在一个js格式文件里，在客户端进行处理。这就是JSONP的原理。JSONP允许用户传递一个callback参数给服务器，之后服务器返回数据时通过这个参数的函数包裹上数据传给客户端。</p>
-<p>下面不多说废话，下面用原生和jq分别写两个小获取baidu联想词条的小demo。<br>想要的效果就是当我在搜索条输入‘a’时，出现下拉联想列表（baidu的）<br><img src="/assets/blogImg/20170223-1.jpg" alt=""><br> <a id="more"></a></p>
-<h4 id="首先是原生实现方式："><a href="#首先是原生实现方式：" class="headerlink" title="首先是原生实现方式："></a>首先是原生实现方式：</h4><p>我们先通过浏览器得到这一个数据请求。（在调试窗口的network中）<br><img src="/assets/blogImg/20170223-2.jpg" alt=""><br><img src="/assets/blogImg/20170223-3.jpg" alt=""><br>得到了请求：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Request URL:https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;json=1&amp;p=3&amp;sid=1424_21114_17001_21930_22036&amp;req=2&amp;csor=1&amp;cb=jQuery1102023194193176203193_1487780037910&amp;_=1487780037913</span><br></pre></td></tr></table></figure></p>
-<p>经过分析wd=a是我们联想的a（故这儿可以放我们想要联想的值）；cb是callback回调函数。把其他的都干掉：<br><a href="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=show" target="_blank" rel="noopener">https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=show</a><br>show随便起的回调函数名字。<br>之后代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oUl = <span class="built_in">document</span>.getElementById(<span class="string">'ull'</span>);</span><br><span class="line">    <span class="keyword">var</span> arr = data.s;</span><br><span class="line">    oUl.innerHTML=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        <span class="keyword">var</span> oLi=<span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line">        oLi.innerHTML=arr[i];</span><br><span class="line">        oUl.appendChild(oLi);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oT = <span class="built_in">document</span>.getElementById(<span class="string">'inp'</span>);</span><br><span class="line">    oT.oninput = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> str = oT.value;</span><br><span class="line">        <span class="keyword">var</span> oScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">        oScript.src = <span class="string">`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=<span class="subst">$&#123;str&#125;</span>&amp;cb=show`</span>;</span><br><span class="line">        <span class="built_in">document</span>.head.appendChild(oScript);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"inp"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"baidu"</span> <span class="attr">id</span>=<span class="string">"inp"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ull"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>当文本框有键盘输入事件时，我们在head标签下面动态的创建了一个script标签，标签的src中是放入了我们的请求wd，之后cb（回调函数）show来接受返回的data。并存储在ul的li下。效果如下：<br><img src="/assets/blogImg/20170223-4.jpg" alt=""><br><img src="/assets/blogImg/20170223-5.jpg" alt=""></p>
+<p>下面不多说废话，下面用原生和jq分别写两个小获取baidu联想词条的小demo。<br>想要的效果就是当我在搜索条输入‘a’时，出现下拉联想列表（baidu的）<br><img src="/assets/blogImg/20170223-1.jpg"><br> <span id="more"></span></p>
+<h4 id="首先是原生实现方式："><a href="#首先是原生实现方式：" class="headerlink" title="首先是原生实现方式："></a>首先是原生实现方式：</h4><p>我们先通过浏览器得到这一个数据请求。（在调试窗口的network中）<br><img src="/assets/blogImg/20170223-2.jpg"><br><img src="/assets/blogImg/20170223-3.jpg"><br>得到了请求：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Request URL:https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;json=1&amp;p=3&amp;sid=1424_21114_17001_21930_22036&amp;req=2&amp;csor=1&amp;cb=jQuery1102023194193176203193_1487780037910&amp;_=1487780037913</span><br></pre></td></tr></table></figure>
+<p>经过分析wd&#x3D;a是我们联想的a（故这儿可以放我们想要联想的值）；cb是callback回调函数。把其他的都干掉：<br><a target="_blank" rel="noopener" href="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&cb=show">https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=show</a><br>show随便起的回调函数名字。<br>之后代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">show</span>(<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> oUl = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;ull&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> arr = data.<span class="property">s</span>;</span><br><span class="line">    oUl.<span class="property">innerHTML</span>=<span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">var</span> oLi=<span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">        oLi.<span class="property">innerHTML</span>=arr[i];</span><br><span class="line">        oUl.<span class="title function_">appendChild</span>(oLi);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> oT = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;inp&#x27;</span>);</span><br><span class="line">    oT.<span class="property">oninput</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> str = oT.<span class="property">value</span>;</span><br><span class="line">        <span class="keyword">var</span> oScript = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">        oScript.<span class="property">src</span> = <span class="string">`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=<span class="subst">$&#123;str&#125;</span>&amp;cb=show`</span>;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(oScript);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;inp&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;baidu&quot;</span> <span class="attr">id</span>=<span class="string">&quot;inp&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;ull&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当文本框有键盘输入事件时，我们在head标签下面动态的创建了一个script标签，标签的src中是放入了我们的请求wd，之后cb（回调函数）show来接受返回的data。并存储在ul的li下。效果如下：<br><img src="/assets/blogImg/20170223-4.jpg"><br><img src="/assets/blogImg/20170223-5.jpg"></p>
 
       
 
@@ -220,11 +221,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
         </li>
       
 		</ul>
@@ -243,7 +244,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/02/23/JSONP的原生实现和JQ实现(下)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8B)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -253,7 +254,7 @@
     </a>
   
   
-    <a href="/2017/02/21/JS中的cookie,localStorage和sessionStorage/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/02/21/JS%E4%B8%AD%E7%9A%84cookie,localStorage%E5%92%8CsessionStorage/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">JS中的cookie,localStorage和sessionStorage</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -369,7 +370,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -377,31 +378,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -413,6 +406,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -421,11 +430,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,23 +446,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,11 +458,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,19 +482,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,11 +498,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,15 +514,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,7 +534,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,15 +546,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,15 +562,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

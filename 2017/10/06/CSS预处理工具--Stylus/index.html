@@ -11,19 +11,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="（2017.10.4   兰州·黄河） 为什么是Stylus？Stylus vs Sass ：Sass 在win下中文字符兼容不是太好。出现的比较早，相比之下少一些新晋的功能 Stylus vs PostCSS：势均力敌，速度都很快，支持自己写扩展。都是用node开发。 stylus优势：1，语法上，无限接近JS。2，极尽简化，又向上兼容。3，强力的@extend （不仅可以继承类还有继承选择器）">
-<meta name="keywords" content="CSS,前端,Stylus">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS预处理工具--Stylus">
-<meta property="og:url" content="http://yoursite.com/2017/10/06/CSS预处理工具--Stylus/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="（2017.10.4   兰州·黄河） 为什么是Stylus？Stylus vs Sass ：Sass 在win下中文字符兼容不是太好。出现的比较早，相比之下少一些新晋的功能 Stylus vs PostCSS：势均力敌，速度都很快，支持自己写扩展。都是用node开发。 stylus优势：1，语法上，无限接近JS。2，极尽简化，又向上兼容。3，强力的@extend （不仅可以继承类还有继承选择器）">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171006-1.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171006-2.jpg">
-<meta property="og:updated_time" content="2017-10-05T16:18:44.000Z">
+<meta property="article:published_time" content="2017-10-05T16:18:44.000Z">
+<meta property="article:modified_time" content="2017-10-05T16:18:44.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="Stylus">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS预处理工具--Stylus">
-<meta name="twitter:description" content="（2017.10.4   兰州·黄河） 为什么是Stylus？Stylus vs Sass ：Sass 在win下中文字符兼容不是太好。出现的比较早，相比之下少一些新晋的功能 Stylus vs PostCSS：势均力敌，速度都很快，支持自己写扩展。都是用node开发。 stylus优势：1，语法上，无限接近JS。2，极尽简化，又向上兼容。3，强力的@extend （不仅可以继承类还有继承选择器）">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20171006-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -42,7 +44,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -56,10 +58,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -110,10 +110,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -164,7 +162,7 @@
   
 
         
-        <a href="/2017/10/06/CSS预处理工具--Stylus/" class="archive-article-date">
+        <a href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus/" class="archive-article-date">
   	<time datetime="2017-10-05T16:18:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
 </a>
         
@@ -172,17 +170,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/assets/blogImg/20171006-1.jpg" alt=""><br>（2017.10.4   兰州·黄河）</p>
+        <p><img src="/assets/blogImg/20171006-1.jpg"><br>（2017.10.4   兰州·黄河）</p>
 <h3 id="为什么是Stylus？"><a href="#为什么是Stylus？" class="headerlink" title="为什么是Stylus？"></a>为什么是Stylus？</h3><p>Stylus vs Sass ：Sass 在win下中文字符兼容不是太好。出现的比较早，相比之下少一些新晋的功能</p>
 <p>Stylus vs PostCSS：势均力敌，速度都很快，支持自己写扩展。都是用node开发。</p>
 <h4 id="stylus优势："><a href="#stylus优势：" class="headerlink" title="stylus优势："></a>stylus优势：</h4><p>1，语法上，无限接近JS。<br>2，极尽简化，又向上兼容。<br>3，强力的@extend （不仅可以继承类还有继承选择器）。<br>4，不需要复杂的配置。</p>
 <h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><p>npm install stylus -g</p>
-<h4 id="编译css："><a href="#编译css：" class="headerlink" title="编译css："></a>编译css：</h4><p>stylus [options][文件|目录…] -o css/<br>eg: stylus .\index.stylus -o css</p>
-<a id="more"></a>
+<h4 id="编译css："><a href="#编译css：" class="headerlink" title="编译css："></a>编译css：</h4><p>stylus [options][文件|目录…] -o css&#x2F;<br>eg: stylus .\index.stylus -o css</p>
+<span id="more"></span>
+
 <h4 id="常用option："><a href="#常用option：" class="headerlink" title="常用option："></a>常用option：</h4><ul>
 <li>-i 启动一个交互工具 （有很多有用的小函数）</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; darken(<span class="comment">#fff, 10%)</span></span><br><span class="line">=&gt; <span class="comment">#e6e6e6</span></span><br><span class="line">&gt; rgb(201,163,59)</span><br><span class="line">=&gt; <span class="comment">#c9a33b</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>-U 把图片转化为Data URI</li>
 <li>-w 监视文件状态，自动编译</li>
@@ -190,38 +190,44 @@
 <li>-m 生成SourceMap</li>
 <li>–include-css 输出文件中包含@import导入的CSS</li>
 </ul>
-<p><a href="http://stylus-lang.com/try.html" target="_blank" rel="noopener">http://stylus-lang.com/try.html</a>(官方游乐场= =)</p>
-<h4 id="日常："><a href="#日常：" class="headerlink" title="日常："></a>日常：</h4><p>package.json:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"stylus"</span>: <span class="string">"mkdir css &amp; stylus -m -w styl/screen.styl -o css/"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>GULP:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gulp-stylus gulp-clean-css -D</span><br></pre></td></tr></table></figure></p>
-<p>gulpfile.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'stylus'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./styl/screen.styl'</span>)</span><br><span class="line">    .pipe(stylus(&#123;</span><br><span class="line">      compress: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">'include css'</span>: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(cleanCSS(&#123;</span><br><span class="line">      level: <span class="number">2</span>,</span><br><span class="line">      rebaseTo: <span class="string">'css/'</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(DEST + <span class="string">'css/'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><a target="_blank" rel="noopener" href="http://stylus-lang.com/try.html">http://stylus-lang.com/try.html</a>(官方游乐场&#x3D; &#x3D;)</p>
+<h4 id="日常："><a href="#日常：" class="headerlink" title="日常："></a>日常：</h4><p>package.json:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;stylus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;mkdir css &amp; stylus -m -w styl/screen.styl -o css/&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>GULP:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gulp-stylus gulp-clean-css -D</span><br></pre></td></tr></table></figure>
+<p>gulpfile.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">gulp.<span class="title function_">task</span>(<span class="string">&#x27;stylus&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.<span class="title function_">src</span>(<span class="string">&#x27;./styl/screen.styl&#x27;</span>)</span><br><span class="line">    .<span class="title function_">pipe</span>(<span class="title function_">stylus</span>(&#123;</span><br><span class="line">      <span class="attr">compress</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">&#x27;include css&#x27;</span>: <span class="literal">true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .<span class="title function_">pipe</span>(<span class="title function_">cleanCSS</span>(&#123;</span><br><span class="line">      <span class="attr">level</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="attr">rebaseTo</span>: <span class="string">&#x27;css/&#x27;</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .<span class="title function_">pipe</span>(gulp.<span class="title function_">dest</span>(<span class="variable constant_">DEST</span> + <span class="string">&#x27;css/&#x27;</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h4 id="一些内部功能："><a href="#一些内部功能：" class="headerlink" title="一些内部功能："></a>一些内部功能：</h4><ul>
-<li>选择器\^[N..M]</li>
+<li>选择器^[N..M]</li>
 </ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">  b</span><br><span class="line">    c</span><br><span class="line">      d</span><br><span class="line">        <span class="attribute">font-size</span> <span class="number">14px</span></span><br><span class="line"></span><br><span class="line">        <span class="selector-class">.abc</span> ^[-<span class="number">1</span>..-<span class="number">1</span>]:hover</span><br><span class="line">          <span class="attribute">color</span> red</span><br></pre></td></tr></table></figure>
-<p>编译为：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> <span class="selector-tag">b</span> <span class="selector-tag">c</span> <span class="selector-tag">d</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.abc</span> <span class="selector-tag">d</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f00</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span></span><br><span class="line">  <span class="selector-tag">b</span></span><br><span class="line">    c</span><br><span class="line">      d</span><br><span class="line">        <span class="attribute">font-size</span> <span class="number">14px</span></span><br><span class="line"></span><br><span class="line">        <span class="selector-class">.abc</span> ^<span class="selector-attr">[-1..-1]</span><span class="selector-pseudo">:hover</span></span><br><span class="line">          <span class="attribute">color</span> red</span><br></pre></td></tr></table></figure>
+<p>编译为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> <span class="selector-tag">b</span> c d &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.abc</span> d<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f00</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>引用属性值</li>
 </ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p</span><br><span class="line">  <span class="attribute">margin</span> <span class="number">10px</span></span><br><span class="line">  <span class="attribute">padding</span> (@margin / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>编译为：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>eg:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用绝对定位居中</span></span><br><span class="line">#logo</span><br><span class="line">  <span class="attribute">position</span> absolute</span><br><span class="line">  <span class="attribute">top</span> <span class="number">50%</span></span><br><span class="line">  <span class="attribute">left</span> <span class="number">50%</span></span><br><span class="line">  <span class="attribute">width</span> <span class="number">150px</span></span><br><span class="line">  <span class="attribute">height</span> <span class="number">80px</span></span><br><span class="line">  <span class="attribute">margin-left</span> -(@width / <span class="number">2</span>)</span><br><span class="line">  <span class="attribute">margin-top</span> -(@height / <span class="number">2</span>)</span><br><span class="line">  <span class="attribute">margin</span> (-@height / <span class="number">2</span>) <span class="number">0</span> <span class="number">0</span> (-@width / <span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span></span><br><span class="line">  <span class="attribute">margin</span> <span class="number">10px</span></span><br><span class="line">  <span class="attribute">padding</span> (@margin / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>编译为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>eg: </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用绝对定位居中</span></span><br><span class="line"><span class="selector-id">#logo</span></span><br><span class="line">  <span class="attribute">position</span> absolute</span><br><span class="line">  <span class="attribute">top</span> <span class="number">50%</span></span><br><span class="line">  <span class="attribute">left</span> <span class="number">50%</span></span><br><span class="line">  <span class="attribute">width</span> <span class="number">150px</span></span><br><span class="line">  <span class="attribute">height</span> <span class="number">80px</span></span><br><span class="line">  <span class="attribute">margin-left</span> <span class="built_in">-</span>(@width / <span class="number">2</span>)</span><br><span class="line">  <span class="attribute">margin-top</span> <span class="built_in">-</span>(@height / <span class="number">2</span>)</span><br><span class="line">  <span class="attribute">margin</span> (-@height / <span class="number">2</span>) <span class="number">0</span> <span class="number">0</span> (-@width / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>循环</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="number">1</span>..<span class="number">10</span></span><br><span class="line">.col-&#123;n&#125;</span><br><span class="line">  <span class="attribute">width</span> <span class="number">10%</span> * n</span><br></pre></td></tr></table></figure>
 <p>编译为：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="selector-class">.col-1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">10%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.col-2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>条件判断 IF/ELSE</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$need</span>-support-ie = true</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  <span class="keyword">if</span> <span class="variable">$need</span>-support-ie</span><br><span class="line">    <span class="attribute">padding</span> <span class="number">5px</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="attribute">margin</span> <span class="number">5px</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="selector-class">.col-1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">10%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.col-2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line">....</span><br></pre></td></tr></table></figure></li>
+<li><p>条件判断 IF&#x2F;ELSE</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$need</span>-support-ie = true</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span></span><br><span class="line">  <span class="keyword">if</span> <span class="variable">$need</span>-support-ie</span><br><span class="line">    <span class="attribute">padding</span> <span class="number">5px</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="attribute">margin</span> <span class="number">5px</span></span><br></pre></td></tr></table></figure>
 <p>(直接修改开关)</p>
-<ul>
-<li>MIXIN &amp; FUNCTIONS<br>(全部参数 ARGS…)<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">border-radius</span><span class="params">(n)</span></span></span><br><span class="line">  -webkit-<span class="attribute">border-radius</span> n</span><br><span class="line">  -moz-<span class="attribute">border-radius</span> n</span><br><span class="line">  <span class="attribute">border-radius</span> n</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">form</span> <span class="selector-tag">input</span>[type=button]</span><br><span class="line">  <span class="attribute">border-radius</span>(<span class="number">5px</span>) // function</span><br><span class="line">  <span class="attribute">border-radius</span> <span class="number">5px</span> // mixin</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="title">box-shadow</span><span class="params">(args...)</span></span></span><br><span class="line">   -webkit-<span class="attribute">box-shadow</span> args</span><br><span class="line">   -moz-<span class="attribute">box-shadow</span> args</span><br><span class="line">   <span class="attribute">box-shadow</span> args</span><br><span class="line"></span><br><span class="line"> a</span><br><span class="line">   <span class="attribute">box-shadow</span> <span class="number">1px</span> <span class="number">2px</span> <span class="number">5px</span> <span class="number">#eee</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>MIXIN &amp; FUNCTIONS<br>(全部参数 ARGS…)</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">border-radius</span><span class="params">(n)</span></span></span><br><span class="line">  -webkit-<span class="attribute">border-radius</span> n</span><br><span class="line">  -moz-<span class="attribute">border-radius</span> n</span><br><span class="line">  <span class="attribute">border-radius</span> n</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">form</span> <span class="selector-tag">input</span><span class="selector-attr">[type=button]</span></span><br><span class="line">  <span class="attribute">border-radius</span>(<span class="number">5px</span>) // function</span><br><span class="line">  <span class="attribute">border-radius</span> <span class="number">5px</span> // mixin</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="title">box-shadow</span><span class="params">(args...)</span></span></span><br><span class="line">   -webkit-<span class="attribute">box-shadow</span> args</span><br><span class="line">   -moz-<span class="attribute">box-shadow</span> args</span><br><span class="line">   <span class="attribute">box-shadow</span> args</span><br><span class="line"></span><br><span class="line"> <span class="selector-tag">a</span></span><br><span class="line">   <span class="attribute">box-shadow</span> <span class="number">1px</span> <span class="number">2px</span> <span class="number">5px</span> <span class="number">#eee</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>编译为:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">form</span> <span class="selector-tag">input</span><span class="selector-attr">[type=button]</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">-moz-border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-box-shadow</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">5px</span> <span class="number">#eee</span>;</span><br><span class="line">  <span class="attribute">-moz-box-shadow</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">5px</span> <span class="number">#eee</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">5px</span> <span class="number">#eee</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/assets/blogImg/20171006-2.jpg" alt=""></p>
+<p>编译为:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">form</span> <span class="selector-tag">input</span><span class="selector-attr">[type=button]</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">  -moz-<span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  -webkit-<span class="attribute">box-shadow</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">5px</span> <span class="number">#eee</span>;</span><br><span class="line">  -moz-<span class="attribute">box-shadow</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">5px</span> <span class="number">#eee</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">1px</span> <span class="number">2px</span> <span class="number">5px</span> <span class="number">#eee</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/assets/blogImg/20171006-2.jpg"></p>
 
       
 
@@ -256,11 +262,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
         </li>
        
         <li class="article-tag-list-item">
@@ -283,7 +289,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/06/CSS预处理工具--Stylus（2）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus%EF%BC%882%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -293,7 +299,7 @@
     </a>
   
   
-    <a href="/2017/09/29/React-Native IOS及安卓打包/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/29/React-Native%20IOS%E5%8F%8A%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">React-Native IOS及安卓打包</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -409,7 +415,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -417,31 +423,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,6 +451,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -461,11 +475,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,23 +491,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,11 +503,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,19 +527,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,11 +543,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,15 +559,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,7 +579,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,15 +591,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,15 +607,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

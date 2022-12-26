@@ -10,18 +10,19 @@
   <title>函数式编程与Redux | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="说道函数式编程，JS这边Redux是代表中的代表。 以Redux的reducers函数为例，它是标准的纯函数，这里举个最简单的例子，说明为什么要用纯函数： 首先是源码1234567891011121314151617181920212223242526272829unction posts(  state = &amp;#123;    isFetching: false,    didInvalidat">
-<meta name="keywords" content="Redux,函数式编程">
+  <meta name="description" content="说道函数式编程，JS这边Redux是代表中的代表。 以Redux的reducers函数为例，它是标准的纯函数，这里举个最简单的例子，说明为什么要用纯函数： 首先是源码 1234567891011121314151617181920212223242526272829unction posts(  state &#x3D; &amp;#123;    isFetching: false,    didInvalida">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数式编程与Redux">
-<meta property="og:url" content="http://yoursite.com/2017/11/14/函数式编程与Redux/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/11/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%8ERedux/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="说道函数式编程，JS这边Redux是代表中的代表。 以Redux的reducers函数为例，它是标准的纯函数，这里举个最简单的例子，说明为什么要用纯函数： 首先是源码1234567891011121314151617181920212223242526272829unction posts(  state = &amp;#123;    isFetching: false,    didInvalidat">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-14T15:13:40.000Z">
+<meta property="og:description" content="说道函数式编程，JS这边Redux是代表中的代表。 以Redux的reducers函数为例，它是标准的纯函数，这里举个最简单的例子，说明为什么要用纯函数： 首先是源码 1234567891011121314151617181920212223242526272829unction posts(  state &#x3D; &amp;#123;    isFetching: false,    didInvalida">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-11-14T15:13:40.000Z">
+<meta property="article:modified_time" content="2017-11-14T15:13:40.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="Redux">
+<meta property="article:tag" content="函数式编程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="函数式编程与Redux">
-<meta name="twitter:description" content="说道函数式编程，JS这边Redux是代表中的代表。 以Redux的reducers函数为例，它是标准的纯函数，这里举个最简单的例子，说明为什么要用纯函数： 首先是源码1234567891011121314151617181920212223242526272829unction posts(  state = &amp;#123;    isFetching: false,    didInvalidat">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +40,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +54,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +106,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +158,7 @@
   
 
         
-        <a href="/2017/11/14/函数式编程与Redux/" class="archive-article-date">
+        <a href="/2017/11/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E4%B8%8ERedux/" class="archive-article-date">
   	<time datetime="2017-11-14T15:13:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-14</time>
 </a>
         
@@ -171,13 +168,18 @@
       
         <p>说道函数式编程，JS这边Redux是代表中的代表。</p>
 <p>以Redux的reducers函数为例，它是标准的纯函数，这里举个最简单的例子，说明为什么要用纯函数：</p>
-<p>首先是源码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">unction posts(</span><br><span class="line">  state = &#123;</span><br><span class="line">    isFetching: <span class="literal">false</span>,</span><br><span class="line">    didInvalidate: <span class="literal">false</span>,</span><br><span class="line">    items: []</span><br><span class="line">  &#125;,</span><br><span class="line">  action</span><br><span class="line">) &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> INVALIDATE_SUBREDDIT:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">        didInvalidate: <span class="literal">true</span></span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="keyword">case</span> REQUEST_POSTS:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">        isFetching: <span class="literal">true</span>,</span><br><span class="line">        didInvalidate: <span class="literal">false</span></span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="keyword">case</span> RECEIVE_POSTS:</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">        isFetching: <span class="literal">false</span>,</span><br><span class="line">        didInvalidate: <span class="literal">false</span>,</span><br><span class="line">        items: action.posts,</span><br><span class="line">        lastUpdated: action.receivedAt</span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先是源码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">unction <span class="title function_">posts</span>(<span class="params"></span></span><br><span class="line"><span class="params">  state = &#123;</span></span><br><span class="line"><span class="params">    isFetching: <span class="literal">false</span>,</span></span><br><span class="line"><span class="params">    didInvalidate: <span class="literal">false</span>,</span></span><br><span class="line"><span class="params">    items: []</span></span><br><span class="line"><span class="params">  &#125;,</span></span><br><span class="line"><span class="params">  action</span></span><br><span class="line"><span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="attr">INVALIDATE_SUBREDDIT</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, state, &#123;</span><br><span class="line">        <span class="attr">didInvalidate</span>: <span class="literal">true</span></span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="keyword">case</span> <span class="attr">REQUEST_POSTS</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, state, &#123;</span><br><span class="line">        <span class="attr">isFetching</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">didInvalidate</span>: <span class="literal">false</span></span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="keyword">case</span> <span class="attr">RECEIVE_POSTS</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, state, &#123;</span><br><span class="line">        <span class="attr">isFetching</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">didInvalidate</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">items</span>: action.<span class="property">posts</span>,</span><br><span class="line">        <span class="attr">lastUpdated</span>: action.<span class="property">receivedAt</span></span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果我们不用return，在reducer内修改旧的state变量。变为不纯的函数，是这样的。</p>
-<a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">  <span class="keyword">case</span> INVALIDATE_SUBREDDIT:</span><br><span class="line">    state = <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      didInvalidate: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="keyword">case</span> REQUEST_POSTS:</span><br><span class="line">    state = <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      isFetching: <span class="literal">true</span>,</span><br><span class="line">      didInvalidate: <span class="literal">false</span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="keyword">case</span> RECEIVE_POSTS:</span><br><span class="line">    state = <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</span><br><span class="line">      isFetching: <span class="literal">false</span>,</span><br><span class="line">      didInvalidate: <span class="literal">false</span>,</span><br><span class="line">      items: action.posts,</span><br><span class="line">      lastUpdated: action.receivedAt</span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">return</span> state</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在Redux中combineReducers.js中看下redux是如何处理的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> hasChanged = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">const</span> nextState = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; finalReducerKeys.length; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> key = finalReducerKeys[i]</span><br><span class="line">    <span class="keyword">const</span> reducer = finalReducers[key]</span><br><span class="line">    <span class="keyword">const</span> previousStateForKey = state[key]</span><br><span class="line">    <span class="keyword">const</span> nextStateForKey = reducer(previousStateForKey, action)</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> nextStateForKey === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> errorMessage = getUndefinedStateErrorMessage(key, action)</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(errorMessage)</span><br><span class="line">    &#125;</span><br><span class="line">    nextState[key] = nextStateForKey</span><br><span class="line">    hasChanged = hasChanged || nextStateForKey !== previousStateForKey</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> hasChanged ? nextState : state</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这两行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nextStateForKey = reducer(previousStateForKey, action)</span><br></pre></td></tr></table></figure></p>
+<span id="more"></span>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="attr">INVALIDATE_SUBREDDIT</span>:</span><br><span class="line">    state = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, state, &#123;</span><br><span class="line">      <span class="attr">didInvalidate</span>: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="keyword">case</span> <span class="attr">REQUEST_POSTS</span>:</span><br><span class="line">    state = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, state, &#123;</span><br><span class="line">      <span class="attr">isFetching</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">didInvalidate</span>: <span class="literal">false</span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="keyword">case</span> <span class="attr">RECEIVE_POSTS</span>:</span><br><span class="line">    state = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, state, &#123;</span><br><span class="line">      <span class="attr">isFetching</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">didInvalidate</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">items</span>: action.<span class="property">posts</span>,</span><br><span class="line">      <span class="attr">lastUpdated</span>: action.<span class="property">receivedAt</span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="attr">default</span>:</span><br><span class="line">    <span class="keyword">return</span> state</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在Redux中combineReducers.js中看下redux是如何处理的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">let</span> hasChanged = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">const</span> nextState = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; finalReducerKeys.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> key = finalReducerKeys[i]</span><br><span class="line">    <span class="keyword">const</span> reducer = finalReducers[key]</span><br><span class="line">    <span class="keyword">const</span> previousStateForKey = state[key]</span><br><span class="line">    <span class="keyword">const</span> nextStateForKey = <span class="title function_">reducer</span>(previousStateForKey, action)</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> nextStateForKey === <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> errorMessage = <span class="title function_">getUndefinedStateErrorMessage</span>(key, action)</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(errorMessage)</span><br><span class="line">    &#125;</span><br><span class="line">    nextState[key] = nextStateForKey</span><br><span class="line">    hasChanged = hasChanged || nextStateForKey !== previousStateForKey</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> hasChanged ? nextState : state</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这两行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nextStateForKey = <span class="title function_">reducer</span>(previousStateForKey, action)</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hasChanged = hasChanged || nextStateForKey !== previousStateForKey</span><br></pre></td></tr></table></figure>
+
 <p>reducer将旧的状态（prev）和要修改的数据一起传进去，然后返回一个新的（next）状态，prev和next相比较来确定storge数据是否改变。如果我们用不纯的函数，prev和next将一致，就算数据改变，hasChanged也会是false。通过函数式的方式没有什么“副作用”</p>
 <p>Redux全篇都是函数式编程，这里只是冰山一角。Redux的源码写得非常优雅。</p>
 
@@ -237,7 +239,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/18/比Redux简单太多的Mobx/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/18/%E6%AF%94Redux%E7%AE%80%E5%8D%95%E5%A4%AA%E5%A4%9A%E7%9A%84Mobx/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -247,7 +249,7 @@
     </a>
   
   
-    <a href="/2017/11/05/Swift学习杂记(一)/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/11/05/Swift%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0(%E4%B8%80)/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Swift学习杂记(一)</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -363,7 +365,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -371,31 +373,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -407,6 +401,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -415,11 +425,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -427,23 +441,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,11 +453,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,19 +477,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,11 +493,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,15 +509,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,7 +529,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,15 +541,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,15 +557,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

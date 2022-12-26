@@ -11,17 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="CodePush巨硬提供的一套热更新策略。使用CodePush 可以进行实时的推送代码更新。CodePush 作为一个中央仓库，开发者可以推送更新 (JS, HTML, CSS and images)，应用可以从客户端 SDK 里面查询更新。 CodePush开源了react-native版本，react-native-code-push托管在GitHub上。 在公司开发的APP上，上周集成了热更">
-<meta name="keywords" content="ReactNative,移动端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native热更新一些命令">
-<meta property="og:url" content="http://yoursite.com/2017/11/01/React-Native热更新杂记/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/11/01/React-Native%E7%83%AD%E6%9B%B4%E6%96%B0%E6%9D%82%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="CodePush巨硬提供的一套热更新策略。使用CodePush 可以进行实时的推送代码更新。CodePush 作为一个中央仓库，开发者可以推送更新 (JS, HTML, CSS and images)，应用可以从客户端 SDK 里面查询更新。 CodePush开源了react-native版本，react-native-code-push托管在GitHub上。 在公司开发的APP上，上周集成了热更">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-01T15:16:26.000Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-11-01T15:16:26.000Z">
+<meta property="article:modified_time" content="2017-11-01T15:16:26.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="移动端">
+<meta property="article:tag" content="ReactNative">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native热更新一些命令">
-<meta name="twitter:description" content="CodePush巨硬提供的一套热更新策略。使用CodePush 可以进行实时的推送代码更新。CodePush 作为一个中央仓库，开发者可以推送更新 (JS, HTML, CSS and images)，应用可以从客户端 SDK 里面查询更新。 CodePush开源了react-native版本，react-native-code-push托管在GitHub上。 在公司开发的APP上，上周集成了热更">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +40,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +54,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +106,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +158,7 @@
   
 
         
-        <a href="/2017/11/01/React-Native热更新杂记/" class="archive-article-date">
+        <a href="/2017/11/01/React-Native%E7%83%AD%E6%9B%B4%E6%96%B0%E6%9D%82%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2017-11-01T15:16:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
 </a>
         
@@ -171,12 +168,16 @@
       
         <h2 id="CodePush"><a href="#CodePush" class="headerlink" title="CodePush"></a>CodePush</h2><p>巨硬提供的一套热更新策略。使用CodePush 可以进行实时的推送代码更新。CodePush 作为一个中央仓库，开发者可以推送更新 (JS, HTML, CSS and images)，应用可以从客户端 SDK 里面查询更新。</p>
 <p>CodePush开源了react-native版本，react-native-code-push托管在GitHub上。</p>
-<p>在公司开发的APP上，上周集成了热更新。碰到了一些小bug，热更新搞一哈，悄悄地把问题改掉咯。免去了发版的烦恼。（仅限于JS bundle部分，要是修改了原生，使用了link操作。还是得老老实实发版）<br><a id="more"></a></p>
-<h2 id="CodePush的一些命令"><a href="#CodePush的一些命令" class="headerlink" title="CodePush的一些命令"></a>CodePush的一些命令</h2><h3 id="账户相关"><a href="#账户相关" class="headerlink" title="账户相关"></a>账户相关</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">code-push app add 在账号里面添加一个新的app</span><br><span class="line">code-push app remove 或者 rm 在账号里移除一个app</span><br><span class="line">code-push app rename 重命名一个存在app</span><br><span class="line">code-push app list 或则 ls 列出账号下面的所有app</span><br><span class="line">code-push app transfer 把app的所有权转移到另外一个账号</span><br><span class="line">code-push login 登陆</span><br><span class="line">code-push loout 注销</span><br><span class="line">code-push access-key ls 列出登陆的token</span><br><span class="line">code-push access-key rm &lt;accessKye&gt; 删除某个 access-key</span><br><span class="line">code-push app list 或则 ls 列出账号下面的所有app</span><br></pre></td></tr></table></figure>
-<h3 id="打包发布"><a href="#打包发布" class="headerlink" title="打包发布"></a>打包发布</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code-push release-react &lt;appName&gt; &lt;platform&gt; -t 版本 -d 环境 --des 描述</span><br></pre></td></tr></table></figure>
-<p>eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">code-push release-react App-iOS ios -t 2.10.0 -d Production --des &apos;一段描述&apos;</span><br><span class="line">//其中参数–t为二进制(.ipa与apk)安装包的的版本；–dev为是否启用开发者模式(默认为false)；–d是要发布更新的环境分Production与Staging(默认为Staging)；–des为更新说明；–m 是强制更新。</span><br></pre></td></tr></table></figure></p>
+<p>在公司开发的APP上，上周集成了热更新。碰到了一些小bug，热更新搞一哈，悄悄地把问题改掉咯。免去了发版的烦恼。（仅限于JS bundle部分，要是修改了原生，使用了link操作。还是得老老实实发版）</p>
+<span id="more"></span>
+<h2 id="CodePush的一些命令"><a href="#CodePush的一些命令" class="headerlink" title="CodePush的一些命令"></a>CodePush的一些命令</h2><h3 id="账户相关"><a href="#账户相关" class="headerlink" title="账户相关"></a>账户相关</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">code-push app add 在账号里面添加一个新的app</span><br><span class="line">code-push app remove 或者 rm 在账号里移除一个app</span><br><span class="line">code-push app rename 重命名一个存在app</span><br><span class="line">code-push app list 或则 ls 列出账号下面的所有app</span><br><span class="line">code-push app transfer 把app的所有权转移到另外一个账号</span><br><span class="line">code-push login 登陆</span><br><span class="line">code-push loout 注销</span><br><span class="line">code-push access-key ls 列出登陆的token</span><br><span class="line">code-push access-key rm &lt;accessKye&gt; 删除某个 access-key</span><br><span class="line">code-push app list 或则 ls 列出账号下面的所有app</span><br></pre></td></tr></table></figure>
+
+<h3 id="打包发布"><a href="#打包发布" class="headerlink" title="打包发布"></a>打包发布</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code-push release-react &lt;appName&gt; &lt;platform&gt; -t 版本 -d 环境 --des 描述</span><br></pre></td></tr></table></figure>
+<p>eg：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">code-push release-react App-iOS ios -t 2.10.0 -d Production --des &#x27;一段描述&#x27;</span><br><span class="line">//其中参数–t为二进制(.ipa与apk)安装包的的版本；–dev为是否启用开发者模式(默认为false)；–d是要发布更新的环境分Production与Staging(默认为Staging)；–des为更新说明；–m 是强制更新。</span><br></pre></td></tr></table></figure>
 <p>注意：热更新的版本必须和app版本相同才有效。高或者低都无效。</p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 清除历史部署记录</span><br><span class="line">code-push deployment clear &lt;appName&gt; Production or Staging</span><br><span class="line">// 列出应用的部署情况</span><br><span class="line">code-push deployment ls &lt;appName&gt;</span><br><span class="line">// 查看部署的key</span><br><span class="line">code-push deployment ls &lt;appName&gt; -k </span><br><span class="line">// 部署记录历史</span><br><span class="line">code-push deployment history uniApp-IOS Production or Staging</span><br></pre></td></tr></table></figure>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 清除历史部署记录</span><br><span class="line">code-push deployment clear &lt;appName&gt; Production or Staging</span><br><span class="line">// 列出应用的部署情况</span><br><span class="line">code-push deployment ls &lt;appName&gt;</span><br><span class="line">// 查看部署的key</span><br><span class="line">code-push deployment ls &lt;appName&gt; -k </span><br><span class="line">// 部署记录历史</span><br><span class="line">code-push deployment history uniApp-IOS Production or Staging</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -211,11 +212,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">移动端</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">移动端</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
         </li>
       
 		</ul>
@@ -234,7 +235,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/05/Swift学习杂记(一)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/05/Swift%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0(%E4%B8%80)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -244,7 +245,7 @@
     </a>
   
   
-    <a href="/2017/10/25/React Native开发遇到的一些坑/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/25/React%20Native%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">React Native开发遇到的一些坑</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -360,7 +361,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -368,31 +369,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -404,6 +397,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -412,11 +421,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -424,23 +437,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,11 +449,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,19 +473,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,11 +489,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -500,15 +505,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,7 +525,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,15 +537,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,15 +553,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

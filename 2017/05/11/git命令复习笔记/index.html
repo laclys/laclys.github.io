@@ -11,17 +11,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="初始化一个Git仓库，使用git init命令。 添加文件到Git仓库，分两步： 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件； 第二步，使用命令git commit，完成。  要随时掌握工作区的状态，使用git status命令。 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。  HEAD指向的版本就是当前版本，因此，Git允许我们在版">
-<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git命令复习笔记">
-<meta property="og:url" content="http://yoursite.com/2017/05/11/git命令复习笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="初始化一个Git仓库，使用git init命令。 添加文件到Git仓库，分两步： 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件； 第二步，使用命令git commit，完成。  要随时掌握工作区的状态，使用git status命令。 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。  HEAD指向的版本就是当前版本，因此，Git允许我们在版">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-05-10T16:08:42.000Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-05-10T16:08:42.000Z">
+<meta property="article:modified_time" content="2017-05-10T16:08:42.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git命令复习笔记">
-<meta name="twitter:description" content="初始化一个Git仓库，使用git init命令。 添加文件到Git仓库，分两步： 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件； 第二步，使用命令git commit，完成。  要随时掌握工作区的状态，使用git status命令。 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。  HEAD指向的版本就是当前版本，因此，Git允许我们在版">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +39,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +53,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +105,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +157,7 @@
   
 
         
-        <a href="/2017/05/11/git命令复习笔记/" class="archive-article-date">
+        <a href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2017-05-10T16:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
 </a>
         
@@ -171,7 +167,7 @@
       
         <p>初始化一个Git仓库，使用git init命令。</p>
 <p>添加文件到Git仓库，分两步：</p>
-<p>第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；</file></p>
+<p>第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；</p>
 <p>第二步，使用命令git commit，完成。</p>
 <hr>
 <p>要随时掌握工作区的状态，使用git status命令。</p>
@@ -180,7 +176,8 @@
 <p>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。</p>
 <p>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。</p>
 <p>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <hr>
 <p>每次修改，如果不add到暂存区，那就不会加入到commit中。</p>
 <hr>
@@ -188,16 +185,16 @@
 <p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。</p>
 <p>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</p>
 <hr>
-<p>要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；</p>
+<p>要关联一个远程库，使用命令git remote add origin git@server-name:path&#x2F;repo-name.git；</p>
 <p>关联后，使用命令git push -u origin master第一次推送master分支的所有内容；</p>
 <p>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；</p>
 <hr>
 <p>查看分支：git branch</p>
-<p>创建分支：git branch <name></name></p>
-<p>切换分支：git checkout <name></name></p>
-<p>创建+切换分支：git checkout -b <name></name></p>
-<p>合并某分支到当前分支：git merge <name></name></p>
-<p>删除分支：git branch -d <name></name></p>
+<p>创建分支：git branch <name></p>
+<p>切换分支：git checkout <name></p>
+<p>创建+切换分支：git checkout -b <name></p>
+<p>合并某分支到当前分支：git merge <name></p>
+<p>删除分支：git branch -d <name></p>
 <hr>
 <p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</p>
 <p>用git log –graph命令可以看到分支合并图</p>
@@ -216,27 +213,28 @@
 <p>6：继续开发dev，最后add，commit</p>
 <p>7：在master下合并最后完成的dev</p>
 <p>代码过程如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">在此插入代码</span><br><span class="line"></span><br><span class="line">1： $ git stash</span><br><span class="line"></span><br><span class="line">2： $ git checkout master</span><br><span class="line">   $ git checkout -b issue-101</span><br><span class="line">    //去文件里修bug</span><br><span class="line">    $ git add README.md</span><br><span class="line">    $ git commit -m &quot;fix-issue-101&quot;</span><br><span class="line"></span><br><span class="line">3： $ git checkout master</span><br><span class="line">   $ git merge --no-ff -m &quot;m-merge-issue-101&quot; issue-101</span><br><span class="line">   $ git branch -d issue-101</span><br><span class="line"></span><br><span class="line">4： $ git checkout dev</span><br><span class="line">    $ git merge --no-ff -m &quot;dev-merge-m&quot; master</span><br><span class="line"></span><br><span class="line">5： $ git stash pop</span><br><span class="line">            //提示冲突，去文件手动改正</span><br><span class="line">            Auto-merging README.md</span><br><span class="line">            CONFLICT (content): Merge conflict in README.md</span><br><span class="line"></span><br><span class="line">6： //继续开发 ... ... ，完成后一并提交</span><br><span class="line">    $ git add README.md</span><br><span class="line">    $ git commit -m &quot;fixconflict &amp; append something&quot;</span><br><span class="line"></span><br><span class="line">7： $ git checkout master</span><br><span class="line">    $ git merge --no-ff -m &quot;m-merge-dev&quot; dev</span><br><span class="line">    $ git branch -d dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">在此插入代码</span><br><span class="line"></span><br><span class="line">1： $ git stash</span><br><span class="line"></span><br><span class="line">2： $ git checkout master</span><br><span class="line">   $ git checkout -b issue-101</span><br><span class="line">    //去文件里修bug</span><br><span class="line">    $ git add README.md</span><br><span class="line">    $ git commit -m &quot;fix-issue-101&quot;</span><br><span class="line"></span><br><span class="line">3： $ git checkout master</span><br><span class="line">   $ git merge --no-ff -m &quot;m-merge-issue-101&quot; issue-101</span><br><span class="line">   $ git branch -d issue-101</span><br><span class="line"></span><br><span class="line">4： $ git checkout dev</span><br><span class="line">    $ git merge --no-ff -m &quot;dev-merge-m&quot; master</span><br><span class="line"></span><br><span class="line">5： $ git stash pop</span><br><span class="line">            //提示冲突，去文件手动改正</span><br><span class="line">            Auto-merging README.md</span><br><span class="line">            CONFLICT (content): Merge conflict in README.md</span><br><span class="line"></span><br><span class="line">6： //继续开发 ... ... ，完成后一并提交</span><br><span class="line">    $ git add README.md</span><br><span class="line">    $ git commit -m &quot;fixconflict &amp; append something&quot;</span><br><span class="line"></span><br><span class="line">7： $ git checkout master</span><br><span class="line">    $ git merge --no-ff -m &quot;m-merge-dev&quot; dev</span><br><span class="line">    $ git branch -d dev</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p>开发一个新feature，最好新建一个分支；</p>
-<p>如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。  </name></p>
+<p>如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。  </p>
 <hr>
 <h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><p>首先，可以试图用git push origin branch-name推送自己的修改；</p>
 <p>如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；</p>
 <p>如果合并有冲突，则解决冲突，并在本地提交；</p>
 <p>没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！</p>
-<p>如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch –set-upstream branch-name origin/branch-name。</p>
+<p>如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch –set-upstream branch-name origin&#x2F;branch-name。</p>
 <hr>
 <p>查看远程库信息，使用git remote -v；</p>
 <p>本地新建的分支如果不推送到远程，对其他人就是不可见的；</p>
 <p>从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；</p>
-<p>在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；</p>
-<p>建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；</p>
+<p>在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin&#x2F;branch-name，本地和远程分支的名称最好一致；</p>
+<p>建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin&#x2F;branch-name；</p>
 <p>从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</p>
 <hr>
-<h3 id="TAG"><a href="#TAG" class="headerlink" title="TAG"></a>TAG</h3><p>命令git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；</name></p>
-<p>git tag -a <tagname> -m “blablabla…”可以指定标签信息；</tagname></p>
-<p>git tag -s <tagname> -m “blablabla…”可以用PGP签名标签；</tagname></p>
+<h3 id="TAG"><a href="#TAG" class="headerlink" title="TAG"></a>TAG</h3><p>命令git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；</p>
+<p>git tag -a <tagname> -m “blablabla…”可以指定标签信息；</p>
+<p>git tag -s <tagname> -m “blablabla…”可以用PGP签名标签；</p>
 <p>命令git tag可以查看所有标签。</p>
 <hr>
 <p>（05.11追加）</p>
@@ -280,12 +278,12 @@
 </ol>
 <hr>
 <h3 id="与分支有关的那些事-Once-more-with-branching"><a href="#与分支有关的那些事-Once-more-with-branching" class="headerlink" title="与分支有关的那些事 Once more, with branching"></a>与分支有关的那些事 Once more, with branching</h3><p>场景：你提交了一些变更，然后你意识到你正在master分支上，但你期望的是在feature分支上执行这些提交。</p>
-<p>使用撤销命令：git branch feature, git reset –hard origin/master, 和 git checkout feature</p>
+<p>使用撤销命令：git branch feature, git reset –hard origin&#x2F;master, 和 git checkout feature</p>
 <p>发生了什么：你可能用的是git checkout -b来建立新的分支，这是创建和检出分支的便捷方法——但实际你并不想立刻切换分支。git branch feature会建立一个叫feature的分支，这个分支指向你最近的提交，但是你还停留在master分支上。</p>
-<p>git reset –hard将master回退至origin/master，并忽略所有新提交。别担心，那些提交都还保留在feature上。</p>
+<p>git reset –hard将master回退至origin&#x2F;master，并忽略所有新提交。别担心，那些提交都还保留在feature上。</p>
 <p>最后，git checkout将分支切换到feature，这个分支原封不动的保留了你最近的所有工作。</p>
 <hr>
-<h3 id="事半功倍处理分支-Branch-in-time-saves-nine"><a href="#事半功倍处理分支-Branch-in-time-saves-nine" class="headerlink" title="事半功倍处理分支 Branch in time saves nine"></a>事半功倍处理分支 Branch in time saves nine</h3><p>场景：你基于master新建了一个feature分支，但是master分支远远落后与origin/master。现在master分支与origin/master同步了，你期望此刻能在feature下立刻commit代码，并且不是在远远落后master的情况下。</p>
+<h3 id="事半功倍处理分支-Branch-in-time-saves-nine"><a href="#事半功倍处理分支-Branch-in-time-saves-nine" class="headerlink" title="事半功倍处理分支 Branch in time saves nine"></a>事半功倍处理分支 Branch in time saves nine</h3><p>场景：你基于master新建了一个feature分支，但是master分支远远落后与origin&#x2F;master。现在master分支与origin&#x2F;master同步了，你期望此刻能在feature下立刻commit代码，并且不是在远远落后master的情况下。</p>
 <p>使用撤销命令：git checkout feature和git rebase master</p>
 <p>发生了什么：你也许已经敲了命令：git reset（但是没用–hard,有意在磁盘上保存这些提交内容），然后敲了git checkout -b，之后重新提交更改，但是那样的话，你将失去本地的提交记录。不过，一个更好的方法：</p>
 <p>使用git rebase master可以做到一些事情：</p>
@@ -345,7 +343,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/04/react-native学习笔记(1)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -355,7 +353,7 @@
     </a>
   
   
-    <a href="/2017/05/02/yarn-cli笔记/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/05/02/yarn-cli%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">yarn-cli笔记</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -471,7 +469,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,31 +477,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,6 +505,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -523,11 +529,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,23 +545,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,11 +557,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,19 +581,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,11 +597,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,15 +613,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,7 +633,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,15 +645,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,15 +661,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

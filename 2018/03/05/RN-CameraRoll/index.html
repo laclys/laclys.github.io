@@ -11,20 +11,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="最近APP有一个业务需求，需要将APP中web加载出来的图片保存到本地,保存至本地相册。很方便的是RN为我们提供了CameraRoll模块，以获得去访问本地相册，以及将图片存储至相册的功能。这里我们主要用将图片存储这个功能。访问相册的话，由于CameraRoll没有提供相册UI页面以及诸多功能。要实现选取图片的话还是使用第三方的react-native-image-crop-picker微妙。基本">
-<meta name="keywords" content="ReactNative">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RN-CameraRoll">
 <meta property="og:url" content="http://yoursite.com/2018/03/05/RN-CameraRoll/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="最近APP有一个业务需求，需要将APP中web加载出来的图片保存到本地,保存至本地相册。很方便的是RN为我们提供了CameraRoll模块，以获得去访问本地相册，以及将图片存储至相册的功能。这里我们主要用将图片存储这个功能。访问相册的话，由于CameraRoll没有提供相册UI页面以及诸多功能。要实现选取图片的话还是使用第三方的react-native-image-crop-picker微妙。基本">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180305-02.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180305-03.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180305-01.jpg">
-<meta property="og:updated_time" content="2018-03-05T14:24:02.000Z">
+<meta property="article:published_time" content="2018-03-05T14:24:02.000Z">
+<meta property="article:modified_time" content="2018-03-05T14:24:02.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="ReactNative">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RN-CameraRoll">
-<meta name="twitter:description" content="最近APP有一个业务需求，需要将APP中web加载出来的图片保存到本地,保存至本地相册。很方便的是RN为我们提供了CameraRoll模块，以获得去访问本地相册，以及将图片存储至相册的功能。这里我们主要用将图片存储这个功能。访问相册的话，由于CameraRoll没有提供相册UI页面以及诸多功能。要实现选取图片的话还是使用第三方的react-native-image-crop-picker微妙。基本">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20180305-02.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -43,7 +43,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -57,10 +57,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -111,10 +109,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -173,10 +169,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近APP有一个业务需求，需要将APP中web加载出来的图片保存到本地,保存至本地相册。很方便的是RN为我们提供了CameraRoll模块，以获得去访问本地相册，以及将图片存储至相册的功能。这里我们主要用将图片存储这个功能。访问相册的话，由于CameraRoll没有提供相册UI页面以及诸多功能。要实现选取图片的话还是使用第三方的react-native-image-crop-picker微妙。基本没什么坑<br><img src="/assets/blogImg/20180305-02.jpg" alt=""><br><img src="/assets/blogImg/20180305-03.jpg" alt=""></p>
-<a id="more"></a>
-<p>CameraRoll使用起来非常简单不过需要注意的是，IOS这边需要在info.plist中添加NSPhotoLibraryUsageDescription，访问相册的权限。<br>以及在使用该模块前你需要先链接RCTCameraRoll库(在node_modules/react-native/Libraries/CameraRoll)<br>将RCTCameraRoll工程添加到当前工程的Libraries文件夹下，然后把ibRCTCameraRoll.at加在TARGETS-&gt;Build Phaese-&gt;Link Binary With Libraries里面<br><img src="/assets/blogImg/20180305-01.jpg" alt=""><br>CameraRoll主要有三个静态方法以供使用。<br>1.static saveImageWithTag(tag) //保存一个图片到相册<br>2.static saveToCameraRoll(tag, type?) //把图片或视频保存到相册中<br>3.static getPhotos(params: object) //返回一个带有图片标识符对象的Promise</p>
-<p>话不多说，上代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Text,</span><br><span class="line">  View,</span><br><span class="line">  Image,</span><br><span class="line">  CameraRoll,</span><br><span class="line">  StyleSheet,</span><br><span class="line">  Dimensions,</span><br><span class="line">  Alert,</span><br><span class="line">  ScrollView,</span><br><span class="line">  TouchableOpacity</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fetchParams = &#123;</span><br><span class="line">  first: <span class="number">6</span>,</span><br><span class="line">  groupTypes: <span class="string">'All'</span>,</span><br><span class="line">  assetType: <span class="string">'Photos'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> webImgUrl = <span class="string">`https://tva2.sinaimg.cn/crop.0.0.750.750.180/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">useLib</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span> (props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      photos: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount () &#123;</span><br><span class="line">    <span class="keyword">this</span>.getPhotos()</span><br><span class="line">  &#125;</span><br><span class="line">  getPhotos () &#123;</span><br><span class="line">    CameraRoll.getPhotos(fetchParams).then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(data)</span><br><span class="line">      <span class="keyword">let</span> edges = data.edges</span><br><span class="line">      <span class="keyword">let</span> photos = []</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> index <span class="keyword">in</span> edges) &#123;</span><br><span class="line">        photos.push(edges[index].node.image.uri)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        photos: photos</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">       (error) =&gt; &#123; Alert.alert(error) &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showPics (photos) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;View style=&#123;styles.picWrapper&#125;&gt;</span><br><span class="line">        &#123;</span><br><span class="line">          photos.map(<span class="function">(<span class="params">result, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">              &lt;Image</span><br><span class="line">                key=&#123;index&#125;</span><br><span class="line">                style=&#123;styles.libPic&#125;</span><br><span class="line">                source=&#123;&#123;<span class="attr">uri</span>: result&#125;&#125;</span><br><span class="line">              /&gt;</span><br><span class="line">            )</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  handleClick = () =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    CameraRoll.saveToCameraRoll(webImgUrl)</span></span><br><span class="line"><span class="regexp">      .then(data =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        let photos = this.state.photos</span></span><br><span class="line"><span class="regexp">        photos.unshift(data)</span></span><br><span class="line"><span class="regexp">        this.setState(&#123;</span></span><br><span class="line"><span class="regexp">          photos: photos</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">      .catch(err =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        Alert.alert(err)</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  render () &#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;ScrollView style=&#123;styles.container&#125;&gt;</span></span><br><span class="line"><span class="regexp">        &lt;Text style=&#123;styles.title&#125;&gt;</span></span><br><span class="line"><span class="regexp">          Get Photos</span></span><br><span class="line"><span class="regexp">        &lt;/</span>Text&gt;</span><br><span class="line">        &#123;<span class="keyword">this</span>.showPics(<span class="keyword">this</span>.state.photos)&#125;</span><br><span class="line">        &lt;Text style=&#123;styles.subTitle&#125;&gt;</span><br><span class="line">          A Web photo</span><br><span class="line">        &lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">        &lt;Image</span></span><br><span class="line"><span class="regexp">          style=&#123;styles.webPic&#125;</span></span><br><span class="line"><span class="regexp">          source=&#123;&#123;uri: webImgUrl&#125;&#125;</span></span><br><span class="line"><span class="regexp">        /</span>&gt;</span><br><span class="line">        &lt;TouchableOpacity</span><br><span class="line">          style=&#123;styles.btnWrapper&#125;</span><br><span class="line">          onPress=&#123;<span class="keyword">this</span>.handleClick&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          &lt;Text style=&#123;styles.btnText&#125; &gt;</span><br><span class="line">            Touch To Save</span><br><span class="line">          &lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>TouchableOpacity&gt;</span><br><span class="line">      &lt;<span class="regexp">/ScrollView&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const styles = StyleSheet.create(&#123;</span></span><br><span class="line"><span class="regexp">  container: &#123;</span></span><br><span class="line"><span class="regexp">    flex: 1,</span></span><br><span class="line"><span class="regexp">    backgroundColor: '#F5FCFF'</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  title: &#123;</span></span><br><span class="line"><span class="regexp">    alignSelf: 'center',</span></span><br><span class="line"><span class="regexp">    marginTop: 30,</span></span><br><span class="line"><span class="regexp">    fontSize: 24</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  picWrapper: &#123;</span></span><br><span class="line"><span class="regexp">    flexDirection: 'row',</span></span><br><span class="line"><span class="regexp">    flexWrap: 'wrap',</span></span><br><span class="line"><span class="regexp">    marginBottom: 20,</span></span><br><span class="line"><span class="regexp">    width: Dimensions.get('window').width</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  libPic: &#123;</span></span><br><span class="line"><span class="regexp">    width: Dimensions.get('window').width /</span> <span class="number">2</span>,</span><br><span class="line">    height: <span class="number">120</span></span><br><span class="line">  &#125;,</span><br><span class="line">  webPic: &#123;</span><br><span class="line">    alignSelf: <span class="string">'center'</span>,</span><br><span class="line">    width: <span class="number">200</span>,</span><br><span class="line">    height: <span class="number">150</span></span><br><span class="line">  &#125;,</span><br><span class="line">  subTitle: &#123;</span><br><span class="line">    alignSelf: <span class="string">'center'</span>,</span><br><span class="line">    fontSize: <span class="number">24</span></span><br><span class="line">  &#125;,</span><br><span class="line">  btnWrapper: &#123;</span><br><span class="line">    alignItems: <span class="string">'center'</span>,</span><br><span class="line">    width: Dimensions.get(<span class="string">'window'</span>).width,</span><br><span class="line">    height: <span class="number">40</span></span><br><span class="line">  &#125;,</span><br><span class="line">  btnText: &#123;</span><br><span class="line">    fontSize: <span class="number">20</span>,</span><br><span class="line">    color: <span class="string">'red'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+        <p>最近APP有一个业务需求，需要将APP中web加载出来的图片保存到本地,保存至本地相册。很方便的是RN为我们提供了CameraRoll模块，以获得去访问本地相册，以及将图片存储至相册的功能。这里我们主要用将图片存储这个功能。访问相册的话，由于CameraRoll没有提供相册UI页面以及诸多功能。要实现选取图片的话还是使用第三方的react-native-image-crop-picker微妙。基本没什么坑<br><img src="/assets/blogImg/20180305-02.jpg"><br><img src="/assets/blogImg/20180305-03.jpg"></p>
+<span id="more"></span>
+
+<p>CameraRoll使用起来非常简单不过需要注意的是，IOS这边需要在info.plist中添加NSPhotoLibraryUsageDescription，访问相册的权限。<br>以及在使用该模块前你需要先链接RCTCameraRoll库(在node_modules&#x2F;react-native&#x2F;Libraries&#x2F;CameraRoll)<br>将RCTCameraRoll工程添加到当前工程的Libraries文件夹下，然后把ibRCTCameraRoll.at加在TARGETS-&gt;Build Phaese-&gt;Link Binary With Libraries里面<br><img src="/assets/blogImg/20180305-01.jpg"><br>CameraRoll主要有三个静态方法以供使用。<br>1.static saveImageWithTag(tag) &#x2F;&#x2F;保存一个图片到相册<br>2.static saveToCameraRoll(tag, type?) &#x2F;&#x2F;把图片或视频保存到相册中<br>3.static getPhotos(params: object) &#x2F;&#x2F;返回一个带有图片标识符对象的Promise</p>
+<p>话不多说，上代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">Component</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  <span class="title class_">Text</span>,</span><br><span class="line">  <span class="title class_">View</span>,</span><br><span class="line">  <span class="title class_">Image</span>,</span><br><span class="line">  <span class="title class_">CameraRoll</span>,</span><br><span class="line">  <span class="title class_">StyleSheet</span>,</span><br><span class="line">  <span class="title class_">Dimensions</span>,</span><br><span class="line">  <span class="title class_">Alert</span>,</span><br><span class="line">  <span class="title class_">ScrollView</span>,</span><br><span class="line">  <span class="title class_">TouchableOpacity</span></span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fetchParams = &#123;</span><br><span class="line">  <span class="attr">first</span>: <span class="number">6</span>,</span><br><span class="line">  <span class="attr">groupTypes</span>: <span class="string">&#x27;All&#x27;</span>,</span><br><span class="line">  <span class="attr">assetType</span>: <span class="string">&#x27;Photos&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> webImgUrl = <span class="string">`https://tva2.sinaimg.cn/crop.0.0.750.750.180/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">useLib</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span> (props) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">photos</span>: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount () &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">getPhotos</span>()</span><br><span class="line">  &#125;</span><br><span class="line">  getPhotos () &#123;</span><br><span class="line">    <span class="title class_">CameraRoll</span>.<span class="title function_">getPhotos</span>(fetchParams).<span class="title function_">then</span>(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">      <span class="keyword">let</span> edges = data.<span class="property">edges</span></span><br><span class="line">      <span class="keyword">let</span> photos = []</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> index <span class="keyword">in</span> edges) &#123;</span><br><span class="line">        photos.<span class="title function_">push</span>(edges[index].<span class="property">node</span>.<span class="property">image</span>.<span class="property">uri</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">        <span class="attr">photos</span>: photos</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">       <span class="function">(<span class="params">error</span>) =&gt;</span> &#123; <span class="title class_">Alert</span>.<span class="title function_">alert</span>(error) &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showPics (photos) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles.picWrapper&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;</span></span><br><span class="line"><span class="language-xml">          photos.map((result, index, arr) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">            return (</span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;<span class="name">Image</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">key</span>=<span class="string">&#123;index&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">style</span>=<span class="string">&#123;styles.libPic&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span> <span class="attr">result</span>&#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">              /&gt;</span></span></span><br><span class="line"><span class="language-xml">            )</span></span><br><span class="line"><span class="language-xml">          &#125;)</span></span><br><span class="line"><span class="language-xml">        &#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title class_">CameraRoll</span>.<span class="title function_">saveToCameraRoll</span>(webImgUrl)</span><br><span class="line">      .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> photos = <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">photos</span></span><br><span class="line">        photos.<span class="title function_">unshift</span>(data)</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">          <span class="attr">photos</span>: photos</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">      .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="title class_">Alert</span>.<span class="title function_">alert</span>(err)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">ScrollView</span> <span class="attr">style</span>=<span class="string">&#123;styles.container&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;styles.title&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          Get Photos</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;this.showPics(this.state.photos)&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;styles.subTitle&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          A Web photo</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Image</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">style</span>=<span class="string">&#123;styles.webPic&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span> <span class="attr">webImgUrl</span>&#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">TouchableOpacity</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">style</span>=<span class="string">&#123;styles.btnWrapper&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">onPress</span>=<span class="string">&#123;this.handleClick&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;styles.btnText&#125;</span> &gt;</span></span></span><br><span class="line"><span class="language-xml">            Touch To Save</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">ScrollView</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = <span class="title class_">StyleSheet</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">container</span>: &#123;</span><br><span class="line">    <span class="attr">flex</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">backgroundColor</span>: <span class="string">&#x27;#F5FCFF&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">title</span>: &#123;</span><br><span class="line">    <span class="attr">alignSelf</span>: <span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">    <span class="attr">marginTop</span>: <span class="number">30</span>,</span><br><span class="line">    <span class="attr">fontSize</span>: <span class="number">24</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">picWrapper</span>: &#123;</span><br><span class="line">    <span class="attr">flexDirection</span>: <span class="string">&#x27;row&#x27;</span>,</span><br><span class="line">    <span class="attr">flexWrap</span>: <span class="string">&#x27;wrap&#x27;</span>,</span><br><span class="line">    <span class="attr">marginBottom</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="attr">width</span>: <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">width</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">libPic</span>: &#123;</span><br><span class="line">    <span class="attr">width</span>: <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="number">120</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">webPic</span>: &#123;</span><br><span class="line">    <span class="attr">alignSelf</span>: <span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">    <span class="attr">width</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="number">150</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">subTitle</span>: &#123;</span><br><span class="line">    <span class="attr">alignSelf</span>: <span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">    <span class="attr">fontSize</span>: <span class="number">24</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">btnWrapper</span>: &#123;</span><br><span class="line">    <span class="attr">alignItems</span>: <span class="string">&#x27;center&#x27;</span>,</span><br><span class="line">    <span class="attr">width</span>: <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">width</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="number">40</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">btnText</span>: &#123;</span><br><span class="line">    <span class="attr">fontSize</span>: <span class="number">20</span>,</span><br><span class="line">    <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -230,7 +229,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/10/node图片合成/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/10/node%E5%9B%BE%E7%89%87%E5%90%88%E6%88%90/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -356,7 +355,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -364,31 +363,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -400,6 +391,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -408,11 +415,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -420,23 +431,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,11 +443,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,19 +467,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,11 +483,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,15 +499,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,7 +519,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,15 +531,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,15 +547,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

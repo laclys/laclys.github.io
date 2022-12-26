@@ -16,10 +16,9 @@
 <meta property="og:url" content="http://yoursite.com/page/7/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="好きな瞬間を 好きなだけ">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
+<meta property="article:author" content="Lac">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lac&#39;s Blog">
-<meta name="twitter:description" content="好きな瞬間を 好きなだけ">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -37,7 +36,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -51,10 +50,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -105,10 +102,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -156,12 +151,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/JSONP的原生实现和JQ实现(下)/">JSONP的原生实现和JQ实现(下)</a>
+      <a class="article-title" href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8B)/">JSONP的原生实现和JQ实现(下)</a>
     </h1>
   
 
         
-        <a href="/2017/02/23/JSONP的原生实现和JQ实现(下)/" class="archive-article-date">
+        <a href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8B)/" class="archive-article-date">
   	<time datetime="2017-02-22T17:03:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
 </a>
         
@@ -170,8 +165,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="JQ实现方式："><a href="#JQ实现方式：" class="headerlink" title="JQ实现方式："></a>JQ实现方式：</h4><p>JQ实现JSONP的时候看起来和ajax调用方式很像，目的也一样，都是请求url，染过获得服务器的数据之后进行处理。但两者完全是两个不同的东西。只是JQ这个框架将jsonp作为ajax的一种形式进行了封装。<br>实质上：ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加script标签来调用服务器提供的js脚本。</p>
-<p>ajax与jsonp的区别不在于是否跨域，ajax通过服务端代理一样可以实现跨域，jsonp本身也不排斥同域的数据的获取。<br>话不多说，下边是jq的实现，用过console.log得到目标数据：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          $(<span class="string">'#inp'</span>).keypress(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="keyword">var</span> str = $(<span class="keyword">this</span>).val();</span><br><span class="line">              $.ajax(&#123;</span><br><span class="line">                  url: <span class="string">'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su'</span>,</span><br><span class="line">                  data: &#123;</span><br><span class="line">                      wd: str</span><br><span class="line">                  &#125;,</span><br><span class="line">                  dataType: <span class="string">'jsonp'</span>,</span><br><span class="line">                  jsonp: <span class="string">'cb'</span>,</span><br><span class="line">                  success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                      <span class="built_in">console</span>.log(data);</span><br><span class="line">                  &#125;,</span><br><span class="line">                  error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">                  &#125;</span><br><span class="line">  </span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure></p>
-<p><img src="/assets/blogImg/20170223-6.jpg" alt=""></p>
+<p>ajax与jsonp的区别不在于是否跨域，ajax通过服务端代理一样可以实现跨域，jsonp本身也不排斥同域的数据的获取。<br>话不多说，下边是jq的实现，用过console.log得到目标数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">          $(<span class="string">&#x27;#inp&#x27;</span>).<span class="title function_">keypress</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">              <span class="keyword">var</span> str = $(<span class="variable language_">this</span>).<span class="title function_">val</span>();</span><br><span class="line">              $.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">                  <span class="attr">url</span>: <span class="string">&#x27;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su&#x27;</span>,</span><br><span class="line">                  <span class="attr">data</span>: &#123;</span><br><span class="line">                      <span class="attr">wd</span>: str</span><br><span class="line">                  &#125;,</span><br><span class="line">                  <span class="attr">dataType</span>: <span class="string">&#x27;jsonp&#x27;</span>,</span><br><span class="line">                  <span class="attr">jsonp</span>: <span class="string">&#x27;cb&#x27;</span>,</span><br><span class="line">                  <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">                      <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">                  &#125;,</span><br><span class="line">                  <span class="attr">error</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  </span><br><span class="line">                  &#125;</span><br><span class="line">  </span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/20170223-6.jpg"></p>
 <p>以上！</p>
 
       
@@ -190,11 +186,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
         </li>
       
 		</ul>
@@ -204,7 +200,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(下)/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8B)/">展开全文 >></a>
         </p>
       
 
@@ -229,12 +225,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/">JSONP的原生实现和JQ实现(上)</a>
+      <a class="article-title" href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8A)/">JSONP的原生实现和JQ实现(上)</a>
     </h1>
   
 
         
-        <a href="/2017/02/23/JSONP的原生实现和JQ实现(上)/" class="archive-article-date">
+        <a href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8A)/" class="archive-article-date">
   	<time datetime="2017-02-22T17:01:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
 </a>
         
@@ -244,9 +240,9 @@
       
         <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP，全称：JSON with padding乍一看应该是和用来数据解析描述的JSON的某个远房亲戚。通过学习，<strong>这两者本质上完全是不同的东西</strong>。</p>
 <p>JSONP的概念在这就不赘言。自己的理解，由于Ajax直接请求文件数据时，跨域无权访问（为了安全）。为了解决跨域问题，我们发现在页面调用JS文件时不受跨域影响（例如，我们在任意文件中都可以引入jq文件，从而使用jq开发页面），因此通过把数据装在一个js格式文件里，在客户端进行处理。这就是JSONP的原理。JSONP允许用户传递一个callback参数给服务器，之后服务器返回数据时通过这个参数的函数包裹上数据传给客户端。</p>
-<p>下面不多说废话，下面用原生和jq分别写两个小获取baidu联想词条的小demo。<br>想要的效果就是当我在搜索条输入‘a’时，出现下拉联想列表（baidu的）<br><img src="/assets/blogImg/20170223-1.jpg" alt=""><br>
+<p>下面不多说废话，下面用原生和jq分别写两个小获取baidu联想词条的小demo。<br>想要的效果就是当我在搜索条输入‘a’时，出现下拉联想列表（baidu的）<br><img src="/assets/blogImg/20170223-1.jpg"><br>
         
-          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8A)/#more">more >></a>
         
       
 
@@ -264,11 +260,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
         </li>
       
 		</ul>
@@ -278,7 +274,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/23/JSONP的原生实现和JQ实现(上)/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8A)/">展开全文 >></a>
         </p>
       
 
@@ -303,12 +299,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/21/JS中的cookie,localStorage和sessionStorage/">JS中的cookie,localStorage和sessionStorage</a>
+      <a class="article-title" href="/2017/02/21/JS%E4%B8%AD%E7%9A%84cookie,localStorage%E5%92%8CsessionStorage/">JS中的cookie,localStorage和sessionStorage</a>
     </h1>
   
 
         
-        <a href="/2017/02/21/JS中的cookie,localStorage和sessionStorage/" class="archive-article-date">
+        <a href="/2017/02/21/JS%E4%B8%AD%E7%9A%84cookie,localStorage%E5%92%8CsessionStorage/" class="archive-article-date">
   	<time datetime="2017-02-20T16:00:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
 </a>
         
@@ -316,11 +312,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>说到cookie通俗一点就是服务器留在用户计算机中的小文件。<br>在JS中创建cookie很简单，比如：document.cookie=123 这样就存储了一条没有名字的cookie。<br>cookie的存储都是字符串，如果存储一条名字是name，值是‘lac’的cookie只需要：document.cookie=’name=lac’即可！取出存储的cookie也只需要：<br>document.cookie就可以取出全部的cookie字符串了。<br>cookie里除了名字和值还有expires和path很重要。</p>
-<p><strong>expires</strong> 默认是session：浏览器和服务器进行的一次通话  浏览器关闭一次会话结束。<br>当然也可以设置时间。expires=事件对象；</p>
-<p><strong>path</strong> cookie存储的位置 需要注意的是：<u>内层文件存的cookie外层文件取不到，内层文件中可以取到外层文件的cookie</u>在一般工作中，一套cookie存储在一层目录中便于管理。即：path=/；<br>下面是自己封装的setCookie(),getCookie()以及removeCookie();<br>
+        <p>说到cookie通俗一点就是服务器留在用户计算机中的小文件。<br>在JS中创建cookie很简单，比如：document.cookie&#x3D;123 这样就存储了一条没有名字的cookie。<br>cookie的存储都是字符串，如果存储一条名字是name，值是‘lac’的cookie只需要：document.cookie&#x3D;’name&#x3D;lac’即可！取出存储的cookie也只需要：<br>document.cookie就可以取出全部的cookie字符串了。<br>cookie里除了名字和值还有expires和path很重要。</p>
+<p><strong>expires</strong> 默认是session：浏览器和服务器进行的一次通话  浏览器关闭一次会话结束。<br>当然也可以设置时间。expires&#x3D;事件对象；</p>
+<p><strong>path</strong> cookie存储的位置 需要注意的是：<u>内层文件存的cookie外层文件取不到，内层文件中可以取到外层文件的cookie</u>在一般工作中，一套cookie存储在一层目录中便于管理。即：path&#x3D;&#x2F;；<br>下面是自己封装的setCookie(),getCookie()以及removeCookie();</p>
         
-          <a class="article-more-a" href="/2017/02/21/JS中的cookie,localStorage和sessionStorage/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/21/JS%E4%B8%AD%E7%9A%84cookie,localStorage%E5%92%8CsessionStorage/#more">more >></a>
         
       
 
@@ -348,7 +344,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/21/JS中的cookie,localStorage和sessionStorage/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/21/JS%E4%B8%AD%E7%9A%84cookie,localStorage%E5%92%8CsessionStorage/">展开全文 >></a>
         </p>
       
 
@@ -373,12 +369,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/18/css3-伪类：hover-特性小探索/">css3 伪类：hover 特性小探索</a>
+      <a class="article-title" href="/2017/02/18/css3-%E4%BC%AA%E7%B1%BB%EF%BC%9Ahover-%E7%89%B9%E6%80%A7%E5%B0%8F%E6%8E%A2%E7%B4%A2/">css3 伪类：hover 特性小探索</a>
     </h1>
   
 
         
-        <a href="/2017/02/18/css3-伪类：hover-特性小探索/" class="archive-article-date">
+        <a href="/2017/02/18/css3-%E4%BC%AA%E7%B1%BB%EF%BC%9Ahover-%E7%89%B9%E6%80%A7%E5%B0%8F%E6%8E%A2%E7%B4%A2/" class="archive-article-date">
   	<time datetime="2017-02-18T13:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-18</time>
 </a>
         
@@ -386,10 +382,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>伪类在css3中相对还是很容易理解，也正是因为他很容易理解，平时也不纠结。不过前两天看到这个写法，还是小懵逼了一下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.a .b:hover&#123;...........&#125;; </span><br><span class="line">.a:hover .b&#123;...........&#125;;</span><br></pre></td></tr></table></figure></p>
+        <p>伪类在css3中相对还是很容易理解，也正是因为他很容易理解，平时也不纠结。不过前两天看到这个写法，还是小懵逼了一下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.a</span> <span class="selector-class">.b</span><span class="selector-pseudo">:hover</span>&#123;...........&#125;; </span><br><span class="line"><span class="selector-class">.a</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.b</span>&#123;...........&#125;; </span><br></pre></td></tr></table></figure>
 <p>这两个有什么去别捏，不费事就写了两个demo：<br>
         
-          <a class="article-more-a" href="/2017/02/18/css3-伪类：hover-特性小探索/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/18/css3-%E4%BC%AA%E7%B1%BB%EF%BC%9Ahover-%E7%89%B9%E6%80%A7%E5%B0%8F%E6%8E%A2%E7%B4%A2/#more">more >></a>
         
       
 
@@ -417,7 +414,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/18/css3-伪类：hover-特性小探索/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/18/css3-%E4%BC%AA%E7%B1%BB%EF%BC%9Ahover-%E7%89%B9%E6%80%A7%E5%B0%8F%E6%8E%A2%E7%B4%A2/">展开全文 >></a>
         </p>
       
 
@@ -442,12 +439,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/17/JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度/">JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度</a>
+      <a class="article-title" href="/2017/02/17/JQuery%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%BA%E5%9F%9F%E9%AB%98%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6,%E6%BB%9A%E5%8A%A8%E6%9D%A1%E9%AB%98%E5%BA%A6/">JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度</a>
     </h1>
   
 
         
-        <a href="/2017/02/17/JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度/" class="archive-article-date">
+        <a href="/2017/02/17/JQuery%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%BA%E5%9F%9F%E9%AB%98%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6,%E6%BB%9A%E5%8A%A8%E6%9D%A1%E9%AB%98%E5%BA%A6/" class="archive-article-date">
   	<time datetime="2017-02-17T09:00:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-17</time>
 </a>
         
@@ -455,7 +452,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">alert($(<span class="built_in">window</span>).height()); <span class="comment">//浏览器时下窗口可视区域高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>).height()); <span class="comment">//浏览器时下窗口文档的高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>.body).height());<span class="comment">//浏览器时下窗口文档body的高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>.body).outerHeight(<span class="literal">true</span>));<span class="comment">//浏览器时下窗口文档body的总高度 包括border padding margin</span></span><br><span class="line">alert($(<span class="built_in">window</span>).width()); <span class="comment">//浏览器时下窗口可视区域宽度</span></span><br><span class="line">alert($(<span class="built_in">document</span>).width());<span class="comment">//浏览器时下窗口文档对于象宽度</span></span><br><span class="line">alert($(<span class="built_in">document</span>.body).width());<span class="comment">//浏览器时下窗口文档body的高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>.body).outerWidth(<span class="literal">true</span>));<span class="comment">//浏览器时下窗口文档body的总宽度 包括border padding margin</span></span><br><span class="line">alert($(<span class="built_in">document</span>).scrollTop()); <span class="comment">//获取滚动条到顶部的垂直高度</span></span><br><span class="line">alert($(<span class="built_in">document</span>).scrollLeft()); <span class="comment">//获取滚动条到左边的垂直宽度</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">window</span>).<span class="title function_">height</span>()); <span class="comment">//浏览器时下窗口可视区域高度</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">document</span>).<span class="title function_">height</span>()); <span class="comment">//浏览器时下窗口文档的高度</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">document</span>.<span class="property">body</span>).<span class="title function_">height</span>());<span class="comment">//浏览器时下窗口文档body的高度</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">document</span>.<span class="property">body</span>).<span class="title function_">outerHeight</span>(<span class="literal">true</span>));<span class="comment">//浏览器时下窗口文档body的总高度 包括border padding margin</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">window</span>).<span class="title function_">width</span>()); <span class="comment">//浏览器时下窗口可视区域宽度</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">document</span>).<span class="title function_">width</span>());<span class="comment">//浏览器时下窗口文档对于象宽度</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">document</span>.<span class="property">body</span>).<span class="title function_">width</span>());<span class="comment">//浏览器时下窗口文档body的高度</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">document</span>.<span class="property">body</span>).<span class="title function_">outerWidth</span>(<span class="literal">true</span>));<span class="comment">//浏览器时下窗口文档body的总宽度 包括border padding margin</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">document</span>).<span class="title function_">scrollTop</span>()); <span class="comment">//获取滚动条到顶部的垂直高度</span></span><br><span class="line"><span class="title function_">alert</span>($(<span class="variable language_">document</span>).<span class="title function_">scrollLeft</span>()); <span class="comment">//获取滚动条到左边的垂直宽度</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -483,7 +481,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/17/JQuery获取浏览器窗口的可视区域高度和宽度,滚动条高度/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/17/JQuery%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%BA%E5%9F%9F%E9%AB%98%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6,%E6%BB%9A%E5%8A%A8%E6%9D%A1%E9%AB%98%E5%BA%A6/">展开全文 >></a>
         </p>
       
 
@@ -508,12 +506,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/10/JS原型与原型链学习笔记/">JS原型与原型链学习笔记</a>
+      <a class="article-title" href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JS原型与原型链学习笔记</a>
     </h1>
   
 
         
-        <a href="/2017/02/10/JS原型与原型链学习笔记/" class="archive-article-date">
+        <a href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2017-02-10T15:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
 </a>
         
@@ -521,13 +519,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这一周在慕课以及网上搜索，好好学习理解了一下JS的原型/原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。</p>
+        <p>这一周在慕课以及网上搜索，好好学习理解了一下JS的原型&#x2F;原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。</p>
 <h3 id="普通对象与函数："><a href="#普通对象与函数：" class="headerlink" title="普通对象与函数："></a>普通对象与函数：</h3><p>JavaScript 中分为普通对象和函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。</p>
-<h3 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">this</span>.name = name;</span><br><span class="line"> <span class="keyword">this</span>.age = age;</span><br><span class="line"> <span class="keyword">this</span>.job = job;</span><br><span class="line"> <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; alert(<span class="keyword">this</span>.name) &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'Zaxlct'</span>, <span class="number">28</span>, <span class="string">'Software Engineer'</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">'Mick'</span>, <span class="number">23</span>, <span class="string">'Doctor'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, job</span>) &#123;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">job</span> = job;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123; <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>) &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Zaxlct&#x27;</span>, <span class="number">28</span>, <span class="string">&#x27;Software Engineer&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Mick&#x27;</span>, <span class="number">23</span>, <span class="string">&#x27;Doctor&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <p>上面的例子中 person1 和 person2 都是 Person 的实例。这两个实例都有一个 constructor （构造函数）属性，该属性（是一个指针）指向 Person。<br><strong>person1 和 person2 都是 构造函数 Person 的实例</strong> </p>
-<p>!!!实例的构造函数属性（constructor）指向构造函数。<br>
+<p>!!!实例的构造函数属性（constructor）指向构造函数。</p>
         
-          <a class="article-more-a" href="/2017/02/10/JS原型与原型链学习笔记/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
         
       
 
@@ -555,7 +553,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/10/JS原型与原型链学习笔记/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
@@ -580,12 +578,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/08/在Github中演示前端demo/">在Github中演示前端demo</a>
+      <a class="article-title" href="/2017/02/08/%E5%9C%A8Github%E4%B8%AD%E6%BC%94%E7%A4%BA%E5%89%8D%E7%AB%AFdemo/">在Github中演示前端demo</a>
     </h1>
   
 
         
-        <a href="/2017/02/08/在Github中演示前端demo/" class="archive-article-date">
+        <a href="/2017/02/08/%E5%9C%A8Github%E4%B8%AD%E6%BC%94%E7%A4%BA%E5%89%8D%E7%AB%AFdemo/" class="archive-article-date">
   	<time datetime="2017-02-07T16:06:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-08</time>
 </a>
         
@@ -593,10 +591,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在浏览他人Github时，经常能看到他们的前端项目的Readme.md中，放有在线演示Demo。自己也想实现这样的效果，在网上自己摸索。总结为下文=。=</p>
-<h3 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h3><p>一般情况，我们将自己写成的网页上传到github仓库，点进相应的html界面出来的是该文件的代码。他人看起来非常不直观。<br><img src="/assets/blogImg/20170207-1.jpg" alt=""><br>因此，我们需要一个在线演示demo的平台。<br>
+        <p>在浏览他人Github时，经常能看到他们的前端项目的Readme.md中，放有在线演示Demo。自己也想实现这样的效果，在网上自己摸索。总结为下文&#x3D;。&#x3D;</p>
+<h3 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h3><p>一般情况，我们将自己写成的网页上传到github仓库，点进相应的html界面出来的是该文件的代码。他人看起来非常不直观。<br><img src="/assets/blogImg/20170207-1.jpg"><br>因此，我们需要一个在线演示demo的平台。<br>
         
-          <a class="article-more-a" href="/2017/02/08/在Github中演示前端demo/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/08/%E5%9C%A8Github%E4%B8%AD%E6%BC%94%E7%A4%BA%E5%89%8D%E7%AB%AFdemo/#more">more >></a>
         
       
 
@@ -624,7 +622,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/08/在Github中演示前端demo/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/08/%E5%9C%A8Github%E4%B8%AD%E6%BC%94%E7%A4%BA%E5%89%8D%E7%AB%AFdemo/">展开全文 >></a>
         </p>
       
 
@@ -649,12 +647,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/03/过年/">过年这几天</a>
+      <a class="article-title" href="/2017/02/03/%E8%BF%87%E5%B9%B4/">过年这几天</a>
     </h1>
   
 
         
-        <a href="/2017/02/03/过年/" class="archive-article-date">
+        <a href="/2017/02/03/%E8%BF%87%E5%B9%B4/" class="archive-article-date">
   	<time datetime="2017-02-03T09:22:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
 </a>
         
@@ -662,10 +660,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/assets/blogImg/20170203-1.jpg" alt=""><br>恍惚间，好久没在国内过年了。在日本的时候每逢除夕夜，<br>叫上几个中国同乡，一起热热闹闹聚一下。吃顿饺子或者去<br>池袋吃个火锅，好不热闹。你二天上班的上班，上学的上学。</p>
-<p>今年总算在家过，比小时候的记忆少了一丝年味。除夕夜没有<br>了炮竹，爷爷摔了一跤的，缘由老爸晚上的在奶奶家照顾老人。<br>今年的除夕夜就和老妈两人。老妈说多亏我回来了。不然今年<br>过节就一个人。其实心里蛮难受的，大学以后一年一年和父母<br>生活的时间越来越少。过年期间，见了好几波朋友，吃吃喝喝<br>胖了快十斤。（不得不说还是国内吃的好吃），初一看了部韩<br>
+        <p><img src="/assets/blogImg/20170203-1.jpg"><br>恍惚间，好久没在国内过年了。在日本的时候每逢除夕夜，<br>叫上几个中国同乡，一起热热闹闹聚一下。吃顿饺子或者去<br>池袋吃个火锅，好不热闹。你二天上班的上班，上学的上学。</p>
+<p>今年总算在家过，比小时候的记忆少了一丝年味。除夕夜没有<br>了炮竹，爷爷摔了一跤的，缘由老爸晚上的在奶奶家照顾老人。<br>今年的除夕夜就和老妈两人。老妈说多亏我回来了。不然今年<br>过节就一个人。其实心里蛮难受的，大学以后一年一年和父母<br>生活的时间越来越少。过年期间，见了好几波朋友，吃吃喝喝<br>胖了快十斤。（不得不说还是国内吃的好吃），初一看了部韩</p>
         
-          <a class="article-more-a" href="/2017/02/03/过年/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/03/%E8%BF%87%E5%B9%B4/#more">more >></a>
         
       
 
@@ -689,7 +687,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/03/过年/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/03/%E8%BF%87%E5%B9%B4/">展开全文 >></a>
         </p>
       
 
@@ -709,7 +707,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -811,7 +809,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -819,31 +817,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -855,6 +845,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -863,11 +869,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -875,23 +885,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -903,11 +897,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -915,19 +921,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -939,11 +937,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,15 +953,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -975,7 +973,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,15 +985,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -999,15 +1001,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

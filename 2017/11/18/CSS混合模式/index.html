@@ -11,19 +11,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="前几天在一个一个技术网站看到了一篇通过CSS3特性，完成酷炫效果的文章。在公司搞App移动端以来，好一阵没有写纯粹的html和css了。今儿学到了一个以前不知道的CSS3属性：混合模式。  关于混合模式CSS3出现了两个与混合模式有关的属性，mix-blend-mode和background-blend-mode. 兼容性如下：可见，Chrome和FireFox已经支持了，并且不需要使用前缀。">
-<meta name="keywords" content="CSS,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS混合模式">
-<meta property="og:url" content="http://yoursite.com/2017/11/18/CSS混合模式/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/11/18/CSS%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="前几天在一个一个技术网站看到了一篇通过CSS3特性，完成酷炫效果的文章。在公司搞App移动端以来，好一阵没有写纯粹的html和css了。今儿学到了一个以前不知道的CSS3属性：混合模式。  关于混合模式CSS3出现了两个与混合模式有关的属性，mix-blend-mode和background-blend-mode. 兼容性如下：可见，Chrome和FireFox已经支持了，并且不需要使用前缀。">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171114-01.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171114-02.jpg">
-<meta property="og:updated_time" content="2017-11-18T13:39:04.000Z">
+<meta property="article:published_time" content="2017-11-18T13:39:04.000Z">
+<meta property="article:modified_time" content="2017-11-18T13:39:04.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS混合模式">
-<meta name="twitter:description" content="前几天在一个一个技术网站看到了一篇通过CSS3特性，完成酷炫效果的文章。在公司搞App移动端以来，好一阵没有写纯粹的html和css了。今儿学到了一个以前不知道的CSS3属性：混合模式。  关于混合模式CSS3出现了两个与混合模式有关的属性，mix-blend-mode和background-blend-mode. 兼容性如下：可见，Chrome和FireFox已经支持了，并且不需要使用前缀。">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20171114-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -42,7 +43,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -56,10 +57,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -110,10 +109,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -164,7 +161,7 @@
   
 
         
-        <a href="/2017/11/18/CSS混合模式/" class="archive-article-date">
+        <a href="/2017/11/18/CSS%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
   	<time datetime="2017-11-18T13:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
 </a>
         
@@ -173,11 +170,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>前几天在一个一个技术网站看到了一篇通过CSS3特性，完成酷炫效果的文章。在公司搞App移动端以来，好一阵没有写纯粹的html和css了。今儿学到了一个以前不知道的CSS3属性：混合模式。</p>
-<p><img src="/assets/blogImg/20171114-01.jpg" alt=""></p>
+<p><img src="/assets/blogImg/20171114-01.jpg"></p>
 <h3 id="关于混合模式"><a href="#关于混合模式" class="headerlink" title="关于混合模式"></a>关于混合模式</h3><p>CSS3出现了两个与混合模式有关的属性，mix-blend-mode和background-blend-mode.</p>
-<p>兼容性如下：<br><img src="/assets/blogImg/20171114-02.jpg" alt=""><br>可见，Chrome和FireFox已经支持了，并且不需要使用前缀。</p>
-<a id="more"></a>
-<h3 id="mix-blend-mode"><a href="#mix-blend-mode" class="headerlink" title="mix-blend-mode"></a>mix-blend-mode</h3><p>可使用的值：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">mix-blend-mode: normal;          //正常</span><br><span class="line">mix-blend-mode: multiply;        //正片叠底</span><br><span class="line">mix-blend-mode: screen;          //滤色</span><br><span class="line">mix-blend-mode: overlay;         //叠加</span><br><span class="line">mix-blend-mode: darken;          //变暗</span><br><span class="line">mix-blend-mode: lighten;         //变亮</span><br><span class="line">mix-blend-mode: color-dodge;     //颜色减淡</span><br><span class="line">mix-blend-mode: color-burn;      //颜色加深</span><br><span class="line">mix-blend-mode: hard-light;      //强光</span><br><span class="line">mix-blend-mode: soft-light;      //柔光</span><br><span class="line">mix-blend-mode: difference;      //差值</span><br><span class="line">mix-blend-mode: exclusion;       //排除</span><br><span class="line">mix-blend-mode: hue;             //色相</span><br><span class="line">mix-blend-mode: saturation;      //饱和度</span><br><span class="line">mix-blend-mode: color;           //颜色</span><br><span class="line">mix-blend-mode: luminosity;      //亮度</span><br><span class="line"></span><br><span class="line">mix-blend-mode: initial;         //初始</span><br><span class="line">mix-blend-mode: inherit;         //继承</span><br><span class="line">mix-blend-mode: unset;           //复原</span><br></pre></td></tr></table></figure></p>
+<p>兼容性如下：<br><img src="/assets/blogImg/20171114-02.jpg"><br>可见，Chrome和FireFox已经支持了，并且不需要使用前缀。</p>
+<span id="more"></span>
+
+<h3 id="mix-blend-mode"><a href="#mix-blend-mode" class="headerlink" title="mix-blend-mode"></a>mix-blend-mode</h3><p>可使用的值：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mix-blend-mode</span>: normal;          //正常</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: multiply;        //正片叠底</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: screen;          //滤色</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: overlay;         //叠加</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: darken;          //变暗</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: lighten;         //变亮</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: color-dodge;     //颜色减淡</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: color-burn;      //颜色加深</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: hard-light;      //强光</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: soft-light;      //柔光</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: difference;      //差值</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: exclusion;       //排除</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: hue;             //色相</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: saturation;      //饱和度</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: color;           //颜色</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: luminosity;      //亮度</span><br><span class="line"></span><br><span class="line"><span class="attribute">mix-blend-mode</span>: initial;         //初始</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: inherit;         //继承</span><br><span class="line"><span class="attribute">mix-blend-mode</span>: unset;           //复原</span><br></pre></td></tr></table></figure>
 <p>有了mix-blend-mode，我们能更方便的使用一些文字特效。</p>
 <p>* mix-blend-mode默认情况下是会混合所有比起层叠顺序低的元素的，如果我们希望值混合某一两个元素，而不是全部，该怎么办呢？可以试试使用<strong>CSS3 isolation:isolate</strong></p>
 <h4 id="background-blend-mode"><a href="#background-blend-mode" class="headerlink" title="background-blend-mode"></a>background-blend-mode</h4><p>顾名思义 背景混合，属性支持和mix-blend-mode一致，需要注意的是，只能是background属性中的背景图片和颜色混合，而且只能在一个background属性中。</p>
@@ -216,11 +215,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
         </li>
       
 		</ul>
@@ -239,7 +238,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/06/Express配合MongoDB简单使用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -249,7 +248,7 @@
     </a>
   
   
-    <a href="/2017/11/18/比Redux简单太多的Mobx/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/11/18/%E6%AF%94Redux%E7%AE%80%E5%8D%95%E5%A4%AA%E5%A4%9A%E7%9A%84Mobx/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">比Redux简单太多的Mobx</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -365,7 +364,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -373,31 +372,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -409,6 +400,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -417,11 +424,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,23 +440,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,11 +452,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,19 +476,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,11 +492,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,15 +508,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,7 +528,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,15 +540,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,15 +556,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

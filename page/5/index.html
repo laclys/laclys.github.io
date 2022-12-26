@@ -16,10 +16,9 @@
 <meta property="og:url" content="http://yoursite.com/page/5/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="好きな瞬間を 好きなだけ">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
+<meta property="article:author" content="Lac">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lac&#39;s Blog">
-<meta name="twitter:description" content="好きな瞬間を 好きなだけ">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -37,7 +36,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -51,10 +50,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -105,10 +102,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -156,12 +151,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/29/React-Native IOS及安卓打包/">React-Native IOS及安卓打包</a>
+      <a class="article-title" href="/2017/09/29/React-Native%20IOS%E5%8F%8A%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85/">React-Native IOS及安卓打包</a>
     </h1>
   
 
         
-        <a href="/2017/09/29/React-Native IOS及安卓打包/" class="archive-article-date">
+        <a href="/2017/09/29/React-Native%20IOS%E5%8F%8A%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85/" class="archive-article-date">
   	<time datetime="2017-09-29T15:35:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-29</time>
 </a>
         
@@ -172,17 +167,18 @@
         <p>开发了快两个月的RN终于到了要打包发布的阶段。</p>
 <p>网上有不少文章博客，还是RN更新太快的缘由，有些并不适用于当前版本。这里简单说一下吧。（这里用的是RN0.43.4）</p>
 <h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><p>首先在项目根目录创建一个空文件夹，我这里创建的是：release_ios</p>
-<p>之后执行打包命令（有点像webpack将JS代码压缩合并，并且导出所使用的静态资源）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native bundle --entry-file index.ios.js --platform ios --dev <span class="literal">false</span> --bundle-output release_ios/main.jsbundle --assets-dest release_ios/</span><br></pre></td></tr></table></figure></p>
+<p>之后执行打包命令（有点像webpack将JS代码压缩合并，并且导出所使用的静态资源）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native bundle --entry-file index.ios.js --platform ios --dev <span class="literal">false</span> --bundle-output release_ios/main.jsbundle --assets-dest release_ios/</span><br></pre></td></tr></table></figure>
 <h4 id="命令具体含义："><a href="#命令具体含义：" class="headerlink" title="命令具体含义："></a>命令具体含义：</h4><ul>
 <li>–entry-file ,ios或者android入口的js名称，比如index.ios.js</li>
 <li>–platform ,平台名称(ios或者android)</li>
 <li>–dev ,设置为false的时候将会对JavaScript代码进行优化处理。</li>
-<li>–bundle-output, 生成的jsbundle文件的名称，比如 release_ios/main.jsbundle</li>
-<li>–assets-dest 图片以及其他资源存放的目录,比如 release_ios/</li>
+<li>–bundle-output, 生成的jsbundle文件的名称，比如 release_ios&#x2F;main.jsbundle</li>
+<li>–assets-dest 图片以及其他资源存放的目录,比如 release_ios&#x2F;</li>
 </ul>
-<p>大概1，2min打包ok。在我们的新建文件夹中就会有相应的bundle文件。<br><img src="/assets/blogImg/20170929-1.jpg" alt=""></p>
+<p>大概1，2min打包ok。在我们的新建文件夹中就会有相应的bundle文件。<br><img src="/assets/blogImg/20170929-1.jpg"></p>
         
-          <a class="article-more-a" href="/2017/09/29/React-Native IOS及安卓打包/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/29/React-Native%20IOS%E5%8F%8A%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85/#more">more >></a>
         
       
 
@@ -200,11 +196,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
         </li>
       
 		</ul>
@@ -214,7 +210,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/29/React-Native IOS及安卓打包/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/29/React-Native%20IOS%E5%8F%8A%E5%AE%89%E5%8D%93%E6%89%93%E5%8C%85/">展开全文 >></a>
         </p>
       
 
@@ -239,12 +235,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/24/React-Native-配置自定义字体/">React Native 配置自定义字体</a>
+      <a class="article-title" href="/2017/09/24/React-Native-%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">React Native 配置自定义字体</a>
     </h1>
   
 
         
-        <a href="/2017/09/24/React-Native-配置自定义字体/" class="archive-article-date">
+        <a href="/2017/09/24/React-Native-%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/" class="archive-article-date">
   	<time datetime="2017-09-24T06:07:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
@@ -255,11 +251,12 @@
         <p>本想着配置自定义字体不是什么大坑，官网文档找了一下，没有。遂关键字：“React Native 配置自定义字体”这么一搜。都是一样的文章，作者名却是各式各样，真是天下文章大家抄。然而试了一下并不好用。</p>
 <p>（这里使用最新的RN 0.48.4 测试）</p>
 <p>这里想一下React Native最新的，最省事的配置自定自定义字体的方法：<br>1）随便下载一个字体（不要改名字，会有坑）我这里随便下了一个scratchmyback的英文字体。<br>    SCRATCHMYBACK.TTF</p>
-<p>2）在项目根目录创建文件夹assets/fonts。并把刚才下载的字体放进去。</p>
-<p><img src="/assets/blogImg/20170924-1.jpg" alt=""></p>
-<p>3）在Package.json告诉React Native 咱们自定义的字体在哪里：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"rnpm"</span>: &#123;</span><br><span class="line">    <span class="string">"assets"</span>: [</span><br><span class="line">	<span class="string">"./assets/fonts/"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2）在项目根目录创建文件夹assets&#x2F;fonts。并把刚才下载的字体放进去。</p>
+<p><img src="/assets/blogImg/20170924-1.jpg"></p>
+<p>3）在Package.json告诉React Native 咱们自定义的字体在哪里：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;rnpm&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;assets&quot;</span>: [</span><br><span class="line">	<span class="string">&quot;./assets/fonts/&quot;</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2017/09/24/React-Native-配置自定义字体/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/24/React-Native-%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/#more">more >></a>
         
       
 
@@ -277,11 +274,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
         </li>
       
 		</ul>
@@ -291,7 +288,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/24/React-Native-配置自定义字体/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/24/React-Native-%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/">展开全文 >></a>
         </p>
       
 
@@ -316,12 +313,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/17/React-Native用到的第三方组件/">React-Native用到的第三方组件</a>
+      <a class="article-title" href="/2017/09/17/React-Native%E7%94%A8%E5%88%B0%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6/">React-Native用到的第三方组件</a>
     </h1>
   
 
         
-        <a href="/2017/09/17/React-Native用到的第三方组件/" class="archive-article-date">
+        <a href="/2017/09/17/React-Native%E7%94%A8%E5%88%B0%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6/" class="archive-article-date">
   	<time datetime="2017-09-17T15:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-17</time>
 </a>
         
@@ -330,11 +327,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这一个多月一直在搞公司的App项目，采用的技术就是React Native。一个人蒙着眼摸着石头过河，第一版总算是接近尾声了。（其实还有好多好多坑···）在这里总结一下，开发中用到的第三方组件。</p>
-<p><img src="/assets/blogImg/20170917-1.jpg" alt=""><br>（2016·秋–湘南）</p>
-<p>说道第三方组件，React Native的社区非常非常的活跃。各式各样的开源组件。开发时需要什么功能，google一下，绝大多数情况都能找到符合需求的组件。不过，RN有个大坑就是更新太快了。一个月前还是0.45吧，现在已经0.48了。而且改动非常巨大，带来的问题就是有些组件这个版本ok，，下个版本GG。也有这个版本ok，作者无暇适配开发老版本的兼容。当然还有很多第三方组件自身有Bug，提供的接口太少，样式太死板。Link Ios/Android的时候由于版本引起的神秘报错。总之。寻找一款合适的第三方组件，真的是需要耐心的。</p>
+<p><img src="/assets/blogImg/20170917-1.jpg"><br>（2016·秋–湘南）</p>
+<p>说道第三方组件，React Native的社区非常非常的活跃。各式各样的开源组件。开发时需要什么功能，google一下，绝大多数情况都能找到符合需求的组件。不过，RN有个大坑就是更新太快了。一个月前还是0.45吧，现在已经0.48了。而且改动非常巨大，带来的问题就是有些组件这个版本ok，，下个版本GG。也有这个版本ok，作者无暇适配开发老版本的兼容。当然还有很多第三方组件自身有Bug，提供的接口太少，样式太死板。Link Ios&#x2F;Android的时候由于版本引起的神秘报错。总之。寻找一款合适的第三方组件，真的是需要耐心的。</p>
 <p>这次App开发采用的是0.43.4这个版本。（0.44这个版本改动非常巨大。立项目之初，保守一点选择了这个版本）。</p>
         
-          <a class="article-more-a" href="/2017/09/17/React-Native用到的第三方组件/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/17/React-Native%E7%94%A8%E5%88%B0%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6/#more">more >></a>
         
       
 
@@ -352,11 +349,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
         </li>
       
 		</ul>
@@ -366,7 +363,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/17/React-Native用到的第三方组件/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/17/React-Native%E7%94%A8%E5%88%B0%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6/">展开全文 >></a>
         </p>
       
 
@@ -391,12 +388,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/19/杂/">杂</a>
+      <a class="article-title" href="/2017/08/19/%E6%9D%82/">杂</a>
     </h1>
   
 
         
-        <a href="/2017/08/19/杂/" class="archive-article-date">
+        <a href="/2017/08/19/%E6%9D%82/" class="archive-article-date">
   	<time datetime="2017-08-19T09:42:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-19</time>
 </a>
         
@@ -404,10 +401,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>不知不觉在新的公司，工作了快四个月了。从一个标准的Java后端转到前端。跨度还是蛮大的。对于后端来说，特别是相对成熟的Java，SSH这三大框架搞明白，操纵操纵数据库。完成业务需求就是了。前端则不一样，要去和设计/后端沟通，还要跟上新技术的浪潮。</p>
-<p>说道技术浪潮，从学习前端开始真的是感受到了互联网技术上的发展之快。从传统的Dom层框架JQ/Yui到现在，MVVM框架的盛行。ES5，ES6，再到现在的ES7。稍微放慢一些脚步就有种跟不上的感觉。和日本的安逸生活相比繁忙了很多，压力也大了。倒是回过头想想确实成长了不少。现在一个人在搞公司App，用的RN。坑很多，不过每一个小功能的实现，带来的成就感，也让自己很满足。<br>
+        <p>不知不觉在新的公司，工作了快四个月了。从一个标准的Java后端转到前端。跨度还是蛮大的。对于后端来说，特别是相对成熟的Java，SSH这三大框架搞明白，操纵操纵数据库。完成业务需求就是了。前端则不一样，要去和设计&#x2F;后端沟通，还要跟上新技术的浪潮。</p>
+<p>说道技术浪潮，从学习前端开始真的是感受到了互联网技术上的发展之快。从传统的Dom层框架JQ&#x2F;Yui到现在，MVVM框架的盛行。ES5，ES6，再到现在的ES7。稍微放慢一些脚步就有种跟不上的感觉。和日本的安逸生活相比繁忙了很多，压力也大了。倒是回过头想想确实成长了不少。现在一个人在搞公司App，用的RN。坑很多，不过每一个小功能的实现，带来的成就感，也让自己很满足。</p>
         
-          <a class="article-more-a" href="/2017/08/19/杂/#more">more >></a>
+          <a class="article-more-a" href="/2017/08/19/%E6%9D%82/#more">more >></a>
         
       
 
@@ -431,7 +428,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/19/杂/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/08/19/%E6%9D%82/">展开全文 >></a>
         </p>
       
 
@@ -470,25 +467,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近公司新开的RN项目，使用了这份JS编码规范。在这里简单的介绍一下。</p>
-<p><a href="https://github.com/standard/standard" target="_blank" rel="noopener">https://github.com/standard/standard</a><br>（star超级多=。=）</p>
-<p>相比Eslint、JSCS这类代码检查工作，优势就是，自有一套社区规范化的[标准]风格。不用维护 .eslintrc, .jshintrc, or .jscsrc 。开箱即用。<br>自动代码格式化。在主流的编译器上sublime/vscode/Atom/Vim都有相应的插件提供支持。实际体验很好。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/standard/standard">https://github.com/standard/standard</a><br>（star超级多&#x3D;。&#x3D;）</p>
+<p>相比Eslint、JSCS这类代码检查工作，优势就是，自有一套社区规范化的[标准]风格。不用维护 .eslintrc, .jshintrc, or .jscsrc 。开箱即用。<br>自动代码格式化。在主流的编译器上sublime&#x2F;vscode&#x2F;Atom&#x2F;Vim都有相应的插件提供支持。实际体验很好。</p>
 <p>再来说说这一套JS编码规范的细则：</p>
 <ul>
 <li>2 spaces – for indentation</li>
 <li>Single quotes for strings – except to avoid escaping</li>
 <li>No unused variables – this one catches tons of bugs!</li>
 <li>No semicolons – It’s fine. Really!</li>
-<li>Never start a line with (, [, or `</li>
+<li>Never start a line with (, [, or &#96;</li>
 <li>This is the only gotcha with omitting semicolons – automatically checked for you!</li>
 <li>Space after keywords if (condition) { … }</li>
 <li>Space after function name function name (arg) { … }</li>
-<li>Always use === instead of == – but obj == null is allowed to check null || undefined.</li>
+<li>Always use &#x3D;&#x3D;&#x3D; instead of &#x3D;&#x3D; – but obj &#x3D;&#x3D; null is allowed to check null || undefined.</li>
 <li>Always handle the node.js err function parameter</li>
 <li>Always prefix browser globals with window – except document and navigator are okay</li>
 <li>Prevents accidental use of poorly-named browser globals like open, length, event, and name.</li>
 <li>And more goodness – give standard a try today!</li>
 </ul>
-<p>仔细看这一串规范，大概最大的争议点是：没有分号。 Standard Style的作者Feross（google了一下，很NB的一个人）他自己认为不用分号的 JavaScript 非常好。<br>分号自动插入是 JavaScript 的一个特性，它可以减少噪点、简化程序。<br>
+<p>仔细看这一串规范，大概最大的争议点是：没有分号。 Standard Style的作者Feross（google了一下，很NB的一个人）他自己认为不用分号的 JavaScript 非常好。<br>分号自动插入是 JavaScript 的一个特性，它可以减少噪点、简化程序。</p>
         
           <a class="article-more-a" href="/2017/08/02/JavaScriptStandardStyle/#more">more >></a>
         
@@ -547,12 +544,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/10/React-Native学习--布局问题/">React Native学习--布局问题</a>
+      <a class="article-title" href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/">React Native学习--布局问题</a>
     </h1>
   
 
         
-        <a href="/2017/06/10/React-Native学习--布局问题/" class="archive-article-date">
+        <a href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/" class="archive-article-date">
   	<time datetime="2017-06-10T08:49:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
 </a>
         
@@ -560,13 +557,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios/Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑=。=）。</p>
-<p>今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而RN，是面向ios/Android的。既然RN对FlexBox支持。我们大可不必关心兼容性问题。</p>
-<h3 id="RN的单位"><a href="#RN的单位" class="headerlink" title="RN的单位"></a>RN的单位</h3><p>首先要说的是RN中的尺寸。<br>在RN中尺寸是没有单位的，他代表设备独立像素。<br>eg：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>,<span class="attr">margin</span>:<span class="number">40</span>,<span class="attr">backgroundColor</span>:<span class="string">'gray'</span>&#125;&#125;&gt;</span><br><span class="line">        &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">margin</span>:<span class="number">20</span>&#125;&#125;&gt;尺寸&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>View&gt;</span><br></pre></td></tr></table></figure></p>
+        <p>最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios&#x2F;Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑&#x3D;。&#x3D;）。</p>
+<p>今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而RN，是面向ios&#x2F;Android的。既然RN对FlexBox支持。我们大可不必关心兼容性问题。</p>
+<h3 id="RN的单位"><a href="#RN的单位" class="headerlink" title="RN的单位"></a>RN的单位</h3><p>首先要说的是RN中的尺寸。<br>在RN中尺寸是没有单位的，他代表设备独立像素。<br>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">View</span> style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>,<span class="attr">margin</span>:<span class="number">40</span>,<span class="attr">backgroundColor</span>:<span class="string">&#x27;gray&#x27;</span>&#125;&#125;&gt;</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;</span> &#123;<span class="attr">fontSize:16</span>,<span class="attr">margin:20</span>&#125;&#125;&gt;</span>尺寸<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">View</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>这里使用无单位的尺寸，是为了确保布局在任何不同的dpi的手机屏幕上不会发生改变。<br>在上面的代码中：</p>
 <p>运行在Android上时，View的长和宽被解释成：100dp 100dp单位是dp，字体被解释成16sp 单位是sp，运行在iOS上时尺寸单位被解释称了pt。</p>
         
-          <a class="article-more-a" href="/2017/06/10/React-Native学习--布局问题/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/#more">more >></a>
         
       
 
@@ -580,11 +578,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">react-native</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">react-native</a>
         </li>
       
 		</ul>
@@ -594,7 +592,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/10/React-Native学习--布局问题/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/">展开全文 >></a>
         </p>
       
 
@@ -619,12 +617,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/04/react-native学习笔记(1)/">react-native学习笔记</a>
+      <a class="article-title" href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/">react-native学习笔记</a>
     </h1>
   
 
         
-        <a href="/2017/06/04/react-native学习笔记(1)/" class="archive-article-date">
+        <a href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/" class="archive-article-date">
   	<time datetime="2017-06-04T15:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-04</time>
 </a>
         
@@ -633,17 +631,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>周末两天的RN初体验，一些杂乱的笔记。</p>
-<p><img src="/assets/blogImg/20170604.jpg" alt=""></p>
+<p><img src="/assets/blogImg/20170604.jpg"></p>
 <h3 id="传统开发："><a href="#传统开发：" class="headerlink" title="传统开发："></a>传统开发：</h3><p>人员稀缺；开发成本高；代码复用；无法实现动态更新</p>
 <h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><p>learn once,write anywhere<br>跨平台 性能高 低投入高回报 支持动态更新</p>
 <h3 id="first-app"><a href="#first-app" class="headerlink" title="first app"></a>first app</h3><p> command+d 在模拟器里打开 开发者菜单</p>
 <p>react-native run-ios （没什么坑直接用就好，启动xcode里的ios模拟器）</p>
 <p> Android这边坑比较多<br>遇到的第一个问题：</p>
-<p><strong>Unable to access Android SDK add-on list</strong><br>解决方案：<br> 在 Android Studio 安装目录 bin/idea.properties 文件最后追加一句</p>
+<p><strong>Unable to access Android SDK add-on list</strong><br>解决方案：<br> 在 Android Studio 安装目录 bin&#x2F;idea.properties 文件最后追加一句</p>
 <pre><code>disable.android.first.run=true
 </code></pre>
         
-          <a class="article-more-a" href="/2017/06/04/react-native学习笔记(1)/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/#more">more >></a>
         
       
 
@@ -657,11 +655,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">react-native</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">react-native</a>
         </li>
       
 		</ul>
@@ -671,7 +669,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/04/react-native学习笔记(1)/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/">展开全文 >></a>
         </p>
       
 
@@ -696,12 +694,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/11/git命令复习笔记/">Git命令复习笔记</a>
+      <a class="article-title" href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">Git命令复习笔记</a>
     </h1>
   
 
         
-        <a href="/2017/05/11/git命令复习笔记/" class="archive-article-date">
+        <a href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2017-05-10T16:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
 </a>
         
@@ -711,7 +709,7 @@
       
         <p>初始化一个Git仓库，使用git init命令。</p>
 <p>添加文件到Git仓库，分两步：</p>
-<p>第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；</file></p>
+<p>第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；</p>
 <p>第二步，使用命令git commit，完成。</p>
 <hr>
 <p>要随时掌握工作区的状态，使用git status命令。</p>
@@ -721,7 +719,7 @@
 <p>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。</p>
 <p>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
         
-          <a class="article-more-a" href="/2017/05/11/git命令复习笔记/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
         
       
 
@@ -745,7 +743,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/11/git命令复习笔记/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
@@ -765,7 +763,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -867,7 +865,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -875,31 +873,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -911,6 +901,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -919,11 +925,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -931,23 +941,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -959,11 +953,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -971,19 +977,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -995,11 +993,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1007,15 +1009,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1031,7 +1029,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1039,15 +1041,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1055,15 +1057,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

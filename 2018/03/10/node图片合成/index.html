@@ -11,21 +11,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="最近在工作上有一个需求是在server(node.js)，将几张图片和文字合成。 经过google一番，尝试了3个库：  node-images： 国人开发的一个轻量级，不需要额外安装依赖的图片处理库。可以实现图片大小，合并等功能。本打算使用它来完成需求。不过已经近一年不维护了。node 8.x版本跑步起来。看了一下issue，发现各个平台、系统的兼容性堪忧。还是不去踩这个坑了。另外其也不支持文字">
-<meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node图片合成">
-<meta property="og:url" content="http://yoursite.com/2018/03/10/node图片合成/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/03/10/node%E5%9B%BE%E7%89%87%E5%90%88%E6%88%90/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="最近在工作上有一个需求是在server(node.js)，将几张图片和文字合成。 经过google一番，尝试了3个库：  node-images： 国人开发的一个轻量级，不需要额外安装依赖的图片处理库。可以实现图片大小，合并等功能。本打算使用它来完成需求。不过已经近一年不维护了。node 8.x版本跑步起来。看了一下issue，发现各个平台、系统的兼容性堪忧。还是不去踩这个坑了。另外其也不支持文字">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180310-01.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180310-02.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180310-03.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180310-04.jpg">
-<meta property="og:updated_time" content="2018-03-09T17:12:26.000Z">
+<meta property="article:published_time" content="2018-03-09T17:12:26.000Z">
+<meta property="article:modified_time" content="2018-03-09T17:12:26.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="node">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node图片合成">
-<meta name="twitter:description" content="最近在工作上有一个需求是在server(node.js)，将几张图片和文字合成。 经过google一番，尝试了3个库：  node-images： 国人开发的一个轻量级，不需要额外安装依赖的图片处理库。可以实现图片大小，合并等功能。本打算使用它来完成需求。不过已经近一年不维护了。node 8.x版本跑步起来。看了一下issue，发现各个平台、系统的兼容性堪忧。还是不去踩这个坑了。另外其也不支持文字">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20180310-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -44,7 +44,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -58,10 +58,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -112,10 +110,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -166,7 +162,7 @@
   
 
         
-        <a href="/2018/03/10/node图片合成/" class="archive-article-date">
+        <a href="/2018/03/10/node%E5%9B%BE%E7%89%87%E5%90%88%E6%88%90/" class="archive-article-date">
   	<time datetime="2018-03-09T17:12:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-10</time>
 </a>
         
@@ -184,28 +180,35 @@
 <li><p>终于到了重点：gm。nodeJs对GraphicsMagick和ImageMagick的封装。图片处理的老牌工具，包含各种各样的功能。由于两个工具本身都不是js实现，所以需要额外安装。这里就主要说说gm。</p>
 </li>
 </ul>
-<a id="more"></a>
-<h3 id="install："><a href="#install：" class="headerlink" title="install："></a>install：</h3><p>在安装gm之前，我们需要安装GraphicsMagick和ImageMagick<br>mac这里：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install imagemagick</span><br><span class="line">brew install graphicsmagick</span><br></pre></td></tr></table></figure></p>
+<span id="more"></span>
+
+<h3 id="install："><a href="#install：" class="headerlink" title="install："></a>install：</h3><p>在安装gm之前，我们需要安装GraphicsMagick和ImageMagick<br>mac这里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install imagemagick</span><br><span class="line">brew install graphicsmagick</span><br></pre></td></tr></table></figure>
 <p>linux的话，拿apt-get安装就ok。</p>
-<p>这两个安装完毕之后。在工程目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gm --save</span><br></pre></td></tr></table></figure></p>
+<p>这两个安装完毕之后。在工程目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gm --save</span><br></pre></td></tr></table></figure>
 <p>就ok</p>
-<h3 id="usage："><a href="#usage：" class="headerlink" title="usage："></a>usage：</h3><p>我们现在想把图一（test.jpg)(600*600）的右下角添加图二(1.jpg)(140*140），使其合成一张图。<br><img src="/assets/blogImg/20180310-01.jpg" alt=""><br><img src="/assets/blogImg/20180310-02.jpg" alt=""><br>这里 我们使用gm的draw方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> gm = <span class="built_in">require</span>(<span class="string">'gm'</span>)</span><br><span class="line">gm(<span class="string">'./test.jpg'</span>)</span><br><span class="line">  .draw(<span class="string">'image Over 460, 460, 140, 140 "./1.jpg"'</span>)</span><br><span class="line">  .write(<span class="string">`./output/<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span>.jpg`</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'done'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err.message || <span class="string">"出错了！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>跑一下程序，output目录下就多出来一张合成的照片咯。当然gm还有很多种合成照片的方式：<br>compose/mosaic/append(api文档说的很细致这里就不展开了)</p>
-<p><img src="/assets/blogImg/20180310-03.jpg" alt=""></p>
-<p>gm的APi文档地址是：<a href="http://aheckmann.github.io/gm/" target="_blank" rel="noopener">gm api文档</a></p>
+<h3 id="usage："><a href="#usage：" class="headerlink" title="usage："></a>usage：</h3><p>我们现在想把图一（test.jpg)(600*600）的右下角添加图二(1.jpg)(140*140），使其合成一张图。<br><img src="/assets/blogImg/20180310-01.jpg"><br><img src="/assets/blogImg/20180310-02.jpg"><br>这里 我们使用gm的draw方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> gm = <span class="built_in">require</span>(<span class="string">&#x27;gm&#x27;</span>)</span><br><span class="line"><span class="title function_">gm</span>(<span class="string">&#x27;./test.jpg&#x27;</span>)</span><br><span class="line">  .<span class="title function_">draw</span>(<span class="string">&#x27;image Over 460, 460, 140, 140 &quot;./1.jpg&quot;&#x27;</span>)</span><br><span class="line">  .<span class="title function_">write</span>(<span class="string">`./output/<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span>.jpg`</span>, <span class="keyword">function</span>(<span class="params">err</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;done&#x27;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(err.<span class="property">message</span> || <span class="string">&quot;出错了！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>跑一下程序，output目录下就多出来一张合成的照片咯。当然gm还有很多种合成照片的方式：<br>compose&#x2F;mosaic&#x2F;append(api文档说的很细致这里就不展开了)</p>
+<p><img src="/assets/blogImg/20180310-03.jpg"></p>
+<p>gm的APi文档地址是：<a target="_blank" rel="noopener" href="http://aheckmann.github.io/gm/">gm api文档</a></p>
 <p>图片和图片合成很简单之后我们还想添加一段文字,查阅api我们发现有这个方法：drawText</p>
 <p>.drawText(x, y, text [, gravity])</p>
 <p>如果没有gravity参数，那么就将text绘制到图片中的(x,y)坐标处。<br>如果带有gravity参数，从(x,y)坐标开始到右下角构成的图片范围内，依据gravity含义绘制文字。</p>
 <p>gravity的选项如下：</p>
 <p>NorthWest, North, NorthEast, West, Center, East, SouthWest, South, or SouthEast</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gm(<span class="string">'./test.jpg'</span>)</span><br><span class="line">  .draw(<span class="string">'image Over 460, 460, 140, 140 "./1.jpg"'</span>)</span><br><span class="line">  .drawText(<span class="number">100</span>, <span class="number">100</span>, <span class="string">'wa~~~'</span>)</span><br><span class="line">  .write(<span class="string">`./output/<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span>.jpg`</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'done'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err.message || <span class="string">"出错了！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>上述代码，我们想要在图片 左上为（0，0）。（100，100）的位置添加wa~<br>跑一下这是报了一个错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: unable to <span class="built_in">read</span> font `/usr/<span class="built_in">local</span>/share/ghostscript/fonts/n019003l.pfb<span class="string">' @ error/annotate.c/RenderFreetype/1123: `(null)'</span></span><br></pre></td></tr></table></figure></p>
-<p>这是因为我们没有装ghostscript(一套建基于Adobe、PostScript及可移植文档格式（PDF）的页面描述语言等而编译成的免费软件。)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ghostscript</span><br></pre></td></tr></table></figure></p>
-<p>安装好了在执行就ok了。<br>顺势我们再试试中文。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.drawText(<span class="number">100</span>, <span class="number">100</span>, <span class="string">'哇~~~'</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">gm</span>(<span class="string">&#x27;./test.jpg&#x27;</span>)</span><br><span class="line">  .<span class="title function_">draw</span>(<span class="string">&#x27;image Over 460, 460, 140, 140 &quot;./1.jpg&quot;&#x27;</span>)</span><br><span class="line">  .<span class="title function_">drawText</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="string">&#x27;wa~~~&#x27;</span>)</span><br><span class="line">  .<span class="title function_">write</span>(<span class="string">`./output/<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span>.jpg`</span>, <span class="keyword">function</span>(<span class="params">err</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;done&#x27;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(err.<span class="property">message</span> || <span class="string">&quot;出错了！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>上述代码，我们想要在图片 左上为（0，0）。（100，100）的位置添加wa~<br>跑一下这是报了一个错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: unable to <span class="built_in">read</span> font `/usr/local/share/ghostscript/fonts/n019003l.pfb<span class="string">&#x27; @ error/annotate.c/RenderFreetype/1123: `(null)&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>这是因为我们没有装ghostscript(一套建基于Adobe、PostScript及可移植文档格式（PDF）的页面描述语言等而编译成的免费软件。)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ghostscript</span><br></pre></td></tr></table></figure>
+<p>安装好了在执行就ok了。<br>顺势我们再试试中文。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.<span class="title function_">drawText</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="string">&#x27;哇~~~&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>乱码了。google一下发现gm、GraphicsMagick的使用中，中文乱码问题屡见不鲜。<br>解决方案总结起来就是1）utf-8编码；2）要指定中文字体库</p>
 <p>这里我们下载了微软雅黑的ttf文件，放在根目录的font文件夹下.我们再添加一些字体属性：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">gm(<span class="string">'./test.jpg'</span>)</span><br><span class="line">  .draw(<span class="string">'image Over 460, 460, 140, 140 "./1.jpg"'</span>)</span><br><span class="line">  .drawText(<span class="number">100</span>, <span class="number">100</span>, <span class="string">'哇'</span>)</span><br><span class="line">  .fontSize(<span class="number">36</span>)</span><br><span class="line">  .fill(<span class="string">'#fff'</span>)</span><br><span class="line">  .font(<span class="string">'./font/微软雅黑.ttf'</span>)</span><br><span class="line">  .write(<span class="string">`./output/<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span>.jpg`</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!err) &#123;<span class="built_in">console</span>.log(<span class="string">'done'</span>)&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(err.message || <span class="string">"出错了！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-<p>这样 白的的36号字的哇就出现在了图片上。<br><img src="/assets/blogImg/20180310-04.jpg" alt=""></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">gm</span>(<span class="string">&#x27;./test.jpg&#x27;</span>)</span><br><span class="line">  .<span class="title function_">draw</span>(<span class="string">&#x27;image Over 460, 460, 140, 140 &quot;./1.jpg&quot;&#x27;</span>)</span><br><span class="line">  .<span class="title function_">drawText</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="string">&#x27;哇&#x27;</span>)</span><br><span class="line">  .<span class="title function_">fontSize</span>(<span class="number">36</span>)</span><br><span class="line">  .<span class="title function_">fill</span>(<span class="string">&#x27;#fff&#x27;</span>)</span><br><span class="line">  .<span class="title function_">font</span>(<span class="string">&#x27;./font/微软雅黑.ttf&#x27;</span>)</span><br><span class="line">  .<span class="title function_">write</span>(<span class="string">`./output/<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span>.jpg`</span>, <span class="keyword">function</span>(<span class="params">err</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!err) &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;done&#x27;</span>)&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(err.<span class="property">message</span> || <span class="string">&quot;出错了！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这样 白的的36号字的哇就出现在了图片上。<br><img src="/assets/blogImg/20180310-04.jpg"></p>
 
       
 
@@ -259,7 +262,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/09/从零配置Webpack4.0搭建一个React工程/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -385,7 +388,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -393,31 +396,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,6 +424,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -437,11 +448,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,23 +464,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,11 +476,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,19 +500,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,11 +516,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,15 +532,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,7 +552,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,15 +564,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,15 +580,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -10,24 +10,25 @@
   <title>深入理解javascript原型和闭包笔记总结 | Lac&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
-  <meta name="description" content="这两天发现一系列很好很棒的javascript原型和闭包深入理解的文章。http://www.cnblogs.com/wangfupeng1988/p/3977924.html 在javascript的学习中，个人认为最容易犯错，坑最多的就是原型链和闭包这一块。原型链这一块也算是js的一大特色，闭包捏则是大量运用于JQ的源码中。很有必要好好总结学学习一番。由于很重要，也绕不开。结合文章，总结了一波">
-<meta name="keywords" content="前端,javascript">
+  <meta name="description" content="这两天发现一系列很好很棒的javascript原型和闭包深入理解的文章。http:&#x2F;&#x2F;www.cnblogs.com&#x2F;wangfupeng1988&#x2F;p&#x2F;3977924.html 在javascript的学习中，个人认为最容易犯错，坑最多的就是原型链和闭包这一块。原型链这一块也算是js的一大特色，闭包捏则是大量运用于JQ的源码中。很有必要好好总结学学习一番。由于很重要，也绕不开。结合文章，总结了一波">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解javascript原型和闭包笔记总结">
-<meta property="og:url" content="http://yoursite.com/2017/03/12/深入理解javascript原型和闭包笔记总结/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/03/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
-<meta property="og:description" content="这两天发现一系列很好很棒的javascript原型和闭包深入理解的文章。http://www.cnblogs.com/wangfupeng1988/p/3977924.html 在javascript的学习中，个人认为最容易犯错，坑最多的就是原型链和闭包这一块。原型链这一块也算是js的一大特色，闭包捏则是大量运用于JQ的源码中。很有必要好好总结学学习一番。由于很重要，也绕不开。结合文章，总结了一波">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="这两天发现一系列很好很棒的javascript原型和闭包深入理解的文章。http:&#x2F;&#x2F;www.cnblogs.com&#x2F;wangfupeng1988&#x2F;p&#x2F;3977924.html 在javascript的学习中，个人认为最容易犯错，坑最多的就是原型链和闭包这一块。原型链这一块也算是js的一大特色，闭包捏则是大量运用于JQ的源码中。很有必要好好总结学学习一番。由于很重要，也绕不开。结合文章，总结了一波">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170312-1.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170312-2.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170312-3.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170312-4.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170312-5.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170312-6.jpg">
-<meta property="og:updated_time" content="2017-03-12T14:33:40.000Z">
+<meta property="article:published_time" content="2017-03-12T14:33:40.000Z">
+<meta property="article:modified_time" content="2017-03-12T14:33:40.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解javascript原型和闭包笔记总结">
-<meta name="twitter:description" content="这两天发现一系列很好很棒的javascript原型和闭包深入理解的文章。http://www.cnblogs.com/wangfupeng1988/p/3977924.html 在javascript的学习中，个人认为最容易犯错，坑最多的就是原型链和闭包这一块。原型链这一块也算是js的一大特色，闭包捏则是大量运用于JQ的源码中。很有必要好好总结学学习一番。由于很重要，也绕不开。结合文章，总结了一波">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20170312-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -46,7 +47,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -60,10 +61,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -114,10 +113,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -168,7 +165,7 @@
   
 
         
-        <a href="/2017/03/12/深入理解javascript原型和闭包笔记总结/" class="archive-article-date">
+        <a href="/2017/03/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" class="archive-article-date">
   	<time datetime="2017-03-12T14:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
 </a>
         
@@ -176,14 +173,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这两天发现一系列很好很棒的javascript原型和闭包深入理解的文章。<br><a href="http://www.cnblogs.com/wangfupeng1988/p/3977924.html" target="_blank" rel="noopener">http://www.cnblogs.com/wangfupeng1988/p/3977924.html</a></p>
-<p>在javascript的学习中，个人认为最容易犯错，坑最多的就是原型链和闭包这一块。<br>原型链这一块也算是js的一大特色，闭包捏则是大量运用于JQ的源码中。<br>很有必要好好总结学学习一番。<br>由于很重要，也绕不开。结合文章，总结了一波这一块的知识点，由于都记<br>在了本本上，这里来一波图片，随时可以参考。<br><a id="more"></a></p>
-<p><img src="/assets/blogImg/20170312-1.jpg" alt=""></p>
-<p><img src="/assets/blogImg/20170312-2.jpg" alt=""></p>
-<p><img src="/assets/blogImg/20170312-3.jpg" alt=""></p>
-<p><img src="/assets/blogImg/20170312-4.jpg" alt=""></p>
-<p><img src="/assets/blogImg/20170312-5.jpg" alt=""></p>
-<p><img src="/assets/blogImg/20170312-6.jpg" alt=""></p>
+        <p>这两天发现一系列很好很棒的javascript原型和闭包深入理解的文章。<br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/wangfupeng1988/p/3977924.html">http://www.cnblogs.com/wangfupeng1988/p/3977924.html</a></p>
+<p>在javascript的学习中，个人认为最容易犯错，坑最多的就是原型链和闭包这一块。<br>原型链这一块也算是js的一大特色，闭包捏则是大量运用于JQ的源码中。<br>很有必要好好总结学学习一番。<br>由于很重要，也绕不开。结合文章，总结了一波这一块的知识点，由于都记<br>在了本本上，这里来一波图片，随时可以参考。</p>
+<span id="more"></span>
+
+<p><img src="/assets/blogImg/20170312-1.jpg"></p>
+<p><img src="/assets/blogImg/20170312-2.jpg"></p>
+<p><img src="/assets/blogImg/20170312-3.jpg"></p>
+<p><img src="/assets/blogImg/20170312-4.jpg"></p>
+<p><img src="/assets/blogImg/20170312-5.jpg"></p>
+<p><img src="/assets/blogImg/20170312-6.jpg"></p>
 
       
 
@@ -241,7 +240,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/03/14/小试NodeJS的express进行前后端数据交互/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -251,7 +250,7 @@
     </a>
   
   
-    <a href="/2017/02/26/icomoon图标/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">icomoon图标</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -367,7 +366,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -375,31 +374,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -411,6 +402,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -419,11 +426,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,23 +442,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,11 +454,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,19 +478,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,11 +494,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,15 +510,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,7 +530,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,15 +542,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,15 +558,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

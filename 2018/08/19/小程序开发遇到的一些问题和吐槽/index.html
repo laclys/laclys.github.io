@@ -11,18 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–快递去哪儿咯。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现">
-<meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小程序开发遇到的一些问题和吐槽">
-<meta property="og:url" content="http://yoursite.com/2018/08/19/小程序开发遇到的一些问题和吐槽/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/08/19/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E5%92%8C%E5%90%90%E6%A7%BD/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–快递去哪儿咯。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20180819-01.jpg">
-<meta property="og:updated_time" content="2018-08-18T17:19:14.307Z">
+<meta property="article:published_time" content="2018-08-18T17:15:02.425Z">
+<meta property="article:modified_time" content="2018-08-18T17:19:14.307Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="小程序">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序开发遇到的一些问题和吐槽">
-<meta name="twitter:description" content="小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–快递去哪儿咯。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20180819-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -41,7 +41,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +55,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -109,10 +107,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -163,7 +159,7 @@
   
 
         
-        <a href="/2018/08/19/小程序开发遇到的一些问题和吐槽/" class="archive-article-date">
+        <a href="/2018/08/19/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E5%92%8C%E5%90%90%E6%A7%BD/" class="archive-article-date">
   	<time datetime="2018-08-18T17:15:02.425Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-19</time>
 </a>
         
@@ -171,12 +167,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–<a href="https://github.com/laclys/your-express-mpvue" target="_blank" rel="noopener">快递去哪儿咯</a>。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现搞all in了两周小程序。这里记录一下遇到的一些小问题或者坑吧。</p>
+        <p>小程序在微信这个超级平台的带动下，这两年着实是越来越火。刚出来那一阵，翻了翻文档简单的看了看，没有组件、没有wsx(虽然现在也很难用，有总比没有强)还有无穷无尽的坑。一直没有深入去学习去了解。期间美团开源了一个mpvue，一个基于Vue的小程序开发框架。上手没什么成本，自己写了一个极其简单简陋查询快递的小程序–<a target="_blank" rel="noopener" href="https://github.com/laclys/your-express-mpvue">快递去哪儿咯</a>。最近工作上来了小程序的需求，组内交流之后打算用小程序原生的那一套搞。现学现搞all in了两周小程序。这里记录一下遇到的一些小问题或者坑吧。</p>
 <h3 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h3><p>那我们就从吐槽开始</p>
-<p><img src="/assets/blogImg/20180819-01.jpg" alt=""><br>（很喜欢的一部电影）<br><a id="more"></a></p>
+<p><img src="/assets/blogImg/20180819-01.jpg"><br>（很喜欢的一部电影）</p>
+<span id="more"></span>
 <ul>
 <li><p>繁琐过时的API<br>在网页端开发web，说道处理请求相比axios、fetch已经成了主流，链式调用try···catch处理错误。但是小程序却用着过时的ES3风格的API(wx.request)。这样在使用起来很不优雅，在使用了调用的时候很容易造成回调地狱。<br>想要使用promise这种链式调用的实行。我们不得不去封装一个HTTP类。下面是自己封装的一个HTTP类</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HTTP</span> </span>&#123;</span><br><span class="line">  request(&#123; url, data=&#123;&#125;, method=<span class="string">"GET"</span> &#125;) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>._request(url, resolve, reject, data, method)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _request(url, resolve, reject, data=&#123;&#125;, method=<span class="string">"GET"</span>) &#123;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: config.api_base_url + url,</span><br><span class="line">      method,</span><br><span class="line">      data,</span><br><span class="line">      header: &#123;</span><br><span class="line">        <span class="string">'content-type'</span>: <span class="string">'application/json'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">				<span class="keyword">const</span> code = res.statusCode.toString()</span><br><span class="line">				<span class="comment">// 判断状态码</span></span><br><span class="line">        <span class="keyword">if</span> (code.startsWith(<span class="string">'2'</span>)) &#123;</span><br><span class="line">          resolve(res.data)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          reject()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      fail: <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        reject()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">HTTP</span> &#123;</span><br><span class="line">  <span class="title function_">request</span>(<span class="params">&#123; url, data=&#123;&#125;, method=<span class="string">&quot;GET&quot;</span> &#125;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">_request</span>(url, resolve, reject, data, method)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">_request</span>(<span class="params">url, resolve, reject, data=&#123;&#125;, method=<span class="string">&quot;GET&quot;</span></span>) &#123;</span><br><span class="line">    wx.<span class="title function_">request</span>(&#123;</span><br><span class="line">      <span class="attr">url</span>: config.<span class="property">api_base_url</span> + url,</span><br><span class="line">      method,</span><br><span class="line">      data,</span><br><span class="line">      <span class="attr">header</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;content-type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">success</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">				<span class="keyword">const</span> code = res.<span class="property">statusCode</span>.<span class="title function_">toString</span>()</span><br><span class="line">				<span class="comment">// 判断状态码</span></span><br><span class="line">        <span class="keyword">if</span> (code.<span class="title function_">startsWith</span>(<span class="string">&#x27;2&#x27;</span>)) &#123;</span><br><span class="line">          <span class="title function_">resolve</span>(res.<span class="property">data</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="title function_">reject</span>()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">fail</span>: <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">reject</span>()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>面向JSON编程<br>接着API设计的过时，不得不吐槽这种面向JSON编程的方式。开发一个小程序需要app.json去配置全局的应用配置、路由配置还有全局UI配置。每个页面，每个组件也有相应json文件去配置。</p>
 </li>
@@ -184,7 +181,7 @@
 </li>
 <li><p>js页面中无法使用绝对路径</p>
 </li>
-<li><p>wxss 里的注释只能用 /<em>…</em>/  写法，不能用 //…</p>
+<li><p>wxss 里的注释只能用 &#x2F;<em>…</em>&#x2F;  写法，不能用 &#x2F;&#x2F;…</p>
 </li>
 <li><p>component组件中与支持onShow这个生命周期</p>
 </li>
@@ -200,7 +197,7 @@
 </li>
 <li><p><code>map</code>、<code>textarea</code> 为原生组件，页面层级最高，就算设置了z-index也无法被覆盖。（这个是真的坑）</p>
 </li>
-<li><p>text组件，看名字我们自然而然想到这个是不是和网页中的span标签一样。但是两个text标签放在一起会出现高度不一致的问题，以及类似网页中的pre标签，会保留文本中的空格和换行符号（开发的时候发现怎么换行了，一个劲的调样式，结果发现=。=真的是无语）</p>
+<li><p>text组件，看名字我们自然而然想到这个是不是和网页中的span标签一样。但是两个text标签放在一起会出现高度不一致的问题，以及类似网页中的pre标签，会保留文本中的空格和换行符号（开发的时候发现怎么换行了，一个劲的调样式，结果发现&#x3D;。&#x3D;真的是无语）</p>
 </li>
 </ul>
 <p>解决: 索性全换成view组件了</p>
@@ -213,7 +210,7 @@
 </li>
 </ul>
 <p>以上</p>
-<p>小程序的开发怎么说真的是又爱又恨，很是微妙。这两周的开发学习感觉又回到了当时研究RN的时候，当效果、成果做出来的时候很有成就感。同时小程序也蛮适合自己瞎搞的，最近在搞的一个repo<br><a href="https://github.com/laclys/teemo" target="_blank" rel="noopener">Teemo</a>,除此之外这两天小程序官方有公测了serverless，感觉发挥的空间更大了。最近自己还真有个好点子，等搞完这个尝试一波（自娱自乐）</p>
+<p>小程序的开发怎么说真的是又爱又恨，很是微妙。这两周的开发学习感觉又回到了当时研究RN的时候，当效果、成果做出来的时候很有成就感。同时小程序也蛮适合自己瞎搞的，最近在搞的一个repo<br><a target="_blank" rel="noopener" href="https://github.com/laclys/teemo">Teemo</a>,除此之外这两天小程序官方有公测了serverless，感觉发挥的空间更大了。最近自己还真有个好点子，等搞完这个尝试一波（自娱自乐）</p>
 
       
 
@@ -267,7 +264,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/27/小程序Note2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/09/27/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -277,7 +274,7 @@
     </a>
   
   
-    <a href="/2018/07/29/7月/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/29/7%E6%9C%88/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">2018.7</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -393,7 +390,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -401,31 +398,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -437,6 +426,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -445,11 +450,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,23 +466,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -485,11 +478,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,19 +502,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +518,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,15 +534,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,7 +554,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,15 +566,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,15 +582,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

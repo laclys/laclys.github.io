@@ -11,17 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="说道node，之前其实也没少用。不过大部分都是自己搞着玩，写个小爬虫或是在本地为自己的前端项目跑个接口。实际开发生产中经验为零。正巧工作中自己负责的APP项目的新模块后台要独立出来，借此机会使用走了一趟node开发到上线的全过程（express+mongoDB）。">
-<meta name="keywords" content="mongoDB,node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node服务器开发上线小记">
-<meta property="og:url" content="http://yoursite.com/2018/02/06/node服务器开发上线小记/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/02/06/node%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%8A%E7%BA%BF%E5%B0%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="说道node，之前其实也没少用。不过大部分都是自己搞着玩，写个小爬虫或是在本地为自己的前端项目跑个接口。实际开发生产中经验为零。正巧工作中自己负责的APP项目的新模块后台要独立出来，借此机会使用走了一趟node开发到上线的全过程（express+mongoDB）。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T14:20:56.000Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-02-06T14:20:56.000Z">
+<meta property="article:modified_time" content="2018-02-06T14:20:56.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="mongoDB">
+<meta property="article:tag" content="node">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node服务器开发上线小记">
-<meta name="twitter:description" content="说道node，之前其实也没少用。不过大部分都是自己搞着玩，写个小爬虫或是在本地为自己的前端项目跑个接口。实际开发生产中经验为零。正巧工作中自己负责的APP项目的新模块后台要独立出来，借此机会使用走了一趟node开发到上线的全过程（express+mongoDB）。">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +40,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +54,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +106,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +158,7 @@
   
 
         
-        <a href="/2018/02/06/node服务器开发上线小记/" class="archive-article-date">
+        <a href="/2018/02/06/node%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E4%B8%8A%E7%BA%BF%E5%B0%8F%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2018-02-06T14:20:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
 </a>
         
@@ -170,26 +167,28 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>说道node，之前其实也没少用。不过大部分都是自己搞着玩，<br>写个小爬虫或是在本地为自己的前端项目跑个接口。<br>实际开发生产中经验为零。正巧工作中自己负责的APP项目的新模块后台要独立出来，<br>借此机会使用走了一趟node开发到上线的全过程（express+mongoDB）。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <h3 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h3><p>新模块开始的功能不太多，开发这块没有花太多时间。不过还是有一些值得记录的地方：</p>
 <ol>
-<li>摒弃callback，拥抱async/promisify。</li>
+<li>摒弃callback，拥抱async&#x2F;promisify。</li>
 </ol>
 <p>node在8.X.X版本之后支持了async以及promisify的方式。callback hole确确实实令人不爽使用async<br>或者util.promisify会让代码优雅很多。</p>
-<ol>
+<ol start="2">
 <li>import代替require</li>
 </ol>
 <p>在最新的node v9.5.0，依然没有支持这一特性。我们引入文件还是需要通过require的方式。<br>虽然不是很推荐，不过执意要在node中使用import这一特性的话。需要安装babel-cli，<br>进行转换 。</p>
-<ol>
+<ol start="3">
 <li>处理图片存储这一块</li>
 </ol>
-<p>公司用的图片存储用的是又拍云。这里需要的是，将图片上传至又拍云，得到云上的图片地址，<br>进而存储到数据库中。期初想的是在前端完成上传又拍云得到图片地址这一系列操作。<br>后端只接收图片地址这一个字符串，进行存储。虽说是有相关JS SDK。不过前端终究不安全，<br>有一些生成密锁/token之类的操作。还是通过form-data传到服务器这边进行操作符合逻辑。这里遇到了一个<br>小问题node这边怎么接受图片。经过一番尝试，这里使用了multer这个中间件。拿到form表单传过来的图片。</p>
-<ol>
+<p>公司用的图片存储用的是又拍云。这里需要的是，将图片上传至又拍云，得到云上的图片地址，<br>进而存储到数据库中。期初想的是在前端完成上传又拍云得到图片地址这一系列操作。<br>后端只接收图片地址这一个字符串，进行存储。虽说是有相关JS SDK。不过前端终究不安全，<br>有一些生成密锁&#x2F;token之类的操作。还是通过form-data传到服务器这边进行操作符合逻辑。这里遇到了一个<br>小问题node这边怎么接受图片。经过一番尝试，这里使用了multer这个中间件。拿到form表单传过来的图片。</p>
+<ol start="4">
 <li>log</li>
 </ol>
-<p>服务器当然要有log。这里使用了另一个中间件：log4js。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LOG配置</span></span><br><span class="line">log4js.configure(&#123;</span><br><span class="line">  appenders: [&#123;</span><br><span class="line">    type: <span class="string">'dateFile'</span>,</span><br><span class="line">    filename: <span class="string">'logs/access.log'</span>,</span><br><span class="line">    pattern: <span class="string">'-yyyy-MM-dd.log'</span>,</span><br><span class="line">    alwaysIncludePattern: <span class="literal">true</span>,</span><br><span class="line">    category: <span class="string">'access'</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// Log Middleware</span></span><br><span class="line">app.use(log4js.connectLogger(log4js.getLogger(<span class="string">'access'</span>), &#123; <span class="attr">level</span>: log4js.levels.INFO &#125;))</span><br></pre></td></tr></table></figure></p>
+<p>服务器当然要有log。这里使用了另一个中间件：log4js。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LOG配置</span></span><br><span class="line">log4js.<span class="title function_">configure</span>(&#123;</span><br><span class="line">  <span class="attr">appenders</span>: [&#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;dateFile&#x27;</span>,</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;logs/access.log&#x27;</span>,</span><br><span class="line">    <span class="attr">pattern</span>: <span class="string">&#x27;-yyyy-MM-dd.log&#x27;</span>,</span><br><span class="line">    <span class="attr">alwaysIncludePattern</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">category</span>: <span class="string">&#x27;access&#x27;</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// Log Middleware</span></span><br><span class="line">app.<span class="title function_">use</span>(log4js.<span class="title function_">connectLogger</span>(log4js.<span class="title function_">getLogger</span>(<span class="string">&#x27;access&#x27;</span>), &#123; <span class="attr">level</span>: log4js.<span class="property">levels</span>.<span class="property">INFO</span> &#125;))</span><br></pre></td></tr></table></figure>
 <p>这里部署上线的时候，其实还遇到了一个小问题。官方例子中type: ‘Date File’。在服务器上执行。报错！查了一下issue，改成小写d，搞定。</p>
-<ol>
+<ol start="5">
 <li>mongoDB</li>
 </ol>
 <p>又是一个部署服务器上出现的问题。在本地使用mongoDB没有设置相关的权限账号。服务器上运维给我了一个admin的root账号。一开始不太懂尝试连接建model。出了一大堆权限问题。和传统数据库不同：</p>
@@ -198,25 +197,26 @@
 <p>3 用户只能在用户所在的数据库登录，包括管理员账号。</p>
 <p>4 管理员可以管理所有的数据库，但是不能直接管理其它数据库，要先在admin数据库中认证才可以，也是为了 安全性考虑。</p>
 <p>具体操作如下：</p>
-<p>这里需要先通过mongo命令使用账号、密码连接线上的mongo。注意这里必须指定admin model。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --username XXX --password XXX mongoDB线上地址/admin</span><br></pre></td></tr></table></figure></p>
+<p>这里需要先通过mongo命令使用账号、密码连接线上的mongo。注意这里必须指定admin model。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mongo --username XXX --password XXX mongoDB线上地址/admin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>之后通过use DATEBASE_NAME (use 如果数据库不存在，则创建数据库,否则切换到指定数据库）</p>
-<p>show dbs看看创建成功没有。之后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(</span><br><span class="line">  &#123;</span><br><span class="line">    user: <span class="string">"lac"</span>,</span><br><span class="line">    <span class="built_in">pwd</span>: <span class="string">"123321"</span>,</span><br><span class="line">    roles: [ &#123; role: <span class="string">"readWrite"</span>, db: <span class="string">"XXX"</span> &#125; ]</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>show dbs看看创建成功没有。之后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(</span><br><span class="line">  &#123;</span><br><span class="line">    user: <span class="string">&quot;lac&quot;</span>,</span><br><span class="line">    <span class="built_in">pwd</span>: <span class="string">&quot;123321&quot;</span>,</span><br><span class="line">    roles: [ &#123; role: <span class="string">&quot;readWrite&quot;</span>, db: <span class="string">&quot;XXX&quot;</span> &#125; ]</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>通过上面的命令 创建一个对应数据库，拥有读写权限的用户。</p>
-<p>在node中，这样使用就好<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodb: <span class="string">'mongodb://lac:123321@mongoDB线上地址:端口/所使用的DB名字'</span></span><br></pre></td></tr></table></figure></p>
+<p>在node中，这样使用就好</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mongodb</span>: <span class="string">&#x27;mongodb://lac:123321@mongoDB线上地址:端口/所使用的DB名字&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>搞明白了很简单。当时倒腾了好一阵orz</p>
-<ol>
+<ol start="6">
 <li><p>413错误</p>
-<p> 上线之后，上传图片/数据。response返回了413错误<br> Request Entity Too Large。这里是由于服务器限制了上传文件的大小，解决办法就是： 在nginx.conf里http{}中加入：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client_max_body_size 20m ;</span><br></pre></td></tr></table></figure>
-<p>允许最大上传的大小设为20m。之后重启nginx即可。</p>
-</li>
+<p> 上线之后，上传图片&#x2F;数据。response返回了413错误<br> Request Entity Too Large。这里是由于服务器限制了上传文件的大小，解决办法就是： 在nginx.conf里http{}中加入：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client_max_body_size 20m ;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<ol>
+<p>  允许最大上传的大小设为20m。之后重启nginx即可。</p>
+<ol start="7">
 <li><p>pm2</p>
 <p> 线上部署运行node 使用的是pm2</p>
 <p> 一些常用命令：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">$ pm2 start app.js <span class="comment"># 启动app.js应用程序</span></span><br><span class="line">$ pm2 start app.js --name=<span class="string">"api"</span> <span class="comment"># 启动应用程序并命名为 "api"</span></span><br><span class="line">$ pm2 start app.js --watch <span class="comment"># 当文件变化时自动重启应用</span></span><br><span class="line">$ pm2 start script.sh <span class="comment"># 启动 bash 脚本</span></span><br><span class="line"></span><br><span class="line">$ pm2 list <span class="comment"># 列表 PM2 启动的所有的应用程序</span></span><br><span class="line">$ pm2 monit <span class="comment"># 显示每个应用程序的CPU和内存占用情况</span></span><br><span class="line">$ pm2 show [app-name] <span class="comment"># 显示应用程序的所有信息</span></span><br><span class="line"></span><br><span class="line">$ pm2 logs <span class="comment"># 显示所有应用程序的日志</span></span><br><span class="line">$ pm2 logs [app-name] <span class="comment"># 显示指定应用程序的日志</span></span><br><span class="line">pm2 flush</span><br><span class="line"></span><br><span class="line">$ pm2 stop all <span class="comment"># 停止所有的应用程序</span></span><br><span class="line">$ pm2 stop 0 <span class="comment"># 停止 id为 0的指定应用程序</span></span><br><span class="line">$ pm2 restart all <span class="comment"># 重启所有应用</span></span><br><span class="line">$ pm2 reload all <span class="comment"># 重启 cluster mode下的所有应用</span></span><br><span class="line">$ pm2 gracefulReload all <span class="comment"># Graceful reload all apps in cluster mode</span></span><br><span class="line">$ pm2 delete all <span class="comment"># 关闭并删除所有应用</span></span><br><span class="line">$ pm2 delete 0 <span class="comment"># 删除指定应用 id 0</span></span><br><span class="line">$ pm2 scale api 10 <span class="comment"># 把名字叫api的应用扩展到10个实例</span></span><br><span class="line">$ pm2 reset [app-name] <span class="comment"># 重置重启数量</span></span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">$ pm2 start app.js <span class="comment"># 启动app.js应用程序</span></span><br><span class="line">$ pm2 start app.js --name=<span class="string">&quot;api&quot;</span> <span class="comment"># 启动应用程序并命名为 &quot;api&quot;</span></span><br><span class="line">$ pm2 start app.js --watch <span class="comment"># 当文件变化时自动重启应用</span></span><br><span class="line">$ pm2 start script.sh <span class="comment"># 启动 bash 脚本</span></span><br><span class="line"></span><br><span class="line">$ pm2 list <span class="comment"># 列表 PM2 启动的所有的应用程序</span></span><br><span class="line">$ pm2 monit <span class="comment"># 显示每个应用程序的CPU和内存占用情况</span></span><br><span class="line">$ pm2 show [app-name] <span class="comment"># 显示应用程序的所有信息</span></span><br><span class="line"></span><br><span class="line">$ pm2 logs <span class="comment"># 显示所有应用程序的日志</span></span><br><span class="line">$ pm2 logs [app-name] <span class="comment"># 显示指定应用程序的日志</span></span><br><span class="line">pm2 flush</span><br><span class="line"></span><br><span class="line">$ pm2 stop all <span class="comment"># 停止所有的应用程序</span></span><br><span class="line">$ pm2 stop 0 <span class="comment"># 停止 id为 0的指定应用程序</span></span><br><span class="line">$ pm2 restart all <span class="comment"># 重启所有应用</span></span><br><span class="line">$ pm2 reload all <span class="comment"># 重启 cluster mode下的所有应用</span></span><br><span class="line">$ pm2 gracefulReload all <span class="comment"># Graceful reload all apps in cluster mode</span></span><br><span class="line">$ pm2 delete all <span class="comment"># 关闭并删除所有应用</span></span><br><span class="line">$ pm2 delete 0 <span class="comment"># 删除指定应用 id 0</span></span><br><span class="line">$ pm2 scale api 10 <span class="comment"># 把名字叫api的应用扩展到10个实例</span></span><br><span class="line">$ pm2 reset [app-name] <span class="comment"># 重置重启数量</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>以上~</p>
 
@@ -286,7 +286,7 @@
     </a>
   
   
-    <a href="/2018/01/27/一个小总结/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/01/27/%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">一个小总结</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -402,7 +402,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -410,31 +410,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,6 +438,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -454,11 +462,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,23 +478,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,11 +490,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,19 +514,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,11 +530,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,15 +546,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,7 +566,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,15 +578,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,15 +594,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

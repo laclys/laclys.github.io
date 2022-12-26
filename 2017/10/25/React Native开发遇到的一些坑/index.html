@@ -11,20 +11,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="距上篇博文有间隔了好一阵。10月初，用RN写的app上架以后，马不停蹄地有整出来一份同业的版本，之后就全力进行二期的优化。其实就是填坑。每天忙忙碌碌，烦心事闹心事也不少。不过看到自己完成的app上store，同事夸app好用，心里还是美滋滋的。回首搞app开发这几个月，真是成长了不少。  言归正传，在这总结一下RN开发中的一些坑：">
-<meta name="keywords" content="ReactNative,移动端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native开发遇到的一些坑">
-<meta property="og:url" content="http://yoursite.com/2017/10/25/React Native开发遇到的一些坑/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/10/25/React%20Native%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="距上篇博文有间隔了好一阵。10月初，用RN写的app上架以后，马不停蹄地有整出来一份同业的版本，之后就全力进行二期的优化。其实就是填坑。每天忙忙碌碌，烦心事闹心事也不少。不过看到自己完成的app上store，同事夸app好用，心里还是美滋滋的。回首搞app开发这几个月，真是成长了不少。  言归正传，在这总结一下RN开发中的一些坑：">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171024-1.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171024-2.jpg">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20171024-3.jpg">
-<meta property="og:updated_time" content="2017-10-24T16:03:34.000Z">
+<meta property="article:published_time" content="2017-10-24T16:03:34.000Z">
+<meta property="article:modified_time" content="2017-10-24T16:03:34.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="移动端">
+<meta property="article:tag" content="ReactNative">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native开发遇到的一些坑">
-<meta name="twitter:description" content="距上篇博文有间隔了好一阵。10月初，用RN写的app上架以后，马不停蹄地有整出来一份同业的版本，之后就全力进行二期的优化。其实就是填坑。每天忙忙碌碌，烦心事闹心事也不少。不过看到自己完成的app上store，同事夸app好用，心里还是美滋滋的。回首搞app开发这几个月，真是成长了不少。  言归正传，在这总结一下RN开发中的一些坑：">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20171024-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -43,7 +44,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -57,10 +58,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -111,10 +110,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -165,7 +162,7 @@
   
 
         
-        <a href="/2017/10/25/React Native开发遇到的一些坑/" class="archive-article-date">
+        <a href="/2017/10/25/React%20Native%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" class="archive-article-date">
   	<time datetime="2017-10-24T16:03:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-25</time>
 </a>
         
@@ -174,42 +171,51 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>距上篇博文有间隔了好一阵。10月初，用RN写的app上架以后，马不停蹄地有整出来一份同业的版本，之后就全力进行二期的优化。其实就是填坑。每天忙忙碌碌，烦心事闹心事也不少。不过看到自己完成的app上store，同事夸app好用，心里还是美滋滋的。回首搞app开发这几个月，真是成长了不少。</p>
-<p><img src="/assets/blogImg/20171024-1.jpg" alt=""></p>
+<p><img src="/assets/blogImg/20171024-1.jpg"></p>
 <p>言归正传，在这总结一下RN开发中的一些坑：</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <h3 id="react-navigation"><a href="#react-navigation" class="headerlink" title="react-navigation"></a>react-navigation</h3><p>react-navigation作为官方推荐的导航跳转的工具，比起之前的navigator好用不少。当然也有不少问题。</p>
 <ul>
-<li><p>goBack（）问题</p>
-<p>react-navigation提供有goBack()这api, 但是使用返回栈中某个组件的方法this.props.navigation.goBack(‘component’)或this.props.navigation.dispatch(NavigationActions.back({key: “component”}))没有反应, 原理是因为这里的component不是用自定义的routeName而是用自动生成的随机值key. 又没有提供有api获取组件的key, 手动去获取又十分麻烦。这里我们可以修改他的源码：<br>把项目/node_modules/react-navigation/src/routers/StackRouter.js中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> backRoute = state.routes.find(<span class="function">(<span class="params">route: *</span>) =&gt;</span> route.key === action.key);</span><br></pre></td></tr></table></figure>
-</li>
+<li>goBack（）问题</li>
 </ul>
-<p>改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const backRoute = state.routes.find(route =&gt; route.routeName === action.key);</span><br></pre></td></tr></table></figure></p>
+<p> react-navigation提供有goBack()这api, 但是使用返回栈中某个组件的方法this.props.navigation.goBack(‘component’)或this.props.navigation.dispatch(NavigationActions.back({key: “component”}))没有反应, 原理是因为这里的component不是用自定义的routeName而是用自动生成的随机值key. 又没有提供有api获取组件的key, 手动去获取又十分麻烦。这里我们可以修改他的源码：<br>把项目&#x2F;node_modules&#x2F;react-navigation&#x2F;src&#x2F;routers&#x2F;StackRouter.js中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> backRoute = state.<span class="property">routes</span>.<span class="title function_">find</span>(<span class="function">(<span class="params">route: *</span>) =&gt;</span> route.<span class="property">key</span> === action.<span class="property">key</span>);</span><br></pre></td></tr></table></figure>
+<p>改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const backRoute = state.routes.find(route =&gt; route.routeName === action.key);</span><br></pre></td></tr></table></figure>
 <p>这样的话，里的component要填想返回的组件的前一个组件的routeName, 比如你的栈里顺序是home1, home2, home3, home4, 在home4里要返回home2, 使用this.props.navigation.goBack(‘home3’);; 并且又会带出一个问题: goBack()方法没反应了, 必须加个null进去, 写成goBack(null)</p>
 <ul>
 <li>快速点击多次跳转问题</li>
 </ul>
 <p>当我们快速点击x按钮，请求跳转时。如果快速地点击两下，三下。会导致快速跳转。这里的解决方案是加入一个setTimeout函数。</p>
-<p>修改react-navigation目录下，scr文件夹中的addNavigationHelpers.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>&lt;<span class="title">S</span>: *&gt;(<span class="params">navigation: NavigationProp&lt;S, NavigationAction&gt;</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 添加点击判断</span></span><br><span class="line">  <span class="keyword">let</span> debounce = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">      ...navigation,</span><br><span class="line">      goBack: (key?: ?string): <span class="function"><span class="params">boolean</span> =&gt;</span></span><br><span class="line">          navigation.dispatch(</span><br><span class="line">              NavigationActions.back(&#123;</span><br><span class="line">                  key: key === <span class="literal">undefined</span> ? navigation.state.key : key,</span><br><span class="line">              &#125;),</span><br><span class="line">          ),</span><br><span class="line">      navigate: (routeName: string,</span><br><span class="line">                 params?: NavigationParams,</span><br><span class="line">                 action?: NavigationAction,): <span class="function"><span class="params">boolean</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (debounce) &#123;</span><br><span class="line">              debounce = <span class="literal">false</span>;</span><br><span class="line">              navigation.dispatch(</span><br><span class="line">                  NavigationActions.navigate(&#123;</span><br><span class="line">                      routeName,</span><br><span class="line">                      params,</span><br><span class="line">                      action,</span><br><span class="line">                  &#125;),</span><br><span class="line">              );</span><br><span class="line">              setTimeout(</span><br><span class="line">                  () =&gt; &#123;</span><br><span class="line">                      debounce = <span class="literal">true</span>;</span><br><span class="line">                  &#125;,</span><br><span class="line">              <span class="number">500</span>,</span><br><span class="line">              );</span><br><span class="line">              <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;,</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * For updating current route params. For example the nav bar title and</span></span><br><span class="line"><span class="comment">     * buttons are based on the route params.</span></span><br><span class="line"><span class="comment">     * This means `setParams` can be used to update nav bar for example.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    setParams: (params: NavigationParams): <span class="function"><span class="params">boolean</span> =&gt;</span></span><br><span class="line">      navigation.dispatch(</span><br><span class="line">        NavigationActions.setParams(&#123;</span><br><span class="line">          params,</span><br><span class="line">          key: navigation.state.key,</span><br><span class="line">        &#125;),</span><br><span class="line">      ),</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>修改react-navigation目录下，scr文件夹中的addNavigationHelpers.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span>&lt;<span class="attr">S</span>: *&gt;(<span class="attr">navigation</span>: <span class="title class_">NavigationProp</span>&lt;S, <span class="title class_">NavigationAction</span>&gt;) &#123;</span><br><span class="line">  <span class="comment">// 添加点击判断</span></span><br><span class="line">  <span class="keyword">let</span> debounce = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">      ...navigation,</span><br><span class="line">      <span class="attr">goBack</span>: (key?: ?string): <span class="function"><span class="params">boolean</span> =&gt;</span></span><br><span class="line">          navigation.<span class="title function_">dispatch</span>(</span><br><span class="line">              <span class="title class_">NavigationActions</span>.<span class="title function_">back</span>(&#123;</span><br><span class="line">                  <span class="attr">key</span>: key === <span class="literal">undefined</span> ? navigation.<span class="property">state</span>.<span class="property">key</span> : key,</span><br><span class="line">              &#125;),</span><br><span class="line">          ),</span><br><span class="line">      <span class="attr">navigate</span>: (<span class="attr">routeName</span>: string,</span><br><span class="line">                 params?: <span class="title class_">NavigationParams</span>,</span><br><span class="line">                 action?: <span class="title class_">NavigationAction</span>,): <span class="function"><span class="params">boolean</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (debounce) &#123;</span><br><span class="line">              debounce = <span class="literal">false</span>;</span><br><span class="line">              navigation.<span class="title function_">dispatch</span>(</span><br><span class="line">                  <span class="title class_">NavigationActions</span>.<span class="title function_">navigate</span>(&#123;</span><br><span class="line">                      routeName,</span><br><span class="line">                      params,</span><br><span class="line">                      action,</span><br><span class="line">                  &#125;),</span><br><span class="line">              );</span><br><span class="line">              <span class="built_in">setTimeout</span>(</span><br><span class="line">                  <span class="function">() =&gt;</span> &#123;</span><br><span class="line">                      debounce = <span class="literal">true</span>;</span><br><span class="line">                  &#125;,</span><br><span class="line">              <span class="number">500</span>,</span><br><span class="line">              );</span><br><span class="line">              <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;,</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * For updating current route params. For example the nav bar title and</span></span><br><span class="line"><span class="comment">     * buttons are based on the route params.</span></span><br><span class="line"><span class="comment">     * This means `setParams` can be used to update nav bar for example.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="attr">setParams</span>: (<span class="attr">params</span>: <span class="title class_">NavigationParams</span>): <span class="function"><span class="params">boolean</span> =&gt;</span></span><br><span class="line">      navigation.<span class="title function_">dispatch</span>(</span><br><span class="line">        <span class="title class_">NavigationActions</span>.<span class="title function_">setParams</span>(&#123;</span><br><span class="line">          params,</span><br><span class="line">          <span class="attr">key</span>: navigation.<span class="property">state</span>.<span class="property">key</span>,</span><br><span class="line">        &#125;),</span><br><span class="line">      ),</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="底部多个TextInput，输入法遮盖问题"><a href="#底部多个TextInput，输入法遮盖问题" class="headerlink" title="底部多个TextInput，输入法遮盖问题"></a>底部多个TextInput，输入法遮盖问题</h3><p>安卓上貌似不会出现这个问题，主要是ios端。一开始使用的是原生的IQKeyBoardManager。但是多个TextInput情况下。支持的不是太好。这里使用了一块开源的组件：react-native-keyboard-aware-scroll-view 完美解决这个问题。</p>
-<h3 id="react-native-lightbox"><a href="#react-native-lightbox" class="headerlink" title="react-native-lightbox"></a>react-native-lightbox</h3><p>这个组件实现了点击图片，灯箱效果。不过它的问题蛮多的。<br>遇到的第一个问题就是Pinch to zoom。这个组件本身不支持灯箱效果下，手势放大。这里使用了一个小技巧。通过本身的swipeToDismiss={false}以及ScrollView的minimumZoomScale和maximumZoomScale属性解决这个问题。</p>
-<p>eg:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;LightBox</span><br><span class="line">        key=&#123;i&#125;</span><br><span class="line">        swipeToDismiss=&#123;<span class="literal">false</span>&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        &lt;ScrollView</span><br><span class="line">          minimumZoomScale=&#123;<span class="number">1</span>&#125;</span><br><span class="line">          maximumZoomScale=&#123;<span class="number">2</span>&#125;</span><br><span class="line">          centerContent=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          &lt;Image</span><br><span class="line">            style=&#123;styles.image&#125;</span><br><span class="line">            source=&#123;&#123;<span class="string">'uri'</span> : source&#125;&#125;</span><br><span class="line">          &gt;</span><br><span class="line"></span><br><span class="line">          &lt;<span class="regexp">/Image&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>ScrollView&gt;</span><br><span class="line">      &lt;<span class="regexp">/LightBox&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="react-native-lightbox"><a href="#react-native-lightbox" class="headerlink" title="react-native-lightbox"></a>react-native-lightbox</h3><p>这个组件实现了点击图片，灯箱效果。不过它的问题蛮多的。<br>遇到的第一个问题就是Pinch to zoom。这个组件本身不支持灯箱效果下，手势放大。这里使用了一个小技巧。通过本身的swipeToDismiss&#x3D;{false}以及ScrollView的minimumZoomScale和maximumZoomScale属性解决这个问题。</p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">LightBox</span></span><br><span class="line">        key=&#123;i&#125;</span><br><span class="line">        swipeToDismiss=&#123;<span class="literal">false</span>&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">ScrollView</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">minimumZoomScale</span>=<span class="string">&#123;1&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">maximumZoomScale</span>=<span class="string">&#123;2&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">centerContent</span>=<span class="string">&#123;true&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        &gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Image</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">style</span>=<span class="string">&#123;styles.image&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">            <span class="attr">source</span>=<span class="string">&#123;&#123;</span>&#x27;<span class="attr">uri</span>&#x27; <span class="attr">:</span> <span class="attr">source</span>&#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          &gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">Image</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ScrollView</span>&gt;</span></span></span><br><span class="line">      &lt;/<span class="title class_">LightBox</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>这个组件还有一个坑是，点击图片出现灯箱效果之后。IOS端的顶部StatusBar信息莫名其妙的消失了。排查了一大圈，发现是这个组件自己写没了。<br>这里需要修改一下源码</p>
-<p>/node_modules/react-native-lightbox/LightboxOverlay.js:<br>135  line:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StatusBar.setHidden(true, &apos;fade&apos;); -&gt; StatusBar.setHidden(false, &apos;fade&apos;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="scrollview的触摸滚动事件"><a href="#scrollview的触摸滚动事件" class="headerlink" title="scrollview的触摸滚动事件"></a>scrollview的触摸滚动事件</h3><p>在这里详细的列举一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1、onScrollBeginDrag：一个子view滑动开始拖动开始时触发，注意和onMomentumScrollBegin的区别</span><br><span class="line"></span><br><span class="line">2、onScrollEndDrag：一个子view滚动结束拖拽时触发，注意和onMomentumScrollEnd的区别</span><br><span class="line"></span><br><span class="line">3、onTouchStart：按下屏幕时触发</span><br><span class="line"></span><br><span class="line">4、onTouchMove：移动手指时触发</span><br><span class="line"></span><br><span class="line">5、onTouchEnd：手指离开屏幕触摸结束时触发</span><br><span class="line"></span><br><span class="line">6、onMomentumScrollBegin：当一帧滚动开始时调用.</span><br><span class="line"></span><br><span class="line">7、onMomentumScrollEnd：当一帧滚动完毕时调用.</span><br><span class="line"></span><br><span class="line">8、onStartShouldSetResponder：触摸开始时是否成为响应者</span><br><span class="line"></span><br><span class="line">9、onStartShouldSetResponderCapture：防止子视图在触摸开始时成为应答器</span><br><span class="line"></span><br><span class="line">10、onScrollShouldSetResponder：滚动时是否成为响应者</span><br><span class="line"></span><br><span class="line">11、onResponderGrant：开始响应时触发</span><br><span class="line"></span><br><span class="line">12、onResponderRelease：手指释放后，视图成为响应者</span><br><span class="line"></span><br><span class="line">13、onResponderReject：另一个响应已经被激活, 响应者不会释放它到该视图</span><br><span class="line"></span><br><span class="line">14、onScroll：滚动时触发，会触发多次</span><br></pre></td></tr></table></figure></p>
+<p>&#x2F;node_modules&#x2F;react-native-lightbox&#x2F;LightboxOverlay.js:<br>135  line: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StatusBar.setHidden(true, &#x27;fade&#x27;); -&gt; StatusBar.setHidden(false, &#x27;fade&#x27;);</span><br></pre></td></tr></table></figure>
+<h3 id="scrollview的触摸滚动事件"><a href="#scrollview的触摸滚动事件" class="headerlink" title="scrollview的触摸滚动事件"></a>scrollview的触摸滚动事件</h3><p>在这里详细的列举一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1、onScrollBeginDrag：一个子view滑动开始拖动开始时触发，注意和onMomentumScrollBegin的区别</span><br><span class="line"></span><br><span class="line">2、onScrollEndDrag：一个子view滚动结束拖拽时触发，注意和onMomentumScrollEnd的区别</span><br><span class="line"></span><br><span class="line">3、onTouchStart：按下屏幕时触发</span><br><span class="line"></span><br><span class="line">4、onTouchMove：移动手指时触发</span><br><span class="line"></span><br><span class="line">5、onTouchEnd：手指离开屏幕触摸结束时触发</span><br><span class="line"></span><br><span class="line">6、onMomentumScrollBegin：当一帧滚动开始时调用.</span><br><span class="line"></span><br><span class="line">7、onMomentumScrollEnd：当一帧滚动完毕时调用.</span><br><span class="line"></span><br><span class="line">8、onStartShouldSetResponder：触摸开始时是否成为响应者</span><br><span class="line"></span><br><span class="line">9、onStartShouldSetResponderCapture：防止子视图在触摸开始时成为应答器</span><br><span class="line"></span><br><span class="line">10、onScrollShouldSetResponder：滚动时是否成为响应者</span><br><span class="line"></span><br><span class="line">11、onResponderGrant：开始响应时触发</span><br><span class="line"></span><br><span class="line">12、onResponderRelease：手指释放后，视图成为响应者</span><br><span class="line"></span><br><span class="line">13、onResponderReject：另一个响应已经被激活, 响应者不会释放它到该视图</span><br><span class="line"></span><br><span class="line">14、onScroll：滚动时触发，会触发多次</span><br></pre></td></tr></table></figure>
 <p>下面是在网上找到的两张图，分别是ios端的测试和Android端的：</p>
-<p><img src="/assets/blogImg/20171024-2.jpg" alt=""></p>
-<p><img src="/assets/blogImg/20171024-3.jpg" alt=""></p>
-<h3 id="WebView自适应高度"><a href="#WebView自适应高度" class="headerlink" title="WebView自适应高度"></a>WebView自适应高度</h3><p>在做APP的时候遇到了一个需求就是希望页面中的文字可以复制。如果是Text组件下的。这个好说一个selectable={true}属性搞定。<br>但是selectable={true}这个属性。在ios端只支持整段话的复制。不支持，选哪儿复制那这种操作。之前查了一下好像是和底层OC代码有关。Android这块没有问题。<br>为了实现需求，采用了Webview的方式。（从接口的到的字段也是超文本类型的）。但是这里出现了一个问题就是WebView无法根据提供内容的多少自适应高度。</p>
+<p><img src="/assets/blogImg/20171024-2.jpg"></p>
+<p><img src="/assets/blogImg/20171024-3.jpg"></p>
+<h3 id="WebView自适应高度"><a href="#WebView自适应高度" class="headerlink" title="WebView自适应高度"></a>WebView自适应高度</h3><p>在做APP的时候遇到了一个需求就是希望页面中的文字可以复制。如果是Text组件下的。这个好说一个selectable&#x3D;{true}属性搞定。<br>但是selectable&#x3D;{true}这个属性。在ios端只支持整段话的复制。不支持，选哪儿复制那这种操作。之前查了一下好像是和底层OC代码有关。Android这块没有问题。<br>为了实现需求，采用了Webview的方式。（从接口的到的字段也是超文本类型的）。但是这里出现了一个问题就是WebView无法根据提供内容的多少自适应高度。</p>
 <p>ReactNative中的WebView需要设定高度才能展示出来，因此需要用js来计算文档高度做到高度自适应。一个思路就是让WebView和React的JS进行通信。页面加载后，webview内的JS代码获取自己的高度，添加一个hash给自己的URL，React当感知到webview加载状态变化后，读取这个hash值，传递给this.state.WebViewHeight，从而改变WebView的高度。</p>
 <p>第二种思路就是万能的github。试了好几个组件之后，一个国人开发的react-native-autoheight-webview最好用。</p>
-<p>不过有一个诡异的现象是value值很少的情况下无法进行长按选中字段复制。字数多的时候 （4，5行以上）功能正常。这个问题的解决：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// default width is the width of screen</span></span><br><span class="line"><span class="comment">// to fix that it can not select text when the length of it is not long enough on iOS, the width should be reduced more than 15</span></span><br><span class="line">style=&#123;&#123; <span class="attr">width</span>: Dimensions.get(<span class="string">'window'</span>).width - <span class="number">15</span> &#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>不过有一个诡异的现象是value值很少的情况下无法进行长按选中字段复制。字数多的时候 （4，5行以上）功能正常。这个问题的解决：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// default width is the width of screen</span></span><br><span class="line"><span class="comment">// to fix that it can not select text when the length of it is not long enough on iOS, the width should be reduced more than 15</span></span><br><span class="line">style=&#123;&#123; <span class="attr">width</span>: <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">width</span> - <span class="number">15</span> &#125;&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="react-native-scrollable-tab-view"><a href="#react-native-scrollable-tab-view" class="headerlink" title="react-native-scrollable-tab-view"></a>react-native-scrollable-tab-view</h3><p>这个组件是tab切换用的。其实react-navigation也有这个功能。<br>它有一个问题是。在多个页面切换下无法正确的显示页面的高。默认选用的是最长的那个。（Tab view always has the height equal to height of the highest tab）</p>
 <p>在issue上看到不少人碰到这个问题。一个不是很完美的解决方案就是：</p>
 <p>Use ScrollView as tabs.</p>
-<p>eg：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;ScrollableTabView style=&#123;&#123; <span class="attr">height</span>: Dimensions.get(<span class="string">'window'</span>).height &#125;&#125;&gt;</span><br><span class="line">  &lt;ScrollView&gt;</span><br><span class="line">    &lt;View style=&#123;&#123; <span class="attr">height</span>: <span class="number">300</span>, <span class="attr">backgroundColor</span>: <span class="string">'cadetblue'</span> &#125;&#125; /&gt;</span><br><span class="line">  &lt;<span class="regexp">/ScrollView&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  &lt;SrcollView&gt;</span></span><br><span class="line"><span class="regexp">    &lt;View style=&#123;&#123; height: 5000, backgroundColor: 'lightgreen' &#125;&#125; /</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/ScrollView&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>ScrollableTabView&gt;</span><br></pre></td></tr></table></figure></p>
+<p>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">ScrollableTabView</span> style=&#123;&#123; <span class="attr">height</span>: <span class="title class_">Dimensions</span>.<span class="title function_">get</span>(<span class="string">&#x27;window&#x27;</span>).<span class="property">height</span> &#125;&#125;&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ScrollView</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">height:</span> <span class="attr">300</span>, <span class="attr">backgroundColor:</span> &#x27;<span class="attr">cadetblue</span>&#x27; &#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ScrollView</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">  &lt;<span class="title class_">SrcollView</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">height:</span> <span class="attr">5000</span>, <span class="attr">backgroundColor:</span> &#x27;<span class="attr">lightgreen</span>&#x27; &#125;&#125; /&gt;</span></span></span><br><span class="line">  &lt;/<span class="title class_">ScrollView</span>&gt;</span><br><span class="line">&lt;/<span class="title class_">ScrollableTabView</span>&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="MAC对APK包进行重新签名"><a href="#MAC对APK包进行重新签名" class="headerlink" title="MAC对APK包进行重新签名"></a>MAC对APK包进行重新签名</h3><p>jarsigner -verbose -keystore [您的私钥存放路径] -signedjar [签名后文件存放路径] [未签名的文件路径] [您的证书名称]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jarsigner的参数说明</span><br><span class="line">-keystore 参数指定您的私钥的绝对路径,例如：/Users/haoweilai/mykeystore</span><br><span class="line">-signedjar 参数指定签名后apk文件存放绝对的路径,例如 /Users/haoweilai/signed.apk</span><br><span class="line">[未签名的文件路径] 指定要签名apk文件的绝对路径,也就是您从我们这里下载到的，例如 /Users/haoweilai/meizuemptyapk-release-unsigned.apk</span><br><span class="line">[您的证书名称] 是指您创建密钥时您设置的证书名称</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jarsigner的参数说明</span><br><span class="line">-keystore 参数指定您的私钥的绝对路径,例如：/Users/haoweilai/mykeystore</span><br><span class="line">-signedjar 参数指定签名后apk文件存放绝对的路径,例如 /Users/haoweilai/signed.apk</span><br><span class="line">[未签名的文件路径] 指定要签名apk文件的绝对路径,也就是您从我们这里下载到的，例如 /Users/haoweilai/meizuemptyapk-release-unsigned.apk</span><br><span class="line">[您的证书名称] 是指您创建密钥时您设置的证书名称</span><br></pre></td></tr></table></figure>
+
 <p>以上</p>
 <p>先总结这些，想到了再补充。RN还有太多太多知识需要掌握。原生，redux，优化。加油~</p>
 
@@ -246,11 +252,11 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">移动端</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">移动端</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
         </li>
       
 		</ul>
@@ -269,7 +275,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/01/React-Native热更新杂记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/01/React-Native%E7%83%AD%E6%9B%B4%E6%96%B0%E6%9D%82%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -279,7 +285,7 @@
     </a>
   
   
-    <a href="/2017/10/06/CSS预处理工具--Stylus（2）/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus%EF%BC%882%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">CSS预处理工具--Stylus（2）</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -395,7 +401,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -403,31 +409,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,6 +437,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -447,11 +461,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,23 +477,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,11 +489,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,19 +513,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,11 +529,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,15 +545,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,7 +565,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,15 +577,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,15 +593,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

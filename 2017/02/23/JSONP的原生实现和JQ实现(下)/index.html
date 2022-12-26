@@ -11,18 +11,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="JQ实现方式：JQ实现JSONP的时候看起来和ajax调用方式很像，目的也一样，都是请求url，染过获得服务器的数据之后进行处理。但两者完全是两个不同的东西。只是JQ这个框架将jsonp作为ajax的一种形式进行了封装。实质上：ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加script标签来调用服务器提供的js脚本。 ajax与jsonp的区别不在于">
-<meta name="keywords" content="前端,javascript,jsonp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSONP的原生实现和JQ实现(下)">
-<meta property="og:url" content="http://yoursite.com/2017/02/23/JSONP的原生实现和JQ实现(下)/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8B)/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="JQ实现方式：JQ实现JSONP的时候看起来和ajax调用方式很像，目的也一样，都是请求url，染过获得服务器的数据之后进行处理。但两者完全是两个不同的东西。只是JQ这个框架将jsonp作为ajax的一种形式进行了封装。实质上：ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加script标签来调用服务器提供的js脚本。 ajax与jsonp的区别不在于">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/20170223-6.jpg">
-<meta property="og:updated_time" content="2017-02-22T17:03:44.000Z">
+<meta property="article:published_time" content="2017-02-22T17:03:44.000Z">
+<meta property="article:modified_time" content="2017-02-22T17:03:44.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="jsonp">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSONP的原生实现和JQ实现(下)">
-<meta name="twitter:description" content="JQ实现方式：JQ实现JSONP的时候看起来和ajax调用方式很像，目的也一样，都是请求url，染过获得服务器的数据之后进行处理。但两者完全是两个不同的东西。只是JQ这个框架将jsonp作为ajax的一种形式进行了封装。实质上：ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加script标签来调用服务器提供的js脚本。 ajax与jsonp的区别不在于">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/20170223-6.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
@@ -41,7 +43,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -55,10 +57,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -109,10 +109,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -163,7 +161,7 @@
   
 
         
-        <a href="/2017/02/23/JSONP的原生实现和JQ实现(下)/" class="archive-article-date">
+        <a href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8B)/" class="archive-article-date">
   	<time datetime="2017-02-22T17:03:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
 </a>
         
@@ -172,8 +170,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="JQ实现方式："><a href="#JQ实现方式：" class="headerlink" title="JQ实现方式："></a>JQ实现方式：</h4><p>JQ实现JSONP的时候看起来和ajax调用方式很像，目的也一样，都是请求url，染过获得服务器的数据之后进行处理。但两者完全是两个不同的东西。只是JQ这个框架将jsonp作为ajax的一种形式进行了封装。<br>实质上：ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加script标签来调用服务器提供的js脚本。</p>
-<p>ajax与jsonp的区别不在于是否跨域，ajax通过服务端代理一样可以实现跨域，jsonp本身也不排斥同域的数据的获取。<br>话不多说，下边是jq的实现，用过console.log得到目标数据：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          $(<span class="string">'#inp'</span>).keypress(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="keyword">var</span> str = $(<span class="keyword">this</span>).val();</span><br><span class="line">              $.ajax(&#123;</span><br><span class="line">                  url: <span class="string">'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su'</span>,</span><br><span class="line">                  data: &#123;</span><br><span class="line">                      wd: str</span><br><span class="line">                  &#125;,</span><br><span class="line">                  dataType: <span class="string">'jsonp'</span>,</span><br><span class="line">                  jsonp: <span class="string">'cb'</span>,</span><br><span class="line">                  success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                      <span class="built_in">console</span>.log(data);</span><br><span class="line">                  &#125;,</span><br><span class="line">                  error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">                  &#125;</span><br><span class="line">  </span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure></p>
-<p><img src="/assets/blogImg/20170223-6.jpg" alt=""></p>
+<p>ajax与jsonp的区别不在于是否跨域，ajax通过服务端代理一样可以实现跨域，jsonp本身也不排斥同域的数据的获取。<br>话不多说，下边是jq的实现，用过console.log得到目标数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">          $(<span class="string">&#x27;#inp&#x27;</span>).<span class="title function_">keypress</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">              <span class="keyword">var</span> str = $(<span class="variable language_">this</span>).<span class="title function_">val</span>();</span><br><span class="line">              $.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">                  <span class="attr">url</span>: <span class="string">&#x27;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su&#x27;</span>,</span><br><span class="line">                  <span class="attr">data</span>: &#123;</span><br><span class="line">                      <span class="attr">wd</span>: str</span><br><span class="line">                  &#125;,</span><br><span class="line">                  <span class="attr">dataType</span>: <span class="string">&#x27;jsonp&#x27;</span>,</span><br><span class="line">                  <span class="attr">jsonp</span>: <span class="string">&#x27;cb&#x27;</span>,</span><br><span class="line">                  <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">                      <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">                  &#125;,</span><br><span class="line">                  <span class="attr">error</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  </span><br><span class="line">                  &#125;</span><br><span class="line">  </span><br><span class="line">              &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/20170223-6.jpg"></p>
 <p>以上！</p>
 
       
@@ -213,11 +212,11 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">jsonp</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
         </li>
       
 		</ul>
@@ -236,7 +235,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/02/26/icomoon图标/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -246,7 +245,7 @@
     </a>
   
   
-    <a href="/2017/02/23/JSONP的原生实现和JQ实现(上)/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/02/23/JSONP%E7%9A%84%E5%8E%9F%E7%94%9F%E5%AE%9E%E7%8E%B0%E5%92%8CJQ%E5%AE%9E%E7%8E%B0(%E4%B8%8A)/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">JSONP的原生实现和JQ实现(上)</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -362,7 +361,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -370,31 +369,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -406,6 +397,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -414,11 +421,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -426,23 +437,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,11 +449,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,19 +473,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,11 +489,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,15 +505,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,7 +525,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,15 +537,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,15 +553,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -11,17 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="_p4dF2z07x9Nxp3NXP5Tg_N_zBhEuYZqbhB87N69zpQ" />
   <meta name="description" content="近期学习js知识的总结，，还会有2，3，4···· 事件：onclick,onmouseover,onmouseout,onmouseup,onmousedown,onchange，onload 获取元素：通过id获取元素 ：document.getElementById(); 通过Tag获取元素： document.getElementsByTagName(); 函数：定义函数：function">
-<meta name="keywords" content="前端,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript知识点总结1">
-<meta property="og:url" content="http://yoursite.com/2017/01/15/JavaScript知识点总结/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/01/15/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Lac&#39;s Blog">
 <meta property="og:description" content="近期学习js知识的总结，，还会有2，3，4···· 事件：onclick,onmouseover,onmouseout,onmouseup,onmousedown,onchange，onload 获取元素：通过id获取元素 ：document.getElementById(); 通过Tag获取元素： document.getElementsByTagName(); 函数：定义函数：function">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-01-14T16:59:08.000Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-01-14T16:59:08.000Z">
+<meta property="article:modified_time" content="2017-01-14T16:59:08.000Z">
+<meta property="article:author" content="Lac">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript知识点总结1">
-<meta name="twitter:description" content="近期学习js知识的总结，，还会有2，3，4···· 事件：onclick,onmouseover,onmouseout,onmouseup,onmousedown,onchange，onload 获取元素：通过id获取元素 ：document.getElementById(); 通过Tag获取元素： document.getElementsByTagName(); 函数：定义函数：function">
   
     <link rel="alternative" href="/atom.xml" title="Lac&#39;s Blog" type="application/atom+xml">
   
@@ -39,7 +40,7 @@
 
   
 
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -53,10 +54,8 @@
 			<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Lac</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">克己</p>
 		
 
 		<nav class="header-menu">
@@ -107,10 +106,8 @@
 				<img src="https://avatars.githubusercontent.com/u/22010181" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Lac</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>克己<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +158,7 @@
   
 
         
-        <a href="/2017/01/15/JavaScript知识点总结/" class="archive-article-date">
+        <a href="/2017/01/15/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" class="archive-article-date">
   	<time datetime="2017-01-14T16:59:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
 </a>
         
@@ -175,12 +172,17 @@
 <p>通过Tag获取元素： document.getElementsByTagName();</p>
 <h4 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h4><p>定义函数：function 函数名(){}</p>
 <p>执行函数：谁调用了这个函数就在谁那里执行。</p>
-<h4 id="变量："><a href="#变量：" class="headerlink" title="变量："></a>变量：</h4><p>var 变量名=变量值</p>
+<h4 id="变量："><a href="#变量：" class="headerlink" title="变量："></a>变量：</h4><p>var 变量名&#x3D;变量值</p>
 <p>“.”:只能操作已存在的属性。</p>
 <p>“[]”:可以接受一个变量，点能够操作的中括号都能操作。</p>
-<h4 id="循环："><a href="#循环：" class="headerlink" title="循环："></a>循环：</h4><p>for：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始值var i=0，</span></span><br><span class="line"><span class="comment">//条件i&lt;6，</span></span><br><span class="line"><span class="comment">//自增i++ 代表每次加1</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)&#123;</span><br><span class="line">    alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>while:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始值</span></span><br><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//条件</span></span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">6</span>)&#123;</span><br><span class="line">    alert(i);</span><br><span class="line">    <span class="comment">//自增</span></span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
+<h4 id="循环："><a href="#循环：" class="headerlink" title="循环："></a>循环：</h4><p>for：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始值var i=0，</span></span><br><span class="line"><span class="comment">//条件i&lt;6，</span></span><br><span class="line"><span class="comment">//自增i++ 代表每次加1</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)&#123;</span><br><span class="line">    <span class="title function_">alert</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>while:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始值</span></span><br><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//条件</span></span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">6</span>)&#123;</span><br><span class="line">    <span class="title function_">alert</span>(i);</span><br><span class="line">    <span class="comment">//自增</span></span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <h4 id="this："><a href="#this：" class="headerlink" title="this："></a>this：</h4><p>表示当前发生事件的元素。</p>
 <h4 id="变量类型："><a href="#变量类型：" class="headerlink" title="变量类型："></a>变量类型：</h4><p><strong>判断变量类型用typeof</strong></p>
 <p>1,字符串：string</p>
@@ -190,30 +192,37 @@
 <p>5函数：function</p>
 <p>6,对象：Object</p>
 <h4 id="数据类型转换："><a href="#数据类型转换：" class="headerlink" title="数据类型转换："></a>数据类型转换：</h4><p>parseInt();parseFloat();Number();</p>
-<p>*Number(‘12.5abc’)=&gt;NaN     parseInt(‘12.5abc’)=&gt;12.5</p>
-<h4 id="运算符："><a href="#运算符：" class="headerlink" title="运算符："></a>运算符：</h4><p>1,算数运算符：+,-,<em>,/,%<br>2,赋值运算符：=，+=，-=，</em>=，/=,%=<br>3,比较运算 ==  &gt;,&gt;=,&lt;,&lt;=<br>​    ==相等  ！=不等于<br>​    ===相等 ！==不等于<br>逻辑运算：||或 &amp;&amp;与 ！取反</p>
-<h4 id="流程控制if"><a href="#流程控制if" class="headerlink" title="流程控制if"></a>流程控制if</h4><p> 1，if(条件){<br>条件满足就走语句一<br>}else{<br>条件不满足就走语句二<br>}<br>简写：三目：条件？语句一：语句二；<br>2，if(条件){<br>语句；<br>     }<br>简写：条件&amp;&amp;语句；<br>3，<br>if(条件一){<br>语句一<br>}else if(条件二){<br>语句二<br>}else{<br>语句三<br>}</p>
-<p>####switch<br>switch(条件){<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> 条件<span class="number">1</span>：</span><br><span class="line">     语句一；</span><br><span class="line"><span class="keyword">break</span>；</span><br><span class="line"><span class="keyword">case</span> 条件<span class="number">2</span>：</span><br><span class="line">     语句二</span><br><span class="line">  <span class="keyword">break</span>；</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">     默认语句</span><br></pre></td></tr></table></figure></p>
+<p>*Number(‘12.5abc’)&#x3D;&gt;NaN     parseInt(‘12.5abc’)&#x3D;&gt;12.5</p>
+<h4 id="运算符："><a href="#运算符：" class="headerlink" title="运算符："></a>运算符：</h4><p>1,算数运算符：+,-,<em>,&#x2F;,%<br>2,赋值运算符：&#x3D;，+&#x3D;，-&#x3D;，</em>&#x3D;，&#x2F;&#x3D;,%&#x3D;<br>3,比较运算 &#x3D;&#x3D;  &gt;,&gt;&#x3D;,&lt;,&lt;&#x3D;<br>​	&#x3D;&#x3D;相等  ！&#x3D;不等于<br>​	&#x3D;&#x3D;&#x3D;相等 ！&#x3D;&#x3D;不等于<br>逻辑运算：||或 &amp;&amp;与 ！取反</p>
+<h4 id="流程控制if"><a href="#流程控制if" class="headerlink" title="流程控制if"></a>流程控制if</h4><p> 1，if(条件){<br>条件满足就走语句一<br>}else{<br>条件不满足就走语句二<br>}<br>简写：三目：条件？语句一：语句二；<br>2，if(条件){<br>语句；<br>     }<br>简写：条件&amp;&amp;语句；<br>3，<br>if(条件一){<br>语句一<br>}else if(条件二){<br>语句二<br>}else{<br>语句三<br>}<br>####switch<br>switch(条件){</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> 条件<span class="number">1</span>：</span><br><span class="line">     语句一；</span><br><span class="line"><span class="keyword">break</span>；</span><br><span class="line"><span class="keyword">case</span> 条件<span class="number">2</span>：</span><br><span class="line">     语句二</span><br><span class="line">  <span class="keyword">break</span>；</span><br><span class="line"><span class="attr">default</span>:</span><br><span class="line">     默认语句</span><br></pre></td></tr></table></figure>
 <p>}</p>
 <p>break:中断整个程序，不再执行<br>continue：中断此次程序，继续下一次程序</p>
 <h4 id="判断真假"><a href="#判断真假" class="headerlink" title="判断真假:"></a>判断真假:</h4><p>真：非零数字，非空字符串，true，非空对象；</p>
 <p>假：数字0，NaN，空字符串，false，undefined，null；</p>
-<h4 id="获取非行间样式："><a href="#获取非行间样式：" class="headerlink" title="获取非行间样式："></a>获取非行间样式：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oBox=<span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line">    oBox.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//getComputedStyle(obj,false);高版本</span></span><br><span class="line">        <span class="comment">//obj.currentStyle；ie系列</span></span><br><span class="line">        <span class="comment">//alert(getComputedStyle(oBox,false));在ie8直接报错</span></span><br><span class="line">        alert(oBox.currentStyle);<span class="comment">//在chrome和ff是undefined</span></span><br><span class="line">        <span class="keyword">if</span>(oBox.currentStyle)&#123;</span><br><span class="line">            alert(oBox.currentStyle.width);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            alert(getComputedStyle(oBox,<span class="literal">false</span>).width);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="获取非行间样式："><a href="#获取非行间样式：" class="headerlink" title="获取非行间样式："></a>获取非行间样式：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> oBox=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;box&#x27;</span>);</span><br><span class="line">    oBox.<span class="property">onclick</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="comment">//getComputedStyle(obj,false);高版本</span></span><br><span class="line">        <span class="comment">//obj.currentStyle；ie系列</span></span><br><span class="line">        <span class="comment">//alert(getComputedStyle(oBox,false));在ie8直接报错</span></span><br><span class="line">        <span class="title function_">alert</span>(oBox.<span class="property">currentStyle</span>);<span class="comment">//在chrome和ff是undefined</span></span><br><span class="line">        <span class="keyword">if</span>(oBox.<span class="property">currentStyle</span>)&#123;</span><br><span class="line">            <span class="title function_">alert</span>(oBox.<span class="property">currentStyle</span>.<span class="property">width</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="title function_">alert</span>(<span class="title function_">getComputedStyle</span>(oBox,<span class="literal">false</span>).<span class="property">width</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="eval"><a href="#eval" class="headerlink" title="eval():"></a>eval():</h4><p>可将字符串转化成js可执行代码。很强大，容易造成eval注入问题</p>
-<h4 id="定时器："><a href="#定时器：" class="headerlink" title="定时器："></a>定时器：</h4><h5 id="连续不断执行："><a href="#连续不断执行：" class="headerlink" title="连续不断执行："></a>连续不断执行：</h5><p>var timer = setInterval(函数，时间)</p>
+<h4 id="定时器："><a href="#定时器：" class="headerlink" title="定时器："></a>定时器：</h4><h5 id="连续不断执行："><a href="#连续不断执行：" class="headerlink" title="连续不断执行："></a>连续不断执行：</h5><p>var timer &#x3D; setInterval(函数，时间)</p>
 <p>清空定时器：clearInterval(timer);</p>
 <h5 id="只执行一次："><a href="#只执行一次：" class="headerlink" title="只执行一次："></a>只执行一次：</h5><p>setTimeout(函数，时间)</p>
-<h4 id="时间对象："><a href="#时间对象：" class="headerlink" title="时间对象："></a>时间对象：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDate=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> iY=oDate.getFullYear();</span><br><span class="line"><span class="keyword">var</span> iMon=oDate.getMonth()+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> iD=oDate.getDate();</span><br><span class="line"><span class="keyword">var</span> iWeek=oDate.getDay();</span><br><span class="line"><span class="keyword">var</span> iH=oDate.getHours();</span><br><span class="line"><span class="keyword">var</span> iM=oDate.getMinutes();</span><br><span class="line"><span class="keyword">var</span> iS=oDate.getSeconds();</span><br><span class="line"><span class="comment">//设置时间</span></span><br><span class="line"><span class="keyword">var</span> oDate=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">oDate.setFullYear(年，月，日)</span><br><span class="line">oDate.setHours(时，分，秒，毫秒)</span><br><span class="line"><span class="comment">//时间戳</span></span><br><span class="line"><span class="keyword">var</span> time=oDate.getTime();</span><br></pre></td></tr></table></figure>
+<h4 id="时间对象："><a href="#时间对象：" class="headerlink" title="时间对象："></a>时间对象：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDate=<span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="keyword">var</span> iY=oDate.<span class="title function_">getFullYear</span>();</span><br><span class="line"><span class="keyword">var</span> iMon=oDate.<span class="title function_">getMonth</span>()+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> iD=oDate.<span class="title function_">getDate</span>();</span><br><span class="line"><span class="keyword">var</span> iWeek=oDate.<span class="title function_">getDay</span>();</span><br><span class="line"><span class="keyword">var</span> iH=oDate.<span class="title function_">getHours</span>();</span><br><span class="line"><span class="keyword">var</span> iM=oDate.<span class="title function_">getMinutes</span>();</span><br><span class="line"><span class="keyword">var</span> iS=oDate.<span class="title function_">getSeconds</span>();</span><br><span class="line"><span class="comment">//设置时间</span></span><br><span class="line"><span class="keyword">var</span> oDate=<span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">oDate.<span class="title function_">setFullYear</span>(年，月，日)</span><br><span class="line">oDate.<span class="title function_">setHours</span>(时，分，秒，毫秒)</span><br><span class="line"><span class="comment">//时间戳</span></span><br><span class="line"><span class="keyword">var</span> time=oDate.<span class="title function_">getTime</span>();</span><br></pre></td></tr></table></figure>
+
 <h4 id="封闭空间"><a href="#封闭空间" class="headerlink" title="封闭空间"></a>封闭空间</h4><p>解决变量名冲突；解决了i的问题；（循环里加事件，事件里的i不好使；循环里加定时器，i也不好使）</p>
-<p>eg：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">       alert(a);</span><br><span class="line">   &#125;)(<span class="number">12</span>);</span><br></pre></td></tr></table></figure></p>
-<h4 id="设置样式："><a href="#设置样式：" class="headerlink" title="设置样式："></a>设置样式：</h4><p>1）用with语句：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span>(oBox.style)&#123;</span><br><span class="line">     width=<span class="string">'400px'</span>,</span><br><span class="line">     height=<span class="string">'400px'</span>,</span><br><span class="line">     background=<span class="string">'red'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>2）cssText:批量设置样式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oBox.style.cssText=<span class="string">'width:400px; height:400px; background:red'</span>;</span><br></pre></td></tr></table></figure></p>
-<p>3）setStyle封装函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setStyle</span>(<span class="params">obj,name,value</span>)</span>&#123;</span><br><span class="line">    obj.style[name]=value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>####字符串<br>1，str.charAt(下标) 获取字符串中的某一项<br>2，str.indexOf(‘小字符串’) 获取某个小字符串在字符串中出现的位置<br><u>    1）从左往右开始找，找到一个就不继续往下找了</u><br><u>    2）区分大小写</u><br><u>    3)如果没有找到，就返回-1</u><br>eg：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取浏览器信息，通过indexOf判断里面有没有MSIE 10.0，如果等于-1，代表没有</span></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.navigator.userAgent.indexOf(<span class="string">'MSIE 10.0'</span>)!=<span class="number">-1</span>)&#123;</span><br><span class="line">    alert(<span class="string">'ie10'</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    alert(<span class="string">'不是ie10'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3，str.lastIndexOf（）<br><u>    1）从右往左找</u><br><u>    2）区分大小写</u><br><u>    3）如果没找到就返回-1</u><br>4，str.toLowerCase()转小写<br>5，str.toUpperCase（）转大写`<br>6，str.substring(起始位置下标，结束位置下标) 截取字符串 （不包括结束位置）<br>7，str.startsWith(小字符串)<br>8，str.endsWith(小字符串 )<br>9，str.split(切割方式)切割字符串，把字符串转化成数组<br>    数组转字符串arr.join(切割方式)</p>
-<p>#####字符串比较：<br>1，字符串数字<br>​    a)两个都是数字字符串类型，一位一位进行比较<br>​    b)其中有一个是数字类型，会做隐式类型转化，转化成数字进行比较<br>2，单词 字典序<br>3，汉字没规律<br>​    unicode </p>
-<h4 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h4><h5 id="创建数组："><a href="#创建数组：" class="headerlink" title="创建数组："></a>创建数组：</h5><p> var arr=[];<br> var arr = new Array();</p>
-<p>#####数组函数：<br>arr.push()  往数组后面添东西，会返回新的数组的长度<br>arr.unshift() 往数组前面添东西，会返回新的数组的长度<br>arr.pop() 从数组后面删除，会返回被删掉的数据<br>arr.shift() 从前面删除，会返回被删掉的数据<br>arr.splice(开始位置,删除长度,元素1,元素2)<br>arr.reverse()翻转<br>arr.sort() 排序<br>arr1.concat(arr2) 数组合并<br>arr.join()将数组转化成字符串</p>
+<p>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params">a</span>)&#123;</span><br><span class="line">       <span class="title function_">alert</span>(a);</span><br><span class="line">   &#125;)(<span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置样式："><a href="#设置样式：" class="headerlink" title="设置样式："></a>设置样式：</h4><p>1）用with语句：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">with</span>(<span class="params">oBox.style</span>)&#123;</span><br><span class="line">     width=<span class="string">&#x27;400px&#x27;</span>,</span><br><span class="line">     height=<span class="string">&#x27;400px&#x27;</span>,</span><br><span class="line">     background=<span class="string">&#x27;red&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2）cssText:批量设置样式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oBox.<span class="property">style</span>.<span class="property">cssText</span>=<span class="string">&#x27;width:400px; height:400px; background:red&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>3）setStyle封装函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setStyle</span>(<span class="params">obj,name,value</span>)&#123;</span><br><span class="line">    obj.<span class="property">style</span>[name]=value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####字符串<br>1，str.charAt(下标) 获取字符串中的某一项<br>2，str.indexOf(‘小字符串’) 获取某个小字符串在字符串中出现的位置<br><u>	1）从左往右开始找，找到一个就不继续往下找了</u><br><u>	2）区分大小写</u><br><u>	3)如果没有找到，就返回-1</u><br>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取浏览器信息，通过indexOf判断里面有没有MSIE 10.0，如果等于-1，代表没有</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable language_">window</span>.<span class="property">navigator</span>.<span class="property">userAgent</span>.<span class="title function_">indexOf</span>(<span class="string">&#x27;MSIE 10.0&#x27;</span>)!=-<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&#x27;ie10&#x27;</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&#x27;不是ie10&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3，str.lastIndexOf（）<br><u>	1）从右往左找</u><br><u>	2）区分大小写</u><br><u>	3）如果没找到就返回-1</u><br>4，str.toLowerCase()转小写<br>5，str.toUpperCase（）转大写&#96;<br>6，str.substring(起始位置下标，结束位置下标) 截取字符串 （不包括结束位置）<br>7，str.startsWith(小字符串)<br>8，str.endsWith(小字符串 )<br>9，str.split(切割方式)切割字符串，把字符串转化成数组<br>    数组转字符串arr.join(切割方式)<br>#####字符串比较：<br>1，字符串数字<br>​	a)两个都是数字字符串类型，一位一位进行比较<br>​	b)其中有一个是数字类型，会做隐式类型转化，转化成数字进行比较<br>2，单词 字典序<br>3，汉字没规律<br>​	unicode </p>
+<h4 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h4><h5 id="创建数组："><a href="#创建数组：" class="headerlink" title="创建数组："></a>创建数组：</h5><p> var arr&#x3D;[];<br> var arr &#x3D; new Array();<br>#####数组函数：<br>arr.push()  往数组后面添东西，会返回新的数组的长度<br>arr.unshift() 往数组前面添东西，会返回新的数组的长度<br>arr.pop() 从数组后面删除，会返回被删掉的数据<br>arr.shift() 从前面删除，会返回被删掉的数据<br>arr.splice(开始位置,删除长度,元素1,元素2)<br>arr.reverse()翻转<br>arr.sort() 排序<br>arr1.concat(arr2) 数组合并<br>arr.join()将数组转化成字符串</p>
 <p>####数学方法：<br>Math.random()随机数0-1，不包括1<br>Math.ceil()向上取整<br>Math.floor（）向下取整<br>Math.round()四舍五入<br>Math.abs()绝对值<br>Math.max()取最大值<br>Math.min()取最小值<br>Math.sqrt()开平方<br>Math.pow(n，m)n的m次方</p>
 
       
@@ -272,7 +281,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/16/通过class名获取元素（解决IE8不兼容问题）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/16/%E9%80%9A%E8%BF%87class%E5%90%8D%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%EF%BC%88%E8%A7%A3%E5%86%B3IE8%E4%B8%8D%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -282,7 +291,7 @@
     </a>
   
   
-    <a href="/2017/01/11/浅谈Responsive设计/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/01/11/%E6%B5%85%E8%B0%88Responsive%E8%AE%BE%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">浅谈Responsive设计</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -398,7 +407,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">CSS</a>
+                <a href="javascript:void(0)" class="color3">Angular</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -406,31 +415,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Stylus</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">交互</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Express</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,6 +443,22 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Stylus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">react-native</a>
               </li>
              
@@ -450,11 +467,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">mongoDB</a>
+                <a href="javascript:void(0)" class="color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">ReactNative</a>
+                <a href="javascript:void(0)" class="color4">SSR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,23 +483,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">TypeScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">vscode</a>
+                <a href="javascript:void(0)" class="color2">ReactNative</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,11 +495,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">bundleless</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">TypeScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Vuex</a>
+                <a href="javascript:void(0)" class="color1">swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,19 +519,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">bundleless</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">SSR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">git</a>
+                <a href="javascript:void(0)" class="color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,11 +535,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">SASS</a>
+                <a href="javascript:void(0)" class="color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">ReactSSR</a>
+                <a href="javascript:void(0)" class="color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">SASS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,15 +551,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Redux</a>
+                <a href="javascript:void(0)" class="color1">Emmet</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">函数式编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">2017</a>
+                <a href="javascript:void(0)" class="color4">ReactSSR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,7 +571,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">redux</a>
+                <a href="javascript:void(0)" class="color1">Redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">函数式编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,15 +583,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">express</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">Emmet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">杂</a>
+                <a href="javascript:void(0)" class="color5">Mobx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,15 +599,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">小程序</a>
+                <a href="javascript:void(0)" class="color5">2017</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">Mobx</a>
+                <a href="javascript:void(0)" class="color2">杂</a>
               </li>
              
               <li class="article-tag-list-item">
