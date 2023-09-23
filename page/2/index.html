@@ -148,6 +148,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React SSR Note(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/16/React%20SSR%20Note(1)/">React SSR Note(1)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/16/React%20SSR%20Note(1)/" class="archive-article-date">
+  	<time datetime="2018-10-16T09:32:59.917Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SSR已经不是什么新词、新概念了。为了解决React、Vue这类单页面（SPA）带来的首屏过慢以及SEO等问题随之而出。Vue、React官方也一直再跟进相关的支持。<br>同时社区也诞生了Next.js(React)以及Nuxt(vue)这类已经配置好，开箱即用的SSR解决方案。</p>
+<p>之前在研究学习Webpack的时候，折腾过React SSR的配置和使用。<a target="_blank" rel="noopener" href="https://laclys.github.io/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/">从零配置Webpack4.0搭建一个React工程</a>并且在蛮多自己瞎搞的项目中使用过，这几周自己再折腾SSR与Redux的结合。这一全面总结一下，就当温故知新了。</p>
+<h3 id="什么是服务端渲染-x2F-为什么使用服务端渲染"><a href="#什么是服务端渲染-x2F-为什么使用服务端渲染" class="headerlink" title="什么是服务端渲染&#x2F;为什么使用服务端渲染"></a>什么是服务端渲染&#x2F;为什么使用服务端渲染</h3><p>服务端渲染顾名思义浏览器通过url向服务器发送请求，服务器处理好页面的内容将整个页面返还给浏览器。每当请求一个url，服务器要将该url对应的页面内容发送给浏览器。</p>
+<p>而SPA单页面应用则是在一开始一股脑将整个bundle.js加载进来。具体流程如下：</p>
+<p>浏览器发送请求 -&gt; 服务器返回HTML(空的骨架) -&gt; 浏览器发送bundle.js -&gt; 服务器返回bundle.js -&gt;浏览器执行React&#x2F;Vue代码 </p>
+<p>之后所有的url变成操作都通过这个js来处理，不需要再重新加载整个页面。web应用更具响应性，用户体验更好。但是由于一开始要加载一大坨bundle.js就会带来首屏过慢的问题。由于整个网页的内容都在js中，自然而然html源码什么都没有，不利于SEO。</p>
+<p>为了解决痛点SSR就来了。它不是传统意义的服务端渲染，只是<code>首屏渲染</code>，首屏通过服务器直接生成，之后的由客户端（浏览器）接管。这样既能解决首屏速度、SEO还能同事拥有单页面应用带给用户的流畅性。(这里有一个专有名词叫做：同构–一套代码在服务器执行一遍，在客户端执行一遍) 具体流程如下：</p>
+<p>浏览器发送请求 -&gt; 服务器运行React代码生成页面 -&gt; 服务器返回页面 -&gt; 浏览器加载bundle.js -&gt; bundle.js的React代码在浏览器重新执行 -&gt; bundle.js的React重新接管页面操作。</p>
+<p>这里主要说说React中的SSR核心由于虚拟DOM的存在(真实DOM的JS对象映射)<br>在SPA中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">ReactDom</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Home</span> /&gt;</span></span>, id/root)</span><br></pre></td></tr></table></figure>
+<p>在SSR中虚拟dom的存在让SSR变得很简单</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">renderToString</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">Home</span> /&gt;</span></span>)</span><br></pre></td></tr></table></figure>
+<p>把虚拟dom转化为字符串，返给服务器就是了</p>
+        
+          <a class="article-more-a" href="/2018/10/16/React%20SSR%20Note(1)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">SSR</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/16/React%20SSR%20Note(1)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-小程序Note2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -639,80 +719,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/04/28/%E5%85%B3%E4%BA%8ERN%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7(-)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-从零配置Webpack4.0搭建一个React工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/">从零配置Webpack4.0搭建一个React工程</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2018-04-09T08:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考</p>
-<h3 id="前段工程化思考"><a href="#前段工程化思考" class="headerlink" title="前段工程化思考"></a>前段工程化思考</h3><p>说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包&#x2F;自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目工程之后开发人员只需要关注业务&#x2F;代码即可。第二点就是保证项目质量，在多人协作，不同环境下开发。通过code lint等约束以及git commit预处理保证代码风格的一致统一，这一点对后续的代码维护很重要。第三就是优化。通过前端工程化、自动化去合理的压缩合并资源文件。这些大部分恰巧webpack帮我们完成了。<br>在vue和react开发中，通过脚手架工具，生成项目之后，只要run一下项目就跑起来了。然而cli给我们提供的只是一个泛模板。然而我们想要去定制它、修改它。就需要深入了解它，知道他是怎么跑起来的。我想考虑的前端工程化，这是每一个前端er绕不开的话题。坑越早开越好&gt;_&lt;</p>
-<h3 id="Webpack基础配置"><a href="#Webpack基础配置" class="headerlink" title="Webpack基础配置"></a>Webpack基础配置</h3><p>这里首先我们要明确webpack工程架构的核心是什么？<br>– loader机制 （不同loader去处理不同的文件。甚至你可以自己创造一个文件，并作出对应的loader来处理它）</p>
-        
-          <a class="article-more-a" href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">webpack</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">ReactSSR</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/">展开全文 >></a>
         </p>
       
 

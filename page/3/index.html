@@ -148,6 +148,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-从零配置Webpack4.0搭建一个React工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/">从零配置Webpack4.0搭建一个React工程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2018-04-09T08:44:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一直大部分精力都在搞App以及Node。前端这块作为初心，还是不能落下。这里不用cli。一步一步记录从零配置Webpack，来搭建起React项目。复习一下Webpack的配置。以及一些前端工程化的一些思考</p>
+<h3 id="前段工程化思考"><a href="#前段工程化思考" class="headerlink" title="前段工程化思考"></a>前段工程化思考</h3><p>说道前端工程化，最重要的一个目的就是：解放生产力。对源代码进行预处理、自动打包&#x2F;自动更新页面显示、去处理图片依赖和正式环境统一这几点在开发中极大提高了开发的效率。在搭建起项目工程之后开发人员只需要关注业务&#x2F;代码即可。第二点就是保证项目质量，在多人协作，不同环境下开发。通过code lint等约束以及git commit预处理保证代码风格的一致统一，这一点对后续的代码维护很重要。第三就是优化。通过前端工程化、自动化去合理的压缩合并资源文件。这些大部分恰巧webpack帮我们完成了。<br>在vue和react开发中，通过脚手架工具，生成项目之后，只要run一下项目就跑起来了。然而cli给我们提供的只是一个泛模板。然而我们想要去定制它、修改它。就需要深入了解它，知道他是怎么跑起来的。我想考虑的前端工程化，这是每一个前端er绕不开的话题。坑越早开越好&gt;_&lt;</p>
+<h3 id="Webpack基础配置"><a href="#Webpack基础配置" class="headerlink" title="Webpack基础配置"></a>Webpack基础配置</h3><p>这里首先我们要明确webpack工程架构的核心是什么？<br>– loader机制 （不同loader去处理不同的文件。甚至你可以自己创造一个文件，并作出对应的loader来处理它）</p>
+        
+          <a class="article-more-a" href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">webpack</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">ReactSSR</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/09/%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AEWebpack4.0%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAReact%E5%B7%A5%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-node图片合成" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -608,91 +682,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Express配合MongoDB简单使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Express配合MongoDB简单使用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2017-12-06T14:07:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>快速开发一个web接口，应该没有比Express+mongoDB更快&#x2F;更简单的组合了。这里简单总结一些使用nodeJs的mongoose模块链接和操作mongoDB。</p>
-<h3 id="Express"><a href="#Express" class="headerlink" title="Express:"></a>Express:</h3><p>基于nodejs快速、开放、极简的web开发框架,怎么安装就不在赘言。这里要说的是如果使用node命令启动server，每次修改文件都需要Ctrl+c非常麻烦。这里可以使用nodemon自动重启，监听路由和响应内容.十分方便</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nodemon</span><br></pre></td></tr></table></figure>
-<p>Express的一些特性：</p>
-<ul>
-<li>app.get、app.post分别开发get和post接口</li>
-<li>app.use使用模块</li>
-<li>res.send、res.json、res.sendfile响应不同的内容</li>
-</ul>
-<p>使用起来非常简单，半个小时不到就能上手</p>
-<h3 id="mongoDB"><a href="#mongoDB" class="headerlink" title="mongoDB"></a>mongoDB</h3><p>Mac的话,安装mongoDB非常简单</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mongodb</span><br></pre></td></tr></table></figure>
-<p>搞定.</p>
-<p>通过命令后台启动</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --config /usr/local/etc/mongod.conf</span><br></pre></td></tr></table></figure>
-<p>之后再开一个终端窗口</p>
-<p><img src="/assets/blogImg/20171206-01.jpg"></p>
-<p>就证明mongo安装成功咯。</p>
-        
-          <a class="article-more-a" href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">Express</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">MongoDB</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 

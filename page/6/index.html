@@ -148,6 +148,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git命令复习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">Git命令复习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2017-05-10T16:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初始化一个Git仓库，使用git init命令。</p>
+<p>添加文件到Git仓库，分两步：</p>
+<p>第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；</p>
+<p>第二步，使用命令git commit，完成。</p>
+<hr>
+<p>要随时掌握工作区的状态，使用git status命令。</p>
+<p>如果git status告诉你有文件被修改过，用git diff可以查看修改内容。</p>
+<hr>
+<p>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。</p>
+<p>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。</p>
+<p>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
+        
+          <a class="article-more-a" href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">git</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/11/git%E5%91%BD%E4%BB%A4%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-yarn-cli笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -640,75 +714,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/03/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%97%AD%E5%8C%85%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-icomoon图标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/">icomoon图标</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/" class="archive-article-date">
-  	<time datetime="2017-02-26T15:10:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>周末研究布局，遇到了获取图标的问题。在之前遇到图标第一时间想到的是切图，在页面放图片。在慕课网看了关于性能优化的雅虎军规之后发现这样很不好。遂翻了翻大厂们的页面，使用的都是字体图标（大家都知道，字体图标相比图片省了太多资源大大减少请求数量不说，任意缩放也不会失真。）搜索了一下发现了icomoon这个好东西。</p>
-<p>使用icomoon借用的是一个在线生成网站：<br><a target="_blank" rel="noopener" href="https://icomoon.io/app/#/select">https://icomoon.io/app/#/select</a><br>里面有已经存在的可以直接选用，当然也可以添加.svg图片。<br>在这里，我使用了它现有的一个搜索放大镜小图标。<br><img src="/assets/blogImg/20170226-1.jpg"><br>
-        
-          <a class="article-more-a" href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">css</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/">展开全文 >></a>
         </p>
       
 

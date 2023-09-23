@@ -148,6 +148,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Express配合MongoDB简单使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">Express配合MongoDB简单使用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2017-12-06T14:07:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>快速开发一个web接口，应该没有比Express+mongoDB更快&#x2F;更简单的组合了。这里简单总结一些使用nodeJs的mongoose模块链接和操作mongoDB。</p>
+<h3 id="Express"><a href="#Express" class="headerlink" title="Express:"></a>Express:</h3><p>基于nodejs快速、开放、极简的web开发框架,怎么安装就不在赘言。这里要说的是如果使用node命令启动server，每次修改文件都需要Ctrl+c非常麻烦。这里可以使用nodemon自动重启，监听路由和响应内容.十分方便</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nodemon</span><br></pre></td></tr></table></figure>
+<p>Express的一些特性：</p>
+<ul>
+<li>app.get、app.post分别开发get和post接口</li>
+<li>app.use使用模块</li>
+<li>res.send、res.json、res.sendfile响应不同的内容</li>
+</ul>
+<p>使用起来非常简单，半个小时不到就能上手</p>
+<h3 id="mongoDB"><a href="#mongoDB" class="headerlink" title="mongoDB"></a>mongoDB</h3><p>Mac的话,安装mongoDB非常简单</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mongodb</span><br></pre></td></tr></table></figure>
+<p>搞定.</p>
+<p>通过命令后台启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --config /usr/local/etc/mongod.conf</span><br></pre></td></tr></table></figure>
+<p>之后再开一个终端窗口</p>
+<p><img src="/assets/blogImg/20171206-01.jpg"></p>
+<p>就证明mongo安装成功咯。</p>
+        
+          <a class="article-more-a" href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">Express</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">MongoDB</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/06/Express%E9%85%8D%E5%90%88MongoDB%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-CSS混合模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -632,83 +717,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus%EF%BC%882%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-CSS预处理工具--Stylus" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus/">CSS预处理工具--Stylus</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus/" class="archive-article-date">
-  	<time datetime="2017-10-05T16:18:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/assets/blogImg/20171006-1.jpg"><br>（2017.10.4   兰州·黄河）</p>
-<h3 id="为什么是Stylus？"><a href="#为什么是Stylus？" class="headerlink" title="为什么是Stylus？"></a>为什么是Stylus？</h3><p>Stylus vs Sass ：Sass 在win下中文字符兼容不是太好。出现的比较早，相比之下少一些新晋的功能</p>
-<p>Stylus vs PostCSS：势均力敌，速度都很快，支持自己写扩展。都是用node开发。</p>
-<h4 id="stylus优势："><a href="#stylus优势：" class="headerlink" title="stylus优势："></a>stylus优势：</h4><p>1，语法上，无限接近JS。<br>2，极尽简化，又向上兼容。<br>3，强力的@extend （不仅可以继承类还有继承选择器）。<br>4，不需要复杂的配置。</p>
-<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><p>npm install stylus -g</p>
-<h4 id="编译css："><a href="#编译css：" class="headerlink" title="编译css："></a>编译css：</h4><p>stylus [options][文件|目录…] -o css&#x2F;<br>eg: stylus .\index.stylus -o css</p>
-        
-          <a class="article-more-a" href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">Stylus</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus/">展开全文 >></a>
         </p>
       
 
