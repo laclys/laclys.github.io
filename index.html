@@ -148,6 +148,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-gap这小半年" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/10/12/gap%E8%BF%99%E5%B0%8F%E5%8D%8A%E5%B9%B4/">gap这小半年</a>
+    </h1>
+  
+
+        
+        <a href="/2023/10/12/gap%E8%BF%99%E5%B0%8F%E5%8D%8A%E5%B9%B4/" class="archive-article-date">
+  	<time datetime="2023-10-12T11:25:55.283Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要开始下一程了，在这个没人在意的角落。记录一下这为期半年的Gap，踏入社会之后难得的长假。</p>
+<h3 id="新加坡"><a href="#新加坡" class="headerlink" title="新加坡"></a>新加坡</h3><p>前司Last Day是今年三月的的最后一天，各种手续办完，和同事简单寒暄之后大概下午四五点的样子。离开了公司。删除Lark那一刻，紧绷两年的神经一下子松了下来。</p>
+<p>自己是一个特别容易焦虑的人，生活上、工作上都是。无论是否工作日，睡前、起床第一眼都是公司的SNS，看看有没有漏掉的消息，负责的系统是否平稳运行。神经总是紧绷的。</p>
+<p>为什么离职呢？工作方面，前司除了忙，什么都好。薪资在坡很有竞争力，可以WFH，只是必须在新加坡（这样也很舒服），Office呢有星巴克咖啡机，各种零食、冷饮。当年晚上七点Garb外卖随便点。托公司投资的福，在很好的位置观看了F1新加坡站的比赛(P房正对面座位)</p>
+<p><img src="/assets/blogImg/20231013-1.jpg"></p>
+<p><img src="/assets/blogImg/20231013-2.jpg"></p>
+<p>（F1·Singapore）</p>
+        
+          <a class="article-more-a" href="/2023/10/12/gap%E8%BF%99%E5%B0%8F%E5%8D%8A%E5%B9%B4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">杂</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">日本</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">Gap</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">新加坡</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/10/12/gap%E8%BF%99%E5%B0%8F%E5%8D%8A%E5%B9%B4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-CSS技术笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -679,85 +761,6 @@
 
 
   
-    <article id="post-ReactSSR样式及SEO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/19/ReactSSR%E6%A0%B7%E5%BC%8F%E5%8F%8ASEO/">ReactSSR样式及SEO</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/19/ReactSSR%E6%A0%B7%E5%BC%8F%E5%8F%8ASEO/" class="archive-article-date">
-  	<time datetime="2018-10-19T04:01:29.196Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前一篇主要记录了一下SSR配置以及结合Redux的使用。这里简单说一下React SSR中样式处理和更优雅的SEO</p>
-<h3 id="SSR样式"><a href="#SSR样式" class="headerlink" title="SSR样式"></a>SSR样式</h3><p>在React客户端渲染，添加样式很容易。写一个css样式文件，在对应组件中引用。标签上通过className这个属性调用对应样式就万事Ok了。当然我们需要在webpack中配置loader来解析css文件。一般的配置如下（使用css modules）：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">module</span>: &#123;</span><br><span class="line">  <span class="attr">rules</span>: [&#123;</span><br><span class="line">    <span class="attr">test</span>: <span class="regexp">/\.css?$/</span>,</span><br><span class="line">    <span class="attr">use</span>: [<span class="string">&#x27;style-loader&#x27;</span>, &#123;</span><br><span class="line">      <span class="attr">loader</span>: <span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">importLoader</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">modules</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">localIdentName</span>: <span class="string">&#x27;[name]_[local]_[hash:base64:5]&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>需要先通过css-loader解析css文件，之后再通过style-loader将样式放在html的style标签中。</p>
-<p>那么SSR也这样行吗~</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn dev</span><br></pre></td></tr></table></figure>
-<p>跑一下服务，发现命令行报这个错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    return window &amp;&amp; document &amp;&amp; document.all &amp;&amp; !window.atob;</span><br><span class="line">    ^</span><br><span class="line"></span><br><span class="line">ReferenceError: window is not defined</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/10/19/ReactSSR%E6%A0%B7%E5%BC%8F%E5%8F%8ASEO/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">ssr</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">seo</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/19/ReactSSR%E6%A0%B7%E5%BC%8F%E5%8F%8ASEO/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1063,6 +1066,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">日本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Gap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">新加坡</a>
               </li>
             
             <div class="clearfix"></div>

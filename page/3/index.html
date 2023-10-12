@@ -148,6 +148,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于RN项目升级(-)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/28/%E5%85%B3%E4%BA%8ERN%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7(-)/">关于RN项目升级(-)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/28/%E5%85%B3%E4%BA%8ERN%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7(-)/" class="archive-article-date">
+  	<time datetime="2018-04-27T17:03:14.008Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>说道RN，依稀记得去年刚来时接触的时候还是0.38。之后公司要搞App，选了一个不新不旧的版本0.44.3。再到之后为了做一个滤镜的效果，依赖于gl-react和gl-react-native这个库。为了追究更好的体验和兼容Android机，将版本升级成了0.46.4。离职之后最近一直在看web，没怎么看RN这块。没想到现在RN已经更新到了0.55.3。（FB团队是真的勤快）,主要是闲的蛋疼。把自己的一个个人小项目升级了一波。顺便总结一下这一年RN 组件和API的变化以及升级方法。</p>
+<h3 id="组件上的变化："><a href="#组件上的变化：" class="headerlink" title="组件上的变化："></a>组件上的变化：</h3><p>新增了：ImageBackground（背景图片组件，它是一个容器组件。当然有了它，也就不支持Image直接包裹的形式）、FlatList、SectionList、VirtualizedList（FlatList、SectionList的底层实现）、SwipeableFlatList（类似于ios备忘录从右往左划出现的效果，带滑动显示更多菜单的FlatList组件）、MaskedViewIOS（可以为组件添加一个透明的遮罩）以及为了适配ipX，0.50出现的SafeAreaView。</p>
+<h3 id="新增的Api："><a href="#新增的Api：" class="headerlink" title="新增的Api："></a>新增的Api：</h3><p>自身使用上，主要用了AccessibilityInfo（判断屏幕阅读器是否处于激活状态）以及DeviceInfo（一个类专门提供屏幕尺寸，字体缩放等信息）。<br>YellowBox（可以屏蔽指定的警告，这个其实也很好用，0.44版本提供的。在公司项目中由于使用了code push。但是在开发环境没有配置key。每次刷新都会弹错，有了它就解决了这个问题。当然更好的办法就是在dev环境配个key）<br>BackAndroid也被BackHandler所替换。在原有的基础上做了加强和补充。</p>
+<h3 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h3><ul>
+<li>View.propTypes -&gt; ViewPropTypes</li>
+<li>takeSnapshot:从 UIManager 移动到 ReactNative(截图的话，疯狂安利：react-native-view-shot)</li>
+<li>react-navigation 代替 Navigator、NavigationExperimental。（前一阵尝试了一下 react-native-router-flux 体验也不错）</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/04/28/%E5%85%B3%E4%BA%8ERN%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7(-)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/28/%E5%85%B3%E4%BA%8ERN%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7(-)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-从零配置Webpack4.0搭建一个React工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -629,76 +700,6 @@
 
 
   
-    <article id="post-React代码整洁之道笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/">React代码整洁之道笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2017-12-07T15:31:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为RN开始接触React，JSX相比HTML，更加简明。由于All in JS，如果在编写React代码的时候不注重代码的规范和整洁。后期维护起来会相当的痛苦。</p>
-<p>正如文章所说:编程也是艺术行为，当我们丝毫代码复用、变量命名时，就是在进行艺术的思考。</p>
-<p><img src="/assets/blogImg/20171207-01.jpg"></p>
-        
-          <a class="article-more-a" href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
@@ -1004,6 +1005,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">日本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Gap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">新加坡</a>
               </li>
             
             <div class="clearfix"></div>

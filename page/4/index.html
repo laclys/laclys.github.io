@@ -148,6 +148,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React代码整洁之道笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/">React代码整洁之道笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2017-12-07T15:31:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因为RN开始接触React，JSX相比HTML，更加简明。由于All in JS，如果在编写React代码的时候不注重代码的规范和整洁。后期维护起来会相当的痛苦。</p>
+<p>正如文章所说:编程也是艺术行为，当我们丝毫代码复用、变量命名时，就是在进行艺术的思考。</p>
+<p><img src="/assets/blogImg/20171207-01.jpg"></p>
+        
+          <a class="article-more-a" href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">React</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">ReactNative</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/07/React%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Express配合MongoDB简单使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -660,80 +730,6 @@
 
 
   
-    <article id="post-CSS预处理工具--Stylus（2）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus%EF%BC%882%EF%BC%89/">CSS预处理工具--Stylus（2）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus%EF%BC%882%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2017-10-06T06:18:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="内建函数："><a href="#内建函数：" class="headerlink" title="内建函数："></a>内建函数：</h4><ul>
-<li><p>颜色函数： darken&#x2F;lighten</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.btn-primary</span></span><br><span class="line">  <span class="attribute">background-color</span> <span class="variable">$primary</span>-color</span><br><span class="line">  <span class="attribute">border-color</span> <span class="built_in">darken</span>(<span class="variable">$primary</span>-color, <span class="number">15%</span>)</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.link</span></span><br><span class="line">  <span class="attribute">color</span> red</span><br><span class="line"></span><br><span class="line">  <span class="selector-pseudo">&amp;:hover</span></span><br><span class="line">    <span class="attribute">color</span> <span class="built_in">lighten</span>(red, <span class="number">10%</span>)</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus%EF%BC%882%EF%BC%89/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">CSS</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color2">Stylus</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/06/CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7--Stylus%EF%BC%882%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
@@ -1039,6 +1035,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">日本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">Gap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">新加坡</a>
               </li>
             
             <div class="clearfix"></div>
