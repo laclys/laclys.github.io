@@ -148,6 +148,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-小试NodeJS的express进行前后端数据交互" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/">小试NodeJS的express进行前后端数据交互</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/" class="archive-article-date">
+  	<time datetime="2017-03-13T17:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今儿小试了一下NodeJs的express框架，在这说一说如何通过express进行前后台的数据交互。</p>
+<p>这几年nodeJs大火，有很多原因。其中最重要的我想就是和前台同为JS语言，在交互上比其他后台语言配合起来更爽一些。</p>
+<p>这里就简要的讲一下通过express框架进行前后端数据交互。<br>express是一个很轻量级的nodeJS框架。使用起来也比较简单。<br>要运用这个框架首先我们需要先将它下载下来：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save</span><br></pre></td></tr></table></figure>
+<p>（<em>后面加了–save，是为了把模块保存到配置文件中，当项目移植的时候只需要npm install 就会把所有依赖的模块下载下来</em>）</p>
+<p>之后就是搭建服务器了。<br>创建一个js文件<br>1, 首先引入框架</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express=<span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">node</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">express</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-深入理解javascript原型和闭包笔记总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -224,13 +298,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/">icomoon图标</a>
+      <a class="article-title" href="/2017/02/27/icomoon%E5%9B%BE%E6%A0%87/">icomoon图标</a>
     </h1>
   
 
         
-        <a href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/" class="archive-article-date">
-  	<time datetime="2017-02-26T15:10:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-26</time>
+        <a href="/2017/02/27/icomoon%E5%9B%BE%E6%A0%87/" class="archive-article-date">
+  	<time datetime="2017-02-26T15:10:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
 </a>
         
       </header>
@@ -240,7 +314,7 @@
         <p>周末研究布局，遇到了获取图标的问题。在之前遇到图标第一时间想到的是切图，在页面放图片。在慕课网看了关于性能优化的雅虎军规之后发现这样很不好。遂翻了翻大厂们的页面，使用的都是字体图标（大家都知道，字体图标相比图片省了太多资源大大减少请求数量不说，任意缩放也不会失真。）搜索了一下发现了icomoon这个好东西。</p>
 <p>使用icomoon借用的是一个在线生成网站：<br><a target="_blank" rel="noopener" href="https://icomoon.io/app/#/select">https://icomoon.io/app/#/select</a><br>里面有已经存在的可以直接选用，当然也可以添加.svg图片。<br>在这里，我使用了它现有的一个搜索放大镜小图标。<br><img src="/assets/blogImg/20170226-1.jpg"><br>
         
-          <a class="article-more-a" href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/27/icomoon%E5%9B%BE%E6%A0%87/#more">more >></a>
         
       
 
@@ -268,7 +342,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/26/icomoon%E5%9B%BE%E6%A0%87/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/27/icomoon%E5%9B%BE%E6%A0%87/">展开全文 >></a>
         </p>
       
 
@@ -641,81 +715,9 @@
 
 
   
-    <article id="post-JS原型与原型链学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JS原型与原型链学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2017-02-10T15:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这一周在慕课以及网上搜索，好好学习理解了一下JS的原型&#x2F;原型链。在这里笔记一下自己觉得重要的东西，在这总结一下。</p>
-<h3 id="普通对象与函数："><a href="#普通对象与函数：" class="headerlink" title="普通对象与函数："></a>普通对象与函数：</h3><p>JavaScript 中分为普通对象和函数对象。凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。</p>
-<h3 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name, age, job</span>) &#123;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">job</span> = job;</span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">sayName</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123; <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">name</span>) &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Zaxlct&#x27;</span>, <span class="number">28</span>, <span class="string">&#x27;Software Engineer&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;Mick&#x27;</span>, <span class="number">23</span>, <span class="string">&#x27;Doctor&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p>上面的例子中 person1 和 person2 都是 Person 的实例。这两个实例都有一个 constructor （构造函数）属性，该属性（是一个指针）指向 Person。<br><strong>person1 和 person2 都是 构造函数 Person 的实例</strong> </p>
-<p>!!!实例的构造函数属性（constructor）指向构造函数。</p>
-        
-          <a class="article-more-a" href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/10/JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1030,6 +1032,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">新加坡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">pnpm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">monorepo</a>
               </li>
             
             <div class="clearfix"></div>

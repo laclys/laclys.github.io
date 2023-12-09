@@ -148,38 +148,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-react-native学习笔记(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-React-Native学习--布局问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/">react-native学习笔记</a>
+      <a class="article-title" href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/">React Native学习--布局问题</a>
     </h1>
   
 
         
-        <a href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/" class="archive-article-date">
-  	<time datetime="2017-06-04T15:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-04</time>
+        <a href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2017-06-10T08:49:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>周末两天的RN初体验，一些杂乱的笔记。</p>
-<p><img src="/assets/blogImg/20170604.jpg"></p>
-<h3 id="传统开发："><a href="#传统开发：" class="headerlink" title="传统开发："></a>传统开发：</h3><p>人员稀缺；开发成本高；代码复用；无法实现动态更新</p>
-<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><p>learn once,write anywhere<br>跨平台 性能高 低投入高回报 支持动态更新</p>
-<h3 id="first-app"><a href="#first-app" class="headerlink" title="first app"></a>first app</h3><p> command+d 在模拟器里打开 开发者菜单</p>
-<p>react-native run-ios （没什么坑直接用就好，启动xcode里的ios模拟器）</p>
-<p> Android这边坑比较多<br>遇到的第一个问题：</p>
-<p><strong>Unable to access Android SDK add-on list</strong><br>解决方案：<br> 在 Android Studio 安装目录 bin&#x2F;idea.properties 文件最后追加一句</p>
-<pre><code>disable.android.first.run=true
-</code></pre>
+        <p>最近一直闲暇时间一直在看RN。大概之前主要看Vue，对React只是了解的缘故。直接上RN，扑面而来一箩筐的概念和知识（不光是React还有ios&#x2F;Android ，没有原生开发经验，上周在配置1环境的时候就踩了不少坑&#x3D;。&#x3D;）。</p>
+<p>今儿主要说说RN中的布局问题。RN采用的布局方式是FlexBox。现代浏览器还是会有FlexBox的兼容问题，在网页开发多少会有一些限制。而RN，是面向ios&#x2F;Android的。既然RN对FlexBox支持。我们大可不必关心兼容性问题。</p>
+<h3 id="RN的单位"><a href="#RN的单位" class="headerlink" title="RN的单位"></a>RN的单位</h3><p>首先要说的是RN中的尺寸。<br>在RN中尺寸是没有单位的，他代表设备独立像素。<br>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">View</span> style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">100</span>,<span class="attr">margin</span>:<span class="number">40</span>,<span class="attr">backgroundColor</span>:<span class="string">&#x27;gray&#x27;</span>&#125;&#125;&gt;</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">Text</span> <span class="attr">style</span>=<span class="string">&#123;</span> &#123;<span class="attr">fontSize:16</span>,<span class="attr">margin:20</span>&#125;&#125;&gt;</span>尺寸<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">View</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>这里使用无单位的尺寸，是为了确保布局在任何不同的dpi的手机屏幕上不会发生改变。<br>在上面的代码中：</p>
+<p>运行在Android上时，View的长和宽被解释成：100dp 100dp单位是dp，字体被解释成16sp 单位是sp，运行在iOS上时尺寸单位被解释称了pt。</p>
         
-          <a class="article-more-a" href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/#more">more >></a>
         
       
 
@@ -207,7 +203,84 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/04/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/10/React-Native%E5%AD%A6%E4%B9%A0--%E5%B8%83%E5%B1%80%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-react-native学习笔记(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/05/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/">react-native学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/05/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/" class="archive-article-date">
+  	<time datetime="2017-06-04T15:28:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>周末两天的RN初体验，一些杂乱的笔记。</p>
+<p><img src="/assets/blogImg/20170604.jpg"></p>
+<h3 id="传统开发："><a href="#传统开发：" class="headerlink" title="传统开发："></a>传统开发：</h3><p>人员稀缺；开发成本高；代码复用；无法实现动态更新</p>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><p>learn once,write anywhere<br>跨平台 性能高 低投入高回报 支持动态更新</p>
+<h3 id="first-app"><a href="#first-app" class="headerlink" title="first app"></a>first app</h3><p> command+d 在模拟器里打开 开发者菜单</p>
+<p>react-native run-ios （没什么坑直接用就好，启动xcode里的ios模拟器）</p>
+<p> Android这边坑比较多<br>遇到的第一个问题：</p>
+<p><strong>Unable to access Android SDK add-on list</strong><br>解决方案：<br> 在 Android Studio 安装目录 bin&#x2F;idea.properties 文件最后追加一句</p>
+<pre><code>disable.android.first.run=true
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/06/05/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">react-native</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/05/react-native%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1)/">展开全文 >></a>
         </p>
       
 
@@ -306,13 +379,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/02/yarn-cli%E7%AC%94%E8%AE%B0/">yarn-cli笔记</a>
+      <a class="article-title" href="/2017/05/03/yarn-cli%E7%AC%94%E8%AE%B0/">yarn-cli笔记</a>
     </h1>
   
 
         
-        <a href="/2017/05/02/yarn-cli%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2017-05-02T15:18:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
+        <a href="/2017/05/03/yarn-cli%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2017-05-02T15:18:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
 </a>
         
       </header>
@@ -323,7 +396,7 @@
 <p>为什么用yarn？正如官网所说：**FAST, RELIABLE, AND SECURE **。</p>
 <p>相比NPM，yarn缓存他下载下来的每一个包，无需重复下载。提高了资源利用率。<br>超级可靠！由于国内网络的特殊原因。有时候npm下载依赖的时候，不能保证包的完整性。会出现很多的“坑”！yarn的话，在每一个安装包的执行前使用校验码验证包的完整性。就不会面对那些坑了。<br>还有一个就是目录下的lock文件。Yarn 使用一个格式详尽但简洁的 lockfile 和一个精确的算法来安装，能够保证在一个系统上的运行的安装过程也会以同样的方式运行在其他系统上。</p>
         
-          <a class="article-more-a" href="/2017/05/02/yarn-cli%E7%AC%94%E8%AE%B0/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/03/yarn-cli%E7%AC%94%E8%AE%B0/#more">more >></a>
         
       
 
@@ -351,7 +424,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/02/yarn-cli%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/03/yarn-cli%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
@@ -596,13 +669,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/23/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/">Angular1.5到Angular1.6的JSONP交互相关的设置及小Demo</a>
+      <a class="article-title" href="/2017/03/24/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/">Angular1.5到Angular1.6的JSONP交互相关的设置及小Demo</a>
     </h1>
   
 
         
-        <a href="/2017/03/23/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/" class="archive-article-date">
-  	<time datetime="2017-03-23T15:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-23</time>
+        <a href="/2017/03/24/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/" class="archive-article-date">
+  	<time datetime="2017-03-23T15:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-24</time>
 </a>
         
       </header>
@@ -615,7 +688,7 @@
 <p>这里在文件夹内建了一个a.txt文件里面随便打了一些数字。在angular包裹的控制器中调用$http，设置url以及所使用的method。如果有其他数据就加一个data属性。这样向后台发的信息就制作好了。是不是和JQ很像。之后then后面两个函数一次对应JQ中的success和error函数。这里。我们当它成功获取a.txt文件中数据时，console.log一下.数据就在我们控制台显示了出来。<br><img src="/assets/blogImg/20170323-1.jpg"></p>
 <h3 id="Angular–JSONP交互"><a href="#Angular–JSONP交互" class="headerlink" title="Angular–JSONP交互"></a>Angular–JSONP交互</h3><p>下面开始说今儿的重点JSONP交互。Angular中JSONP的操作也是基于$http方法中的。由于前端框架的高速版本变化。在JSONP这一块1.5版本和1.6版本有很大的不同。下面就来详细说一下。</p>
         
-          <a class="article-more-a" href="/2017/03/23/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/#more">more >></a>
+          <a class="article-more-a" href="/2017/03/24/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/#more">more >></a>
         
       
 
@@ -647,81 +720,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/23/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-小试NodeJS的express进行前后端数据交互" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/">小试NodeJS的express进行前后端数据交互</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/" class="archive-article-date">
-  	<time datetime="2017-03-13T17:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今儿小试了一下NodeJs的express框架，在这说一说如何通过express进行前后台的数据交互。</p>
-<p>这几年nodeJs大火，有很多原因。其中最重要的我想就是和前台同为JS语言，在交互上比其他后台语言配合起来更爽一些。</p>
-<p>这里就简要的讲一下通过express框架进行前后端数据交互。<br>express是一个很轻量级的nodeJS框架。使用起来也比较简单。<br>要运用这个框架首先我们需要先将它下载下来：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save</span><br></pre></td></tr></table></figure>
-<p>（<em>后面加了–save，是为了把模块保存到配置文件中，当项目移植的时候只需要npm install 就会把所有依赖的模块下载下来</em>）</p>
-<p>之后就是搭建服务器了。<br>创建一个js文件<br>1, 首先引入框架</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express=<span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">node</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">express</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/14/%E5%B0%8F%E8%AF%95NodeJS%E7%9A%84express%E8%BF%9B%E8%A1%8C%E5%89%8D%E5%90%8E%E7%AB%AF%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/03/24/Angular1.5%E5%88%B0Angular1.6%E7%9A%84JSONP%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%B0%8FDemo/">展开全文 >></a>
         </p>
       
 
@@ -741,7 +740,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1056,6 +1055,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">新加坡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">pnpm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">monorepo</a>
               </li>
             
             <div class="clearfix"></div>

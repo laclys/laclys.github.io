@@ -148,6 +148,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React_Portal" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/14/React_Portal/">React Portal 小谈</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/14/React_Portal/" class="archive-article-date">
+  	<time datetime="2018-12-13T16:08:36.342Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在看ReactV16带来的新东西，V16版本直接支持了Portal。今儿就总结一下Portal这个自己不是那么熟悉却又非常重要的“传送门”吧。<br>先说说为什么需要传送门。React的世界一切皆组件，进行render就需要一个root根节点进行挂载。组件套组件一层一层，不过最外面一层都是挂在在这个root根节点上的。</p>
+<p>有一个常见的需求Dialog(弹窗),通常它会显示在屏幕正中央，它应该是一个独立的组件。因此将这个弹窗组件放在根节点下的子组件里显然是不合适的。<br>我们希望将其渲染在和root根节点同级的DOM上在React组件树的最顶层。样式独立，没必要受其他组件的干扰。除了Dialog需要在最顶层渲染之外，我们还希望(也可以说是诉求)在不同的业务组件中去使用它。这里就需要Portal咯。</p>
+<p><img src="/assets/blogImg/20181214-1.jpg"><br>（ 天野喜孝展 ）</p>
+        
+          <a class="article-more-a" href="/2018/12/14/React_Portal/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/14/React_Portal/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-ReactSSR样式及SEO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -314,13 +384,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/27/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/">小程序Note2</a>
+      <a class="article-title" href="/2018/09/28/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/">小程序Note2</a>
     </h1>
   
 
         
-        <a href="/2018/09/27/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/" class="archive-article-date">
-  	<time datetime="2018-09-27T15:16:00.469Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
+        <a href="/2018/09/28/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/" class="archive-article-date">
+  	<time datetime="2018-09-27T15:16:00.469Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
 </a>
         
       </header>
@@ -331,7 +401,7 @@
 <p>这里还是聊聊最近编写小程序一些问题和解决方案</p>
 <p><img src="/assets/blogImg/20180928-01.jpg"><br>（中秋在三里屯人行天桥拍到的日落，很美）</p>
         
-          <a class="article-more-a" href="/2018/09/27/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/#more">more >></a>
+          <a class="article-more-a" href="/2018/09/28/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/#more">more >></a>
         
       
 
@@ -355,7 +425,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/28/%E5%B0%8F%E7%A8%8B%E5%BA%8FNote2/">展开全文 >></a>
         </p>
       
 
@@ -671,82 +741,9 @@
 
 
   
-    <article id="post-关于直播" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/14/%E5%85%B3%E4%BA%8E%E7%9B%B4%E6%92%AD/">关于直播</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/14/%E5%85%B3%E4%BA%8E%E7%9B%B4%E6%92%AD/" class="archive-article-date">
-  	<time datetime="2018-05-14T02:37:31.312Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>正处于难得的空档期，五一去和大学的基友去日本的东北玩了一大圈（东京-仙台-角馆-田泽湖-秋田-弘前-青森-东京），回来也该收收心了。周末无事，浅浅的研究了一下现在大热的直播技术。同时也在这里记录一下。</p>
-<h3 id="直播流程（原理）"><a href="#直播流程（原理）" class="headerlink" title="直播流程（原理）"></a>直播流程（原理）</h3><p>PC端&#x2F;IOS&#x2F;Android -&gt; 压缩编码过程（H.264&#x2F;ACC）-&gt; 字幕叠加（视频本身处理）-&gt; 推流 -&gt; CDN -&gt; 直播（终端显示直播流）</p>
-        
-          <a class="article-more-a" href="/2018/05/14/%E5%85%B3%E4%BA%8E%E7%9B%B4%E6%92%AD/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">直播</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">HLS</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">RTMP</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/14/%E5%85%B3%E4%BA%8E%E7%9B%B4%E6%92%AD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1061,6 +1058,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">新加坡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">pnpm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">monorepo</a>
               </li>
             
             <div class="clearfix"></div>

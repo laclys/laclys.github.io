@@ -148,6 +148,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-记一次pnpm monorepo实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/09/%E8%AE%B0%E4%B8%80%E6%AC%A1pnpm%20monorepo%E5%AE%9E%E8%B7%B5/">记一次pnpm monorepo实践</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/09/%E8%AE%B0%E4%B8%80%E6%AC%A1pnpm%20monorepo%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
+  	<time datetime="2023-12-09T14:02:15.962Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>入职新公司快一个月了。再一次的东京生活也算稳定下来了。到现在为止生活还算惬意，30 岁之后心态真的会发生很大的变化（笑</p>
+<p><img src="/assets/blogImg/20231209-1.jpg"></p>
+<p><img src="/assets/blogImg/20231209-2.jpg"></p>
+<p>每当天气好的清晨黄昏，就可以在小屋阳台看到富士山</p>
+<p>话不多说，接手的第一个项目是类似问卷的项目，包括管理侧制作问卷，和用户侧使用问卷。分两个仓库开发过一版，但是种种原因没有上线。现在时机成熟了，重启项目。新的一版设计中管理侧有预览用户侧问卷的功能，那为什么不把两个仓库合二为一呢。</p>
+<p>上一份工作有大规模的使用 Monorepo，采用的是微软开源的<code>NX</code>作为构建 Monorepo 的方案，功能很齐全很强大，它的命令行工具类似 NG CLI，但这样带来的副作用就是刚上手可能会有一些不知所措。小型项目使用的话，有些杀鸡用牛刀。<br>短暂的考虑一番之后，决定采用简单轻量<code>pnpm workspace</code>方案，花了一天时间把两个项目合而为一，顺便替换掉<code>Yarn</code>.</p>
+        
+          <a class="article-more-a" href="/2023/12/09/%E8%AE%B0%E4%B8%80%E6%AC%A1pnpm%20monorepo%E5%AE%9E%E8%B7%B5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">pnpm</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">monorepo</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/09/%E8%AE%B0%E4%B8%80%E6%AC%A1pnpm%20monorepo%E5%AE%9E%E8%B7%B5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-gap这小半年" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -535,13 +608,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/20/Snowpack/">Snowpack</a>
+      <a class="article-title" href="/2020/07/21/Snowpack/">Snowpack</a>
     </h1>
   
 
         
-        <a href="/2020/07/20/Snowpack/" class="archive-article-date">
-  	<time datetime="2020-07-20T15:00:11.813Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
+        <a href="/2020/07/21/Snowpack/" class="archive-article-date">
+  	<time datetime="2020-07-20T15:00:11.813Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
 </a>
         
       </header>
@@ -565,7 +638,7 @@
 <li>HTTPS&#x2F;HTTP2(<strong>HTTP2的多路复用、合并请求就能解决<code>Snowpack</code>多构建文件的问题</strong>)</li>
 </ul>
         
-          <a class="article-more-a" href="/2020/07/20/Snowpack/#more">more >></a>
+          <a class="article-more-a" href="/2020/07/21/Snowpack/#more">more >></a>
         
       
 
@@ -593,7 +666,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/20/Snowpack/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/07/21/Snowpack/">展开全文 >></a>
         </p>
       
 
@@ -691,79 +764,9 @@
 
 
   
-    <article id="post-React_Portal" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/14/React_Portal/">React Portal 小谈</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/14/React_Portal/" class="archive-article-date">
-  	<time datetime="2018-12-13T16:08:36.342Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在看ReactV16带来的新东西，V16版本直接支持了Portal。今儿就总结一下Portal这个自己不是那么熟悉却又非常重要的“传送门”吧。<br>先说说为什么需要传送门。React的世界一切皆组件，进行render就需要一个root根节点进行挂载。组件套组件一层一层，不过最外面一层都是挂在在这个root根节点上的。</p>
-<p>有一个常见的需求Dialog(弹窗),通常它会显示在屏幕正中央，它应该是一个独立的组件。因此将这个弹窗组件放在根节点下的子组件里显然是不合适的。<br>我们希望将其渲染在和root根节点同级的DOM上在React组件树的最顶层。样式独立，没必要受其他组件的干扰。除了Dialog需要在最顶层渲染之外，我们还希望(也可以说是诉求)在不同的业务组件中去使用它。这里就需要Portal咯。</p>
-<p><img src="/assets/blogImg/20181214-1.jpg"><br>（ 天野喜孝展 ）</p>
-        
-          <a class="article-more-a" href="/2018/12/14/React_Portal/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">前端</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">react</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/14/React_Portal/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1078,6 +1081,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">新加坡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">pnpm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">monorepo</a>
               </li>
             
             <div class="clearfix"></div>
